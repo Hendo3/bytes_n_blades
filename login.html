@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACCESS TERMINAL - Byte & Blades</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="icon" href="./assets/svg/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+</head>
+<body class="login-body">
+    
+    <div class="login-container">
+        <header class="login-header">
+            <h1 class="glitch-text">OFFGRID HANDSHAKE</h1>
+            <p>DROP YOUR HANDLE, CHOOM. ADULT RUNNERS ONLY.</p>
+        </header>
+
+        <form id="login-form" autocomplete="off">
+            <div class="input-group">
+                <label for="runner-handle">HANDLE (USERNAME)</label>
+                <input type="text" id="runner-handle" placeholder="ex: Ghost_Dog" maxlength="20" autofocus>
+                <small class="hint">ALLOWED: A-Z, 0-9, [ - ], [ _ ] ONLY.</small>
+            </div>
+
+            <button type="submit" id="btn-jack-in" class="btn-primary btn-large" disabled>
+                JACK IN
+            </button>
+        </form>
+
+        <div class="terminal-status">
+            <p>> SYSTEM: WAITING FOR INPUT...</p>
+            <p>> ROUTE: GHOST RELAYS ACTIVE</p>
+        </div>
+    </div>
+    <script src="./js/login.js"></script>
+    <script src="./js/modal.js"></script>
+
+</body>
+</html>

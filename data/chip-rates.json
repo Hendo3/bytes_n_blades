@@ -1,0 +1,119 @@
+{
+  "$id": "./data/chip-rates.json",
+  "title": "Chip Skill Rates",
+  "description": "APTR, MRAM and Visual Recognition chip price tables per level.",
+  "version": "1.0.0",
+  "data": {
+    "mram": {
+      "label": "MRAM",
+      "sections": [
+        {
+          "id": "attr_mram",
+          "label": "ATTR (MRAM)",
+          "items": [
+            { "skill": "Personal Grooming", "pricePerLevel": 100 },
+            { "skill": "Wardrobe & Style", "pricePerLevel": 100 }
+          ]
+        },
+        {
+          "id": "int_mram",
+          "label": "INT (MRAM)",
+          "items": [
+            { "skill": "Accounting", "pricePerLevel": 150 },
+            { "skill": "Anthropology", "pricePerLevel": 150 },
+            { "skill": "Biology", "pricePerLevel": 150 },
+            { "skill": "Botany", "pricePerLevel": 150 },
+            { "skill": "Chemistry", "pricePerLevel": 150 },
+            { "skill": "Education & Gen. Know", "pricePerLevel": 200 },
+            { "skill": "Expert (pick subject)", "pricePerLevel": null, "note": "Ref decision" },
+            { "skill": "Geology", "pricePerLevel": 150 },
+            { "skill": "History", "pricePerLevel": 150 },
+            { "skill": "Know Language (choose)", "pricePerLevel": 200 },
+            { "skill": "Mathematics", "pricePerLevel": 200 },
+            { "skill": "Physics", "pricePerLevel": 200 },
+            { "skill": "Programming", "pricePerLevel": 300 },
+            { "skill": "Stock Market", "pricePerLevel": 300 },
+            { "skill": "Wilderness Survival", "pricePerLevel": 200 },
+            { "skill": "Zoology", "pricePerLevel": 150 },
+            { "skill": "Daytimer-Chip", "pricePerLevel": 100 }
+          ]
+        }
+      ]
+    },
+    "aptr": {
+      "label": "APTR",
+      "sections": [
+        {
+          "id": "body_aptr",
+          "label": "BODY (APTR)",
+          "items": [
+            { "skill": "Swimming", "pricePerLevel": 100 }
+          ]
+        },
+        {
+          "id": "ref_aptr",
+          "label": "REF (APTR)",
+          "items": [
+            { "skill": "Archery", "pricePerLevel": 300 },
+            { "skill": "Dance", "pricePerLevel": 150 },
+            { "skill": "Driving", "pricePerLevel": 150 },
+            { "skill": "Fencing", "pricePerLevel": 300 },
+            { "skill": "Handgun", "pricePerLevel": 300 },
+            { "skill": "Heavy Weapons", "pricePerLevel": 400 },
+            { "skill": "Martial Art (choose type)", "pricePerLevel": 350 },
+            { "skill": "Melee", "pricePerLevel": 150 },
+            { "skill": "Motorcycle", "pricePerLevel": 150 },
+            { "skill": "Operate Hvy. Machinery", "pricePerLevel": 200 },
+            { "skill": "Pilot (Gyro)", "pricePerLevel": 300 },
+            { "skill": "Pilot (Fixed Wing)", "pricePerLevel": 300 },
+            { "skill": "Pilot (Dirigible)", "pricePerLevel": 300 },
+            { "skill": "Pilot (Vect. Thrust Vehicle)", "pricePerLevel": 350 },
+            { "skill": "Rifle", "pricePerLevel": 300 },
+            { "skill": "Submachinegun", "pricePerLevel": 300 }
+          ]
+        },
+        {
+          "id": "tech_aptr",
+          "label": "TECH (APTR)",
+          "items": [
+            { "skill": "Aero Tech", "pricePerLevel": 250 },
+            { "skill": "AV Tech", "pricePerLevel": 300 },
+            { "skill": "Basic Tech", "pricePerLevel": 200 },
+            { "skill": "Cryotank Operation", "pricePerLevel": 150 },
+            { "skill": "Cyberdeck Design", "pricePerLevel": 200 },
+            { "skill": "CyberTech", "pricePerLevel": 300 },
+            { "skill": "Demolitions", "pricePerLevel": 300 },
+            { "skill": "Disguise", "pricePerLevel": 150 },
+            { "skill": "Electronics", "pricePerLevel": 150 },
+            { "skill": "Elect Security", "pricePerLevel": 200 },
+            { "skill": "First Aid", "pricePerLevel": 150 },
+            { "skill": "Forgery", "pricePerLevel": 200 },
+            { "skill": "Gyro Tech", "pricePerLevel": 300 },
+            { "skill": "Pharmaceuticals", "pricePerLevel": 200 },
+            { "skill": "Pick Lock", "pricePerLevel": 150 },
+            { "skill": "Pick Pocket", "pricePerLevel": 150 },
+            { "skill": "Play Instrument", "pricePerLevel": 150 },
+            { "skill": "Weaponsmith", "pricePerLevel": 200 }
+          ]
+        }
+      ]
+    },
+    "visual_recognition": {
+      "label": "Visual Recognition",
+      "sections": [
+        {
+          "id": "visual_profiles",
+          "label": "Visual Recognition Profiles",
+          "items": [
+            { "skill": "Techie", "pricePerLevel": 100 },
+            { "skill": "Corporate", "levelPrices": [50, 100, 150] },
+            { "skill": "Police", "pricePerLevel": 200 },
+            { "skill": "Military", "pricePerLevel": 300, "note": "3x base profile" },
+            { "skill": "Rocker", "pricePerLevel": 100 },
+            { "skill": "Secretarial", "pricePerLevel": 100 }
+          ]
+        }
+      ]
+    }
+  }
+}

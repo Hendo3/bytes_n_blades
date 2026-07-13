@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Weapons Dataset",
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+	"$id": { "type": "string" },
+	"title": { "type": "string" },
+	"description": { "type": "string" },
+	"version": { "type": "string" },
+	"releaseDate": { "type": "string" },
+	"data": {
+	  "type": "object",
+	  "additionalProperties": { "$ref": "#/definitions/category" }
+	}
+  },
+  "additionalProperties": false,
+  "definitions": {
+	"category": {
+	  "type": "object",
+	  "required": ["name", "description", "items"],
+	  "properties": {
+		"name": { "type": "string" },
+		"description": { "type": "string" },
+		"items": { "$ref": "#/definitions/itemMap" }
+	  },
+	  "additionalProperties": true
+	},
+	"itemMap": {
+	  "type": "object",
+	  "additionalProperties": { "$ref": "#/definitions/weaponItem" }
+	},
+	"weaponItem": {
+	  "type": "object",
+	  "required": ["name", "description"],
+	  "properties": {
+		"name": { "type": "string" },
+		"description": { "type": "string" },
+		"price": { "type": ["string", "number"] },
+		"code": { "$ref": "#/definitions/weaponCode" },
+		"note": { "type": "string" },
+		"codeString": { "type": "string" }
+	  },
+	  "additionalProperties": true
+	},
+	"weaponCode": {
+	  "type": "object",
+	  "properties": {
+		"type": { "type": "string" },
+		"precision": { "type": "string" },
+		"accuracy": { "type": "string" },
+		"concealability": { "type": "string" },
+		"damageAmmo": { "type": ["string", "number"] },
+		"numberOfShots": { "type": ["string", "number"] },
+		"rateOfFire": { "type": ["string", "number"] },
+		"range": { "type": ["string", "number"] },
+		"reliability": { "type": "string" }
+	  },
+	  "additionalProperties": true
+	}
+  }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Offgrid bundle builder with dependency-safe stacks and no-morality curation for adult Cyberpunk tables." />
+
+    <title>Bundles | Byte & Blades</title>
+
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="icon" href="../assets/svg/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="../manifest.webmanifest" />
+    <script src="../js/auth.js"></script>
+</head>
+
+<body>
+    <a href="#bundles-main" class="skip-link">Skip to bundles</a>
+
+    <div class="container">
+        <header class="navbar">
+            <div class="logo-area">
+                <h1 class="logo">Byte & Blades Store</h1>
+                <p class="tagline">Stacked loadouts for chooms who buy hot and burn bright</p>
+            </div>
+
+            <nav aria-label="Main Navigation">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./cyberwares.html">Cyberwares</a></li>
+                    <li><a href="./accessories.html">Accessories</a></li>
+                    <li><a href="./drugs.html">Drugs</a></li>
+                    <li><a class="nav-highlight" href="./bundles.html" aria-current="page">Bundles</a></li>
+                    <li><a href="./cart.html">Cart</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <main class="grid-shell" id="bundles-main">
+        <aside class="category-rail">
+            <header class="rail-header">
+                <span class="rail-title">Smart Bundles</span>
+                <p class="rail-hint">Offgrid presets: chrome now, weapons and combat chems next.</p>
+            </header>
+            <p id="bundle-timer" class="rail-hint">Bundle relay syncing...</p>
+
+            <div class="kit-options">
+                <label for="kit-style">Build Profile</label>
+                <select id="kit-style" aria-label="Kit style">
+                    <option value="balanced">Balanced</option>
+                    <option value="aggressive">Aggressive</option>
+                    <option value="stealth">Stealth</option>
+                    <option value="netrunner">Netrunner</option>
+                </select>
+
+                <label for="kit-budget">Budget Band</label>
+                <select id="kit-budget" aria-label="Kit budget">
+                    <option value="street">Street (cheap/efficient)</option>
+                    <option value="pro">Pro (mid-tier)</option>
+                    <option value="opulence">Opulence (max chrome)</option>
+                </select>
+
+                <label class="kit-toggle">
+                    <input id="kit-low-hl" type="checkbox" />
+                    <span>Humanity Safe mode</span>
+                </label>
+            </div>
+        </aside>
+
+        <section class="content-slab">
+            <div class="content-header">
+                <div class="content-titles">
+                    <h1>Generated Bundles</h1>
+                    <p class="content-sub">Prebuilt packs tuned for fast deals: pick, stash, JSON, done.</p>
+                </div>
+            </div>
+
+            <section class="items-section full">
+                <div id="bundle-list" class="items-list"></div>
+            </section>
+        </section>
+
+        <aside class="filter-sidebar" aria-label="Bundle rules">
+            <div class="filter-header">
+                <h3>Coherence Rules</h3>
+            </div>
+
+            <div class="bundle-rules">
+                <p>Every pack is validated before it hits your screen:</p>
+                <ul>
+                    <li>Chipware requires Neuralware Processor + Chipware Socket</li>
+                    <li>Smartgun builds require Interface Plugs</li>
+                    <li>Netrunning links include compatible data gear</li>
+                    <li>Sensory bundles pair cyber senses with support tools</li>
+                    <li>Build Profile and Budget Band reshape every generated kit</li>
+                </ul>
+                <p class="rail-hint">Price sums first. Offgrid markdown applies after coherence checks.</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Byte & Blades Store. Hendo: All rights reserved.</p>
+            <p class="netwatch-warning">No Corps. No NetWatch. Offgrid market.</p>
+        </div>
+    </footer>
+
+    <script src="../js/modal.js"></script>
+    <script src="../js/core-utils.js"></script>
+    <script src="../js/bundles.js"></script>
+</body>
+
+</html>

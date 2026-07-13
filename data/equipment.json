@@ -1,0 +1,219 @@
+{
+	"$id": "/data/equipment.json",
+	"title": "Equipment",
+	"version": "1.0.0",
+	"author": "Hendo",
+	"description": "Equipment for the Cyberpunk 2020 game",
+	"type": "object",
+
+
+    "data": {
+        "fashion":{
+            "name": "Fashion",
+            "description": "The clothing styles of 2020, break into five basic fashion statements.",
+            "modifiers": {"Generic": "1x", "Leisurewear": "2x", "Businesswear": "3x", "High Fashion": "4x", "Urban Flash": "2x"},
+            "types":{"Generic": "Standard streetwear, made up of colorful modular components in many colors. Belts, coats, sashes, boots predominate. ", "Leisurewear": "This a the equivalent of old athletic wear. Paddle fleence, corporate, and athletic logos.", "Businesswear": "This a the equivalent of standard business suits. unstandard colors, pinstripes, real leather shoes, etc. Wool and onther natural fabrics are considered the proper outfitting for the up and comming Corp.", "High Fashion": "Sophisticated and expansive dressing for upperclass. Designers labels like Miyake. Si-FuYan and Anne Calvin.", "Urban Flash": "Video Jackets, colorshifters fabrics, cammo leathers, metalspikes, LogoWear, jeans, leatherskirts, boots. The wildest and most chilled in Cyberfashion."},
+            "list": {
+                "pants": {"name": "Pants", "note": "modifier applies", "price": "20.0"}, 
+                "top": {"name": "Top", "note": "modifier applies", "price": "15.0"},
+                "jacket": {"name": "Jacket", "note": "modifier applies", "price": "35.0"},
+                "footwear": {"name": "Footwear", "note": "modifier applies", "price": "25.0"},
+                "accessory": {"name": "Jewelry", "note": "modifier applies", "price": "between 10.0 and 100.0"},
+                "mirrorshades": {"name": "Mirrorshades", "note": "modifier applies", "price": "between 5.0 and 50.0"},
+                "contactlenses": {"name": "Contact Lenses", "note": "modifier applies", "price": "100.0"},
+                "glasses": {"name": "Glasses", "note": "modifier applies", "price": "50.0"}
+            }
+        },
+        "tools": {
+            "description": "Tools",
+            "list": {
+                "techscanner": {"name": "TechScanner", "price": "600.0"},
+                "cuttingtorch": {"name": "Cutting Torch", "price": "40.0"},
+                "techToolkit": {"name": "Tech Toolkit", "price": "100.0"},
+                "eletronicToolkit": {"name": "Electronic Toolkit", "price": "100.0"},
+                "protectiveGoggles": {"name": "Protective Goggles", "price": "20.0"},
+                "flashtube": {"name": "Flash Tube", "price": "2.0"},
+                "glowstick": {"name": "Glow Stick", "price": "1.0"},
+                "flashpaint": {"name": "Flash Paint", "note": "per gallon", "price": "10.0"},
+                "flashtape": {"name": "Flash Tape", "note": "per meter", "price": "10.0"},
+                "rope": {"name": "Rope", "note": "per meter", "price": "2.0"},
+                "breathmask": {"name": "Breathing Mask", "price": "30.0"}
+            }
+        },
+        "personalElectronics": {
+            "description": "Personal Electronics",
+            "list": {
+                "hologen": {"name": "Holo Generator", "price": "500.0"},
+                "videoBoard": {"name": "Video Board", "price": "100.0"},
+                "dataChip": {"name": "Data Chip", "price": "10.0"},
+                "logcompass": {"name": "Log Compass", "price": "50.0"},
+                "digitalRecorder": {"name": "Digital Recorder", "price": "300.0"},
+                "digitalCamera": {"name": "Digital Camera", "price": "150.0"},
+                "videoCam": {"name": "VideoCam", "price": "800.0"},
+                "tapePlayer": {"name": "Video/Audio Tape Player", "price": "40.0"},
+                "tape": {"name": "Video/Audio Tape", "price": "4.0"},
+                "pocketTV": {"name": "Pocket TV", "price": "80.0"},
+                "chipPlayer": {"name": "Digital chip Player", "price": "150.0"},
+                "chip": {"name": "Digital chip", "price": "20.0"},
+                "eletricGuitar": {"name": "Electric Guitar", "price": "between 100.0 and 500.0"},
+                "eletronicKeyboard": {"name": "Electronic Keyboard", "price": "between 200.0 and 900.0"},
+                "drumSynthesizer": {"name": "Drum Synthesizer", "price": "between 200.0 and 800.0"},
+                "amplifier": {"name": "Amplifier", "price": "between 500.0 and 1000.0"}
+            }
+        },
+        "dataSystems": {
+            "description": "Data Systems",
+            "list": {
+                "laptop": {"name": "Laptop Computer", "price": "900.0"},
+                "pocketComputer": {"name": "Pocket Computer", "price": "100.0"},
+                "cybermodem": {"name": "Cybermodem", "price": "Varies by design"},
+                "cellularCybermodem": {"name": "Cellular Cybermodem", "price": "Varies by design"},
+                "interfaceCables": {"name": "Interface Cables", "price": "Between 20.0 and 30.0"},
+                "lowImpedance": {"name": "Low Impedance Cables", "price": "60.0"},
+                "trodeSet": {"name": "Trodes Set", "price": "20.0"},
+                "keyboard": {"name": "Keyboard", "price": "100.0"},
+                "terminal": {"name": "Terminal", "price": "400.0"}
+            }
+        },
+        "communications": {
+            "description": "Communications",
+            "list": {
+                "mastoid": {"name": "Mastoid Commo", "price": "100.0"},
+                "pocketCommo": {"name": "Pocket Commo", "price": "50.0"},
+                "cellularPhone": {"name": "Cellular Phone", "price": "400.0"},
+                "miniCellPhone": {"name": "Mini Cellular Phone", "price": "800.0"}
+            }
+        },
+        "surveillance": {
+            "description": "Surveillance",
+            "list": {
+                "binglasses": {"name": "Binglasses", "price": "200.0"},
+                "binocular": {"name": "Binocular", "price": "20.0"},
+                "lightBoosterGoogle": {"name": "Light Booster Googles", "price": "200.0"},
+                "irGoogles": {"name": "IR Googles", "price": "250.0"},
+                "irFlash": {"name": "IR Flash", "price": "50.0"}
+            }
+        },
+        "entertainment": {
+            "description": "Entertainment",
+            "modifiers": {"Fair": "1x", "Good": "2x", "Excellent": "3x"},
+            "list": {
+                "movie": {"name": "Movie", "price": "10.0"},
+                "chipRental": {"name": "VCR/Chip Rental", "price": "4.0"},
+                "braindance": {"name": "Braindance", "price": "20.0"},
+                "liveConcert": {"name": "Live Concert/Sport Event", "price": "50.0"},
+                "fastFood": {"name": "Fast Food", "price": "5.0"},
+                "wellDrink": {"name": "Well Drink", "price": "3.0"},
+                "restaurant": {"name": "Restaurant Meal", "price": "20.0"}
+            }
+        },
+        "security": {
+            "description": "Security",
+            "list": {
+                "keylock": {"name": "Keylock", "note": " per level", "price": "20.0"},
+                "cardlock": {"name": "Cardlock", "note": "per level", "price": "200.0"},
+                "vocolock": {"name": "Vocolock", "note": "per level", "price": "200.0"},
+                "lineTap": {"name": "Line Tap", "price": "200.0"},
+                "codeDecryptor": {"name": "Code Decryptor", "price": "500.0"},
+                "vocDecryptor": {"name": "Vocal Decryptor", "price": "1000.0"},
+                "securityScanner": {"name": "Security Scanner", "price": "1500.0"},
+                "poisonSniffer": {"name": "Poison Sniffer", "price": "1500.0"},
+                "jammingTransmitter": {"name": "Jamming Transmitter", "price": "500.0"},
+                "scannerPlate": {"name": "Scanner Plate", "price": "500.0"},
+                "movementSensor": {"name": "Movement Sensor", "price": "40.0"},
+                "passCard": {"name": "Pass Card", "price": "10.0"},
+                "trackingDevice": {"name": "Tracking Device", "price": "1000.0"},
+                "tracerButton": {"name": "Tracer Button", "price": "50.0"},
+                "remoteSensors": {"name": "Remote Sensors", "price": "700.0"},
+                "plasKuffs": {"name": "PlasKuffs", "price": "100.0"},
+                "stripwireBlinders": {"name": "Stripwire Blinders", "price": "5.0"}
+            }
+        },
+        "medical": {
+            "description": "Medical",
+            "list": {
+                "dermalStapler": {"name": "Dermal Stapler", "price": "1000.0"},
+                "spraySkin": {"name": "Spray Skin", "note": "per can", "price": "50.0"},
+                "slapPatch": {"name": "Slap Patch", "price": "varies per drug type"},
+                "criotank": {"name": "Cryotank", "price": "1000.0"},
+                "medkit": {"name": "Medkit", "price": "5.0"},
+                "surgicalKit": {"name": "Surgical Kit", "price": "40.0"},
+                "firstAidKit": {"name": "First Aid Kit", "price": "10.0"},
+                "medscanner": {"name": "Medscanner", "price": "30.0"},
+                "drugAnalyzer": {"name": "Drug Analyzer", "price": "75.0"},
+                "airhypho": {"name": "Air Hypo", "price": "100.0"},
+                "clinicVisit": {"name": "Clinic Visit", "price": "300.0"},
+                "dayInICU": {"name": "Day in Intensive Care Unit", "price": "1000.0"},
+                "cloneLimbReplacement": {"name": "Clone Limb Replacement", "note": "varies by limb", "price": "1500.0"}
+            }
+        },
+        "furnshing": {
+            "description": "Furnishing",
+            "list": {
+                "nylonCarryBag": {"name": "Nylon Carry Bag", "price": "5.0"},
+                "sleepingBag": {"name": "Sleeping Bag", "price": "25.0"},
+                "inflatableBed": {"name": "Inflatable Bed", "price": "25.0"},
+                "futon": {"name": "Futon", "price": "90.0"},
+                "realWoodFurniture": {"name": "Real Wood Furniture", "note": "per piece", "price": "200.0"}, 
+                "sintheticFurniture": {"name": "Synthetic Furniture", "note": "per piece", "price": "100.0"},
+                "apartmentCube": {"name": "Apartment Cube", "price": "5000.0"}, 
+                "lamp": {"name": "Lamp", "price": "20.0"},
+                "cleaningRobot": {"name": "Cleaning Robot", "price": "1000.0"}, 
+                "vocalSwitchSystem": {"name": "Vocal Switch System", "price": "100.0"}
+            }
+        },
+        "vehicles": {
+            "description": "Vehicles",
+            "list": {
+                "scooter": {"name": "Scooter", "price": "500.0"},
+                "motorcycle": {"name": "Motorcycle", "price": "1500.0"},
+                "cityCar": {"name": "City Car", "price": "2000.0"},
+                "smallSubcompact": {"name": "Small Subcompact", "price": "6000.0"},
+                "sportsCar": {"name": "Sports Car", "price": "20000.0"},
+                "luxurySedan": {"name": "Luxury Sedan", "price": "40000.0"},
+                "TODO": "Add more vehicles"
+            }
+        },
+        "lifestyle": {
+            "description": "Lifestyle",
+            "list": {
+                "cellPhoneService": {"name": "Cellular Phone Service", "note": "per month", "price": "100.0"},
+                "standardPhoneService": {"name": "Standard Phone Service", "note": "per month", "price": "30.0"},
+                "payPhoneCall": {"name": "Pay Phone Call", "note": "per minute", "price": "0.50"},
+                "dataTermUse": {"name": "Data Term Use", "note": "per minute", "price": "1.0"}, 
+                "credChipAccount": {"name": "Cred Chip Account", "note": "per month", "price": "20.0"}, 
+                "healthPlan": {"name": "Health Plan", "note": "per month", "price": "1000.0"},
+                "traumaTeamSilver": {"name": "Trauma Team Silver Plan", "note": "Services: paramedic / Surgery Cost Separated / response: 1d10 turns / per month", "price": "500.0"},
+                "traumaTeamGold": {"name": "Trauma Team Gold Plan", "note": "Services: paramedic, ambulance, LIMITED armed escort/ Surgery Cost Separated / response: 1d8 turns / per month", "price": "1000.0"},
+                "traumaTeamPlatinum": {"name": "Trauma Team Platinum Plan", "note": "Services: paramedic, ambulance, armed escort/ Surgery Cost Separated / response: 1d6 turns / per month", "price": "2000.0"}, 
+                "traumaTeamDiamond": {"name": "Trauma Team Diamond Plan", "note": "Services: paramedic, ambulance, armed escort, cyberware repair/ Surgery Cost Include / response: 1d4 turns / per month", "price": "5000.0"},
+                "air": {"name": "Air", "note": "per minute", "price": "5.0"},
+                "maglevChip": {"name": "Maglev Chip", "note": "per station", "price": "0.25"},
+                "taxi": {"name": "Taxi", "note": "per mile", "price": "3.0"},
+                "avTaxi": {"name": "AV Taxi", "note": "per mile", "price": "10.0"},
+                "cableTV": {"name": "Cable TV", "note": "per month", "price": "40.0"}
+            }
+        },
+        "groceries": {
+            "description": "Groceries",
+            "list": {
+                "kibble": {"name": "Kibble", "note": "1 week", "price": "50.0"},
+                "genericPrepak": {"name": "Generic Prepak", "note": "1 week", "price": "150.0"},
+                "goodPrepak": {"name": "Good Prepak", "note": "1 week", "price": "200.0"},
+                "freshFood": {"name": "Fresh Food", "note": "1 week", "price": "300.0"}
+            }
+        },
+        "housing": {
+            "description": "Housing",
+            "modifiers": {"combatZone": "1x", "moderateZone": "2x", "corporateZone": "4x", "executiveZone": "6x"},
+            "list": {
+                "coffin": {"name": "Coffin", "note": "per night", "price": "20.0"},
+                "hotelRoom": {"name": "Hotel Room", "note": "per night", "price": "100.0"},
+                "apartment": {"name": "Apartment", "note": "per month / per room / modifier applies", "price": "200.0"},
+                "house": {"name": "House", "note": "per month / per room / modifier applies", "price": "150.0"},
+                "utilities": {"name": "Utilities", "note": "per month", "price": "100.0"}
+            }
+        }
+    }
+}
+

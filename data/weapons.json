@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "weapons": [
+    {
+      "name": "Minami 10",
+	"type_code": "SM",
+      "accuracy": 0,
+      "concealment": "J",
+      "availability": "E",
+      "damage": "2D6+3",
+      "ammo_type": "10mm",
+      "weapon_range_m": 50,
+      "magazine_capacity": 40,
+      "cadence_full_auto": 20,
+      "reliability": "MC"
+    },
+	{
+		"name": "Astra Style-6",
+		"type_code": "P",
+		"accuracy": -1,
+		"concealment": "B",
+		"availability": "E",
+		"damage": "1D6",
+		"ammo_type": "5mm",
+		"weapon_range_m": 50,
+		"magazine_capacity": 6,
+		"cadence_full_auto": 2,
+		"reliability": "PC",
+		"class": "Light Handgun",
+		"price": 75
+	},
+	{
+		"name": "BudgetArms C-13",
+		"type_code": "P",
+		"accuracy": -1,
+		"concealment": "B",
+		"availability": "E",
+		"damage": "1D6",
+		"ammo_type": "5mm",
+		"weapon_range_m": 50,
+		"magazine_capacity": 8,
+		"cadence_full_auto": 2,
+		"reliability": "C",
+		"class": "Light Handgun",
+		"price": 75
+	},
+	{
+		"name": "Dai Lung Cybermag 15",
+		"type_code": "P",
+		"accuracy": -1,
+		"concealment": "J",
+		"availability": "E",
+		"damage": "1D6+1",
+		"ammo_type": "6mm",
+		"weapon_range_m": 50,
+		"magazine_capacity": 10,
+		"cadence_full_auto": 2,
+		"reliability": "PC",
+		"class": "Light Handgun",
+		"price": 50
+	},
+	{
+		"name": "Federated Arms Impact",
+		"type_code": "P",
+		"accuracy": 1,
+		"concealment": "J",
+		"availability": "E",
+		"damage": "1D6",
+		"ammo_type": ".22mm",
+		"weapon_range_m": 50,
+		"magazine_capacity": 10,
+		"cadence_full_auto": 2,
+		"reliability": "ST",
+		"class": "Light Handgun",
+		"price": 60
+	}
+  ]
+}

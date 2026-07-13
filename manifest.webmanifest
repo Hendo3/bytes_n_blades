@@ -1,0 +1,64 @@
+{
+	"id": "./",
+	"name": "Byte & Blades Store",
+	"short_name": "Byte&Blades",
+	"description": "Cyberpunk 2020 storefront for cyberwares, accessories, drugs, bundles and chip tables.",
+	"lang": "pt-BR",
+	"start_url": "./login.html",
+	"scope": "./",
+	"display": "standalone",
+	"orientation": "portrait-primary",
+	"background_color": "#030305",
+	"theme_color": "#00ffd5",
+	"icons": [
+		{
+			"src": "./assets/svg/favicon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml",
+			"purpose": "any"
+		}
+	],
+	"categories": ["shopping", "business", "technology", "cyberpunk", "lifestyle"],
+	"shortcuts": [
+		{
+			"name": "Cyberwares",
+			"short_name": "Cyberwares",
+			"url": "./html/cyberwares.html"
+		},
+		{
+			"name": "Accessories",
+			"short_name": "Accessories",
+			"url": "./html/accessories.html"
+		},
+		{
+			"name": "Drugs",
+			"short_name": "Drugs",
+			"url": "./html/drugs.html"
+		},
+		{
+			"name": "Bundles",
+			"short_name": "Bundles",
+			"url": "./html/bundles.html"
+		},
+		{
+			"name": "APTR Chips",
+			"short_name": "APTR",
+			"url": "./html/aptr-chips.html"
+		},
+		{
+			"name": "MRAM Chips",
+			"short_name": "MRAM",
+			"url": "./html/mram-chips.html"
+		},
+		{
+			"name": "Visual Chips",
+			"short_name": "Visual",
+			"url": "./html/visual-rec-chips.html"
+		},
+		{
+			"name": "Cart",
+			"short_name": "Cart",
+			"url": "./html/cart.html"
+		}
+	]
+}

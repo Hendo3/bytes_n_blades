@@ -1,0 +1,425 @@
+{
+  "$id": "./data/drugs.json",
+  "title": "Drugs Dataset",
+  "description": "Offgrid drugs feed with street stock formulas and procedural generation options.",
+  "type": "drugs",
+  "version": "1.10",
+  "author": "Hendo",
+  "date": "2026-03-25",
+
+  "data": {
+    "street_stock": {
+      "Description": "Street stock combat and utility compounds.",
+      "items": {
+        "synthcoke": {
+          "name": "SynthCoke",
+          "type": "stimulant",
+          "strength": "+1",
+          "difficulty": 20,
+          "price": "1000",
+          "duration": "1D6+1 minutes",
+          "effects": "Stimulant high and endurance boost",
+          "description": "The second generation synthetic replacement for cocaine. Side effects are nasty: paranoia and psychological addiction."
+        },
+        "stim": {
+          "name": "Stim",
+          "type": "stimulant",
+          "strength": "+3",
+          "difficulty": 10,
+          "price": "500",
+          "duration": "1D6+1 minutes",
+          "effects": "Increases endurance and alertness",
+          "description": "Stim increases endurance, allowing the user to stay alert for longer periods. Side effects include mental delusions."
+        },
+        "syncomp_15": {
+          "name": "Syncomp 15",
+          "type": "antidote",
+          "strength": "+3",
+          "difficulty": 13,
+          "price": "650",
+          "duration": "1D6+1 turns",
+          "effects": "Broad-spectrum antidote effect",
+          "description": "Syncomp is a broad-spectrum poison antidote used to treat nerve and biotoxins. REF is reduced at the rate of 1 point per dose."
+        },
+        "speedheal": {
+          "name": "Speedheal",
+          "type": "healing-drug",
+          "strength": "+2",
+          "difficulty": 33,
+          "price": "1650",
+          "duration": "1D6+1 hours",
+          "effects": "Enhances natural healing",
+          "description": "Speedheal is designed to enhance natural healing processes. Side effect: REF reduced by 1D6/3 for one week after use."
+        },
+        "boost": {
+          "name": "Boost",
+          "type": "int-booster",
+          "strength": "+4",
+          "difficulty": 12,
+          "price": "600",
+          "duration": "1D6+1 hours",
+          "effects": "Raises INT by +1 temporarily",
+          "description": "Boost raises INT by +1 for a 2-7 hour period. Frequent users build tolerance and may crash into screaming fits and hallucinations without repeated doses."
+        },
+        "blue_glass": {
+          "name": "Blue Glass",
+          "type": "hallucinogenic",
+          "strength": "+1",
+          "difficulty": 18,
+          "price": "900",
+          "duration": "1D6+1 minutes",
+          "effects": "Hallucinogenic flashout risk",
+          "description": "Originally developed as a biological weapon. Under stress there is a 3 in 10 chance of flashing out; reduce INT by 1 per dose."
+        },
+        "smash": {
+          "name": "Smash",
+          "type": "euphoric",
+          "strength": "+1",
+          "difficulty": 2,
+          "price": "100",
+          "duration": "1D6+1 minutes",
+          "effects": "Euphoria and party-state",
+          "description": "Smash is 2020's answer to alcohol. It makes you loose, happy and ready to party, but crash withdrawal can trigger suicidal episodes and catatonia.",
+          "pack": "6 pk"
+        },
+        "dorph": {
+          "name": "'Dorph",
+          "type": "pain-negation",
+          "strength": "+2",
+          "difficulty": 5,
+          "price": "250",
+          "duration": "1D6+1 turns",
+          "effects": "Reduces pain, stun and shock impact",
+          "description": "Combat painkiller based on endorphins. Each use adds one extra 1D10 roll; on a 1, user permanently loses 1 point of REF."
+        },
+        "black_lace": {
+          "name": "Black Lace",
+          "type": "pain-negation",
+          "strength": "+3",
+          "difficulty": 13,
+          "price": "650",
+          "duration": "1D6+1 hours",
+          "effects": "Euphoria, adrenal rush and pain invulnerability",
+          "description": "High-powered version of 'Dorph. Raises CL by 2 and grants resistance to stun/shock, but addiction and EMP loss can trigger cyberpsychosis."
+        }
+      }
+    },
+
+    "generatorOptions": {
+      "Description": "Official creation system tables transcribed from source material.",
+      "types": {
+        "stimulant": {
+          "label": "Stimulant",
+          "baseDifficulty": 0,
+          "basePrice": "500"
+        },
+        "euphoric": {
+          "label": "Euphoric",
+          "baseDifficulty": 0,
+          "basePrice": "250"
+        },
+        "hallucinogenic": {
+          "label": "Hallucinogenic",
+          "baseDifficulty": 0,
+          "basePrice": "800"
+        },
+        "pain-negation": {
+          "label": "Pain Negation",
+          "baseDifficulty": 0,
+          "basePrice": "400"
+        },
+        "healing-drug": {
+          "label": "Healing Drug",
+          "baseDifficulty": 0,
+          "basePrice": "1200"
+        },
+        "antidote": {
+          "label": "Antidote",
+          "baseDifficulty": 0,
+          "basePrice": "600"
+        },
+        "int-booster": {
+          "label": "INT Booster",
+          "baseDifficulty": 0,
+          "basePrice": "600"
+        }
+      },
+
+      "strengthOptions": [
+        {
+          "value": "1",
+          "difficultyMod": 1,
+          "priceMod": "0",
+          "rule": "Add drug Strength to the body and to base formula."
+        },
+        {
+          "value": "2",
+          "difficultyMod": 2,
+          "priceMod": "0",
+          "rule": "Add drug Strength to the body and to base formula."
+        },
+        {
+          "value": "3",
+          "difficultyMod": 3,
+          "priceMod": "0",
+          "rule": "Add drug Strength to the body and to base formula."
+        }
+      ],
+
+      "durationOptions": [
+        {
+          "value": "1D10+1 turns",
+          "difficultyMod": 1,
+          "priceMod": "0",
+          "multiplier": 1
+        },
+        {
+          "value": "1D10+1 minutes",
+          "difficultyMod": 2,
+          "priceMod": "0",
+          "multiplier": 2
+        },
+        {
+          "value": "1D10+1 hours",
+          "difficultyMod": 3,
+          "priceMod": "0",
+          "multiplier": 3
+        }
+      ],
+
+      "effectOptions": [
+        {
+          "id": "increase_ref",
+          "label": "Increase REF by Strength of drug",
+          "difficultyMod": 15,
+          "priceMod": "0"
+        },
+        {
+          "id": "increase_int",
+          "label": "Increase INT by Strength of drug",
+          "difficultyMod": 15,
+          "priceMod": "0"
+        },
+        {
+          "id": "increase_cl",
+          "label": "Increase CL by Strength of drug",
+          "difficultyMod": 15,
+          "priceMod": "0"
+        },
+        {
+          "id": "enhanced_perception",
+          "label": "Enhanced Perception (+Strength to Awareness checks)",
+          "difficultyMod": 15,
+          "priceMod": "0"
+        },
+        {
+          "id": "healing_rate",
+          "label": "Increase healing rate 1 point per point of Strength",
+          "difficultyMod": 15,
+          "priceMod": "0"
+        },
+        {
+          "id": "antidote",
+          "label": "Antidote (+1 to Save per Strength)",
+          "difficultyMod": 15,
+          "priceMod": "0"
+        },
+        {
+          "id": "increased_endurance",
+          "label": "Increased Endurance (+Strength to Endurance checks)",
+          "difficultyMod": 10,
+          "priceMod": "0"
+        },
+        {
+          "id": "negate_pain",
+          "label": "Negate Pain effects (+Strength to Stun saves)",
+          "difficultyMod": 10,
+          "priceMod": "0"
+        },
+        {
+          "id": "depressant",
+          "label": "Depressant (-Strength to Awareness)",
+          "difficultyMod": 5,
+          "priceMod": "0"
+        },
+        {
+          "id": "euphoric",
+          "label": "Euphoric (makes you feel good)",
+          "difficultyMod": 5,
+          "priceMod": "0"
+        },
+        {
+          "id": "hallucinogenic",
+          "label": "Hallucinogenic (makes you see things)",
+          "difficultyMod": 10,
+          "priceMod": "0"
+        },
+        {
+          "id": "reduce_stun",
+          "label": "Reduce Stun (+Strength to Stun saves)",
+          "difficultyMod": 10,
+          "priceMod": "0"
+        },
+        {
+          "id": "soporific",
+          "label": "Soporific (-Strength to Save vs. Sleep)",
+          "difficultyMod": 5,
+          "priceMod": "0"
+        },
+        {
+          "id": "aphrodesiac",
+          "label": "Aphrodesiac (-Strength to resist Seduction checks)",
+          "difficultyMod": 10,
+          "priceMod": "0"
+        },
+        {
+          "id": "contraceptive",
+          "label": "Contraceptive (male or female)",
+          "difficultyMod": 10,
+          "priceMod": "0"
+        },
+        {
+          "id": "antibiotic",
+          "label": "Antibiotic (+Strength to Saves vs. disease)",
+          "difficultyMod": 10,
+          "priceMod": "0"
+        }
+      ],
+
+      "riskOptions": [
+        {
+          "id": "psychological_addiction",
+          "label": "Psychological Addiction",
+          "severity": "high",
+          "difficultyMod": -8,
+          "priceMod": "0",
+          "rule": "Character must roll under CL each hour after dose ends; failed roll leads to panic, depression and compulsive drug-seeking."
+        },
+        {
+          "id": "physiological_addiction",
+          "label": "Physiological Addiction",
+          "severity": "high",
+          "difficultyMod": -10,
+          "priceMod": "0",
+          "rule": "Character must roll under BT each hour after dose ends; failed roll causes pain and damage until next dose."
+        },
+        {
+          "id": "death",
+          "label": "Death",
+          "severity": "extreme",
+          "difficultyMod": -15,
+          "priceMod": "0",
+          "rule": "Each use requires a Death Save with negative modifier equal to drug Strength minus one."
+        },
+        {
+          "id": "reduced_ref",
+          "label": "Reduced REF",
+          "severity": "high",
+          "difficultyMod": -5,
+          "priceMod": "0",
+          "rule": "Reduces REF by 1 point per dose for duration; cumulative if redosed before expiration."
+        },
+        {
+          "id": "reduced_int",
+          "label": "Reduced INT",
+          "severity": "high",
+          "difficultyMod": -5,
+          "priceMod": "0",
+          "rule": "Reduces INT by 1 point per dose for duration; cumulative if redosed before expiration."
+        },
+        {
+          "id": "tremors",
+          "label": "Tremors",
+          "severity": "medium",
+          "difficultyMod": -2,
+          "priceMod": "0",
+          "rule": "Causes painful hand and face tremors."
+        },
+        {
+          "id": "hallucinations",
+          "label": "Hallucinations",
+          "severity": "high",
+          "difficultyMod": -5,
+          "priceMod": "0",
+          "rule": "Causes visual/audio hallucinations; may persist as recurring bad trip at referee discretion."
+        },
+        {
+          "id": "paranoia",
+          "label": "Paranoia",
+          "severity": "high",
+          "difficultyMod": -3,
+          "priceMod": "0",
+          "rule": "Character becomes hyper-suspicious and defensive against perceived threats."
+        },
+        {
+          "id": "delusions",
+          "label": "Delusions",
+          "severity": "high",
+          "difficultyMod": -5,
+          "priceMod": "0",
+          "rule": "Character believes false realities and acts to preserve them."
+        },
+        {
+          "id": "sterility",
+          "label": "Sterility",
+          "severity": "high",
+          "difficultyMod": -8,
+          "priceMod": "0",
+          "rule": "Causes permanent sterility on a 3 in 10 chance."
+        },
+        {
+          "id": "carcinogenic",
+          "label": "Carcinogenic",
+          "severity": "extreme",
+          "difficultyMod": -10,
+          "priceMod": "0",
+          "rule": "1 in 10 chance to develop cancer; causes permanent damage unless treated by very difficult medical check."
+        },
+        {
+          "id": "psychotic_rage",
+          "label": "Psychotic Rage",
+          "severity": "extreme",
+          "difficultyMod": -10,
+          "priceMod": "0",
+          "rule": "Character may fly into psychotic rage and attack anyone nearby."
+        },
+        {
+          "id": "aggressive_behavior",
+          "label": "Aggressive Behavior",
+          "severity": "extreme",
+          "difficultyMod": -12,
+          "priceMod": "0",
+          "rule": "Character becomes irritable and aggressive; on 5 in 10 chance starts a fight with nearest person."
+        },
+        {
+          "id": "irrational_fear",
+          "label": "Irrational Fear",
+          "severity": "extreme",
+          "difficultyMod": -12,
+          "priceMod": "0",
+          "rule": "Character becomes irrationally fearful and may freeze or fall into catatonia until drug wears off."
+        },
+        {
+          "id": "nerve_degeneration",
+          "label": "Nerve Degeneration",
+          "severity": "extreme",
+          "difficultyMod": -15,
+          "priceMod": "0",
+          "rule": "Causes severe nerve damage; user loses 2 REF permanently."
+        }
+      ],
+
+      "formula": {
+        "difficulty": "(strengthBase + effectsTotal + sideEffectsTotal) * durationMultiplier",
+        "price": "difficulty * 25",
+        "notes": "Side effects use negative points and reduce build difficulty; duration applies as multiplier."
+      },
+
+      "warnings": [
+        "Drugs are dangerous and can permanently damage stats.",
+        "You can buy down cost by adding side effects.",
+        "Final dose cost uses 25 eb per point of final creation difficulty."
+      ]
+    }
+  }
+}

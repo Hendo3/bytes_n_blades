@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "test": "npm run test:unit",
+    "test:unit": "node tests/core-utils.test.js",
+    "validate:data": "node js/validate_data.js"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1"
+  }
+}

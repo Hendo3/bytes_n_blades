@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Review stash, total humanity loss, and export order JSON through an offgrid channel." />
+    
+    <title>Your Loadout | Byte & Blades Store</title>
+    
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/auth.js"></script>
+    <link rel="icon" href="../assets/svg/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="../manifest.webmanifest" />
+</head>
+
+<body>
+    <a href="#cart-main" class="skip-link">Skip to cart summary</a>
+
+    <div class="container">
+        <header class="navbar">
+            <div class="logo-area">
+                <h1 class="logo">Byte & Blades Store</h1>
+                <p class="tagline">Offgrid checkout, run JSON out, trace gone</p>
+            </div>
+            
+            <nav aria-label="Main Navigation">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./cyberwares.html">Cyberwares</a></li>
+                    <li><a href="./accessories.html">Accessories</a></li>
+                    <li><a href="./drugs.html">Drugs</a></li>
+                    <li><a href="./bundles.html">Bundles</a></li>
+                    <li><a class="nav-highlight" href="./cart.html" aria-current="page">Cart</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <main class="cart-main" id="cart-main">
+        <section class="cart-panel">
+            <header class="cart-header">
+                <h1>Stash Summary</h1>
+                <p>Review the haul, export the order JSON, push it to your private channel.</p>
+            </header>
+
+            <div id="cart-list" class="cart-list" role="list">
+                </div>
+
+            <div id="empty-cart-msg" class="empty-state hidden">
+                <p>Your stash is empty, choom. Grab chrome and come back hot.</p>
+                <a href="./cyberwares.html" class="btn-primary">Open Market</a>
+            </div>
+
+            <footer class="cart-footer">
+                <div class="cart-total">
+                    <span>Live Total:</span>
+                    <strong id="cart-total-value" aria-live="polite">0.00 ED$</strong>
+                </div>
+                
+                <div class="cart-actions">
+                    <button id="cart-clear" class="btn-danger" type="button" aria-label="Remove all items">
+                        Wipe Stash
+                    </button>
+                    <button id="cart-export" class="btn-primary" type="button" aria-label="Download cart as JSON">
+                        Export Run JSON
+                    </button>
+                </div>
+            </footer>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Byte & Blades Store. Hendo: All rights reserved.</p>
+            <p class="netwatch-warning">No Corps. No NetWatch. Offgrid market.</p>
+        </div>
+    </footer>
+
+    <script src="../js/core-utils.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/hack.js"></script>
+    <script src="../js/modal.js"></script>
+</body>
+</html>

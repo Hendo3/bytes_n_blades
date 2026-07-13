@@ -1,0 +1,42 @@
+{
+	"$id": "./data/programs.json",
+	"title": "Programs Dataset",
+	"description": "Dataset dos programas para Netrunners",
+	"version": "1.0.0",
+	"releaseDate": "2026-06-28",
+	"data": {
+		"intrusion": {
+			"name": "Intrusion Programs",
+			"description": "Intrusion programs used to bypass security systems and gain unauthorized access.",
+			"itens": {
+				"hammer": {
+					"name": "Hammer",
+					"description": "Hammer pounds down data walls with a bombardment of raw eletric pulse. It is very noisy and will automatically alert any defense program within 10 spaces.",
+					"class": "Intrusion",
+					"price": 400,
+					"strength": 4,
+					"options": [
+						"Noisy"
+					],
+					"mu": 1,
+					"icon": "A glowing red Hammer",
+					"source": "Rache Bartmoss' Brainware Blowout - pg. 42"
+				},
+				
+				"jackhammer": {
+					"name": "Jackhammer",
+					"description": "Jackhammer is a quieter but less powerful version of Hammer. It uses small pulses of energy to wear the data wall away.",
+					"class": "Intrusion",
+					"price": 360,
+					"strength": 2,
+					"options": [
+						"None"
+					],
+					"mu": 2,
+					"icon": "A glowing red Jackhammer-like object, witch fires a stream of white hot energy at the data wall",
+					"source": "Rache Bartmoss' Brainware Blowout - pg. 42"
+				}
+			}
+		}
+	}
+}

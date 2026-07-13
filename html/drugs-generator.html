@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Offgrid drug forge: procedural compound builder based on official system tables." />
+    <title>Drug Forge | Byte & Blades</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/auth.js"></script>
+    <link rel="icon" href="../assets/svg/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="../manifest.webmanifest" />
+</head>
+
+<body>
+    <a href="#drug-forge-main" class="skip-link">Skip to drug forge</a>
+
+    <div class="container">
+        <header class="navbar">
+            <div class="logo-area">
+                <h1 class="logo">Byte & Blades Store</h1>
+                <p class="tagline">Forge custom compounds from street tables</p>
+            </div>
+
+            <nav aria-label="Main Navigation">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./cyberwares.html">Cyberwares</a></li>
+                    <li><a href="./accessories.html">Accessories</a></li>
+                    <li><a href="./drugs.html">Drugs</a></li>
+                    <li><a href="./bundles.html">Bundles</a></li>
+                    <li><a href="./cart.html">Cart</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <main class="grid-shell" id="drug-forge-main">
+        <aside class="category-rail">
+            <header class="rail-header">
+                <span class="rail-title">Forge Controls</span>
+                <p class="rail-hint">Set type, strength, duration and optional effects.</p>
+            </header>
+
+            <form id="drug-generator-form" onsubmit="event.preventDefault();">
+                <div class="filter-group">
+                    <label for="dg-name">Compound Name</label>
+                    <input id="dg-name" type="text" placeholder="ex.: Ghostburn" maxlength="40" />
+                </div>
+
+                <div class="filter-group">
+                    <label for="dg-type">Type</label>
+                    <select id="dg-type"></select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="dg-strength">Strength</label>
+                    <select id="dg-strength"></select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="dg-duration">Duration</label>
+                    <select id="dg-duration"></select>
+                </div>
+
+                <div class="action-row">
+                    <button id="dg-random" type="button" class="btn-secondary">Randomize</button>
+                    <button id="dg-generate" type="button" class="btn-primary">Generate</button>
+                </div>
+            </form>
+        </aside>
+
+        <section class="content-slab">
+            <div class="content-header">
+                <div class="content-titles">
+                    <h1>Drug Forge</h1>
+                    <p class="content-sub">Build a custom dose using official effect and side-effect tables.</p>
+                </div>
+            </div>
+
+            <div class="generator-grid">
+                <article class="item generator-column">
+                    <h3>Effects</h3>
+                    <div id="dg-effects" class="generator-checklist"></div>
+                </article>
+
+                <article class="item generator-column">
+                    <h3>Side Effects</h3>
+                    <div id="dg-risks" class="generator-checklist"></div>
+                </article>
+            </div>
+
+            <article class="item generator-result" id="dg-result">
+                <h3>Generated Formula</h3>
+                <p class="desc">Select options and run generate.</p>
+                <div id="dg-sheet" class="generator-sheet"></div>
+                <button id="dg-add-cart" type="button" class="btn-primary">Send to Cart</button>
+            </article>
+        </section>
+
+        <aside class="filter-sidebar" aria-label="Drug forge formulas">
+            <div class="filter-header">
+                <h3>Formula Rules</h3>
+            </div>
+            <div class="bundle-rules">
+                <p>Creation rules follow official system math:</p>
+                <ul>
+                    <li>Base score = Strength + Effects + Side Effects</li>
+                    <li>Final Difficulty = Base score × Duration multiplier</li>
+                    <li>Street Cost = Difficulty × 25 eb</li>
+                </ul>
+                <p class="rail-hint">Side effects lower build difficulty and can reduce final cost.</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Byte & Blades Store. Hendo: All rights reserved.</p>
+            <p class="netwatch-warning">No Corps. No NetWatch. Offgrid market.</p>
+        </div>
+    </footer>
+
+    <script src="../js/core-utils.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/drugs-generator.js"></script>
+</body>
+
+</html>

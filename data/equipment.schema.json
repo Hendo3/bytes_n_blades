@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Equipment Dataset",
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "$id": { "type": "string" },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "version": { "type": "string" },
+    "author": { "type": "string" },
+    "type": { "type": "string" },
+    "data": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "modifiers": { "type": "object", "additionalProperties": { "type": "string" } },
+          "types": { "type": "object", "additionalProperties": { "type": "string" } },
+          "list": { "$ref": "#/definitions/itemMap" },
+          "items": { "$ref": "#/definitions/itemMap" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "itemMap": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          { "$ref": "#/definitions/item" },
+          { "type": "string" }
+        ]
+      }
+    },
+    "item": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "note": { "type": "string" },
+        "effect": { "type": "string" },
+        "price": { "type": ["string", "number"] },
+        "cost": { "type": ["string", "number"] },
+        "value": { "type": ["string", "number"] }
+      },
+      "additionalProperties": true
+    }
+  }
+}
