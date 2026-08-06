@@ -87,6 +87,7 @@ a:hover { text-shadow: var(--glow-soft); color: #fff; }
 .tagline { margin: 0; font-size: 0.8rem; color: var(--secondary-color); text-transform: uppercase; letter-spacing: 1px; }
 
 /* Navegação de Abas */
+.navbar nav { display: flex; align-items: flex-end; gap: 10px; }
 .nav-links { list-style: none; display: flex; gap: 10px; margin: 0 0 -2px; padding: 0; }
 .nav-links li a {
     display: block; padding: 12px 24px;
@@ -107,6 +108,42 @@ a:hover { text-shadow: var(--glow-soft); color: #fff; }
 .nav-links li a:hover, .nav-links li a.nav-highlight {
     background: var(--primary-color); color: #000;
     box-shadow: 0 -10px 25px rgba(0, 255, 213, 0.5);
+}
+html[lang="pt-BR"] .navbar::before {
+    content: "[ LINK_REDE: ESTABELECIDO ] // PROTOCOLO: V4.2";
+}
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 7px;
+    position: relative;
+    z-index: 10;
+}
+
+.language-selector label {
+    color: #8fdfff;
+    font-size: 0.62rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.language-selector select {
+    min-width: 82px;
+    background: rgba(5, 10, 20, 0.92);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 7px 8px;
+    font-family: var(--font-stack);
+    font-size: 0.7rem;
+    cursor: pointer;
+    box-shadow: var(--glow-soft);
+}
+
+.login-container > .language-selector {
+    justify-content: flex-end;
+    margin: -18px 0 18px;
 }
 
 /* --- LAYOUT PRINCIPAL & PAINÉIS DE VIDRO --- */
@@ -929,6 +966,7 @@ footer { margin-top: auto; border-top: 2px solid #222; padding: 30px; text-align
 @media (max-width: 900px) {
     .grid-shell { grid-template-columns: 1fr; }
     .navbar { flex-direction: column; align-items: center; gap: 30px; }
+    .navbar nav { flex-direction: column; align-items: center; }
     .logo-area { border-left: none; border-bottom: 4px solid var(--primary-color); padding-bottom: 15px; padding-left: 0; text-align: center; }
     .nav-links { flex-wrap: wrap; justify-content: center; }
     .filter-sidebar { order: 3; } /* Filtros vão para baixo no mobile */

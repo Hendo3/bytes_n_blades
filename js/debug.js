@@ -3,6 +3,8 @@
  */
 
 (function () {
+  const tr = (key, fallback) => window.I18n ? I18n.t(key, {}, fallback) : fallback;
+  const dataPath = (path) => window.I18n ? I18n.dataPath(path) : path;
   const state = {
     paused: false,
     logs: [],
@@ -30,7 +32,7 @@
     bindNetworkHooks();
     bindButtons(ui);
 
-    pushLog("system", "Debug console initialized.");
+    pushLog("system", tr("debug.initialized", "Debug console initialized."));
     pushLog("system", `User agent: ${navigator.userAgent}`);
   });
 
@@ -38,20 +40,24 @@
     ui.clear?.addEventListener("click", () => {
       state.logs = [];
       ui.output.innerHTML = "";
-      pushLog("system", "Console cleared.");
+      pushLog("system", tr("debug.cleared", "Console cleared."));
     });
 
     ui.pause?.addEventListener("click", () => {
       state.paused = !state.paused;
-      ui.pause.textContent = state.paused ? "Resume" : "Pause";
-      pushLog("system", state.paused ? "Capture paused." : "Capture resumed.");
+      ui.pause.textContent = state.paused
+        ? tr("debug.resume", "Resume")
+        : tr("debug.pause", "Pause");
+      pushLog("system", state.paused
+        ? tr("debug.paused", "Capture paused.")
+        : tr("debug.resumed", "Capture resumed."));
     });
 
     ui.exportBtn?.addEventListener("click", () => exportLogs());
 
-    ui.checkCyberwares?.addEventListener("click", () => testFetch("../data/cyberwares.json"));
-    ui.checkEquipment?.addEventListener("click", () => testFetch("../data/equipment.json"));
-    ui.checkWeapons?.addEventListener("click", () => testFetch("../data/weapons.json"));
+    ui.checkCyberwares?.addEventListener("click", () => testFetch(dataPath("../data/cyberwares.json")));
+    ui.checkEquipment?.addEventListener("click", () => testFetch(dataPath("../data/equipment.json")));
+    ui.checkWeapons?.addEventListener("click", () => testFetch(dataPath("../data/weapons.json")));
 
     ui.snapshotStorage?.addEventListener("click", () => {
       const snapshot = {
@@ -184,7 +190,7 @@
 
     const time = formatTime(entry.timestamp);
     const payload = stringifySafe(entry.data);
-    line.textContent = `[${time}] [${entry.level.toUpperCase()}] ${payload}`;
+    line.textContent = `[${time}] [${tr(`debug.level_${entry.level}`, entry.level.toUpperCase())}] ${payload}`;
 
     output.appendChild(line);
     output.scrollTop = output.scrollHeight;
@@ -204,7 +210,7 @@
     anchor.remove();
 
     URL.revokeObjectURL(url);
-    pushLog("system", "Logs exported.");
+    pushLog("system", tr("debug.exported", "Logs exported."));
   }
 
   function formatTime(isoString) {
@@ -216,7 +222,16 @@
     if (typeof value === "string") return value;
 
     try {
-      return JSON.stringify(value);
+      return JSON.stringify(value, (_key, item) => {
+        if (item instanceof Error) {
+          return {
+            name: item.name,
+            message: item.message,
+            stack: item.stack,
+          };
+        }
+        return item;
+      });
     } catch {
       return String(value);
     }

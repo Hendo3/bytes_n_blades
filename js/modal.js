@@ -4,10 +4,15 @@
  */
 
 const Modal = {
+    tr(key, fallback) {
+        return typeof window !== "undefined" && window.I18n
+            ? window.I18n.t(key, {}, fallback)
+            : fallback;
+    },
     // --- MENSAGEM SIMPLES (Substituto do alert) ---
     alert(title, message, callback) {
         this.create(title, message, [
-            { label: "ACKNOWLEDGE", class: "btn-primary", onClick: () => { this.close(); if(callback) callback(); } }
+            { label: this.tr("modal.acknowledge", "ACKNOWLEDGE"), class: "btn-primary", onClick: () => { this.close(); if(callback) callback(); } }
         ]);
     },
 
@@ -15,7 +20,7 @@ const Modal = {
     confirm(title, message, onConfirm, onCancel) {
         this.create(title, message, [
             { 
-                label: "CANCEL", 
+                label: this.tr("modal.cancel", "CANCEL"), 
                 class: "btn-secondary", 
                 onClick: () => { 
                     this.close(); 
@@ -23,7 +28,7 @@ const Modal = {
                 } 
             },
             { 
-                label: "CONFIRM", 
+                label: this.tr("modal.confirm", "CONFIRM"), 
                 class: "btn-danger", 
                 onClick: () => { 
                     this.close(); 
@@ -87,3 +92,7 @@ const Modal = {
         if (existing) existing.remove();
     }
 };
+
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = Modal;
+}

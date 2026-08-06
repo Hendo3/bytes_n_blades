@@ -1,0 +1,792 @@
+{
+    "$id": "/data/equipment.pt-BR.json",
+    "title": "Equipamentos",
+    "version": "1.1.0",
+    "author": "Hendo",
+    "description": "Equipamentos do Livro Básico de Cyberpunk 2020, com as extensões existentes do site preservadas.",
+    "type": "object",
+    "data": {
+        "fashion": {
+            "name": "Moda",
+            "description": "Os estilos de roupa de 2020 podem ser reduzidos a cinco manifestações básicas da moda.",
+            "modifiers": {
+                "Roupa Normal Elegante": "1x",
+                "Roupa Esporte": "2x",
+                "Roupas Formais": "3x",
+                "Alta Costura": "4x",
+                "Moda Urbana": "2x"
+            },
+            "types": {
+                "Roupa Normal Elegante": "A roupa padrão das ruas, confeccionada com componentes modulares coloridos. Predominam cintos, casacos, faixas e botas.",
+                "Roupa Esporte": "O equivalente à moda esportiva do século XXI: roupas acolchoadas, com logotipos esportivos ou de Corporações.",
+                "Roupas Formais": "O equivalente ao terno: cores austeras, prendedores de gravata e sapatos de couro legítimo. Lã e outros tecidos naturais são apropriados para Corporativos promissores.",
+                "Alta Costura": "Roupas sofisticadas e caras para as classes superiores, com grifes como Miyake, Si-fui Yan e Anne Calvin.",
+                "Moda Urbana": "Videojaquetas, tecidos que mudam de cor, camuflagem, couro, tachas, logotipos, jeans, saias de couro e botas: o lado mais selvagem da cibermoda."
+            },
+            "list": {
+                "pants": {
+                    "name": "Calças",
+                    "price": "20.0",
+                    "note": "aplica-se o modificador de estilo"
+                },
+                "top": {
+                    "name": "Top",
+                    "price": "15.0",
+                    "note": "aplica-se o modificador de estilo"
+                },
+                "jacket": {
+                    "name": "Jaqueta",
+                    "price": "35.0",
+                    "note": "aplica-se o modificador de estilo"
+                },
+                "footwear": {
+                    "name": "Calçados",
+                    "price": "25.0",
+                    "note": "aplica-se o modificador de estilo"
+                },
+                "accessory": {
+                    "name": "Joias",
+                    "price": "entre 10.0 e 100.0",
+                    "note": "aplica-se o modificador de estilo"
+                },
+                "mirrorshades": {
+                    "name": "Óculos Espelhados",
+                    "price": "entre 5.0 e 50.0",
+                    "note": "aplica-se o modificador de estilo"
+                },
+                "contactlenses": {
+                    "name": "Lentes de Contato",
+                    "price": "100.0",
+                    "note": "aplica-se o modificador de estilo"
+                },
+                "glasses": {
+                    "name": "Óculos",
+                    "price": "50.0",
+                    "note": "aplica-se o modificador de estilo"
+                }
+            }
+        },
+        "tools": {
+            "name": "Ferramentas",
+            "description": "Ferramentas",
+            "list": {
+                "techscanner": {
+                    "name": "Tecscanner",
+                    "price": "600.0",
+                    "description": "Um pequeno microcomputador de mão com vários conectores de entrada e saída e sondas. Executa programas de diagnóstico, identifica e examina componentes defeituosos e mostra esquemas internos numa pequena tela."
+                },
+                "cuttingtorch": {
+                    "name": "Maçarico",
+                    "price": "40.0",
+                    "description": "O maçarico comum de oxiacetileno, portátil e com cerca de 30 cm. Modelos mais potentes, inclusive lanças de termite, custam entre 5 e 15 vezes o preço normal."
+                },
+                "techToolkit": {
+                    "name": "Kit de Ferramentas",
+                    "price": "100.0",
+                    "description": "Um conjunto de ferramentas diversas para reparar objetos mecânicos, geralmente guardado numa maleta de 10 por 40 por 5 cm."
+                },
+                "breakingEnteringTools": {
+                    "name": "Ferramentas B&E",
+                    "price": "120.0"
+                },
+                "eletronicToolkit": {
+                    "name": "Kit de Ferramentas Eletrônicas",
+                    "price": "100.0",
+                    "description": "Um conjunto de ferramentas diversas para reparar equipamentos eletrônicos."
+                },
+                "protectiveGoggles": {
+                    "name": "Óculos de Proteção",
+                    "price": "20.0",
+                    "description": "Proteção para os olhos durante soldagem, trabalho com metais, mistura de produtos químicos e atividades semelhantes."
+                },
+                "flashtube": {
+                    "name": "Lanterna",
+                    "price": "2.0",
+                    "description": "Uma lanterna comum com alcance entre 30 e 35 metros. Lanternas de bolso com um quarto do alcance custam metade do preço normal."
+                },
+                "glowstick": {
+                    "name": "Bastão de Luz",
+                    "price": "1.0",
+                    "description": "Composto químico luminoso num tubo plástico de 15 cm. Sacuda ou quebre para ativar. A luz suave dura até seis horas e pode ser verde, azul ou vermelha."
+                },
+                "flashpaint": {
+                    "name": "Tinta Luminosa",
+                    "price": "10.0",
+                    "note": "por pinta (0,47 L)",
+                    "description": "Tinta fluorescente que emite uma luz suave equivalente à de um Bastão de Luz e dura até quatro horas."
+                },
+                "flashtape": {
+                    "name": "Fita Luminosa",
+                    "price": "10.0",
+                    "note": "por pé (0,30 m)",
+                    "description": "O mesmo material da Tinta Luminosa, em forma de fita. Dura seis horas e existe em várias larguras."
+                },
+                "rope": {
+                    "name": "Corda",
+                    "price": "2.0",
+                    "note": "por pé (0,30 m)",
+                    "description": "Fibras sintéticas trançadas em várias grossuras e pesos. Suporta até 450 kg."
+                },
+                "breathmask": {
+                    "name": "Máscara de Pintor",
+                    "price": "30.0",
+                    "description": "Máscara comum de pintor que cobre boca e nariz, com dois filtros laterais substituíveis. Um pacote com dez filtros custa 1 eb. Boa para evitar a fumaça e a poluição."
+                }
+            }
+        },
+        "personalElectronics": {
+            "name": "Eletrônicos Pessoais",
+            "description": "Eletrônicos Pessoais",
+            "list": {
+                "hologen": {
+                    "name": "Gerador de Holografia",
+                    "price": "500.0",
+                    "description": "Uma pequena caixa, com cerca de 10 por 5 por 15 cm, que projeta uma imagem holográfica a partir de um chip substituível. Aceita chips da maioria das câmeras digitais e pode ser conectada a um gravador/reprodutor digital."
+                },
+                "videoBoard": {
+                    "name": "Monitor de Vídeo",
+                    "price": "100.0",
+                    "note": "por pé quadrado (0,093 m²)",
+                    "description": "Monitor de tela plana com tecnologia de cristal líquido. Tem no máximo 2,5 cm de espessura e conectores para servir de monitor a outros aparelhos; os modelos grandes são usados como painéis publicitários."
+                },
+                "dataChip": {
+                    "name": "Datachip",
+                    "price": "10.0",
+                    "description": "O meio de armazenamento do futuro. Normalmente envoltos em plástico, os chips podem ter forma de botões, quadrados achatados ou lascas triangulares; adaptadores permitem que qualquer gravador leia qualquer formato."
+                },
+                "logcompass": {
+                    "name": "Logbússola",
+                    "price": "50.0",
+                    "description": "Uma bússola inercial programável que registra mudanças de direção a partir de um ponto e de um rumo estabelecidos."
+                },
+                "digitalRecorder": {
+                    "name": "Gravador Digital",
+                    "price": "300.0",
+                    "description": "Aparelho de gravação de áudio baseado em datachips. A maioria tem o tamanho de dois livros de bolso empilhados, embora alguns sejam menores que um maço de cartas."
+                },
+                "digitalCamera": {
+                    "name": "Câmera Digital",
+                    "price": "150.0",
+                    "description": "Digitaliza imagens estáticas e as armazena num cartucho de chip. Tem o tamanho aproximado de um maço de cigarros."
+                },
+                "videoCam": {
+                    "name": "Vídeo Câmera",
+                    "price": "800.0",
+                    "description": "Pode ser instalada na cabeça, no ombro ou usada com as mãos. Som e imagem são gravados numa fita compacta ou transmitidos diretamente por cabos. O preço indicado corresponde ao modelo de ombro mais barato."
+                },
+                "tapePlayer": {
+                    "name": "Toca-Fitas de Áudio/Vídeo",
+                    "price": "40.0",
+                    "description": "Reproduz fitas de Vídeo Câmera e muitas fitas antigas de áudio."
+                },
+                "tape": {
+                    "name": "Fita de Vídeo",
+                    "price": "4.0",
+                    "description": "Meio digital de alta densidade capaz de armazenar sinais de áudio e imagens."
+                },
+                "pocketTV": {
+                    "name": "TV de Bolso",
+                    "price": "80.0",
+                    "description": "Usa uma tela plana num aparelho de aproximadamente 12 por 12 por 2 cm ou menor e capta a maioria das estações VHF e UHF."
+                },
+                "chipPlayer": {
+                    "name": "Reprodutor de Chip Digital",
+                    "price": "150.0",
+                    "description": "Reproduz chips digitais de áudio e vídeo. Deve ser conectado a um Monitor de Vídeo para exibir a faixa de vídeo."
+                },
+                "chip": {
+                    "name": "Chip Digital de Música",
+                    "price": "20.0",
+                    "description": "Armazena de um a seis álbuns musicais em plástico e semicondutores. Também existe em versão de leitura e gravação."
+                },
+                "eletricGuitar": {
+                    "name": "Guitarra Elétrica",
+                    "price": "entre 100.0 e 500.0",
+                    "description": "Mais leve e flexível que a guitarra clássica, por vezes nem possui uma forma reconhecível. Cordas e trastes podem ter sido substituídos por bancos de teclas."
+                },
+                "eletronicKeyboard": {
+                    "name": "Teclado Eletrônico",
+                    "price": "entre 200.0 e 900.0",
+                    "description": "Pouco mudou em relação aos teclados atuais, exceto pelo tamanho e pela potência."
+                },
+                "drumSynthesizer": {
+                    "name": "Sintetizador de Bateria",
+                    "price": "entre 200.0 e 800.0",
+                    "description": "Um conjunto de elementos de percussão e uma caixa de ritmos. Cabe em duas malas e pode ser arranjado como o baterista preferir."
+                },
+                "amplifier": {
+                    "name": "Amplificador",
+                    "price": "entre 500.0 e 1000.0",
+                    "description": "Equipamento de amplificação para instrumentos eletrônicos."
+                }
+            }
+        },
+        "dataSystems": {
+            "name": "Sistemas de Dados",
+            "description": "Sistemas de Dados",
+            "list": {
+                "laptop": {
+                    "name": "Computador Laptop",
+                    "price": "900.0",
+                    "description": "Computador portátil com disco rígido interno, Monitor de Vídeo removível e slots para chips de dados ou programas. Não possui os processadores e a memória de um computador normal e não pode ser usado para operações na Rede."
+                },
+                "pocketComputer": {
+                    "name": "Computador de Bolso",
+                    "price": "100.0",
+                    "description": "Calculadora programável com teclado e slots para chips, capaz de armazenar até 100 páginas de memória alfanumérica."
+                },
+                "cybermodem": {
+                    "name": "Cibermodem",
+                    "price": "Varia conforme o projeto",
+                    "description": "Veja a seção Netrunning."
+                },
+                "cellularCybermodem": {
+                    "name": "Cibermodem Celular",
+                    "price": "Varia conforme o projeto",
+                    "description": "Veja a seção Netrunning, página 133."
+                },
+                "interfaceCables": {
+                    "name": "Cabos de Interface",
+                    "price": "entre 20.0 e 30.0",
+                    "description": "Cabos comuns com plugues usados para ligar uma máquina controlada ciberneticamente aos conectores de interface de uma pessoa."
+                },
+                "lowImpedance": {
+                    "name": "Cabos de Baixa Impedância",
+                    "price": "60.0",
+                    "description": "Cabos especiais de baixa resistência e interferência que melhoram a transferência de dados. Concedem +1 em tarefas de Interface, como controlar cibervéiculos ou operar na Rede."
+                },
+                "trodeSet": {
+                    "name": "Conjunto de Eletrodos",
+                    "price": "20.0",
+                    "description": "Dispositivo de baixa eficiência usado na cabeça para pegar carona na Rede. Impõe -2 à perícia Interface."
+                },
+                "keyboard": {
+                    "name": "Teclado",
+                    "price": "100.0",
+                    "description": "Pode ser conectado ao seu cibermodem ou a outros equipamentos eletrônicos."
+                },
+                "terminal": {
+                    "name": "Terminal",
+                    "price": "400.0",
+                    "description": "Estação de trabalho com teclado, Monitor de Vídeo e conectores de entrada e saída. Pode ser usada na Rede, tornando o Netrunner imune à maioria dos programas Negros, mas impõe -5 à Interface. Seus operadores são chamados de tartarugas da Rede."
+                }
+            }
+        },
+        "communications": {
+            "name": "Comunicações",
+            "description": "Comunicações",
+            "list": {
+                "mastoid": {
+                    "name": "Comunicador Mastóide",
+                    "price": "100.0",
+                    "description": "Rádio transceptor colado ao maxilar e à têmpora. Transmite por subvocalização e recebe por vibrações silenciosas. Alcance: 15 km."
+                },
+                "pocketCommo": {
+                    "name": "Comunicador de Bolso",
+                    "price": "50.0",
+                    "description": "Um walkie-talkie pequeno e comum. Alcance: 15 km."
+                },
+                "cellularPhone": {
+                    "name": "Telefone Celular",
+                    "price": "400.0",
+                    "description": "Comunicação móvel em qualquer lugar coberto por uma rede de radiotelefonia. O serviço custa 100 eb por mês."
+                },
+                "miniCellPhone": {
+                    "name": "Mini Telefone Celular",
+                    "price": "800.0",
+                    "description": "Cabe num maço de cigarros."
+                }
+            }
+        },
+        "surveillance": {
+            "name": "Patrulhamento",
+            "description": "Patrulhamento",
+            "list": {
+                "binglasses": {
+                    "name": "Óculos Binoculares",
+                    "price": "200.0",
+                    "description": "Visores de alta tecnologia que combinam binóculos com telêmetro laser e, às vezes, lentes infravermelhas. Modelos mais caros podem incluir uma câmera digital."
+                },
+                "binocular": {
+                    "name": "Binóculos",
+                    "price": "20.0",
+                    "description": "Binóculos comuns."
+                },
+                "lightBoosterGoogle": {
+                    "name": "Óculos de Intensificação Luminosa",
+                    "price": "200.0",
+                    "description": "Amplificam a luz ambiente para visão noturna por tecnologia Starlite, mas podem ser ofuscados por luz súbita. Com um ajuste Difícil, também detectam feixes infravermelhos ativos."
+                },
+                "irGoogles": {
+                    "name": "Óculos de Infravermelho",
+                    "price": "250.0",
+                    "description": "Captam fontes difusas de infravermelho. Normalmente usados com uma fonte ativa para produzir iluminação invisível."
+                },
+                "irFlash": {
+                    "name": "Lanterna de Infravermelho",
+                    "price": "50.0",
+                    "description": "Fonte ativa de luz infravermelha. A versão ultravioleta é semelhante e pode ser usada com o ciberóptico apropriado."
+                }
+            }
+        },
+        "entertainment": {
+            "name": "Entretenimento",
+            "description": "Entretenimento",
+            "modifiers": {
+                "Médio": "1x",
+                "Bom": "2x",
+                "Excelente": "3x"
+            },
+            "list": {
+                "movie": {
+                    "name": "Filme",
+                    "price": "10.0"
+                },
+                "chipRental": {
+                    "name": "Aluguel de Fita/Chip de Vídeo",
+                    "price": "4.0"
+                },
+                "braindance": {
+                    "name": "Dança Cerebral",
+                    "price": "20.0"
+                },
+                "liveConcert": {
+                    "name": "Concerto ao Vivo/Evento Esportivo",
+                    "price": "50.0"
+                },
+                "fastFood": {
+                    "name": "Refeição Fast Food",
+                    "price": "5.0"
+                },
+                "wellDrink": {
+                    "name": "Água de Fonte",
+                    "price": "3.0"
+                },
+                "restaurant": {
+                    "name": "Refeição em Restaurante",
+                    "price": "20.0",
+                    "note": "aplica-se o modificador de qualidade do restaurante ou bar"
+                }
+            }
+        },
+        "security": {
+            "name": "Segurança",
+            "description": "Segurança",
+            "list": {
+                "keylock": {
+                    "name": "Fechadura",
+                    "price": "20.0",
+                    "note": "por nível",
+                    "description": "Trava mecânica para portas. Possui quatro níveis: Segurança Baixa (15), Média (20), Alta (25) e Máxima (30)."
+                },
+                "cardlock": {
+                    "name": "Fechadura de Cartão",
+                    "price": "100.0",
+                    "note": "por nível",
+                    "description": "Trava eletrônica que usa um cartão codificado magneticamente. Possui quatro níveis: Segurança Baixa (15), Média (20), Alta (25) e Máxima (30)."
+                },
+                "vocolock": {
+                    "name": "Fechadura de Voz",
+                    "price": "200.0",
+                    "note": "por nível",
+                    "description": "Trava eletrônica com reconhecimento de voz. Possui quatro níveis: Segurança Baixa (15), Média (20), Alta (25) e Máxima (30)."
+                },
+                "lineTap": {
+                    "name": "Grampo Telefônico",
+                    "price": "200.0",
+                    "description": "Capta voz ou dados de uma linha de telecomunicações para gravar ou retransmitir. Modelos avançados funcionam a cerca de 30 cm da linha e aceitam controle remoto. Não funciona em sistemas instalados ou atualizados após a adoção total de fibra óptica em 2008."
+                },
+                "codeDecryptor": {
+                    "name": "Decifrador de Fechaduras de Cartão",
+                    "price": "500.0",
+                    "description": "A sonda substitui o cartão normal de uma Fechadura de Cartão e acrescenta +5 ao teste de TEC + Segurança Eletrônica + 1D10 contra a fechadura."
+                },
+                "vocDecryptor": {
+                    "name": "Decodificador de Voz",
+                    "price": "1000.0",
+                    "description": "Modulador vocal usado para penetrar Fechaduras de Voz."
+                },
+                "securityScanner": {
+                    "name": "Scanner de Segurança",
+                    "price": "1500.0",
+                    "description": "Procura campos eletromagnéticos produzidos por alarmes, com 75% de chance de localizar um sistema. Um teste de TEC ou INT pode identificar o tipo de alarme."
+                },
+                "poisonSniffer": {
+                    "name": "Detector de Veneno",
+                    "price": "1500.0",
+                    "description": "Pode procurar venenos específicos no ar ou em líquidos, ou apenas alertar sobre substâncias estranhas. Precisão: 85%."
+                },
+                "jammingTransmitter": {
+                    "name": "Transmissor de Interferências",
+                    "price": "500.0",
+                    "description": "Geralmente ocupa duas ou três malas grandes, embora possa preencher um furgão. Interfere em transmissões eletromagnéticas num raio de 300 m, incluindo telefones celulares e parte dos ciberware."
+                },
+                "scannerPlate": {
+                    "name": "Placa de Leitura via Scanner",
+                    "price": "500.0",
+                    "description": "Leitor de impressão da mão que pode ser conectado a uma Fechadura de Cartão ou de Voz como camada adicional de segurança."
+                },
+                "movementSensor": {
+                    "name": "Sensor de Movimento",
+                    "price": "40.0",
+                    "description": "Sistema de alarme com sensores sísmicos, sonar e redes fixas de infravermelho ou luz visível. Detecta movimento numa área definida com 95% de confiabilidade; o processador tem o tamanho de um maço de cigarros."
+                },
+                "passCard": {
+                    "name": "Cartão de Passe",
+                    "price": "10.0",
+                    "description": "O dispositivo mais comum para abrir uma Fechadura de Cartão."
+                },
+                "trackingDevice": {
+                    "name": "Aparelho de Rastreamento",
+                    "price": "1000.0",
+                    "description": "Equipamento portátil ou em forma de maleta para detectar e seguir Botões Rastreadores. Alcance: 1,5 km."
+                },
+                "tracerButton": {
+                    "name": "Botões Rastreadores",
+                    "price": "50.0",
+                    "note": "estojo com seis",
+                    "description": "Variam do tamanho de uma caixa de fósforos ao de um alfinete e usam radioatividade ou transmissões de rádio para revelar a posição daquilo a que estão presos. Alguns podem ser ligados ou desligados remotamente."
+                },
+                "remoteSensors": {
+                    "name": "Sensores Remotos",
+                    "price": "700.0"
+                },
+                "plasKuffs": {
+                    "name": "Algemas de Plástico",
+                    "price": "100.0",
+                    "description": "Algemas resistentes feitas de ligas modernas. Rompê-las é Quase Impossível; metade utiliza uma Fechadura de Cartão."
+                },
+                "stripwireBlinders": {
+                    "name": "Fita Reforçada",
+                    "price": "5.0",
+                    "note": "caixa com doze",
+                    "description": "Tiras plásticas reforçadas e descartáveis para algemas temporárias de mãos e pernas. São Muito Difíceis de romper, resistem a cortes graças a fibras cerâmicas e são à prova de fogo."
+                }
+            }
+        },
+        "medical": {
+            "name": "Medicamentos",
+            "description": "Medicamentos",
+            "list": {
+                "dermalStapler": {
+                    "name": "Grampeador Dérmico",
+                    "price": "1000.0",
+                    "description": "Fecha automaticamente as bordas de uma ferida com grampos de material orgânico comprimido que se dissolvem depois de algum tempo."
+                },
+                "spraySkin": {
+                    "name": "Spray para a Pele",
+                    "price": "50.0",
+                    "note": "por lata",
+                    "description": "Gel espesso em spray para tratar abrasões graves. Antisséptico, esterilizado e permeável ao ar, desprende-se em cerca de duas semanas."
+                },
+                "slapPatch": {
+                    "name": "Cobertura para Ferimentos",
+                    "price": "varia conforme o tipo de droga",
+                    "description": "Pequena cobertura plástica com uma dose de medicamento, aplicada à pele para absorção gradual. Veja a seção do Trauma Team para drogas e preços."
+                },
+                "criotank": {
+                    "name": "Tanque Criogênico",
+                    "price": "100000.0",
+                    "description": "Tanque avançado de refrigeração que reduz o corpo a níveis de conservação enquanto o suporte vital mantém o fluxo de sangue e oxigênio, preservando um moribundo em estase relativa."
+                },
+                "medkit": {
+                    "name": "Kit Médico",
+                    "price": "50.0",
+                    "description": "Mala padrão de médico ou paramédico militar com antídotos, curativos, drogas, aplicadores, remédios e instrumentos de exame."
+                },
+                "surgicalKit": {
+                    "name": "Kit Cirúrgico",
+                    "price": "400.0",
+                    "description": "Conjunto completo de instrumentos cirúrgicos e dos compostos ou aparelhos necessários para manter o campo operatório esterilizado."
+                },
+                "firstAidKit": {
+                    "name": "Kit de Primeiros Socorros",
+                    "price": "10.0",
+                    "description": "Caixa doméstica de primeiros socorros com bandagens, antissépticos e um analgésico simples."
+                },
+                "medscanner": {
+                    "name": "Scanner Médico",
+                    "price": "300.0",
+                    "description": "Mede temperatura corporal, batimentos cardíacos, pressão sanguínea, respiração e glicemia. Seu banco de dados em chip concede +2 à perícia Diagnose."
+                },
+                "drugAnalyzer": {
+                    "name": "Analisador de Drogas",
+                    "price": "75.0",
+                    "description": "Varia do tamanho de um livro ao de uma maleta. Determina a pureza de drogas conhecidas ou identifica a estrutura molecular e os possíveis efeitos de substâncias semelhantes às registradas em sua biblioteca."
+                },
+                "airhypho": {
+                    "name": "Hipodérmica de Ar",
+                    "price": "100.0",
+                    "description": "Usa um jato de ar comprimido para introduzir uma droga líquida através da pele. Veja a seção do Trauma Team para drogas e preços."
+                },
+                "clinicVisit": {
+                    "name": "Visita a uma Clínica",
+                    "price": "200.0"
+                },
+                "dayInHospital": {
+                    "name": "Dia no Hospital",
+                    "price": "300.0"
+                },
+                "dayInICU": {
+                    "name": "Dia na UTI",
+                    "price": "1000.0"
+                },
+                "cloneLimbReplacement": {
+                    "name": "Substituição de Membro Clonado",
+                    "price": "1500.0",
+                    "note": "varia conforme o membro"
+                }
+            }
+        },
+        "furnshing": {
+            "name": "Equipamentos",
+            "description": "Equipamentos",
+            "list": {
+                "nylonCarryBag": {
+                    "name": "Mochila de Nylon",
+                    "price": "5.0",
+                    "description": "Mochila esportiva de carga do século XXI, disponível em vários tamanhos e com muitos logotipos."
+                },
+                "sleepingBag": {
+                    "name": "Saco de Dormir",
+                    "price": "25.0",
+                    "description": "Mais leve e capaz de suportar temperaturas de até -73 °C. Comprime-se num pacote de aproximadamente 30 por 15 por 10 cm."
+                },
+                "inflatableBed": {
+                    "name": "Cama Inflável",
+                    "price": "25.0",
+                    "description": "Colchão auto-inflável altamente comprimido. Dobrado, mede cerca de 15 por 5 por 10 cm."
+                },
+                "futon": {
+                    "name": "Futon",
+                    "price": "90.0",
+                    "description": "Cama dobrável portátil com acolchoado, de origem japonesa."
+                },
+                "realWoodFurniture": {
+                    "name": "Mobília de Madeira de Verdade",
+                    "price": "200.0",
+                    "note": "por peça",
+                    "description": "Mobília feita de madeira verdadeira."
+                },
+                "sintheticFurniture": {
+                    "name": "Mobília Sintética",
+                    "price": "100.0",
+                    "note": "por peça",
+                    "description": "Mobília feita de materiais sintéticos."
+                },
+                "apartmentCube": {
+                    "name": "Apartamento Cubo",
+                    "price": "5000.0",
+                    "description": "Módulo habitável de 3 por 3 por 2 m com móveis e utensílios ocultos em recessos nas paredes. Inclui cama, armário, fogão, refrigerador, TV, centro de entretenimento digital, cadeiras, escrivaninha e mesa removível, e pode ser transportado como uma unidade."
+                },
+                "lamp": {
+                    "name": "Lâmpada",
+                    "price": "20.0",
+                    "description": "Emite luz e existe numa infinidade de formas e cores."
+                },
+                "cleaningRobot": {
+                    "name": "Robô de Limpeza",
+                    "price": "1000.0",
+                    "description": "Pequeno aparelho robótico de limpeza pré-programado, geralmente do tamanho de um aspirador portátil. Não é muito inteligente."
+                },
+                "vocalSwitchSystem": {
+                    "name": "Sistema de Ativação Vocal",
+                    "price": "100.0",
+                    "description": "Controles ativados por voz para luzes e outros utensílios."
+                }
+            }
+        },
+        "vehicles": {
+            "name": "Veículos",
+            "description": "Veículos típicos do início do século XXI. Cibercontroles dobram o custo indicado.",
+            "list": {
+                "scooter": {
+                    "name": "Lambreta",
+                    "price": "500.0",
+                    "description": "Lambreta elétrica atualizada, com velocidade máxima de cerca de 80 km/h e seis horas de autonomia por abastecimento rápido."
+                },
+                "motorcycle": {
+                    "name": "Motocicleta",
+                    "price": "1500.0",
+                    "description": "Normalmente possui desenho reclinado e carenagem plástica. Modelos elétricos alcançam cerca de 105 km/h e oito horas por carga; versões a CHOOH2 chegam a 240 km/h com tanque de 15 litros."
+                },
+                "cityCar": {
+                    "name": "Carro para a Cidade",
+                    "price": "2000.0",
+                    "description": "Carro corporativo de três rodas e um lugar, com velocidade máxima de cerca de 65 km/h e quatro horas por carga. Também pode ser alugado em quiosques de áreas corporativas."
+                },
+                "smallSubcompact": {
+                    "name": "Pequeno Subcompacto",
+                    "price": "6000.0",
+                    "description": "Geralmente movido a metanol ou CHOOH2, com velocidade máxima de cerca de 145 km/h, tanque de 40 litros e quatro lugares."
+                },
+                "mediumSedan": {
+                    "name": "Sedan Médio",
+                    "price": "10000.0",
+                    "description": "Movido a metanol ou CHOOH2, com velocidade máxima de cerca de 145 km/h, tanque de 55 litros e quatro lugares."
+                },
+                "sportsCar": {
+                    "name": "Carro Esporte",
+                    "price": "20000.0",
+                    "description": "Quase sempre movido a CHOOH2, com velocidade máxima de cerca de 340 km/h, tanque de 40 litros e dois lugares."
+                },
+                "luxurySedan": {
+                    "name": "Sedan de Luxo",
+                    "price": "40000.0",
+                    "description": "Movido a metanol ou CHOOH2, com velocidade máxima de cerca de 145 km/h, tanque de 75 litros e seis lugares."
+                }
+            }
+        },
+        "lifestyle": {
+            "name": "Estilo de Vida",
+            "description": "Estilo de Vida",
+            "list": {
+                "cellPhoneService": {
+                    "name": "Serviço de Telefonia Celular",
+                    "price": "100.0",
+                    "note": "por mês"
+                },
+                "standardPhoneService": {
+                    "name": "Serviço de Telefonia Padrão",
+                    "price": "30.0",
+                    "note": "por mês"
+                },
+                "payPhoneCall": {
+                    "name": "Chamada Telefônica Paga",
+                    "price": "0.50",
+                    "note": "por minuto"
+                },
+                "dataTermUse": {
+                    "name": "Utilização de Terminal de Dados",
+                    "price": "1.0",
+                    "note": "por minuto"
+                },
+                "credChipAccount": {
+                    "name": "Chip de Crédito",
+                    "price": "20.0",
+                    "note": "por mês",
+                    "description": "Um cartão de débito usado para carregar dinheiro eletronicamente no lugar de uma carteira."
+                },
+                "healthPlan": {
+                    "name": "Plano de Saúde",
+                    "price": "1000.0",
+                    "note": "por mês"
+                },
+                "traumaTeamSilver": {
+                    "name": "Plano Prata do Trauma Team",
+                    "price": "500.0",
+                    "note": "Serviço paramédico; cirurgia cobrada separadamente; resposta em 1D10 turnos; por mês"
+                },
+                "traumaTeamGold": {
+                    "name": "Plano Ouro do Trauma Team",
+                    "price": "1000.0",
+                    "note": "Serviço paramédico e ambulância com escolta armada limitada; cirurgia cobrada separadamente; resposta em 1D8 turnos; por mês"
+                },
+                "traumaTeamPlatinum": {
+                    "name": "Plano Platina do Trauma Team",
+                    "price": "2000.0",
+                    "note": "Serviço paramédico, ambulância e escolta armada; cirurgia cobrada separadamente; resposta em 1D6 turnos; por mês"
+                },
+                "traumaTeamDiamond": {
+                    "name": "Plano Diamante do Trauma Team",
+                    "price": "5000.0",
+                    "note": "Serviço paramédico, ambulância, escolta armada e reparo de ciberware; cirurgia incluída; resposta em 1D4 turnos; por mês"
+                },
+                "air": {
+                    "name": "Ar",
+                    "price": "5.0",
+                    "note": "por minuto",
+                    "description": "Em regiões muito poluídas, ar limpo é vendido por bares de ar, lojas, vendedores de rua e máquinas automáticas."
+                },
+                "maglevChip": {
+                    "name": "Passagem de Mag Lev",
+                    "price": "0.25",
+                    "note": "por estação"
+                },
+                "taxi": {
+                    "name": "Táxi",
+                    "price": "3.0",
+                    "note": "por milha"
+                },
+                "avTaxi": {
+                    "name": "AV-Táxi",
+                    "price": "10.0",
+                    "note": "por milha"
+                },
+                "cableTV": {
+                    "name": "TV a Cabo",
+                    "price": "40.0",
+                    "note": "por mês"
+                }
+            }
+        },
+        "groceries": {
+            "name": "Mantimentos",
+            "description": "Mantimentos",
+            "list": {
+                "kibble": {
+                    "name": "Kibble (Mingau)",
+                    "price": "50.0",
+                    "note": "por semana",
+                    "description": "Nutriente produzido em série que satisfaz a maioria das necessidades alimentares, mas parece, cheira e tem gosto de ração seca para animais."
+                },
+                "genericPrepak": {
+                    "name": "Pré-cozidos Genéricos",
+                    "price": "150.0",
+                    "note": "por semana",
+                    "description": "Refeição básica embalada que pode ser aquecida no micro-ondas ou refrigerada. Muitas vêm com pastilhas químicas para aquecimento ou resfriamento."
+                },
+                "goodPrepak": {
+                    "name": "Pré-cozidos de Qualidade",
+                    "price": "200.0",
+                    "note": "por semana",
+                    "description": "Boa refeição de restaurante dentro de um pacote, a melhor comida pré-preparada normalmente disponível."
+                },
+                "freshFood": {
+                    "name": "Comida Fresca",
+                    "price": "300.0",
+                    "note": "por semana",
+                    "description": "Comida realmente fresca ou, pelo menos, algo que foi comido por alguém que já a viu."
+                }
+            }
+        },
+        "housing": {
+            "name": "Residência",
+            "description": "Residência",
+            "modifiers": {
+                "combatZone": "1x",
+                "moderateZone": "2x",
+                "corporateZone": "4x",
+                "executiveZone": "6x"
+            },
+            "list": {
+                "coffin": {
+                    "name": "Caixão",
+                    "price": "20.0",
+                    "note": "por noite",
+                    "description": "Caixa de dormir empilhável e operada por moedas, encontrada em aeroportos e pensões. Há espaço apenas para virar-se ou ler na cama; modelos caros podem incluir telefone ou mini-TV."
+                },
+                "hotelRoom": {
+                    "name": "Quarto de Hotel",
+                    "price": "100.0",
+                    "note": "por noite"
+                },
+                "apartment": {
+                    "name": "Apartamento em Condomínio",
+                    "price": "200.0",
+                    "note": "por quarto, por mês; aplica-se o modificador de localização"
+                },
+                "house": {
+                    "name": "Casa",
+                    "price": "150.0",
+                    "note": "por quarto, por mês; aplica-se o modificador de localização"
+                },
+                "utilities": {
+                    "name": "Utilidades",
+                    "price": "100.0",
+                    "note": "por mês"
+                }
+            }
+        }
+    }
+}

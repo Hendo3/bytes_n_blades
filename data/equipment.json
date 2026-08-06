@@ -1,219 +1,792 @@
 {
-	"$id": "/data/equipment.json",
-	"title": "Equipment",
-	"version": "1.0.0",
-	"author": "Hendo",
-	"description": "Equipment for the Cyberpunk 2020 game",
-	"type": "object",
-
-
+    "$id": "/data/equipment.json",
+    "title": "Equipment",
+    "version": "1.1.0",
+    "author": "Hendo",
+    "description": "Equipment from the Cyberpunk 2020 Corebook, with existing site extensions preserved.",
+    "type": "object",
     "data": {
-        "fashion":{
+        "fashion": {
             "name": "Fashion",
-            "description": "The clothing styles of 2020, break into five basic fashion statements.",
-            "modifiers": {"Generic": "1x", "Leisurewear": "2x", "Businesswear": "3x", "High Fashion": "4x", "Urban Flash": "2x"},
-            "types":{"Generic": "Standard streetwear, made up of colorful modular components in many colors. Belts, coats, sashes, boots predominate. ", "Leisurewear": "This a the equivalent of old athletic wear. Paddle fleence, corporate, and athletic logos.", "Businesswear": "This a the equivalent of standard business suits. unstandard colors, pinstripes, real leather shoes, etc. Wool and onther natural fabrics are considered the proper outfitting for the up and comming Corp.", "High Fashion": "Sophisticated and expansive dressing for upperclass. Designers labels like Miyake. Si-FuYan and Anne Calvin.", "Urban Flash": "Video Jackets, colorshifters fabrics, cammo leathers, metalspikes, LogoWear, jeans, leatherskirts, boots. The wildest and most chilled in Cyberfashion."},
+            "description": "The clothing styles of 2020 break into five basic fashion statements.",
+            "modifiers": {
+                "Generic Chic": "1x",
+                "Leisurewear": "2x",
+                "Businesswear": "3x",
+                "High Fashion": "4x",
+                "Urban Flash": "2x"
+            },
+            "types": {
+                "Generic Chic": "This is the standard streetwear, made up of colorful modular components in many colors. Belts, coats, sashes and boots predominate.",
+                "Leisurewear": "This is the equivalent of 21st-century athletic wear: padded fleece, corporate and athletic logos.",
+                "Businesswear": "This is the equivalent of the standard business suit: understated colors, pinstripes, real leather shoes, etc. Wool and other natural fabrics are considered the proper outfitting for the up-and-coming Corp.",
+                "High Fashion": "Sophisticated and expensive dressing for the upper class. Designer labels include Miyake, Si-fui Yan and Anne Calvin.",
+                "Urban Flash": "Video jackets, colorshift fabrics, cammo, leathers, metal spikes, Logowear, jeans, leather skirts and boots. The wildest and most utterly chilled in cyberfashion."
+            },
             "list": {
-                "pants": {"name": "Pants", "note": "modifier applies", "price": "20.0"}, 
-                "top": {"name": "Top", "note": "modifier applies", "price": "15.0"},
-                "jacket": {"name": "Jacket", "note": "modifier applies", "price": "35.0"},
-                "footwear": {"name": "Footwear", "note": "modifier applies", "price": "25.0"},
-                "accessory": {"name": "Jewelry", "note": "modifier applies", "price": "between 10.0 and 100.0"},
-                "mirrorshades": {"name": "Mirrorshades", "note": "modifier applies", "price": "between 5.0 and 50.0"},
-                "contactlenses": {"name": "Contact Lenses", "note": "modifier applies", "price": "100.0"},
-                "glasses": {"name": "Glasses", "note": "modifier applies", "price": "50.0"}
+                "pants": {
+                    "name": "Pants",
+                    "price": "20.0",
+                    "note": "style modifier applies"
+                },
+                "top": {
+                    "name": "Top",
+                    "price": "15.0",
+                    "note": "style modifier applies"
+                },
+                "jacket": {
+                    "name": "Jacket",
+                    "price": "35.0",
+                    "note": "style modifier applies"
+                },
+                "footwear": {
+                    "name": "Footwear",
+                    "price": "25.0",
+                    "note": "style modifier applies"
+                },
+                "accessory": {
+                    "name": "Jewelry",
+                    "price": "between 10.0 and 100.0",
+                    "note": "style modifier applies"
+                },
+                "mirrorshades": {
+                    "name": "Mirrorshades",
+                    "price": "between 5.0 and 50.0",
+                    "note": "style modifier applies"
+                },
+                "contactlenses": {
+                    "name": "Contact Lenses",
+                    "price": "100.0",
+                    "note": "style modifier applies"
+                },
+                "glasses": {
+                    "name": "Glasses",
+                    "price": "50.0",
+                    "note": "style modifier applies"
+                }
             }
         },
         "tools": {
+            "name": "Tools",
             "description": "Tools",
             "list": {
-                "techscanner": {"name": "TechScanner", "price": "600.0"},
-                "cuttingtorch": {"name": "Cutting Torch", "price": "40.0"},
-                "techToolkit": {"name": "Tech Toolkit", "price": "100.0"},
-                "eletronicToolkit": {"name": "Electronic Toolkit", "price": "100.0"},
-                "protectiveGoggles": {"name": "Protective Goggles", "price": "20.0"},
-                "flashtube": {"name": "Flash Tube", "price": "2.0"},
-                "glowstick": {"name": "Glow Stick", "price": "1.0"},
-                "flashpaint": {"name": "Flash Paint", "note": "per gallon", "price": "10.0"},
-                "flashtape": {"name": "Flash Tape", "note": "per meter", "price": "10.0"},
-                "rope": {"name": "Rope", "note": "per meter", "price": "2.0"},
-                "breathmask": {"name": "Breathing Mask", "price": "30.0"}
+                "techscanner": {
+                    "name": "Techscanner",
+                    "price": "600.0",
+                    "description": "A small handheld microcomputer with various I/O connectors and probes. Techscanners run diagnostic programs, identify and examine malfunctioning components, and display internal schematics on a small screen."
+                },
+                "cuttingtorch": {
+                    "name": "Cutting Torch",
+                    "price": "40.0",
+                    "description": "Common oxyacetylene type out of a bottle. Handheld and about a foot long. More powerful models are available, up to thermite lances at 5 to 15 times the normal cost."
+                },
+                "techToolkit": {
+                    "name": "Tech Tool Kit",
+                    "price": "100.0",
+                    "description": "Mixed kit of tools for repairing mechanical items, usually in a 4 by 16 by 2 inch case."
+                },
+                "breakingEnteringTools": {
+                    "name": "B&E Tools",
+                    "price": "120.0"
+                },
+                "eletronicToolkit": {
+                    "name": "Electronics Tool Kit",
+                    "price": "100.0",
+                    "description": "A mixed kit of tools for repairing electronic items."
+                },
+                "protectiveGoggles": {
+                    "name": "Protective Goggles",
+                    "price": "20.0",
+                    "description": "Protective eyewear for welding, metal machining, chemical mixing and similar work."
+                },
+                "flashtube": {
+                    "name": "Flashlight",
+                    "price": "2.0",
+                    "description": "A standard flashlight with a beam range of 100 to 120 feet. Smaller pocket lights with one quarter of the range cost half the normal price."
+                },
+                "glowstick": {
+                    "name": "Glowstik",
+                    "price": "1.0",
+                    "description": "A chemical light in a 6-inch plastic tube. Shake or break it to activate. Its soft light lasts up to six hours and is available in green, blue or red."
+                },
+                "flashpaint": {
+                    "name": "Flashpaint",
+                    "price": "10.0",
+                    "note": "per pint",
+                    "description": "Fluorescent paint that gives off a soft light equal to a Glowstik and lasts up to four hours."
+                },
+                "flashtape": {
+                    "name": "Flashtape",
+                    "price": "10.0",
+                    "note": "per foot",
+                    "description": "The same material as Flashpaint in tape form. It lasts six hours and comes in a variety of widths."
+                },
+                "rope": {
+                    "name": "Rope",
+                    "price": "2.0",
+                    "note": "per foot",
+                    "description": "Braided synthetics in a variety of thicknesses and weights. Can hold up to 1,000 pounds."
+                },
+                "breathmask": {
+                    "name": "Breathing Mask",
+                    "price": "30.0",
+                    "description": "A common painter's mask covering the nose and mouth, with two replaceable side filters. Replacement filters cost 1 eb per pack of ten. Good for keeping out the smog."
+                }
             }
         },
         "personalElectronics": {
+            "name": "Personal Electronics",
             "description": "Personal Electronics",
             "list": {
-                "hologen": {"name": "Holo Generator", "price": "500.0"},
-                "videoBoard": {"name": "Video Board", "price": "100.0"},
-                "dataChip": {"name": "Data Chip", "price": "10.0"},
-                "logcompass": {"name": "Log Compass", "price": "50.0"},
-                "digitalRecorder": {"name": "Digital Recorder", "price": "300.0"},
-                "digitalCamera": {"name": "Digital Camera", "price": "150.0"},
-                "videoCam": {"name": "VideoCam", "price": "800.0"},
-                "tapePlayer": {"name": "Video/Audio Tape Player", "price": "40.0"},
-                "tape": {"name": "Video/Audio Tape", "price": "4.0"},
-                "pocketTV": {"name": "Pocket TV", "price": "80.0"},
-                "chipPlayer": {"name": "Digital chip Player", "price": "150.0"},
-                "chip": {"name": "Digital chip", "price": "20.0"},
-                "eletricGuitar": {"name": "Electric Guitar", "price": "between 100.0 and 500.0"},
-                "eletronicKeyboard": {"name": "Electronic Keyboard", "price": "between 200.0 and 900.0"},
-                "drumSynthesizer": {"name": "Drum Synthesizer", "price": "between 200.0 and 800.0"},
-                "amplifier": {"name": "Amplifier", "price": "between 500.0 and 1000.0"}
+                "hologen": {
+                    "name": "Holo Generator",
+                    "price": "500.0",
+                    "description": "A small box, about 4 by 2 by 6 inches, that projects a holographic picture from a replaceable chip. It accepts chips from most digital cameras and can be linked to a digital recorder/player."
+                },
+                "videoBoard": {
+                    "name": "Video Board",
+                    "price": "100.0",
+                    "note": "per square foot",
+                    "description": "A monitor using flat-LCD technology. No thicker than an inch, most are built into TVs, but all have input plugs for use as readout monitors. Large units are used as advertising signs."
+                },
+                "dataChip": {
+                    "name": "Datachip",
+                    "price": "10.0",
+                    "description": "The storage medium of the future. Usually plastic-cased, datachips come as buttons, flat squares and triangular slivers; adapter plugs let any recorder read any shape."
+                },
+                "logcompass": {
+                    "name": "Logcompass",
+                    "price": "50.0",
+                    "description": "A programmable inertial compass that tracks changes in direction from a fixed bearing or point."
+                },
+                "digitalRecorder": {
+                    "name": "Digital Recorder",
+                    "price": "300.0",
+                    "description": "An audio recorder using datachip technology. Most are the size of two paperback books stacked flat, although some are smaller than a pack of cards."
+                },
+                "digitalCamera": {
+                    "name": "Digital Camera",
+                    "price": "150.0",
+                    "description": "Digitizes still images onto a chip cartridge. About the size of a pack of cigarettes."
+                },
+                "videoCam": {
+                    "name": "VideoCam",
+                    "price": "800.0",
+                    "description": "Can be headset-mounted, shoulder-mounted or handheld depending on size. Sound and image are normally recorded on a compact tape-pak, or fed directly to a transmitter through cables. The listed price is for the least expensive shoulder-carried model."
+                },
+                "tapePlayer": {
+                    "name": "Video/Audio Tape Player",
+                    "price": "40.0",
+                    "description": "Plays VideoCam tape-paks as well as many older-style audio tapes."
+                },
+                "tape": {
+                    "name": "Video Tape",
+                    "price": "4.0",
+                    "description": "High-density digital media capable of handling both audio and visual images."
+                },
+                "pocketTV": {
+                    "name": "Pocket TV",
+                    "price": "80.0",
+                    "description": "Uses a flat-scan screen in a package about 5 by 5 by 3/4 inches or smaller and receives most VHF and UHF stations."
+                },
+                "chipPlayer": {
+                    "name": "Digital Chip Player",
+                    "price": "150.0",
+                    "description": "Plays audio- and video-recorded chips. A Video Board is required to display a chip's video track."
+                },
+                "chip": {
+                    "name": "Digital Music Chip",
+                    "price": "20.0",
+                    "description": "Stores one to six music albums in semiconductor and plastic form. Read-write versions are available."
+                },
+                "eletricGuitar": {
+                    "name": "Electric Guitar",
+                    "price": "between 100.0 and 500.0",
+                    "description": "Lighter and more flexible than the classic axe, sometimes in an unrecognizable shape. Strings and frets may even be replaced by banks of keys."
+                },
+                "eletronicKeyboard": {
+                    "name": "Electronic Keyboard",
+                    "price": "between 200.0 and 900.0",
+                    "description": "Little changed from present-day keyboards except in size and power."
+                },
+                "drumSynthesizer": {
+                    "name": "Drum Synthesizer",
+                    "price": "between 200.0 and 800.0",
+                    "description": "A set of percussion pads and a sound box. It fits into a couple of suitcases and can be arranged however the drummer prefers."
+                },
+                "amplifier": {
+                    "name": "Amplifier",
+                    "price": "between 500.0 and 1000.0",
+                    "description": "Amplification equipment for electronic instruments."
+                }
             }
         },
         "dataSystems": {
+            "name": "Data Systems",
             "description": "Data Systems",
             "list": {
-                "laptop": {"name": "Laptop Computer", "price": "900.0"},
-                "pocketComputer": {"name": "Pocket Computer", "price": "100.0"},
-                "cybermodem": {"name": "Cybermodem", "price": "Varies by design"},
-                "cellularCybermodem": {"name": "Cellular Cybermodem", "price": "Varies by design"},
-                "interfaceCables": {"name": "Interface Cables", "price": "Between 20.0 and 30.0"},
-                "lowImpedance": {"name": "Low Impedance Cables", "price": "60.0"},
-                "trodeSet": {"name": "Trodes Set", "price": "20.0"},
-                "keyboard": {"name": "Keyboard", "price": "100.0"},
-                "terminal": {"name": "Terminal", "price": "400.0"}
+                "laptop": {
+                    "name": "Laptop Computer",
+                    "price": "900.0",
+                    "description": "A common portable with an internal hard drive, detachable Video Board and slots for data or programming chips. It lacks the advanced CPUs and memory of a regular computer and cannot be used for Netrunning."
+                },
+                "pocketComputer": {
+                    "name": "Pocket Computer",
+                    "price": "100.0",
+                    "description": "A programmable calculator with keyboard and chip slots, holding up to 100 pages of alphanumeric memory."
+                },
+                "cybermodem": {
+                    "name": "Cybermodem",
+                    "price": "Varies by design",
+                    "description": "See the Netrunning section."
+                },
+                "cellularCybermodem": {
+                    "name": "Cellular Cybermodem",
+                    "price": "Varies by design",
+                    "description": "See the Netrunning section, page 133."
+                },
+                "interfaceCables": {
+                    "name": "Interface Cables",
+                    "price": "between 20.0 and 30.0",
+                    "description": "Typical plug-ended splicing cables that connect a cyber-operated machine to a person's Interface Plugs."
+                },
+                "lowImpedance": {
+                    "name": "Low Impedance Cables",
+                    "price": "60.0",
+                    "description": "Special low-resistance, low-interference cables for improved data transfer. They grant +1 to interfacing tasks such as controlling cybervehicles or Netrunning."
+                },
+                "trodeSet": {
+                    "name": "'Trode Set",
+                    "price": "20.0",
+                    "description": "A low-efficiency headset for piggybacking in the Net. Applies -2 to Interface."
+                },
+                "keyboard": {
+                    "name": "Keyboard",
+                    "price": "100.0",
+                    "description": "Can be connected to a cybermodem or other electronic equipment."
+                },
+                "terminal": {
+                    "name": "Terminal",
+                    "price": "400.0",
+                    "description": "A workstation with keyboard, Video Board and I/O connectors. It can be used to Netrun, making the runner immune to most Black software, but applies -5 to Interface. Terminal operators are commonly known as net-tortoises."
+                }
             }
         },
         "communications": {
+            "name": "Communications",
             "description": "Communications",
             "list": {
-                "mastoid": {"name": "Mastoid Commo", "price": "100.0"},
-                "pocketCommo": {"name": "Pocket Commo", "price": "50.0"},
-                "cellularPhone": {"name": "Cellular Phone", "price": "400.0"},
-                "miniCellPhone": {"name": "Mini Cellular Phone", "price": "800.0"}
+                "mastoid": {
+                    "name": "Mastoid Commo",
+                    "price": "100.0",
+                    "description": "A radio transceiver glued to the jaw and temple. It transmits by subvocalization and receives through soundless vibrations. Range: 10 miles."
+                },
+                "pocketCommo": {
+                    "name": "Pocket Commo",
+                    "price": "50.0",
+                    "description": "A typical small walkie-talkie. Range: 10 miles."
+                },
+                "cellularPhone": {
+                    "name": "Cellular Phone",
+                    "price": "400.0",
+                    "description": "Mobile communication anywhere within a radiotelephone transceiver network. Service costs 100 eb per month."
+                },
+                "miniCellPhone": {
+                    "name": "Mini Cell Phone",
+                    "price": "800.0",
+                    "description": "Fits inside a pack of cigarettes."
+                }
             }
         },
         "surveillance": {
+            "name": "Surveillance",
             "description": "Surveillance",
             "list": {
-                "binglasses": {"name": "Binglasses", "price": "200.0"},
-                "binocular": {"name": "Binocular", "price": "20.0"},
-                "lightBoosterGoogle": {"name": "Light Booster Googles", "price": "200.0"},
-                "irGoogles": {"name": "IR Googles", "price": "250.0"},
-                "irFlash": {"name": "IR Flash", "price": "50.0"}
+                "binglasses": {
+                    "name": "Binoglasses",
+                    "price": "200.0",
+                    "description": "High-tech vision aids combining binoculars with a laser rangefinder and sometimes IR lenses. More expensive models may include a digital camera."
+                },
+                "binocular": {
+                    "name": "Binoculars",
+                    "price": "20.0",
+                    "description": "Standard binoculars."
+                },
+                "lightBoosterGoogle": {
+                    "name": "Light Booster Goggles",
+                    "price": "200.0",
+                    "description": "Light-intensification goggles that amplify ambient light for night vision using Starlite technology. Sudden bright light can overwhelm them. With a Difficult tuning task, they can detect active IR beams."
+                },
+                "irGoogles": {
+                    "name": "IR Goggles",
+                    "price": "250.0",
+                    "description": "Detect hazy background infrared sources. Normally used with an active IR source for invisible illumination."
+                },
+                "irFlash": {
+                    "name": "IR Flashlight",
+                    "price": "50.0",
+                    "description": "An active infrared light source. UV versions are similar and can be used with the proper cyberoptic."
+                }
             }
         },
         "entertainment": {
+            "name": "Entertainment",
             "description": "Entertainment",
-            "modifiers": {"Fair": "1x", "Good": "2x", "Excellent": "3x"},
+            "modifiers": {
+                "Fair": "1x",
+                "Good": "2x",
+                "Excellent": "3x"
+            },
             "list": {
-                "movie": {"name": "Movie", "price": "10.0"},
-                "chipRental": {"name": "VCR/Chip Rental", "price": "4.0"},
-                "braindance": {"name": "Braindance", "price": "20.0"},
-                "liveConcert": {"name": "Live Concert/Sport Event", "price": "50.0"},
-                "fastFood": {"name": "Fast Food", "price": "5.0"},
-                "wellDrink": {"name": "Well Drink", "price": "3.0"},
-                "restaurant": {"name": "Restaurant Meal", "price": "20.0"}
+                "movie": {
+                    "name": "Movie",
+                    "price": "10.0"
+                },
+                "chipRental": {
+                    "name": "VCR/Chip Rental",
+                    "price": "4.0"
+                },
+                "braindance": {
+                    "name": "Braindance",
+                    "price": "20.0"
+                },
+                "liveConcert": {
+                    "name": "Live Concert/Sports Event",
+                    "price": "50.0"
+                },
+                "fastFood": {
+                    "name": "Fast Food Meal",
+                    "price": "5.0"
+                },
+                "wellDrink": {
+                    "name": "Well Drink",
+                    "price": "3.0"
+                },
+                "restaurant": {
+                    "name": "Restaurant Meal",
+                    "price": "20.0",
+                    "note": "restaurant or bar quality modifier applies"
+                }
             }
         },
         "security": {
+            "name": "Security",
             "description": "Security",
             "list": {
-                "keylock": {"name": "Keylock", "note": " per level", "price": "20.0"},
-                "cardlock": {"name": "Cardlock", "note": "per level", "price": "200.0"},
-                "vocolock": {"name": "Vocolock", "note": "per level", "price": "200.0"},
-                "lineTap": {"name": "Line Tap", "price": "200.0"},
-                "codeDecryptor": {"name": "Code Decryptor", "price": "500.0"},
-                "vocDecryptor": {"name": "Vocal Decryptor", "price": "1000.0"},
-                "securityScanner": {"name": "Security Scanner", "price": "1500.0"},
-                "poisonSniffer": {"name": "Poison Sniffer", "price": "1500.0"},
-                "jammingTransmitter": {"name": "Jamming Transmitter", "price": "500.0"},
-                "scannerPlate": {"name": "Scanner Plate", "price": "500.0"},
-                "movementSensor": {"name": "Movement Sensor", "price": "40.0"},
-                "passCard": {"name": "Pass Card", "price": "10.0"},
-                "trackingDevice": {"name": "Tracking Device", "price": "1000.0"},
-                "tracerButton": {"name": "Tracer Button", "price": "50.0"},
-                "remoteSensors": {"name": "Remote Sensors", "price": "700.0"},
-                "plasKuffs": {"name": "PlasKuffs", "price": "100.0"},
-                "stripwireBlinders": {"name": "Stripwire Blinders", "price": "5.0"}
+                "keylock": {
+                    "name": "Keylock",
+                    "price": "20.0",
+                    "note": "per level",
+                    "description": "A mechanical portal lock. Locks have four levels: Low Security (15), Medium Security (20), High Security (25) and Maximum Security (30)."
+                },
+                "cardlock": {
+                    "name": "Cardlock",
+                    "price": "100.0",
+                    "note": "per level",
+                    "description": "An electronic portal lock using a magnetically coded card. Locks have four levels: Low Security (15), Medium Security (20), High Security (25) and Maximum Security (30)."
+                },
+                "vocolock": {
+                    "name": "Vocolock",
+                    "price": "200.0",
+                    "note": "per level",
+                    "description": "An electronic portal lock using voice recognition. Locks have four levels: Low Security (15), Medium Security (20), High Security (25) and Maximum Security (30)."
+                },
+                "lineTap": {
+                    "name": "Line Tap",
+                    "price": "200.0",
+                    "description": "Captures voice or data from a telecommunications line for recording or retransmission. Advanced models work from about a foot away and can be remote-controlled. They do not work on systems installed or upgraded after the 2008 fiber-optic switchover."
+                },
+                "codeDecryptor": {
+                    "name": "Code Decryptor",
+                    "price": "500.0",
+                    "description": "Its probe replaces a Cardlock's normal card and adds +5 to a TECH + Electronic Security + 1D10 test against the lock."
+                },
+                "vocDecryptor": {
+                    "name": "VocDecryptor",
+                    "price": "1000.0",
+                    "description": "A vocal modulator for penetrating Vocolocks."
+                },
+                "securityScanner": {
+                    "name": "Security Scanner",
+                    "price": "1500.0",
+                    "description": "Searches for electromagnetic fields produced by alarm systems, with a 75% chance to locate one. A TECH or INT test may be needed to identify the alarm type."
+                },
+                "poisonSniffer": {
+                    "name": "Poison Sniffer",
+                    "price": "1500.0",
+                    "description": "Checks air or liquid for specific poisons, or alerts the user to foreign substances. Accuracy: 85%."
+                },
+                "jammingTransmitter": {
+                    "name": "Jamming Transmitter",
+                    "price": "500.0",
+                    "description": "Usually carried in two or three large cases, though some fill an entire van. Jams electromagnetic transmissions in a 1,000-foot area, including cellular phones and some cyberware."
+                },
+                "scannerPlate": {
+                    "name": "Scanner Plate",
+                    "price": "500.0",
+                    "description": "A palmprint reader that can be attached to a Cardlock or Vocolock as an additional security layer."
+                },
+                "movementSensor": {
+                    "name": "Movement Sensor",
+                    "price": "40.0",
+                    "description": "An alarm system covering seismic, sonar, fixed IR or visible-light networks. Detects movement in a defined area with 95% reliability; its processor is about the size of a cigarette pack."
+                },
+                "passCard": {
+                    "name": "Passcard",
+                    "price": "10.0",
+                    "description": "The most common device used to open a Cardlock."
+                },
+                "trackingDevice": {
+                    "name": "Tracking Device",
+                    "price": "1000.0",
+                    "description": "Handheld or suitcase-sized equipment for detecting and following Tracer Buttons. Range: 1 mile."
+                },
+                "tracerButton": {
+                    "name": "Tracer Buttons",
+                    "price": "50.0",
+                    "note": "set of six",
+                    "description": "Range from matchbook-sized to pin-sized and use radioactivity or radio transmissions to reveal the position of whatever they are attached to. Some can be switched remotely."
+                },
+                "remoteSensors": {
+                    "name": "Remote Sensors",
+                    "price": "700.0"
+                },
+                "plasKuffs": {
+                    "name": "PlasKuffs",
+                    "price": "100.0",
+                    "description": "Strong restraint cuffs made from modern alloys. Breaking them is Nearly Impossible; half use a Cardlock."
+                },
+                "stripwireBlinders": {
+                    "name": "Stripwire Binders",
+                    "price": "5.0",
+                    "note": "box of twelve",
+                    "description": "Single-use reinforced plastic strips for temporary handcuffs and leg ties. They are Very Difficult to break, use ceramic fibers to resist cutting, and are guaranteed fireproof."
+                }
             }
         },
         "medical": {
+            "name": "Medical",
             "description": "Medical",
             "list": {
-                "dermalStapler": {"name": "Dermal Stapler", "price": "1000.0"},
-                "spraySkin": {"name": "Spray Skin", "note": "per can", "price": "50.0"},
-                "slapPatch": {"name": "Slap Patch", "price": "varies per drug type"},
-                "criotank": {"name": "Cryotank", "price": "1000.0"},
-                "medkit": {"name": "Medkit", "price": "5.0"},
-                "surgicalKit": {"name": "Surgical Kit", "price": "40.0"},
-                "firstAidKit": {"name": "First Aid Kit", "price": "10.0"},
-                "medscanner": {"name": "Medscanner", "price": "30.0"},
-                "drugAnalyzer": {"name": "Drug Analyzer", "price": "75.0"},
-                "airhypho": {"name": "Air Hypo", "price": "100.0"},
-                "clinicVisit": {"name": "Clinic Visit", "price": "300.0"},
-                "dayInICU": {"name": "Day in Intensive Care Unit", "price": "1000.0"},
-                "cloneLimbReplacement": {"name": "Clone Limb Replacement", "note": "varies by limb", "price": "1500.0"}
+                "dermalStapler": {
+                    "name": "Dermal Stapler",
+                    "price": "1000.0",
+                    "description": "Pulls the sides of a wound together and sutures them with compressed organic staples that dissolve over time."
+                },
+                "spraySkin": {
+                    "name": "Spray Skin",
+                    "price": "50.0",
+                    "note": "per can",
+                    "description": "A putty-like spray gel for severe abrasions. Antiseptic, sterile and air-permeable, it flakes off in about two weeks."
+                },
+                "slapPatch": {
+                    "name": "Slap Patch",
+                    "price": "varies by drug type",
+                    "description": "A small medicated plastic pad applied to the skin so the drug is absorbed in steady doses. See the Trauma Team section for drugs and prices."
+                },
+                "criotank": {
+                    "name": "Cryotank",
+                    "price": "100000.0",
+                    "description": "An advanced refrigeration tank that cools a body to preservation levels while life-support maintains blood and oxygen flow, keeping a dying body in relative stasis."
+                },
+                "medkit": {
+                    "name": "Medkit",
+                    "price": "50.0",
+                    "description": "A doctor's or military corpsman's bag containing antidotes, dressings, drugs, applicators, medicines and examination instruments."
+                },
+                "surgicalKit": {
+                    "name": "Surgical Set",
+                    "price": "400.0",
+                    "description": "A full set of surgical tools plus the chemicals and equipment needed to maintain a sterile operating field."
+                },
+                "firstAidKit": {
+                    "name": "First Aid Kit",
+                    "price": "10.0",
+                    "description": "A household medical box containing bandages, antiseptics and a simple painkiller."
+                },
+                "medscanner": {
+                    "name": "Medscanner",
+                    "price": "300.0",
+                    "description": "Reads body temperature, heart rate, blood pressure, respiration and blood sugar. Its chipped database grants +2 to Diagnose."
+                },
+                "drugAnalyzer": {
+                    "name": "Drug Analyser",
+                    "price": "75.0",
+                    "description": "Ranges from book-sized to briefcase-sized. Determines the purity of known drugs or identifies the molecular structure and likely effects of substances resembling entries in its library."
+                },
+                "airhypho": {
+                    "name": "Airhypo",
+                    "price": "100.0",
+                    "description": "Uses a burst of compressed air to force a liquid drug through the skin. See the Trauma Team section for drugs and prices."
+                },
+                "clinicVisit": {
+                    "name": "Clinic Visit",
+                    "price": "200.0"
+                },
+                "dayInHospital": {
+                    "name": "Day in Hospital",
+                    "price": "300.0"
+                },
+                "dayInICU": {
+                    "name": "Day in Intensive Care",
+                    "price": "1000.0"
+                },
+                "cloneLimbReplacement": {
+                    "name": "Clone Limb Replacement",
+                    "price": "1500.0",
+                    "note": "varies by limb"
+                }
             }
         },
         "furnshing": {
-            "description": "Furnishing",
+            "name": "Furnishings",
+            "description": "Furnishings",
             "list": {
-                "nylonCarryBag": {"name": "Nylon Carry Bag", "price": "5.0"},
-                "sleepingBag": {"name": "Sleeping Bag", "price": "25.0"},
-                "inflatableBed": {"name": "Inflatable Bed", "price": "25.0"},
-                "futon": {"name": "Futon", "price": "90.0"},
-                "realWoodFurniture": {"name": "Real Wood Furniture", "note": "per piece", "price": "200.0"}, 
-                "sintheticFurniture": {"name": "Synthetic Furniture", "note": "per piece", "price": "100.0"},
-                "apartmentCube": {"name": "Apartment Cube", "price": "5000.0"}, 
-                "lamp": {"name": "Lamp", "price": "20.0"},
-                "cleaningRobot": {"name": "Cleaning Robot", "price": "1000.0"}, 
-                "vocalSwitchSystem": {"name": "Vocal Switch System", "price": "100.0"}
+                "nylonCarryBag": {
+                    "name": "Nylon Carrybag",
+                    "price": "5.0",
+                    "description": "A 2000s athletic bag or kitbag available with many logos and in various sizes."
+                },
+                "sleepingBag": {
+                    "name": "Sleeping Bag",
+                    "price": "25.0",
+                    "description": "Lightweight and rated for temperatures down to -100 F. Compresses to a 12 by 6 by 4 inch bundle."
+                },
+                "inflatableBed": {
+                    "name": "Inflatable Bed",
+                    "price": "25.0",
+                    "description": "A self-inflating, highly compressed mattress package measuring about 6 by 2 by 4 inches when folded."
+                },
+                "futon": {
+                    "name": "Futon",
+                    "price": "90.0",
+                    "description": "A portable folding bed and pad of Japanese origin."
+                },
+                "realWoodFurniture": {
+                    "name": "Real Wood Furniture",
+                    "price": "200.0",
+                    "note": "per piece",
+                    "description": "Real wood furniture."
+                },
+                "sintheticFurniture": {
+                    "name": "Synthetic Furniture",
+                    "price": "100.0",
+                    "note": "per piece",
+                    "description": "Synthetic furniture."
+                },
+                "apartmentCube": {
+                    "name": "Apartment Cube",
+                    "price": "5000.0",
+                    "description": "A 10 by 10 by 8 foot living module with furnishings and appliances hidden in flush wall recesses. It contains a bed, closet, stove, refrigerator, TV, digital entertainment center, two chairs, fold-down desk and removable table, and can be transported as a single unit."
+                },
+                "lamp": {
+                    "name": "Lamp",
+                    "price": "20.0",
+                    "description": "Gives light and comes in an infinity of shapes and colors."
+                },
+                "cleaningRobot": {
+                    "name": "Cleaning Bot",
+                    "price": "1000.0",
+                    "description": "A small preprogrammed robotic cleaner, usually the size of a portable canister vacuum. Not very intelligent."
+                },
+                "vocalSwitchSystem": {
+                    "name": "Vocal Switching System",
+                    "price": "100.0",
+                    "description": "Voice-activated controls for lights and appliances."
+                }
             }
         },
         "vehicles": {
-            "description": "Vehicles",
+            "name": "Vehicles",
+            "description": "Typical vehicles of the early 21st century. Cybercontrols double the listed cost.",
             "list": {
-                "scooter": {"name": "Scooter", "price": "500.0"},
-                "motorcycle": {"name": "Motorcycle", "price": "1500.0"},
-                "cityCar": {"name": "City Car", "price": "2000.0"},
-                "smallSubcompact": {"name": "Small Subcompact", "price": "6000.0"},
-                "sportsCar": {"name": "Sports Car", "price": "20000.0"},
-                "luxurySedan": {"name": "Luxury Sedan", "price": "40000.0"},
-                "TODO": "Add more vehicles"
+                "scooter": {
+                    "name": "Scooter",
+                    "price": "500.0",
+                    "description": "An updated electric motorscooter with a top speed of about 50 mph and six hours of travel per fastcharge."
+                },
+                "motorcycle": {
+                    "name": "Motorcycle",
+                    "price": "1500.0",
+                    "description": "Usually a recumbent design with protective plastic fairings. Electric models reach about 65 mph with eight hours of travel per fastcharge; CHOOH2 models reach about 140 mph with a four-gallon tank."
+                },
+                "cityCar": {
+                    "name": "CityCar",
+                    "price": "2000.0",
+                    "description": "A one-person, three-wheeled Corporate Zone car with a top speed around 40 mph and four hours per fastcharge. CityCars can also be rented from corporate-area kiosks."
+                },
+                "smallSubcompact": {
+                    "name": "Small Subcompact",
+                    "price": "6000.0",
+                    "description": "Usually methanol- or CHOOH2-powered, with a top speed around 90 mph, a ten-gallon tank and four seats."
+                },
+                "mediumSedan": {
+                    "name": "Medium Sedan",
+                    "price": "10000.0",
+                    "description": "Methanol- or CHOOH2-powered, with a top speed around 90 mph, a fifteen-gallon tank and four seats."
+                },
+                "sportsCar": {
+                    "name": "Sportscar",
+                    "price": "20000.0",
+                    "description": "Usually CHOOH2-powered, with a top speed around 210 mph, a ten-gallon tank and two seats."
+                },
+                "luxurySedan": {
+                    "name": "Luxury Sedan",
+                    "price": "40000.0",
+                    "description": "Methanol- or CHOOH2-powered, with a top speed around 90 mph, a twenty-gallon tank and six seats."
+                }
             }
         },
         "lifestyle": {
+            "name": "Lifestyle",
             "description": "Lifestyle",
             "list": {
-                "cellPhoneService": {"name": "Cellular Phone Service", "note": "per month", "price": "100.0"},
-                "standardPhoneService": {"name": "Standard Phone Service", "note": "per month", "price": "30.0"},
-                "payPhoneCall": {"name": "Pay Phone Call", "note": "per minute", "price": "0.50"},
-                "dataTermUse": {"name": "Data Term Use", "note": "per minute", "price": "1.0"}, 
-                "credChipAccount": {"name": "Cred Chip Account", "note": "per month", "price": "20.0"}, 
-                "healthPlan": {"name": "Health Plan", "note": "per month", "price": "1000.0"},
-                "traumaTeamSilver": {"name": "Trauma Team Silver Plan", "note": "Services: paramedic / Surgery Cost Separated / response: 1d10 turns / per month", "price": "500.0"},
-                "traumaTeamGold": {"name": "Trauma Team Gold Plan", "note": "Services: paramedic, ambulance, LIMITED armed escort/ Surgery Cost Separated / response: 1d8 turns / per month", "price": "1000.0"},
-                "traumaTeamPlatinum": {"name": "Trauma Team Platinum Plan", "note": "Services: paramedic, ambulance, armed escort/ Surgery Cost Separated / response: 1d6 turns / per month", "price": "2000.0"}, 
-                "traumaTeamDiamond": {"name": "Trauma Team Diamond Plan", "note": "Services: paramedic, ambulance, armed escort, cyberware repair/ Surgery Cost Include / response: 1d4 turns / per month", "price": "5000.0"},
-                "air": {"name": "Air", "note": "per minute", "price": "5.0"},
-                "maglevChip": {"name": "Maglev Chip", "note": "per station", "price": "0.25"},
-                "taxi": {"name": "Taxi", "note": "per mile", "price": "3.0"},
-                "avTaxi": {"name": "AV Taxi", "note": "per mile", "price": "10.0"},
-                "cableTV": {"name": "Cable TV", "note": "per month", "price": "40.0"}
+                "cellPhoneService": {
+                    "name": "Cell Phone Service",
+                    "price": "100.0",
+                    "note": "per month"
+                },
+                "standardPhoneService": {
+                    "name": "Standard Phone Service",
+                    "price": "30.0",
+                    "note": "per month"
+                },
+                "payPhoneCall": {
+                    "name": "Pay Phone Call",
+                    "price": "0.50",
+                    "note": "per minute"
+                },
+                "dataTermUse": {
+                    "name": "DataTerm Use",
+                    "price": "1.0",
+                    "note": "per minute"
+                },
+                "credChipAccount": {
+                    "name": "CredChip Account",
+                    "price": "20.0",
+                    "note": "per month",
+                    "description": "A debit card used to carry cash electronically instead of in a wallet."
+                },
+                "healthPlan": {
+                    "name": "Health Plan",
+                    "price": "1000.0",
+                    "note": "per month"
+                },
+                "traumaTeamSilver": {
+                    "name": "Trauma Team Silver Plan",
+                    "price": "500.0",
+                    "note": "Paramedic service; surgery billed separately; response in 1D10 turns; per month"
+                },
+                "traumaTeamGold": {
+                    "name": "Trauma Team Gold Plan",
+                    "price": "1000.0",
+                    "note": "Paramedic and ambulance service with limited armed escort; surgery billed separately; response in 1D8 turns; per month"
+                },
+                "traumaTeamPlatinum": {
+                    "name": "Trauma Team Platinum Plan",
+                    "price": "2000.0",
+                    "note": "Paramedic, ambulance and armed escort; surgery billed separately; response in 1D6 turns; per month"
+                },
+                "traumaTeamDiamond": {
+                    "name": "Trauma Team Diamond Plan",
+                    "price": "5000.0",
+                    "note": "Paramedic, ambulance, armed escort and cyberware repair; surgery included; response in 1D4 turns; per month"
+                },
+                "air": {
+                    "name": "Air",
+                    "price": "5.0",
+                    "note": "per minute",
+                    "description": "In heavily polluted regions, clean air is sold by air bars, vendors, street-corner machines and stores."
+                },
+                "maglevChip": {
+                    "name": "Mag Lev Chit",
+                    "price": "0.25",
+                    "note": "per station"
+                },
+                "taxi": {
+                    "name": "Taxi",
+                    "price": "3.0",
+                    "note": "per mile"
+                },
+                "avTaxi": {
+                    "name": "AV-Taxi",
+                    "price": "10.0",
+                    "note": "per mile"
+                },
+                "cableTV": {
+                    "name": "Cable TV",
+                    "price": "40.0",
+                    "note": "per month"
+                }
             }
         },
         "groceries": {
+            "name": "Groceries",
             "description": "Groceries",
             "list": {
-                "kibble": {"name": "Kibble", "note": "1 week", "price": "50.0"},
-                "genericPrepak": {"name": "Generic Prepak", "note": "1 week", "price": "150.0"},
-                "goodPrepak": {"name": "Good Prepak", "note": "1 week", "price": "200.0"},
-                "freshFood": {"name": "Fresh Food", "note": "1 week", "price": "300.0"}
+                "kibble": {
+                    "name": "Kibble",
+                    "price": "50.0",
+                    "note": "per week",
+                    "description": "A mass-produced nutrient satisfying most dietary needs but resembling dry pet food in look, smell and taste."
+                },
+                "genericPrepak": {
+                    "name": "Generic Prepak",
+                    "price": "150.0",
+                    "note": "per week",
+                    "description": "A basic packaged meal that can be microwaved or refrigerated. Many include chemical heating or cooling tabs."
+                },
+                "goodPrepak": {
+                    "name": "Good Prepak",
+                    "price": "200.0",
+                    "note": "per week",
+                    "description": "A good restaurant meal in a package, representing the best commonly available pre-made food."
+                },
+                "freshFood": {
+                    "name": "Fresh Food",
+                    "price": "300.0",
+                    "note": "per week",
+                    "description": "Actual fresh food, or at least something eaten by someone who has seen it."
+                }
             }
         },
         "housing": {
+            "name": "Housing",
             "description": "Housing",
-            "modifiers": {"combatZone": "1x", "moderateZone": "2x", "corporateZone": "4x", "executiveZone": "6x"},
+            "modifiers": {
+                "combatZone": "1x",
+                "moderateZone": "2x",
+                "corporateZone": "4x",
+                "executiveZone": "6x"
+            },
             "list": {
-                "coffin": {"name": "Coffin", "note": "per night", "price": "20.0"},
-                "hotelRoom": {"name": "Hotel Room", "note": "per night", "price": "100.0"},
-                "apartment": {"name": "Apartment", "note": "per month / per room / modifier applies", "price": "200.0"},
-                "house": {"name": "House", "note": "per month / per room / modifier applies", "price": "150.0"},
-                "utilities": {"name": "Utilities", "note": "per month", "price": "100.0"}
+                "coffin": {
+                    "name": "Coffin",
+                    "price": "20.0",
+                    "note": "per night",
+                    "description": "A stacked, coin-operated sleeping box found in airports and flophouses. It has just enough room to turn around or read in bed; expensive models may include a phone or mini-TV."
+                },
+                "hotelRoom": {
+                    "name": "Hotel Room",
+                    "price": "100.0",
+                    "note": "per night"
+                },
+                "apartment": {
+                    "name": "Apartment/Condo",
+                    "price": "200.0",
+                    "note": "per room, per month; location modifier applies"
+                },
+                "house": {
+                    "name": "House",
+                    "price": "150.0",
+                    "note": "per room, per month; location modifier applies"
+                },
+                "utilities": {
+                    "name": "Utilities",
+                    "price": "100.0",
+                    "note": "per month"
+                }
             }
         }
     }
 }
-

@@ -1,5 +1,8 @@
 (function () {
   const root = typeof window !== "undefined" ? window : globalThis;
+  const tr = (key, fallback, params = {}) => root.I18n
+    ? root.I18n.t(key, params, fallback)
+    : fallback.replace(/\{([a-zA-Z0-9_]+)\}/g, (_match, name) => params[name] ?? `{${name}}`);
   function parseNumeric(value) {
     if (typeof value === "number") return Number.isFinite(value) ? value : 0;
 
@@ -17,10 +20,10 @@
 
   function formatCurrency(value) {
     const safe = Number(value) || 0;
+    const locale = root.I18n?.getLocale?.() || "en-US";
     return (
       safe
-        .toLocaleString("en-US", { style: "currency", currency: "USD" })
-        .replace("$", "") + " eb"
+        .toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " eb"
     );
   }
 
@@ -31,6 +34,220 @@
       .replace(/[^a-z0-9\s]/g, "")
       .replace(/\s+/g, " ")
       .trim();
+  }
+
+  function normalizeId(value) {
+    return String(value || "").trim().toLowerCase();
+  }
+
+  function humanizeId(value) {
+    return String(value || "")
+      .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+      .replace(/[_:-]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .replace(/\b\w/g, (letter) => letter.toUpperCase());
+  }
+
+  function stringList(value) {
+    return Array.isArray(value)
+      ? value.map((entry) => String(entry || "").trim()).filter(Boolean)
+      : [];
+  }
+
+  function itemIds(item) {
+    return [item?.id, ...stringList(item?.legacyIds)]
+      .map(normalizeId)
+      .filter(Boolean);
+  }
+
+  function resolveRequirementLabel(id, labels) {
+    const normalized = normalizeId(id);
+    if (labels instanceof Map) {
+      return labels.get(normalized) || humanizeId(id);
+    }
+    if (labels && typeof labels === "object") {
+      return labels[normalized] || labels[id] || humanizeId(id);
+    }
+    return humanizeId(id);
+  }
+
+  function analyzeConsistency(items, options = {}) {
+    const cart = Array.isArray(items) ? items : [];
+    const labels = options.labels;
+    const warnings = [];
+    const warningKeys = new Set();
+    const installedIds = new Set(cart.flatMap(itemIds));
+    const purchasesById = new Map();
+    const providerState = new Map();
+    const slotUsageByFamily = new Map();
+
+    function addWarning(key, message) {
+      if (warningKeys.has(key)) return;
+      warningKeys.add(key);
+      warnings.push(message);
+    }
+
+    function registerProvider(provider) {
+      if (!provider || typeof provider !== "object") return;
+      const family = normalizeId(provider.slotFamily);
+      if (!family) return;
+
+      if (!providerState.has(family)) {
+        providerState.set(family, {
+          count: 0,
+          finiteCapacity: 0,
+          hasUnboundedCapacity: false,
+        });
+      }
+
+      const state = providerState.get(family);
+      state.count += 1;
+
+      if (provider.slotCapacity === undefined || provider.slotCapacity === null) {
+        state.hasUnboundedCapacity = true;
+        return;
+      }
+
+      const capacity = Number(provider.slotCapacity);
+      if (Number.isFinite(capacity) && capacity >= 0) {
+        state.finiteCapacity += capacity;
+      }
+    }
+
+    cart.forEach((item) => {
+      const itemId = normalizeId(item?.id);
+      if (itemId) {
+        purchasesById.set(itemId, (purchasesById.get(itemId) || 0) + 1);
+      }
+
+      const installation = item?.installation || {};
+      if (installation.slotProvider || installation.slotCapacity !== undefined) {
+        registerProvider({
+          slotFamily: installation.slotFamily || installation.slotProvider || item?.id,
+          slotCapacity: installation.slotCapacity,
+        });
+      }
+      if (Array.isArray(installation.provides)) {
+        installation.provides.forEach(registerProvider);
+      }
+
+      const usage = Number(installation.slotUsage);
+      const usageFamily = normalizeId(
+        installation.slotFamily || installation.slotProvider,
+      );
+      if (usageFamily && Number.isFinite(usage) && usage > 0) {
+        slotUsageByFamily.set(
+          usageFamily,
+          (slotUsageByFamily.get(usageFamily) || 0) + usage,
+        );
+      }
+    });
+
+    cart.forEach((item) => {
+      const installation = item?.installation || {};
+      const itemName = item?.name || humanizeId(item?.id || "item");
+
+      stringList(installation.requires).forEach((requiredId) => {
+        const normalized = normalizeId(requiredId);
+        if (!installedIds.has(normalized)) {
+          addWarning(
+            `required:${normalizeId(item?.id)}:${normalized}`,
+            tr("consistency.missing", `${itemName}: missing ${resolveRequirementLabel(requiredId, labels)}`, {
+              item: itemName,
+              requirement: resolveRequirementLabel(requiredId, labels),
+            }),
+          );
+        }
+      });
+
+      const requiresAny = stringList(installation.requiresAny);
+      if (
+        requiresAny.length > 0
+        && !requiresAny.some((id) => installedIds.has(normalizeId(id)))
+      ) {
+          addWarning(
+            `required-any:${normalizeId(item?.id)}:${requiresAny.map(normalizeId).join("|")}`,
+            tr("consistency.missing_any", `${itemName}: missing one of [${requiresAny
+              .map((id) => resolveRequirementLabel(id, labels))
+              .join(", ")}]`, {
+              item: itemName,
+              requirements: requiresAny.map((id) => resolveRequirementLabel(id, labels)).join(", "),
+            }),
+        );
+      }
+
+      const requiresAnyGroups = Array.isArray(installation.requiresAnyGroups)
+        ? installation.requiresAnyGroups
+        : [];
+      requiresAnyGroups.forEach((group, index) => {
+        const candidates = stringList(group);
+        if (
+          candidates.length > 0
+          && !candidates.some((id) => installedIds.has(normalizeId(id)))
+        ) {
+          addWarning(
+            `required-any-group:${normalizeId(item?.id)}:${index}`,
+            tr("consistency.missing_any", `${itemName}: missing one of [${candidates
+              .map((id) => resolveRequirementLabel(id, labels))
+              .join(", ")}]`, {
+              item: itemName,
+              requirements: candidates.map((id) => resolveRequirementLabel(id, labels)).join(", "),
+            }),
+          );
+        }
+      });
+
+      const itemId = normalizeId(item?.id);
+      const maxPurchases = Number(item?.maxPurchases);
+      if (itemId && Number.isFinite(maxPurchases) && maxPurchases > 0) {
+        const count = purchasesById.get(itemId) || 0;
+        if (count > maxPurchases) {
+          addWarning(
+            `max:${itemId}`,
+            tr("consistency.max", `${itemName}: max exceeded (${count}/${maxPurchases})`, {
+              item: itemName,
+              count,
+              max: maxPurchases,
+            }),
+          );
+        }
+      }
+    });
+
+    slotUsageByFamily.forEach((used, family) => {
+      const provider = providerState.get(family);
+      const familyLabel = humanizeId(family);
+
+      if (!provider) {
+        addWarning(
+          `slot-provider:${family}`,
+          tr("consistency.slot_provider", `${familyLabel}: missing slot provider (${used} used)`, {
+            family: familyLabel,
+            used,
+          }),
+        );
+        return;
+      }
+
+      if (!provider.hasUnboundedCapacity && used > provider.finiteCapacity) {
+        addWarning(
+          `slot-overflow:${family}`,
+          tr("consistency.slot_overflow", `${familyLabel}: slots overflow (${used}/${provider.finiteCapacity})`, {
+            family: familyLabel,
+            used,
+            capacity: provider.finiteCapacity,
+          }),
+        );
+      }
+    });
+
+    return {
+      warnings,
+      installedIds,
+      providerState,
+      slotUsageByFamily,
+    };
   }
 
   function safeGetArray(storageKey) {
@@ -153,6 +370,12 @@
     parseNumeric,
     formatCurrency,
     normalizeName,
+    normalizeId,
+    humanizeId,
+    stringList,
+    itemIds,
+    resolveRequirementLabel,
+    analyzeConsistency,
     safeGetArray,
     rollHL,
     hlComparable,

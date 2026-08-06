@@ -12,12 +12,14 @@
     window.location.href = "index.html";
   } else {
     // Limpeza preventiva
-    localStorage.clear();
+    if (window.I18n) I18n.preserveLocaleAndClear(localStorage);
+    else localStorage.clear();
     sessionStorage.clear();
   }
 })();
 
 document.addEventListener("DOMContentLoaded", () => {
+  const tr = (key, fallback) => window.I18n ? I18n.t(key, {}, fallback) : fallback;
   const inputHandle = document.getElementById("runner-handle");
   const btnLogin = document.getElementById("btn-jack-in");
   const form = document.getElementById("login-form");
@@ -40,15 +42,15 @@ document.addEventListener("DOMContentLoaded", () => {
       btnLogin.disabled = false;
       btnLogin.style.opacity = "1";
       btnLogin.style.cursor = "pointer";
-      btnLogin.textContent = "JACK IN";
+      btnLogin.textContent = tr("login.jack_in", "JACK IN");
     } else {
       btnLogin.disabled = true;
       btnLogin.style.opacity = "0.3";
       btnLogin.style.cursor = "not-allowed";
       btnLogin.textContent =
         value.length > 0 && !VALID_REGEX.test(value)
-          ? "INVALID CHARACTERS"
-          : "JACK IN";
+          ? tr("login.invalid", "INVALID CHARACTERS")
+          : tr("login.jack_in", "JACK IN");
     }
   }
 
@@ -60,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Login Bem Sucedido
     localStorage.setItem("cyber_runner_id", handle.toUpperCase());
 
-    btnLogin.textContent = "ACCESS GRANTED...";
+    btnLogin.textContent = tr("login.granted", "ACCESS GRANTED...");
     btnLogin.style.background = "var(--neon-green)";
     btnLogin.style.color = "#000";
     btnLogin.style.borderColor = "var(--neon-green)";

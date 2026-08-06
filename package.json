@@ -1,10 +1,24 @@
 {
+  "name": "bytes-and-blades-static",
+  "private": true,
+  "version": "1.0.0",
   "scripts": {
-    "test": "npm run test:unit",
-    "test:unit": "node tests/core-utils.test.js",
-    "validate:data": "node js/validate_data.js"
+    "dev": "vite",
+    "restore:equipment:en-US": "python3 scripts/repair-equipment-en.py",
+    "restore:weapons:en-US": "python3 scripts/repair-weapons-en.py",
+    "localize:cyberware:pt-BR": "python3 scripts/build-cyberwares-ptbr.py",
+    "localize:equipment:pt-BR": "python3 scripts/build-equipment-ptbr.py",
+    "localize:weapons:pt-BR": "python3 scripts/build-weapons-ptbr.py",
+    "localize:pt-BR": "npm run localize:cyberware:pt-BR && npm run localize:equipment:pt-BR && npm run localize:weapons:pt-BR",
+    "build": "node scripts/build-static.js",
+    "test": "mkdir -p tmp/test-runtime && TMPDIR=\"$PWD/tmp/test-runtime\" node --test --test-concurrency=1 --experimental-test-coverage --test-coverage-lines=99 --test-coverage-branches=80 --test-coverage-functions=95 --test-coverage-include='js/*.js' --test-coverage-exclude='js/fix_*.js' --test-coverage-exclude='js/validate_data.js' tests/*.test.js",
+    "test:quick": "mkdir -p tmp/test-runtime && TMPDIR=\"$PWD/tmp/test-runtime\" node --test --test-concurrency=1 tests/*.test.js",
+    "check:syntax": "for file in js/*.js scripts/*.js; do node --check \"$file\"; done",
+    "css-tree": "^3.2.1",
+    "jsdom": "^26.1.0",
+    "vite": "^7.3.6"
   },
-  "dependencies": {
-    "ajv": "^8.17.1"
+  "allowScripts": {
+    "esbuild@0.28.1": true
   }
 }

@@ -2,27 +2,57 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Cyberwares Dataset",
   "type": "object",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
-    "$id": { "type": "string" },
-    "title": { "type": "string" },
-    "description": { "type": "string" },
-    "version": { "type": "string" },
-    "author": { "type": "string" },
-    "date": { "type": "string" },
+    "$id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
     "data": {
       "type": "object",
       "additionalProperties": {
         "type": "object",
         "properties": {
-          "Description": { "type": "string" },
-          "description": { "type": "string" },
-          "name": { "type": "string" },
-          "types": { "type": "object" },
-          "modifiers": { "type": "object" },
-          "itens": { "$ref": "#/definitions/itemMap" },
-          "items": { "$ref": "#/definitions/itemMap" },
-          "list": { "$ref": "#/definitions/itemMap" }
+          "Description": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "types": {
+            "type": "object"
+          },
+          "modifiers": {
+            "type": "object"
+          },
+          "itens": {
+            "$ref": "#/definitions/itemMap"
+          },
+          "items": {
+            "$ref": "#/definitions/itemMap"
+          },
+          "list": {
+            "$ref": "#/definitions/itemMap"
+          }
         },
         "additionalProperties": true
       }
@@ -32,48 +62,114 @@
   "definitions": {
     "itemMap": {
       "type": "object",
-      "additionalProperties": { "$ref": "#/definitions/item" }
+      "additionalProperties": {
+        "$ref": "#/definitions/item"
+      }
     },
     "item": {
       "type": "object",
-      "required": ["name"],
+      "required": [
+        "name"
+      ],
       "properties": {
-        "id": { "type": "string" },
-        "name": { "type": "string" },
-        "description": { "type": "string" },
-        "note": { "type": "string" },
-        "effect": { "type": "string" },
-        "price": { "type": ["string", "number"] },
-        "cost": { "type": ["string", "number"] },
-        "value": { "type": ["string", "number"] },
-        "HL": { "type": ["string", "number"] },
-        "hl": { "type": ["string", "number"] },
-        "humanity": { "type": ["string", "number"] },
-        "surg": { "type": "string" },
-        "CIR": { "type": "string" },
-        "cir": { "type": "string" },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "effect": {
+          "type": "string"
+        },
+        "price": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "cost": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "HL": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "hl": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "humanity": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "surg": {
+          "type": "string"
+        },
+        "CIR": {
+          "type": "string"
+        },
+        "cir": {
+          "type": "string"
+        },
         "tags": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "maxPurchases": {
           "type": "integer",
           "minimum": 1
         },
-        "alternativeAcquisition": { "type": "boolean" },
+        "alternativeAcquisition": {
+          "type": "boolean"
+        },
         "attributeBonuses": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["attribute", "value"],
+            "required": [
+              "attribute",
+              "value"
+            ],
             "properties": {
-              "attribute": { "type": "string" },
-              "value": { "type": "number" },
+              "attribute": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
               "mode": {
                 "type": "string",
-                "enum": ["flat", "percent"]
+                "enum": [
+                  "flat",
+                  "percent"
+                ]
               },
-              "scope": { "type": "string" }
+              "scope": {
+                "type": "string"
+              }
             },
             "additionalProperties": true
           }
@@ -82,16 +178,30 @@
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["skill", "value"],
+            "required": [
+              "skill",
+              "value"
+            ],
             "properties": {
-              "skill": { "type": "string" },
-              "value": { "type": "number" },
+              "skill": {
+                "type": "string"
+              },
+              "value": {
+                "type": "number"
+              },
               "mode": {
                 "type": "string",
-                "enum": ["flat", "percent"]
+                "enum": [
+                  "flat",
+                  "percent"
+                ]
               },
-              "scope": { "type": "string" },
-              "note": { "type": "string" }
+              "scope": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
             },
             "additionalProperties": true
           }
@@ -99,22 +209,38 @@
         "attributeSet": {
           "type": "object",
           "additionalProperties": {
-            "type": ["number", "string"]
+            "type": [
+              "number",
+              "string"
+            ]
           }
         },
         "priceModifiers": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["type", "value"],
+            "required": [
+              "type",
+              "value"
+            ],
             "properties": {
               "type": {
                 "type": "string",
-                "enum": ["multiplier", "additive", "override"]
+                "enum": [
+                  "multiplier",
+                  "additive",
+                  "override"
+                ]
               },
-              "value": { "type": "number" },
-              "condition": { "type": "string" },
-              "note": { "type": "string" }
+              "value": {
+                "type": "number"
+              },
+              "condition": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
             },
             "additionalProperties": true
           }
@@ -124,16 +250,80 @@
           "properties": {
             "requires": {
               "type": "array",
-              "items": { "type": "string" }
+              "items": {
+                "type": "string"
+              }
             },
             "requiresAny": {
               "type": "array",
-              "items": { "type": "string" }
+              "items": {
+                "type": "string"
+              }
             },
-            "slotProvider": { "type": "string" },
-            "slotFamily": { "type": "string" },
-            "slotCapacity": { "type": "integer", "minimum": 0 },
-            "slotUsage": { "type": "integer", "minimum": 0 }
+            "slotProvider": {
+              "type": "string"
+            },
+            "slotFamily": {
+              "type": "string"
+            },
+            "slotCapacity": {
+              "type": "number",
+              "minimum": 0
+            },
+            "slotUsage": {
+              "type": "number",
+              "minimum": 0
+            },
+            "provides": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "slotProvider",
+                  "slotFamily"
+                ],
+                "properties": {
+                  "slotProvider": {
+                    "type": "string"
+                  },
+                  "slotFamily": {
+                    "type": "string"
+                  },
+                  "slotCapacity": {
+                    "type": "number",
+                    "minimum": 0
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "targetRequired": {
+              "type": "boolean"
+            },
+            "targetCategories": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "requiresAnyGroups": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            },
+            "compatibilityNotes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            }
           },
           "additionalProperties": true
         }

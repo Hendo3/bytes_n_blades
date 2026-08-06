@@ -3,25 +3,59 @@
  * "Talk cheap, ammo expensive."
  */
 
+function catalogT(key, fallback, params = {}) {
+  if (typeof window !== "undefined" && window.I18n) {
+    return window.I18n.t(key, params, fallback);
+  }
+  return String(fallback).replace(/\{([a-zA-Z0-9_]+)\}/g, (_match, name) => params[name] ?? `{${name}}`);
+}
+
+function catalogDataPath(path) {
+  return typeof window !== "undefined" && window.I18n ? window.I18n.dataPath(path) : path;
+}
+
 const PAGE_CONFIG = {
   cyberwares: {
-    path: "../data/cyberwares.json",
+    path: catalogDataPath("../data/cyberwares.json"),
     title: "CHROME_CATALOG",
   },
   accessories: {
-    path: "../data/equipment.json",
+    path: catalogDataPath("../data/equipment.json"),
     title: "GEAR_STASH",
   },
   drugs: {
-    path: "../data/drugs.json",
+    path: catalogDataPath("../data/drugs.json"),
     title: "CHEM_FEED",
     dataSelector: "data.street_stock",
   },
-  // weapons intentionally disabled for now (dataset pending completion)
+  weapons: {
+    path: catalogDataPath("../data/weapons.json"),
+    title: "ARMORY_FEED",
+    weaponCatalog: true,
+  },
 };
 
 
 const STORAGE_KEY = "cyber_cart";
+
+const AMMO_OPTIONS = [
+  { key: "base", label: catalogT("catalog.standard", "Standard"), multiplier: 1 },
+  { key: "api", label: catalogT("catalog.api", "API (Armor Piercing Incendiary)"), multiplier: 4 },
+  { key: "ap", label: catalogT("catalog.ap", "Armor Piercing"), multiplier: 3 },
+  { key: "dual_purpose", label: catalogT("catalog.dual_purpose", "Dual Purpose"), multiplier: 4 },
+  { key: "electrothermal", label: catalogT("catalog.electrothermal", "Electrothermal Ammo Enhancement"), multiplier: 1.5 },
+  { key: "hollow_point", label: catalogT("catalog.hollow_point", "Hollow Point"), multiplier: 1.125 },
+  { key: "kendachi_fragmentation", label: catalogT("catalog.kendachi_fragmentation", "Kendachi Fragmentation Flechette"), multiplier: 5 },
+  { key: "rubber", label: catalogT("catalog.rubber", "Rubber Bullets (box of 50)"), multiplier: 1 / 3 },
+];
+
+const SHOTGUN_AMMO_OPTIONS = [
+  { key: "shotgun_shells", label: catalogT("catalog.shotgun_shells", "Shotgun shells"), pricingModel: "fixed", fixedPrice: 15 },
+  { key: "apfsds", label: catalogT("catalog.apfsds", "APFSDS"), pricingModel: "fixed", fixedPrice: 10 },
+  { key: "flare_rounds", label: catalogT("catalog.flare_rounds", "Flare rounds"), pricingModel: "fixed", fixedPrice: 25 },
+  { key: "flash_bang", label: catalogT("catalog.flash_bang", "Flash bang"), pricingModel: "fixed", fixedPrice: 50 },
+  { key: "flash", label: catalogT("catalog.flash", "Flash"), pricingModel: "fixed", fixedPrice: 35 },
+];
 
 // --- DICE ENGINE ---
 const DiceEngine = {
@@ -77,7 +111,7 @@ const DiceEngine = {
 
     const btn = document.createElement("button");
     btn.className = "btn-secondary btn-dice";
-    btn.innerHTML = `[ROLL] ${damageStr}`;
+    btn.textContent = catalogT("catalog.roll", `[ROLL] ${damageStr}`, { damage: damageStr });
     btn.style.fontSize = "0.7rem";
     btn.style.marginTop = "5px";
     btn.style.width = "100%";
@@ -85,8 +119,8 @@ const DiceEngine = {
       e.stopPropagation();
       const result = this.roll(damageStr);
       Modal.alert(
-        `DAMAGE REPORT: ${contextName}`,
-        `<strong>TOTAL DAMAGE: ${result.total}</strong><br><br><small style="color:#888">LOG: ${result.details}</small>`,
+        catalogT("catalog.damage_report", `DAMAGE REPORT: ${contextName}`, { name: contextName }),
+        `<strong>${catalogT("catalog.total_damage", `TOTAL DAMAGE: ${result.total}`, { total: result.total })}</strong><br><br><small style="color:#888">LOG: ${result.details}</small>`,
       );
     };
     return btn;
@@ -118,6 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const config = PAGE_CONFIG[pageId];
   const ui = captureUI();
+  const dependencyLabels = new Map();
 
   let fullCatalog = {};
   let activeCategory = null;
@@ -127,6 +162,8 @@ document.addEventListener("DOMContentLoaded", () => {
   async function init() {
     try {
       fullCatalog = await fetchData(config.path);
+      indexRequirementLabels(fullCatalog);
+      await hydrateRequirementLabels(pageId);
       setupCategories(fullCatalog);
       setupFilters(fullCatalog);
       setupEvents();
@@ -135,13 +172,15 @@ document.addEventListener("DOMContentLoaded", () => {
       if (firstCategory) selectCategory(firstCategory);
     } catch (err) {
       console.error("Netrun Failed:", err);
-      ui.itemsList.innerHTML = `
-                <div class="error-box" style="border: 1px solid red; padding: 20px; color: red;">
-                    <h3>[!] SIGNAL LOST</h3>
-                    <p>Can't sync with DataTerm at <strong>${config.path}</strong>.</p>
-                    <p>Debug info: ${err.message}</p>
-                    ${window.location.protocol === "file:" ? "<br><p><strong>PRO TIP:</strong> Local file usage detected. Check CORS settings.</p>" : ""}
-                </div>`;
+      const isHtmlPage = window.location.pathname.includes("/html/");
+      const errorPagePath = isHtmlPage ? "./404.html" : "./html/404.html";
+      const errorUrl = new URL(errorPagePath, window.location.href);
+      errorUrl.searchParams.set("source", config.path);
+      errorUrl.searchParams.set("message", err.message);
+      if (window.location.protocol === "file:") {
+        errorUrl.searchParams.set("hint", catalogT("catalog.file_hint", "Local file usage detected. Check CORS settings."));
+      }
+      window.location.href = errorUrl.toString();
     }
   }
 
@@ -151,16 +190,78 @@ document.addEventListener("DOMContentLoaded", () => {
     const res = await fetch(url);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const json = await res.json();
+    if (config.weaponCatalog) {
+      return normalizeWeaponCatalog(json.weapons || json.data?.weapons || []);
+    }
     if (config.dataSelector === "data.street_stock") {
       return { street_stock: (json.data && json.data.street_stock) ? json.data.street_stock : {} };
     }
     return json.data || json;
   }
 
+  function normalizeWeaponCatalog(weapons) {
+    const catalog = {};
+
+    (Array.isArray(weapons) ? weapons : []).forEach((weapon, index) => {
+      if (!weapon || typeof weapon !== "object") return;
+      if (isPlaceholderWeapon(weapon)) return;
+
+      const categoryKey = String(weapon.class || "UNSORTED").trim() || "UNSORTED";
+      if (!catalog[categoryKey]) {
+        catalog[categoryKey] = {
+          name: categoryKey,
+          description: catalogT("catalog.weapon_lane", `Weapon lane for ${categoryKey}.`, { category: categoryKey }),
+          items: {},
+        };
+      }
+
+      const name = String(weapon.name || catalogT("catalog.weapon_default", `Weapon ${index + 1}`, { index: index + 1 })).trim();
+      const itemId = String(weapon.id || `weapon_${categoryKey}_${index}_${slugify(name)}`).trim();
+      const priceValue = weapon.price !== undefined && weapon.price !== null ? parsePrice(weapon.price) : null;
+      const priceMaximum = weapon.price_max !== undefined && weapon.price_max !== null
+        ? parsePrice(weapon.price_max)
+        : null;
+      const priceLabel = priceValue === null
+        ? catalogT("catalog.price_pending", "PRICE PENDING")
+        : priceMaximum !== null && priceMaximum > priceValue
+          ? `${formatCurrency(priceValue)} - ${formatCurrency(priceMaximum)}`
+          : null;
+
+      catalog[categoryKey].items[itemId] = {
+        id: itemId,
+        name,
+        weaponClass: categoryKey,
+        description: buildWeaponDescription(weapon),
+        price: priceValue,
+        priceMaximum,
+        priceLabel,
+        raw: weapon,
+      };
+    });
+
+    return catalog;
+  }
+
+  function isPlaceholderWeapon(weapon) {
+    const placeholderFields = [
+      weapon.name,
+      weapon.class,
+      weapon.type_code,
+      weapon.concealment,
+      weapon.availability,
+      weapon.damage,
+      weapon.ammo_type,
+      weapon.reliability,
+    ];
+
+    return placeholderFields.some((value) => String(value || "").trim().toUpperCase() === "TODO");
+  }
+
   function getItemsFromCategory(categoryKey) {
     const categoryData = fullCatalog[categoryKey];
     if (!categoryData) return [];
 
+    const categoryLabel = categoryData.name || categoryKey;
     const categoryLower = String(categoryKey || "").toLowerCase();
     const inferredMeta = inferCategoryMeta(categoryLower);
 
@@ -172,10 +273,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       return {
         id: item.id || key,
+        legacyIds: Array.isArray(item.legacyIds) ? item.legacyIds : [],
         name: item.name || formatName(key),
+        weaponClass: item.weaponClass || categoryLabel,
         description:
-          item.description || item.note || item.desc || "No specs available.",
+          item.description || item.note || item.desc || catalogT("catalog.no_specs", "No specs available."),
         price: parsePrice(item.price || item.cost || item.value),
+        priceMaximum: item.priceMaximum ?? null,
+        priceLabel: item.priceLabel || null,
         hl: itemHL,
         cir: item.surg || item.cir || null,
         tags: Array.isArray(item.tags) ? item.tags : inferredMeta.tags,
@@ -188,6 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
         installation: item.installation && typeof item.installation === "object" ? item.installation : inferredMeta.installation,
         raw: item,
         category: categoryKey,
+        categoryLabel,
       };
     });
   }
@@ -219,6 +325,37 @@ document.addEventListener("DOMContentLoaded", () => {
       installation: null,
     };
   }
+
+  function indexRequirementLabels(catalog) {
+    Object.values(catalog || {}).forEach((category) => {
+      if (!category || typeof category !== "object") return;
+      const rawItems = category.itens || category.items || category.list || {};
+      Object.entries(rawItems).forEach(([key, item]) => {
+        if (!item || typeof item !== "object") return;
+        const label = item.name || key;
+        [item.id || key, ...(item.legacyIds || [])].forEach((id) => {
+          const normalized = String(id || "").trim().toLowerCase();
+          if (normalized) dependencyLabels.set(normalized, label);
+        });
+      });
+    });
+  }
+
+  async function hydrateRequirementLabels(page) {
+    if (!window.I18n || !["cyberwares", "accessories"].includes(page)) return;
+    const otherPath = page === "cyberwares"
+      ? catalogDataPath("../data/equipment.json")
+      : catalogDataPath("../data/cyberwares.json");
+    try {
+      const response = await fetch(otherPath, { cache: "no-store" });
+      if (!response.ok) return;
+      const payload = await response.json();
+      indexRequirementLabels(payload.data || payload);
+    } catch {
+      // Cross-catalog labels are an enhancement; the catalog remains usable offline.
+    }
+  }
+
   // --- RENDER ---
   function setupCategories(catalog) {
     if (!ui.categoryList) return;
@@ -227,7 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Object.keys(catalog).forEach((key) => {
       if (typeof catalog[key] !== "object") return;
       const btn = document.createElement("button");
-      btn.textContent = key.toUpperCase();
+      btn.textContent = String(catalog[key].name || key).toUpperCase();
       btn.dataset.category = key;
       btn.onclick = () => selectCategory(key);
       fragment.appendChild(btn);
@@ -239,7 +376,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function selectCategory(key) {
     activeCategory = key;
 
-    if (ui.titleCategory) ui.titleCategory.textContent = key;
+    if (ui.titleCategory) ui.titleCategory.textContent = fullCatalog[key]?.name || key;
 
     Array.from(ui.categoryList.children).forEach((btn) => {
       if (btn.dataset.category === key) {
@@ -265,7 +402,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ui.itemsList.innerHTML = "";
 
     if (items.length === 0) {
-      ui.itemsList.innerHTML = `<p class="no-results">Nothing here, Choom. Try another stream.</p>`;
+      ui.itemsList.innerHTML = `<p class="no-results">${catalogT("catalog.no_results", "Nothing here, Choom. Try another stream.")}</p>`;
       return;
     }
 
@@ -274,23 +411,31 @@ document.addEventListener("DOMContentLoaded", () => {
     items.forEach((item) => {
       const card = document.createElement("article");
       card.className = "item";
+      const domId = slugify(item.id || item.name || "item");
+      const isAmmo = config.weaponCatalog && isAmmoItem(item);
+      const isShotgunAmmo = isAmmo && isShotgunAmmoItem(item);
+      const ammoOptionSet = isAmmo ? getAmmoOptionSet(item) : [];
 
       let badges = "";
+      if (item.weaponClass)
+        badges += `<span style="color:#8fdfff">${catalogT("catalog.class", "CLASS")}: ${item.weaponClass}</span>`;
       if (item.hl)
         badges += `<span style="color:var(--secondary-color)">HL: ${item.hl}</span>`;
       if (item.cir)
         badges += `<span style="margin-left:10px; color:#888">CIR: ${item.cir}</span>`;
       if (item.maxPurchases)
-        badges += `<span style="margin-left:10px; color:#8fdfff">MAX: ${item.maxPurchases}</span>`;
+        badges += `<span style="margin-left:10px; color:#8fdfff">${catalogT("catalog.max", "MAX")}: ${item.maxPurchases}</span>`;
 
       const techMeta = renderTechnicalMeta(item);
 
       const { statsHtml, damageVal } = renderWeaponStats(item.raw);
+      const smartchippedId = `smartchipped-${domId}`;
+      const ammoOptionId = `ammo-option-${domId}`;
 
       let diceButton = null;
-      if (damageVal) {
+      if (!config.weaponCatalog && damageVal) {
         diceButton = DiceEngine.createButton(damageVal, item.name);
-      } else {
+      } else if (!config.weaponCatalog) {
         const descDmg = item.description.match(DiceEngine.regex);
         if (descDmg)
           diceButton = DiceEngine.createButton(descDmg[0], item.name);
@@ -302,26 +447,62 @@ document.addEventListener("DOMContentLoaded", () => {
                 ${badges ? `<div class="meta">${badges}</div>` : ""}
                 ${techMeta}
                 ${statsHtml}
-                <div id="dice-area-${item.id}"></div>
+                <div id="dice-area-${domId}"></div>
                 <div class="meta" style="margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end;">
-              <strong id="price-${item.id}" style="color:var(--primary-color); font-size:1.2em;">${formatCurrency(item.price)}</strong>
+              <strong id="price-${domId}" style="color:var(--primary-color); font-size:1.2em;">${formatDisplayedCatalogPrice(item, item.price, false)}</strong>
                 </div>
+                ${config.weaponCatalog && !isAmmo ? `
+                <label style="display:flex; align-items:center; gap:8px; margin-top:12px; font-size:0.75rem; color:#8fdfff; cursor:pointer;">
+                    <input id="${smartchippedId}" type="checkbox" style="accent-color: var(--primary-color);">
+                    ${catalogT("catalog.smartchipped", "Smartchipped (x2 price)")}
+                </label>` : ""}
+                ${isAmmo ? `
+                <label for="${ammoOptionId}" style="display:block; margin-top:12px; font-size:0.75rem; color:#8fdfff;">${catalogT("catalog.ammo_option", "Ammo Option")}</label>
+                <select id="${ammoOptionId}" style="width:100%; margin-top:6px; background:#080b15; color:var(--primary-color); border:1px solid #0f2e4a; padding:8px; font-family:inherit;">
+                  ${ammoOptionSet.map((option) => {
+                    if (option.pricingModel === "fixed") {
+                      return `<option value="${option.key}">${option.label} (${formatCurrency(option.fixedPrice)})</option>`;
+                    }
+                    return `<option value="${option.key}">${option.label} (${option.multiplier}x)</option>`;
+                  }).join("")}
+                </select>` : ""}
             `;
 
       if (diceButton) {
-        card.querySelector(`#dice-area-${item.id}`).appendChild(diceButton);
+        const diceArea = card.querySelector(`#dice-area-${domId}`);
+        if (diceArea) diceArea.appendChild(diceButton);
+      }
+
+      const priceEl = card.querySelector(`#price-${domId}`);
+      const smartchippedEl = config.weaponCatalog && !isAmmo ? card.querySelector(`#${smartchippedId}`) : null;
+      const ammoOptionEl = isAmmo ? card.querySelector(`#${ammoOptionId}`) : null;
+
+      if (smartchippedEl && priceEl) {
+        smartchippedEl.addEventListener("change", () => {
+          const selectedAmmoOption = ammoOptionEl ? ammoOptionEl.value : "base";
+          const finalPrice = computeCatalogPrice(item, smartchippedEl.checked, selectedAmmoOption);
+          priceEl.textContent = formatDisplayedCatalogPrice(item, finalPrice, smartchippedEl.checked);
+        });
+      }
+
+      if (ammoOptionEl && priceEl) {
+        ammoOptionEl.addEventListener("change", () => {
+          const isSmartchipped = smartchippedEl ? smartchippedEl.checked : false;
+          const finalPrice = computeCatalogPrice(item, isSmartchipped, ammoOptionEl.value);
+          priceEl.textContent = formatDisplayedCatalogPrice(item, finalPrice, isSmartchipped);
+        });
       }
 
       const btn = document.createElement("button");
       btn.className = "btn-add";
       if (item.id === "aptr_reflex_chips") {
-        btn.textContent = "OPEN APTR TABLE";
+        btn.textContent = catalogT("catalog.open_aptr", "OPEN APTR TABLE");
       } else if (item.id === "mram_memory_chips") {
-        btn.textContent = "OPEN MRAM TABLE";
+        btn.textContent = catalogT("catalog.open_mram", "OPEN MRAM TABLE");
       } else if (isVisualRecognitionItem(item)) {
-        btn.textContent = "OPEN VISUAL TABLE";
+        btn.textContent = catalogT("catalog.open_visual", "OPEN VISUAL TABLE");
       } else {
-        btn.textContent = "SNAG IT";
+        btn.textContent = catalogT("catalog.snag", "SNAG IT");
       }
       btn.style.width = "100%";
       btn.style.marginTop = "15px";
@@ -338,7 +519,10 @@ document.addEventListener("DOMContentLoaded", () => {
           window.location.href = "./visual-rec-chips.html";
           return;
         }
-        handlePurchase(item, btn);
+        handlePurchase(item, btn, {
+          smartchipped: smartchippedEl ? smartchippedEl.checked : false,
+          ammoOptionKey: ammoOptionEl ? ammoOptionEl.value : (isShotgunAmmo ? "shotgun_shells" : "base"),
+        });
       };
 
       card.appendChild(btn);
@@ -350,15 +534,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderWeaponStats(raw) {
     const stats = raw.code || raw;
-    if (!stats.accuracy && !stats.damage && !stats.danoMunicao)
-      return { statsHtml: "", damageVal: null };
+    if (!stats || typeof stats !== "object") return { statsHtml: "", damageVal: null };
 
     const map = [
-      { l: "WA", v: stats.accuracy || stats.precision || stats.wa },
-      { l: "DMG", v: stats.damage || stats.danoMunicao, isDamage: true },
-      { l: "SHT", v: stats.shots || stats.disparos },
-      { l: "ROF", v: stats.rof || stats.cadencia },
-      { l: "REL", v: stats.reliability || stats.confiabilidade },
+      { l: catalogT("weapon.code.type", "TYP"), v: stats.type || stats.type_code },
+      { l: catalogT("weapon.code.accuracy", "ACC"), v: stats.accuracy || stats.precision || stats.wa },
+      { l: catalogT("weapon.code.damage", "DMG"), v: stats.damage || stats.danoMunicao, isDamage: true },
+      { l: catalogT("weapon.code.range", "RNG"), v: stats.range || stats.weapon_range_m },
+      { l: catalogT("weapon.code.magazine", "MAG"), v: stats.numberOfShots || stats.magazine_capacity || stats.shots || stats.disparos },
+      { l: catalogT("weapon.code.rof", "ROF"), v: stats.rateOfFire || stats.cadence_full_auto || stats.rof || stats.cadencia },
+      { l: catalogT("weapon.code.ammo", "AMMO"), v: stats.damageAmmo || stats.ammo_type },
+      { l: catalogT("weapon.code.availability", "AVA"), v: stats.availability },
+      { l: catalogT("weapon.code.reliability", "REL"), v: stats.reliability || stats.confiabilidade },
+      { l: catalogT("weapon.code.concealment", "CON"), v: stats.concealability || stats.concealment },
     ];
 
     let html = `<ul class="weapon-code">`;
@@ -366,7 +554,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let damageVal = null;
 
     map.forEach((f) => {
-      if (f.v) {
+      if (f.v !== undefined && f.v !== null && String(f.v).trim() !== "") {
         html += `<li><span>${f.l}</span> <span>${f.v}</span></li>`;
         hasData = true;
         if (f.isDamage) damageVal = f.v;
@@ -379,22 +567,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderTechnicalMeta(item) {
     const lines = [];
+    const labelFor = (value) => dependencyLabels.get(String(value || "").trim().toLowerCase())
+      || (window.CyberUtils ? CyberUtils.humanizeId(value) : formatName(String(value || "")));
 
     const reqs = item.installation?.requires;
     if (Array.isArray(reqs) && reqs.length > 0) {
-      lines.push(`REQ: ${reqs.join(", ")}`);
+      lines.push(`${catalogT("catalog.req", "REQ")}: ${reqs.map(labelFor).join(", ")}`);
+    }
+
+    const reqAny = item.installation?.requiresAny;
+    if (Array.isArray(reqAny) && reqAny.length > 0) {
+      lines.push(`${catalogT("catalog.req_any", "REQ ANY")}: ${reqAny.map(labelFor).join(" | ")}`);
+    }
+
+    const reqAnyGroups = item.installation?.requiresAnyGroups;
+    if (Array.isArray(reqAnyGroups)) {
+      reqAnyGroups.forEach((group) => {
+        if (Array.isArray(group) && group.length > 0) {
+          lines.push(`${catalogT("catalog.req_any", "REQ ANY")}: ${group.map(labelFor).join(" | ")}`);
+        }
+      });
     }
 
     const slotUsage = Number(item.installation?.slotUsage);
     if (!Number.isNaN(slotUsage) && slotUsage > 0) {
       const family = item.installation?.slotFamily || item.installation?.slotProvider || "GENERIC";
-      lines.push(`SLOTS: ${slotUsage} @ ${family}`);
+      const familyLabel = window.I18n?.isPtBr?.() ? labelFor(family) : family;
+      lines.push(`${catalogT("catalog.slots", "SLOTS")}: ${slotUsage} @ ${familyLabel}`);
     }
 
     const slotCapacity = Number(item.installation?.slotCapacity);
     if (!Number.isNaN(slotCapacity) && slotCapacity >= 0) {
       const family = item.installation?.slotFamily || item.id;
-      lines.push(`PROVIDER: ${family} (${slotCapacity})`);
+      lines.push(`${catalogT("catalog.provider", "PROVIDER")}: ${labelFor(family)} (${slotCapacity})`);
+    } else if (item.installation?.slotProvider) {
+      const family = item.installation?.slotFamily || item.installation.slotProvider;
+      lines.push(`${catalogT("catalog.provider", "PROVIDER")}: ${labelFor(family)}`);
+    }
+
+    const nestedProviders = item.installation?.provides;
+    if (Array.isArray(nestedProviders)) {
+      nestedProviders.forEach((provider) => {
+        if (!provider || typeof provider !== "object" || !provider.slotFamily) return;
+        const capacity = Number(provider.slotCapacity);
+        const suffix = Number.isFinite(capacity) ? ` (${capacity})` : "";
+        lines.push(`${catalogT("catalog.provider", "PROVIDER")}: ${labelFor(provider.slotFamily)}${suffix}`);
+      });
+    }
+
+    const compatibilityNotes = item.installation?.compatibilityNotes;
+    if (Array.isArray(compatibilityNotes)) {
+      compatibilityNotes.forEach((note) => {
+        if (String(note || "").trim()) lines.push(`${catalogT("catalog.note", "NOTE")}: ${note}`);
+      });
     }
 
     if (Array.isArray(item.attributeBonuses) && item.attributeBonuses.length > 0) {
@@ -405,7 +630,7 @@ document.addEventListener("DOMContentLoaded", () => {
           return `${signal}${value} ${bonus.attribute}`;
         })
         .join(" | ");
-      lines.push(`BONUS: ${bonusText}`);
+      lines.push(`${catalogT("catalog.bonus", "BONUS")}: ${bonusText}`);
     }
 
     if (Array.isArray(item.skillBonuses) && item.skillBonuses.length > 0) {
@@ -413,21 +638,21 @@ document.addEventListener("DOMContentLoaded", () => {
         .map((bonus) => {
           const value = Number(bonus.value) || 0;
           const signal = value >= 0 ? "+" : "";
-          return `${signal}${value} ${bonus.skill}`;
+          return `${signal}${value} ${bonus.label || bonus.skill}`;
         })
         .join(" | ");
-      lines.push(`SKILL: ${skillText}`);
+      lines.push(`${catalogT("catalog.skill", "SKILL")}: ${skillText}`);
     }
 
     if (item.attributeSet && typeof item.attributeSet === "object") {
       const setText = Object.entries(item.attributeSet)
         .map(([attribute, value]) => `${attribute}=${value}`)
         .join(" | ");
-      if (setText) lines.push(`SET: ${setText}`);
+      if (setText) lines.push(`${catalogT("catalog.set", "SET")}: ${setText}`);
     }
 
     if (item.alternativeAcquisition) {
-      lines.push("ALT ACQ: FAVORS/TRADE");
+      lines.push(catalogT("catalog.alt_acq", "ALT ACQ: FAVORS/TRADE"));
     }
 
     if (lines.length === 0) return "";
@@ -438,10 +663,74 @@ document.addEventListener("DOMContentLoaded", () => {
     return Array.isArray(item.tags) && item.tags.includes("visual_recognition_chip");
   }
 
+  function isAmmoItem(item) {
+    const category = String(item.weaponClass || item.category || "").toLowerCase();
+    const typeCode = String(item.raw?.type_code || "").toLowerCase();
+    return category.includes("ammo") || typeCode === "ammo";
+  }
+
+  function isShotgunAmmoItem(item) {
+    const category = String(item.weaponClass || item.category || "").toLowerCase();
+    const ammoType = String(item.raw?.ammo_type || "").toLowerCase();
+    const name = String(item.name || "").toLowerCase();
+    return category.includes("shotgun")
+      || ammoType.includes("shotgun")
+      || ammoType.includes("apfsds")
+      || ammoType.includes("flare")
+      || ammoType.includes("flash")
+      || name.includes("shotgun")
+      || name.includes("apfsds")
+      || name.includes("flare")
+      || name.includes("flash");
+  }
+
+  function getAmmoOptionSet(item) {
+    return isShotgunAmmoItem(item) ? SHOTGUN_AMMO_OPTIONS : AMMO_OPTIONS;
+  }
+
+  function getAmmoOption(item, key) {
+    const options = getAmmoOptionSet(item);
+    return options.find((option) => option.key === key) || options[0];
+  }
+
+  function computeCatalogPrice(item, smartchipped, ammoOptionKey) {
+    let finalPrice = Number(item.price || 0);
+    if (!Number.isFinite(finalPrice)) finalPrice = 0;
+
+    if (Boolean(smartchipped) && !isAmmoItem(item)) {
+      finalPrice *= 2;
+    }
+
+    if (isAmmoItem(item)) {
+      const ammoOption = getAmmoOption(item, ammoOptionKey);
+      if (ammoOption.pricingModel === "fixed") {
+        finalPrice = Number(ammoOption.fixedPrice || 0);
+      } else {
+        finalPrice *= Number(ammoOption.multiplier || 1);
+      }
+    }
+
+    return Number(finalPrice.toFixed(2));
+  }
+
+  function formatDisplayedCatalogPrice(item, finalPrice, smartchipped) {
+    const maximum = Number(item.priceMaximum);
+    if (!isAmmoItem(item) && Number.isFinite(maximum) && maximum > Number(item.price || 0)) {
+      const multiplier = smartchipped ? 2 : 1;
+      return `${formatCurrency(Number(item.price || 0) * multiplier)} - ${formatCurrency(maximum * multiplier)}`;
+    }
+    return formatCurrency(finalPrice);
+  }
+
   // --- PURCHASE LOGIC (AUTO-ROLL HL) ---
-  function handlePurchase(item, btn) {
+  function handlePurchase(item, btn, options = {}) {
     let finalHL = 0;
     let rollLog = "";
+    const smartchipped = Boolean(options.smartchipped) && !isAmmoItem(item);
+    const ammoOption = isAmmoItem(item)
+      ? getAmmoOption(item, options.ammoOptionKey)
+      : { key: "base", label: catalogT("catalog.standard", "Standard"), multiplier: 1, pricingModel: "multiplier" };
+    const finalPrice = computeCatalogPrice(item, smartchipped, ammoOption.key);
 
     if (item.hl && item.hl !== "0") {
       if (window.CyberUtils) {
@@ -460,9 +749,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     Stash.add({
       id: item.id,
+      legacyIds: item.legacyIds,
       name: item.name,
-      price: item.price,
+      price: finalPrice,
+      basePrice: item.price,
       category: item.category,
+      categoryLabel: item.categoryLabel,
+      sourceCatalog: pageId,
+      locale: window.I18n?.getLocale?.() || "en-US",
       hl: finalHL, // Salva o valor numérico rolado
       hlOriginal: item.hl, // Salva a fórmula original para referência
       hlRaw: item.hl,
@@ -475,10 +769,22 @@ document.addEventListener("DOMContentLoaded", () => {
       attributeSet: item.attributeSet,
       priceModifiers: item.priceModifiers,
       installation: item.installation,
+      Smartchipped: Boolean(smartchipped),
+      ammoOptionKey: isAmmoItem(item) ? ammoOption.key : null,
+      ammoOptionLabel: isAmmoItem(item) ? ammoOption.label : null,
+      ammoOptionMultiplier: isAmmoItem(item) && ammoOption.pricingModel !== "fixed"
+        ? Number(ammoOption.multiplier || 1)
+        : null,
+      ammoOptionPricingModel: isAmmoItem(item) ? (ammoOption.pricingModel || "multiplier") : null,
+      ammoOptionFixedPrice: isAmmoItem(item) && ammoOption.pricingModel === "fixed"
+        ? Number(ammoOption.fixedPrice || 0)
+        : null,
     });
 
     const originalText = btn.textContent;
-    btn.textContent = `COPPED! ${finalHL > 0 ? `[HL -${finalHL}]` : ""}`;
+    btn.textContent = catalogT("catalog.copped", `COPPED! ${finalHL > 0 ? `[HL -${finalHL}]` : ""}`, {
+      hl: finalHL > 0 ? `[${window.I18n?.isPtBr?.() ? "PH" : "HL"} -${finalHL}]` : "",
+    });
     btn.style.background = "var(--primary-color)";
     btn.style.color = "#000";
     btn.style.boxShadow = "var(--glow-strong)";
@@ -500,11 +806,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function formatCurrency(val) {
     if (window.CyberUtils) return CyberUtils.formatCurrency(val);
-    return (val || 0).toLocaleString("en-US", { style: "currency", currency: "USD" }).replace("$", "") + " eb";
+    return Number(val || 0).toLocaleString(window.I18n?.getLocale?.() || "en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }) + " eb";
   }
 
   function formatName(slug) {
     return slug.replace(/_/g, " ").toUpperCase();
+  }
+
+  function slugify(value) {
+    return String(value || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[^a-z0-9]+/g, "_")
+      .replace(/^_+|_+$/g, "") || "item";
+  }
+
+  function buildWeaponDescription(weapon) {
+    const formatField = (value, suffix = "") => {
+      if (value === undefined || value === null || String(value).trim() === "") {
+        return "N/A";
+      }
+      const values = Array.isArray(value) ? value : [value];
+      return values.map((entry) => `${entry}${suffix}`).join(" / ");
+    };
+
+    const bits = [
+      `${catalogT("weapon.type", "Type")}: ${formatField(weapon.type_code)}`,
+      `${catalogT("weapon.accuracy", "Accuracy")}: ${formatField(weapon.accuracy)}`,
+      `${catalogT("weapon.concealment", "Concealment")}: ${formatField(weapon.concealment)}`,
+      `${catalogT("weapon.availability", "Availability")}: ${formatField(weapon.availability)}`,
+      `${catalogT("weapon.damage", "Damage")}: ${formatField(weapon.damage)}`,
+      `${catalogT("weapon.ammo_type", "Ammo Type")}: ${formatField(weapon.ammo_type)}`,
+      `${catalogT("weapon.range", "Range")}: ${formatField(weapon.weapon_range_m, "m")}`,
+      `${catalogT("weapon.capacity", "Capacity")}: ${formatField(weapon.magazine_capacity)}`,
+      `${catalogT("weapon.cadence", "Cadence")}: ${formatField(weapon.cadence_full_auto)}`,
+      `${catalogT("weapon.reliability", "Reliability")}: ${formatField(weapon.reliability)}`,
+    ];
+
+    return bits.join(" // ");
   }
 
   function detectPage() {
@@ -512,6 +854,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (path.includes("cyberwares")) return "cyberwares";
     if (path.includes("accessories")) return "accessories";
     if (path.includes("drugs")) return "drugs";
+    if (path.includes("weapons")) return "weapons";
     return null;
   }
 
@@ -535,13 +878,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const frag = document.createDocumentFragment();
     const all = document.createElement("option");
     all.value = "";
-    all.textContent = "ALL SIGNALS";
+    all.textContent = catalogT("catalog.all_signals", "ALL SIGNALS");
     frag.appendChild(all);
     Object.keys(catalog).forEach((k) => {
       if (typeof catalog[k] !== "object") return;
       const opt = document.createElement("option");
       opt.value = k;
-      opt.textContent = k;
+      opt.textContent = catalog[k].name || k;
       frag.appendChild(opt);
     });
     ui.fsCategory.replaceChildren(frag);
@@ -613,3 +956,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = {
+    PAGE_CONFIG,
+    AMMO_OPTIONS,
+    SHOTGUN_AMMO_OPTIONS,
+    DiceEngine,
+    Stash,
+  };
+}

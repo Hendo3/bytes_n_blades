@@ -1,0 +1,533 @@
+/**
+ * BYTE & BLADES - LOCALIZATION CORE
+ * Keeps EN-US as the mechanical source and switches visible content to pt-BR.
+ */
+(function () {
+  const root = typeof window !== "undefined" ? window : globalThis;
+  const STORAGE_KEY = "bytes_locale";
+  const SUPPORTED = ["en-US", "pt-BR"];
+
+  const PT_STATIC = {
+    "Byte & Blades Store | Home": "Loja Byte & Blades | Início",
+    "ACCESS TERMINAL - Byte & Blades": "TERMINAL DE ACESSO - Byte & Blades",
+    "Signal Lost | Byte & Blades": "Sinal Perdido | Byte & Blades",
+    "Accessories & Gear | Byte & Blades": "Acessórios e Equipamentos | Byte & Blades",
+    "APTR Chips | Byte & Blades": "Chips PART | Byte & Blades",
+    "MRAM Chips | Byte & Blades": "Chips MRAM | Byte & Blades",
+    "Visual Recognition Chips | Byte & Blades": "Chips de Reconhecimento Visual | Byte & Blades",
+    "Bundles | Byte & Blades": "Pacotes | Byte & Blades",
+    "Your Loadout | Byte & Blades Store": "Seu Equipamento | Loja Byte & Blades",
+    "Cyberwares Catalog | Byte & Blades": "Catálogo de Ciberware | Byte & Blades",
+    "Drugs Catalog | Byte & Blades": "Catálogo de Drogas | Byte & Blades",
+    "Drug Forge | Byte & Blades": "Forja de Drogas | Byte & Blades",
+    "Weapons Catalog | Byte & Blades": "Catálogo de Armas | Byte & Blades",
+    "Debug Console | Byte & Blades": "Console de Diagnóstico | Byte & Blades",
+    "Byte & Blades: offgrid market for edgerunners. We move everything: chrome, gear, weapons, combat chems and dirty custom jobs.": "Byte & Blades: mercado fora da rede para edgerunners. Movemos cromo, equipamentos, armas, drogas de combate e serviços sujos sob medida.",
+    "Byte & Blades error screen for missing feeds and offline data streams.": "Tela de erro da Byte & Blades para feeds ausentes e fluxos de dados offline.",
+    "Offgrid accessory feed: tools, electronics, surveillance, fashion and every other shady thing your crew needs.": "Feed de acessórios fora da rede: ferramentas, eletrônicos, vigilância, moda e tudo de suspeito que sua equipe precisar.",
+    "APTR chip rate table by skill level for offgrid runners.": "Tabela de preços de chips PART por nível de perícia para runners fora da rede.",
+    "MRAM chip rate table by skill level for offgrid runners.": "Tabela de preços de chips MRAM por nível de perícia para runners fora da rede.",
+    "Visual Recognition chip profile table by level for offgrid runners.": "Tabela de perfis de chips de Reconhecimento Visual por nível para runners fora da rede.",
+    "Offgrid bundle builder with dependency-safe stacks and no-morality curation for adult Cyberpunk tables.": "Gerador de pacotes fora da rede com dependências seguras e curadoria sem moralismo para mesas adultas de Cyberpunk.",
+    "Review stash, total humanity loss, and export order JSON through an offgrid channel.": "Revise o estoque, a perda total de Humanidade e exporte o JSON do pedido por um canal fora da rede.",
+    "Offgrid cyberware feed for edgerunners: neuralware, implants and hard chrome with zero Corp oversight and zero moral filters.": "Feed de ciberware fora da rede para edgerunners: equipamento neural, implantes e cromo pesado sem supervisão corporativa nem filtros morais.",
+    "Offgrid drug listings for edgerunners: combat stimulants, neural enhancers and hard chrome with zero Corp oversight and zero moral filters.": "Anúncios de drogas fora da rede para edgerunners: estimulantes de combate, aprimoradores neurais e compostos pesados sem supervisão corporativa nem filtros morais.",
+    "Offgrid drug forge: procedural compound builder based on official system tables.": "Forja de drogas fora da rede: gerador de compostos baseado nas tabelas oficiais do sistema.",
+    "Offgrid weapons feed for edgerunners: pistols, SMGs, rifles and hard chrome with zero Corp oversight.": "Feed de armas fora da rede para edgerunners: pistolas, submetralhadoras, fuzis e equipamento pesado sem supervisão corporativa.",
+    "Debug console for Byte & Blades diagnostics.": "Console de diagnóstico da Byte & Blades.",
+    "Home": "Início",
+    "Cyberwares": "Ciberware",
+    "Accessories": "Acessórios",
+    "Drugs": "Drogas",
+    "Weapons": "Armas",
+    "Bundles": "Pacotes",
+    "Cart": "Carrinho",
+    "Debug": "Diagnóstico",
+    "Main Navigation": "Navegação Principal",
+    "Gear Categories": "Categorias de Equipamento",
+    "Cyberware Categories": "Categorias de Ciberware",
+    "Weapon Categories": "Categorias de Armas",
+    "APTR rules": "Regras de PART",
+    "MRAM rules": "Regras de MRAM",
+    "Visual Recognition rules": "Regras de Reconhecimento Visual",
+    "Bundle rules": "Regras dos Pacotes",
+    "Drug forge formulas": "Fórmulas da Forja de Drogas",
+    "Debug actions": "Ações de Diagnóstico",
+    "Skip to catalog": "Pular para o catálogo",
+    "Back to home": "Voltar ao início",
+    "Skip to APTR table": "Pular para a tabela PART",
+    "Skip to MRAM table": "Pular para a tabela MRAM",
+    "Skip to Visual Recognition table": "Pular para a tabela de Reconhecimento Visual",
+    "Skip to bundles": "Pular para os pacotes",
+    "Skip to cart summary": "Pular para o resumo do carrinho",
+    "Skip to debug console": "Pular para o console de diagnóstico",
+    "Skip to drug forge": "Pular para a forja de drogas",
+    "OFFGRID NODE // NO CORP FLAGS": "NÓ FORA DA REDE // SEM BANDEIRA CORPO",
+    "Runner-run market. If it exists, we move it.": "Mercado de runners. Se existe, nós movemos.",
+    "Virgins to Mercs": "De Virgens a Mercenários",
+    "Get a Chip'in": "Manda um Chip'in",
+    "Chrome, contraband, soon weapons and combat chems — no moral filters, just clean delivery.": "Cromo, contrabando, armas e drogas de combate — sem filtro moral, só entrega limpa.",
+    "Fuck the corpos. Choose whatever you need and buy it.": "Foda-se as Corporações. Escolha o que precisa e compre.",
+    "Every purchase runs discounted from your crypto card and lands through trusted merc hands.": "Toda compra sai do seu cartão de cripto e chega pelas mãos de mercenários confiáveis.",
+    "Start Shopping": "Começar as Compras",
+    "© 2025 Byte & Blades Store. Hendo: All rights reserved.": "© 2025 Loja Byte & Blades. Hendo: Todos os direitos reservados.",
+    "No Corps. No NetWatch. Offgrid market.": "Sem Corporações. Sem NetWatch. Mercado fora da rede.",
+    "No Corps. No NetWatch. No trace contracts.": "Sem Corporações. Sem NetWatch. Sem contratos rastreáveis.",
+    "OFFGRID HANDSHAKE": "HANDSHAKE FORA DA REDE",
+    "DROP YOUR HANDLE, CHOOM. ADULT RUNNERS ONLY.": "MANDA SEU HANDLE, CHOOM. APENAS RUNNERS ADULTOS.",
+    "HANDLE (USERNAME)": "HANDLE (USUÁRIO)",
+    "ALLOWED: A-Z, 0-9, [ - ], [ _ ] ONLY.": "PERMITIDO: APENAS A-Z, 0-9, [ - ] E [ _ ].",
+    "JACK IN": "CONECTAR",
+    "> SYSTEM: WAITING FOR INPUT...": "> SISTEMA: AGUARDANDO ENTRADA...",
+    "> ROUTE: GHOST RELAYS ACTIVE": "> ROTA: RELÉS FANTASMAS ATIVOS",
+    "SYSTEM: SIGNAL LOST": "SISTEMA: SINAL PERDIDO",
+    "Offgrid error lane // feed lost": "Linha de erro fora da rede // feed perdido",
+    "The feed you asked for is missing or offline.": "O feed solicitado não existe ou está offline.",
+    "404 // Feed Offline": "404 // Feed Desconectado",
+    "Unable to reach the requested resource.": "Não foi possível alcançar o recurso solicitado.",
+    "[!] SIGNAL LOST": "[!] SINAL PERDIDO",
+    "Requested path not available.": "O caminho solicitado não está disponível.",
+    "The DataTerm returned an error while loading this stream.": "O DataTerm retornou um erro ao carregar este fluxo.",
+    "Go Home": "Ir ao Início",
+    "Open Cyberwares": "Abrir Ciberware",
+    "Accessory Feed": "Feed de Acessórios",
+    "Pull stock from street caches and ghost drops.": "Puxe o estoque de caches de rua e entregas fantasmas.",
+    "Pick a feed": "Escolha um feed",
+    "From medkits to dumb chaos gear: if it sells, it lands in your stash.": "De kits médicos a equipamento de caos puro: se vende, cai no seu estoque.",
+    "Open Filters": "Abrir Filtros",
+    "Signal Filter": "Filtro de Sinal",
+    "Category": "Categoria",
+    "All Categories": "Todas as Categorias",
+    "Max Price (ED$)": "Preço Máximo (ED$)",
+    "Run Filter": "Executar Filtro",
+    "Reset": "Limpar",
+    "Close filters": "Fechar filtros",
+    "Gear lane for crews that don't ask, they take": "Equipamento para equipes que não pedem: tomam",
+    "Cyberware Feed": "Feed de Ciberware",
+    "Fresh street listings. No corp-safe catalog edits.": "Anúncios frescos das ruas. Sem edição segura para Corporações.",
+    "No corpo babysitting. Just implants mercs actually use.": "Sem babá corporativa. Apenas implantes que mercenários usam de verdade.",
+    "Max Humanity Loss (HL)": "Perda Máxima de Humanidade (PH)",
+    "CIR Limit": "Limite de Cirurgia",
+    "Raw chrome lane for chooms who play rough": "Cromo bruto para chooms que jogam pesado",
+    "Drug Feed": "Feed de Drogas",
+    "Street stock compounds for offgrid clients.": "Compostos das ruas para clientes fora da rede.",
+    "Open Drug Forge": "Abrir Forja de Drogas",
+    "Street compounds listed and ready to move. No corp compliance.": "Compostos das ruas prontos para circular. Sem conformidade corporativa.",
+    "Max Difficulty": "Dificuldade Máxima",
+    "Weapons Feed": "Feed de Armas",
+    "Street stock sorted by class and type.": "Estoque das ruas organizado por classe e tipo.",
+    "Firearms and hardware listed with live stats. No corpo babysitting.": "Armas e equipamento com estatísticas ao vivo. Sem babá corporativa.",
+    "Weapons lane for chooms that need louder answers": "Armas para chooms que precisam de respostas mais barulhentas",
+    "Chip Tables": "Tabelas de Chips",
+    "Switch APTR, MRAM and Visual lanes.": "Alterne entre as linhas PART, MRAM e Visual.",
+    "APTR Table": "Tabela PART",
+    "MRAM Table": "Tabela MRAM",
+    "Visual Table": "Tabela Visual",
+    "Back to Cyberwares": "Voltar ao Ciberware",
+    "APTR Skill Chips": "Chips de Perícia PART",
+    "MRAM Skill Chips": "Chips de Perícia MRAM",
+    "Visual Recognition Chips": "Chips de Reconhecimento Visual",
+    "Loading street table…": "Carregando tabela das ruas…",
+    "Pricing Rule": "Regra de Preço",
+    "APTR rates are listed per skill level.": "Os preços PART são indicados por nível da perícia.",
+    "MRAM rates are listed per skill level.": "Os preços MRAM são indicados por nível da perícia.",
+    "Visual profile rates are listed per level.": "Os preços dos perfis visuais são indicados por nível.",
+    "Final cost = rate × chosen level": "Custo final = preço × nível escolhido",
+    "Final cost uses level-specific profile rule": "O custo final usa a regra específica do nível do perfil",
+    "Default chip installation requires socket + processor": "A instalação padrão exige soquete + processador",
+    "Use this page as source for APTR-specific values": "Use esta página como fonte dos valores específicos de PART",
+    "Use this page as source for MRAM-specific values": "Use esta página como fonte dos valores específicos de MRAM",
+    "Use this page as source for Visual Recognition values": "Use esta página como fonte dos valores de Reconhecimento Visual",
+    "APTR feed for reflex and tech-linked chips": "Feed PART para chips ligados a reflexos e técnica",
+    "MRAM feed for memory and cognition-linked chips": "Feed MRAM para chips ligados à memória e cognição",
+    "Visual profile feed for recon and ID-linked chips": "Feed de perfis visuais para reconhecimento e identificação",
+    "Smart Bundles": "Pacotes Inteligentes",
+    "Offgrid presets: chrome now, weapons and combat chems next.": "Configurações fora da rede: cromo agora, armas e drogas de combate em seguida.",
+    "Bundle relay syncing...": "Sincronizando relé de pacotes...",
+    "Build Profile": "Perfil da Configuração",
+    "Budget Band": "Faixa de Orçamento",
+    "Balanced": "Equilibrado",
+    "Aggressive": "Agressivo",
+    "Stealth": "Furtivo",
+    "Street (cheap/efficient)": "Rua (barato/eficiente)",
+    "Pro (mid-tier)": "Profissional (intermediário)",
+    "Opulence (max chrome)": "Opulência (cromo máximo)",
+    "Humanity Safe mode": "Modo de Humanidade Segura",
+    "Generated Bundles": "Pacotes Gerados",
+    "Prebuilt packs tuned for fast deals: pick, stash, JSON, done.": "Pacotes prontos para negócios rápidos: escolha, guarde, JSON, acabou.",
+    "Coherence Rules": "Regras de Coerência",
+    "Every pack is validated before it hits your screen:": "Todo pacote é validado antes de chegar à sua tela:",
+    "Chipware requires Neuralware Processor + Chipware Socket": "Chipware exige Processador Neural + Soquete de Chipware",
+    "Smartgun builds require Interface Plugs": "Configurações de arma inteligente exigem Conectores de Interface",
+    "Netrunning links include compatible data gear": "Conexões de Netrunning incluem equipamento de dados compatível",
+    "Sensory bundles pair cyber senses with support tools": "Pacotes sensoriais combinam cibersentidos com ferramentas de apoio",
+    "Build Profile and Budget Band reshape every generated kit": "Perfil e Orçamento remodelam todo kit gerado",
+    "Price sums first. Offgrid markdown applies after coherence checks.": "Os preços são somados primeiro. O desconto vem após a verificação de coerência.",
+    "Stacked loadouts for chooms who buy hot and burn bright": "Equipamentos completos para chooms que compram quente e queimam forte",
+    "Stash Summary": "Resumo do Estoque",
+    "Review the haul, export the order JSON, push it to your private channel.": "Revise a carga, exporte o JSON do pedido e envie para seu canal privado.",
+    "Your stash is empty, choom. Grab chrome and come back hot.": "Seu estoque está vazio, choom. Pegue algum cromo e volte carregado.",
+    "Open Market": "Abrir Mercado",
+    "Live Total:": "Total Atual:",
+    "Wipe Stash": "Apagar Estoque",
+    "Export Run JSON": "Exportar JSON da Corrida",
+    "Remove all items": "Remover todos os itens",
+    "Download cart as JSON": "Baixar o carrinho como JSON",
+    "Offgrid checkout, run JSON out, trace gone": "Checkout fora da rede, JSON exportado, rastro apagado",
+    "Forge Controls": "Controles da Forja",
+    "Set type, strength, duration and optional effects.": "Defina tipo, força, duração e efeitos opcionais.",
+    "Compound Name": "Nome do Composto",
+    "Type": "Tipo",
+    "Strength": "Força",
+    "Duration": "Duração",
+    "Randomize": "Aleatorizar",
+    "Generate": "Gerar",
+    "Drug Forge": "Forja de Drogas",
+    "Build a custom dose using official effect and side-effect tables.": "Crie uma dose usando as tabelas oficiais de efeitos e efeitos colaterais.",
+    "Effects": "Efeitos",
+    "Side Effects": "Efeitos Colaterais",
+    "Generated Formula": "Fórmula Gerada",
+    "Select options and run generate.": "Selecione as opções e mande gerar.",
+    "Send to Cart": "Enviar ao Carrinho",
+    "Formula Rules": "Regras da Fórmula",
+    "Creation rules follow official system math:": "As regras de criação seguem a matemática oficial:",
+    "Base score = Strength + Effects + Side Effects": "Valor base = Força + Efeitos + Efeitos Colaterais",
+    "Final Difficulty = Base score × Duration multiplier": "Dificuldade final = Valor base × Multiplicador da duração",
+    "Street Cost = Difficulty × 25 eb": "Preço nas ruas = Dificuldade × 25 eb",
+    "Side effects lower build difficulty and can reduce final cost.": "Efeitos colaterais reduzem a dificuldade e podem baixar o custo final.",
+    "Forge custom compounds from street tables": "Forje compostos personalizados a partir das tabelas das ruas",
+    "Debug Console": "Console de Diagnóstico",
+    "Live output for logs, errors and network diagnostics.": "Saída ao vivo de logs, erros e diagnósticos de rede.",
+    "Clear": "Limpar",
+    "Pause": "Pausar",
+    "Export JSON": "Exportar JSON",
+    "Quick Checks": "Verificações Rápidas",
+    "Check cyberwares.json": "Verificar cyberwares.json",
+    "Check equipment.json": "Verificar equipment.json",
+    "Check weapons.json": "Verificar weapons.json",
+    "Storage Snapshot": "Capturar Armazenamento",
+    "Simulate Error": "Simular Erro",
+    "Blackbox diagnostics for offgrid operators": "Diagnóstico blackbox para operadores fora da rede"
+  };
+
+  const PT_MESSAGES = {
+    "language.label": "Idioma",
+    "common.unknown": "DESCONHECIDO",
+    "common.none": "nenhum",
+    "common.bundle": "Pacote",
+    "common.loading_error": "Falha ao carregar dados",
+    "catalog.weapon_lane": "Linha de armas: {category}.",
+    "catalog.weapon_default": "Arma {index}",
+    "catalog.price_pending": "PREÇO PENDENTE",
+    "catalog.no_specs": "Sem especificações disponíveis.",
+    "catalog.no_results": "Nada aqui, choom. Tente outro fluxo.",
+    "catalog.roll": "[JOGAR] {damage}",
+    "catalog.damage_report": "RELATÓRIO DE DANO: {name}",
+    "catalog.total_damage": "DANO TOTAL: {total}",
+    "catalog.class": "CLASSE",
+    "catalog.max": "MÁX",
+    "catalog.smartchipped": "Smartchipada (preço x2)",
+    "catalog.ammo_option": "Opção de Munição",
+    "catalog.open_aptr": "ABRIR TABELA PART",
+    "catalog.open_mram": "ABRIR TABELA MRAM",
+    "catalog.open_visual": "ABRIR TABELA VISUAL",
+    "catalog.snag": "PEGAR",
+    "catalog.copped": "COMPRADO! {hl}",
+    "catalog.all_signals": "TODOS OS SINAIS",
+    "catalog.file_hint": "Uso por arquivo local detectado. Verifique as configurações de CORS.",
+    "catalog.standard": "Padrão",
+    "catalog.api": "API (Perfurante Incendiária)",
+    "catalog.ap": "Perfurante",
+    "catalog.dual_purpose": "Dupla Finalidade",
+    "catalog.electrothermal": "Aprimoramento Eletrotérmico",
+    "catalog.hollow_point": "Ponta Oca",
+    "catalog.kendachi_fragmentation": "Flechete de Fragmentação Kendachi",
+    "catalog.rubber": "Balas de Borracha (caixa com 50)",
+    "catalog.shotgun_shells": "Cartuchos de espingarda",
+    "catalog.apfsds": "APFSDS",
+    "catalog.flare_rounds": "Cartuchos sinalizadores",
+    "catalog.flash_bang": "Flash-bang",
+    "catalog.flash": "Flash",
+    "catalog.req": "EXIGE",
+    "catalog.req_any": "EXIGE UM",
+    "catalog.slots": "ESPAÇOS",
+    "catalog.provider": "PROVEDOR",
+    "catalog.note": "NOTA",
+    "catalog.bonus": "BÔNUS",
+    "catalog.skill": "PERÍCIA",
+    "catalog.set": "DEFINE",
+    "catalog.alt_acq": "AQUISIÇÃO ALT.: FAVORES/TROCA",
+    "catalog.alt_acq_short": "AQUISIÇÃO ALT.",
+    "weapon.type": "Tipo",
+    "weapon.accuracy": "Precisão",
+    "weapon.concealment": "Ocultabilidade",
+    "weapon.availability": "Disponibilidade",
+    "weapon.damage": "Dano",
+    "weapon.ammo_type": "Munição",
+    "weapon.range": "Alcance",
+    "weapon.capacity": "Capacidade",
+    "weapon.cadence": "Cadência",
+    "weapon.reliability": "Confiabilidade",
+    "weapon.code.type": "TIP",
+    "weapon.code.accuracy": "PRE",
+    "weapon.code.damage": "DANO",
+    "weapon.code.range": "ALC",
+    "weapon.code.magazine": "PEN",
+    "weapon.code.rof": "CDT",
+    "weapon.code.ammo": "MUN",
+    "weapon.code.availability": "DIS",
+    "weapon.code.reliability": "CONF",
+    "weapon.code.concealment": "OCL",
+    "cart.empty_total": "TOTAL: 0,00 eb | PH: 0",
+    "cart.type": "TIPO",
+    "cart.trash": "JOGAR FORA",
+    "cart.breach": "PROTOCOLO DE INVASÃO",
+    "cart.breach_success": "INVASÃO BEM-SUCEDIDA",
+    "cart.breach_success_message": "Caução corporativa falsificada.<br><span style='color:var(--neon-green)'>DESCONTO DE 20% APLICADO.</span>",
+    "cart.breach_failed": "INVASÃO DETECTADA",
+    "cart.breach_failed_message": "Rastreamento da NetWatch concluído.<br><span style='color:var(--alert-color)'>TAXA DE 10% ADICIONADA.</span>",
+    "cart.bundle_sync": "SINCRONIZAÇÃO DE PACOTE",
+    "cart.discount_offset": "DESCONTO",
+    "cart.hacked": "INVADIDO: -20%",
+    "cart.traced": "RASTREADO: TAXA +10%",
+    "cart.cost": "CUSTO",
+    "cart.total_hl": "PH TOTAL",
+    "cart.warnings": "AVISOS",
+    "cart.burn_title": "APAGAR ESTOQUE?",
+    "cart.burn_message": "Tem certeza de que deseja apagar os bancos de memória?<br>Esta ação não pode ser desfeita.",
+    "cart.smartchipped": "SMARTCHIPADA x2",
+    "cart.ammo_mod": "MOD. DE MUNIÇÃO",
+    "consistency.missing": "{item}: falta {requirement}",
+    "consistency.missing_any": "{item}: falta um de [{requirements}]",
+    "consistency.max": "{item}: máximo excedido ({count}/{max})",
+    "consistency.slot_provider": "{family}: falta provedor de espaços ({used} usados)",
+    "consistency.slot_overflow": "{family}: espaços excedidos ({used}/{capacity})",
+    "chip.title": "Chips de Perícia {label}",
+    "chip.subtitle": "Tabela oficial das ruas carregada para {label}.",
+    "chip.unavailable": "Tabela de preços indisponível para este tipo.",
+    "chip.feed_offline": "[!] FEED DE PREÇOS OFFLINE",
+    "chip.no_rates": "Nenhum preço encontrado",
+    "chip.awaiting": "Aguardando dados da fonte.",
+    "chip.varies": "Varia",
+    "chip.add": "ADICIONAR",
+    "chip.added": "ADICIONADO",
+    "chip.ref_decision": "Definido pelo Mestre",
+    "chip.level_table": "Tabela por nível {prices} eb | L{level} selecionado",
+    "chip.rate_note": "Preço {rate} eb × nível {level}",
+    "drug.generator_missing": "Opções do gerador não encontradas.",
+    "drug.load_error": "Falha ao carregar dados de drogas: HTTP {status}",
+    "drug.forge_offline": "[!] FORJA OFFLINE",
+    "drug.strength_option": "FOR {value} (mod {mod})",
+    "drug.diff": "DIF",
+    "drug.custom_description": "Composto {type} gerado a partir da tabela oficial das ruas.",
+    "drug.summary": "Tipo: {type} | FOR {strength} | Dificuldade {difficulty} | Custo {cost} eb",
+    "drug.type": "Tipo",
+    "drug.strength": "Força",
+    "drug.duration": "Duração",
+    "drug.difficulty": "Dificuldade",
+    "drug.street_cost": "Preço nas Ruas",
+    "drug.effects": "Efeitos",
+    "drug.side_effects": "Efeitos Colaterais",
+    "drug.compound_formula": "Fórmula do Composto //",
+    "drug.send_cart": "Enviar ao Carrinho",
+    "drug.pushed_title": "ENVIADO AO CARRINHO",
+    "drug.pushed_message": "{name} vinculado ao estoque do carrinho.",
+    "bundle.next_drip": "PRÓXIMO PACOTE DE DADOS EM {seconds}s",
+    "bundle.offline": "[!] MOTOR DE PACOTES OFFLINE",
+    "bundle.virgin_title": "Pacote Virgem",
+    "bundle.virgin_subtitle": "Primeiro conjunto neural com soquete e chips iniciais.",
+    "bundle.virgin_perk_1": "Conjunto de chips de aprendizado rápido",
+    "bundle.virgin_perk_2": "Instalação com dependências seguras",
+    "bundle.netrunner_title": "Pacote de Becos do Netrunner",
+    "bundle.netrunner_subtitle": "Conexão direta com equipamento de apoio ao deck.",
+    "bundle.netrunner_perk_1": "Pronto para datajack",
+    "bundle.netrunner_perk_2": "Ferramentas de sinal incluídas",
+    "bundle.solo_title": "Pacote de Arma Inteligente do Solo",
+    "bundle.solo_subtitle": "Pacote de conexão de combate ajustado para tiro direto.",
+    "bundle.solo_perk_1": "Calibração voltada ao combate",
+    "bundle.solo_perk_2": "Equipamento de supressão urbana",
+    "bundle.recon_title": "Pacote de Reconhecimento Fantasma",
+    "bundle.recon_subtitle": "Conjunto sensorial para rastreamento, observação e inteligência tática.",
+    "bundle.recon_perk_1": "Linha óptica furtiva",
+    "bundle.recon_perk_2": "Fusão sensorial de reconhecimento",
+    "bundle.medic_title": "Kit de Médico das Ruas",
+    "bundle.medic_subtitle": "Conjunto de remendos para corridas noturnas e fugas ruins.",
+    "bundle.medic_perk_1": "Pronto para triagem de emergência",
+    "bundle.medic_perk_2": "Equipamento de apoio cirúrgico",
+    "bundle.star_title": "Kit Estrela Cromada",
+    "bundle.star_subtitle": "Cromo com estilo para presença, operações sociais e noites quentes.",
+    "bundle.star_perk_1": "Cibermoda de alta presença",
+    "bundle.star_perk_2": "Pacote de reforço de persona",
+    "bundle.signature_aggressive": "Calibrado para Combate",
+    "bundle.signature_aggressive_perk": "Calibração de pressão constante",
+    "bundle.signature_stealth": "Calibrado para Baixa Visibilidade",
+    "bundle.signature_stealth_perk": "Prioridade para utilidade silenciosa",
+    "bundle.signature_netrunner": "Calibrado para Fluxo de Rede",
+    "bundle.signature_netrunner_perk": "Compatibilidade da cadeia de sinal",
+    "bundle.signature_balanced": "Equilíbrio da Casa",
+    "bundle.signature_balanced_perk": "Verificação de coerência entre funções",
+    "bundle.subtotal": "Subtotal",
+    "bundle.total": "Total",
+    "bundle.add": "Adicionar Pacote ao Carrinho",
+    "bundle.added": "Pacote Adicionado",
+    "bundle.uploaded": "PACOTE ENVIADO",
+    "bundle.uploaded_message": "{title} adicionado ao estoque com {count} itens.",
+    "auth.online": "ONLINE",
+    "auth.status": "STATUS",
+    "auth.user": "USUÁRIO",
+    "auth.jack_out": "[ DESCONECTAR ]",
+    "auth.jack_out_title": "DESCONECTAR?",
+    "auth.jack_out_message": "Encerrar a conexão e apagar a memória local?<br>Todos os dados da sessão serão perdidos.",
+    "login.invalid": "CARACTERES INVÁLIDOS",
+    "login.jack_in": "CONECTAR",
+    "login.granted": "ACESSO CONCEDIDO...",
+    "modal.acknowledge": "ENTENDIDO",
+    "modal.cancel": "CANCELAR",
+    "modal.confirm": "CONFIRMAR",
+    "hack.title": "PROTOCOLO DE INVASÃO",
+    "hack.injecting": "INJETANDO MALWARE... PARE NA ZONA AZUL",
+    "hack.execute": "EXECUTAR",
+    "hack.granted": "ACESSO CONCEDIDO. FUNDOS DESVIADOS.",
+    "hack.detected": "INVASÃO DETECTADA. RASTREAMENTO INICIADO.",
+    "debug.resume": "Retomar",
+    "debug.pause": "Pausar",
+    "debug.initialized": "Console de diagnóstico iniciado.",
+    "debug.cleared": "Console limpo.",
+    "debug.paused": "Captura pausada.",
+    "debug.resumed": "Captura retomada.",
+    "debug.exported": "Logs exportados.",
+    "debug.level_system": "SISTEMA",
+    "debug.level_log": "LOG",
+    "debug.level_info": "INFO",
+    "debug.level_warn": "AVISO",
+    "debug.level_error": "ERRO",
+    "debug.level_network": "REDE",
+    "debug.level_storage": "ARMAZENAMENTO",
+    "debug.level_check": "VERIFICAÇÃO",
+    "error.cant_sync": "Não foi possível sincronizar com o DataTerm em {source}.",
+    "error.debug_info": "Informação de diagnóstico: {message}",
+    "error.pro_tip": "DICA: {hint}",
+    "error.feed_failed": "Falha ao carregar o feed solicitado."
+  };
+
+  function normalizeLocale(value) {
+    const candidate = String(value || "").toLowerCase();
+    return candidate === "pt-br" || candidate === "pt" ? "pt-BR" : "en-US";
+  }
+
+  function getLocale() {
+    try {
+      return normalizeLocale(root.localStorage?.getItem(STORAGE_KEY) || "en-US");
+    } catch {
+      return "en-US";
+    }
+  }
+
+  function interpolate(value, params) {
+    return String(value).replace(/\{([a-zA-Z0-9_]+)\}/g, (_match, key) => (
+      Object.prototype.hasOwnProperty.call(params || {}, key) ? String(params[key]) : `{${key}}`
+    ));
+  }
+
+  function t(key, params = {}, fallback = key) {
+    const value = getLocale() === "pt-BR" ? PT_MESSAGES[key] : null;
+    return interpolate(value || fallback, params);
+  }
+
+  function translateStatic(rootNode) {
+    if (getLocale() !== "pt-BR" || !rootNode) return;
+    const documentNode = rootNode.nodeType === 9 ? rootNode : rootNode.ownerDocument;
+    if (!documentNode) return;
+
+    const walker = documentNode.createTreeWalker(rootNode, 4);
+    const textNodes = [];
+    let node;
+    while ((node = walker.nextNode())) textNodes.push(node);
+    textNodes.forEach((textNode) => {
+      if (["SCRIPT", "STYLE"].includes(textNode.parentElement?.tagName)) return;
+      const trimmed = textNode.nodeValue.trim();
+      const translated = PT_STATIC[trimmed];
+      if (!translated) return;
+      textNode.nodeValue = textNode.nodeValue.replace(trimmed, translated);
+    });
+
+    const attributes = ["aria-label", "placeholder", "content", "title"];
+    rootNode.querySelectorAll?.("[aria-label], [placeholder], meta[name='description'], [title]").forEach((element) => {
+      attributes.forEach((attribute) => {
+        const value = element.getAttribute(attribute);
+        if (value && PT_STATIC[value]) element.setAttribute(attribute, PT_STATIC[value]);
+      });
+    });
+    if (documentNode.title && PT_STATIC[documentNode.title]) documentNode.title = PT_STATIC[documentNode.title];
+    documentNode.documentElement.lang = "pt-BR";
+  }
+
+  function dataPath(path) {
+    if (getLocale() !== "pt-BR") return path;
+    return String(path).replace(/\.json(?=$|[?#])/, ".pt-BR.json");
+  }
+
+  function preserveLocaleAndClear(storage) {
+    const locale = getLocale();
+    storage.clear();
+    if (storage === root.localStorage && locale !== "en-US") storage.setItem(STORAGE_KEY, locale);
+  }
+
+  function injectSelector(documentNode) {
+    if (!documentNode || documentNode.getElementById("language-select")) return;
+    const wrapper = documentNode.createElement("div");
+    wrapper.className = "language-selector";
+    const label = documentNode.createElement("label");
+    label.htmlFor = "language-select";
+    label.textContent = t("language.label", {}, "Language");
+    const select = documentNode.createElement("select");
+    select.id = "language-select";
+    select.setAttribute("aria-label", t("language.label", {}, "Language"));
+    for (const locale of SUPPORTED) {
+      const option = documentNode.createElement("option");
+      option.value = locale;
+      option.textContent = locale;
+      option.selected = locale === getLocale();
+      select.appendChild(option);
+    }
+    select.addEventListener("change", () => {
+      try { root.localStorage.setItem(STORAGE_KEY, normalizeLocale(select.value)); } catch {}
+      root.location.reload();
+    });
+    wrapper.append(label, select);
+
+    const nav = documentNode.querySelector(".navbar nav");
+    const login = documentNode.querySelector(".login-container");
+    if (nav) nav.appendChild(wrapper);
+    else if (login) login.prepend(wrapper);
+    else documentNode.body?.prepend(wrapper);
+  }
+
+  function boot() {
+    const documentNode = root.document;
+    if (!documentNode) return;
+    if (getLocale() === "pt-BR") {
+      const manifest = documentNode.querySelector("link[rel='manifest']");
+      if (manifest) manifest.href = manifest.getAttribute("href").replace("manifest.webmanifest", "manifest.pt-BR.webmanifest");
+    }
+    translateStatic(documentNode);
+    injectSelector(documentNode);
+  }
+
+  const api = {
+    STORAGE_KEY,
+    SUPPORTED,
+    getLocale,
+    isPtBr: () => getLocale() === "pt-BR",
+    normalizeLocale,
+    t,
+    translateStatic,
+    dataPath,
+    preserveLocaleAndClear,
+    injectSelector,
+  };
+
+  root.I18n = api;
+  if (root.document) root.document.addEventListener("DOMContentLoaded", boot);
+  if (typeof module !== "undefined" && module.exports) module.exports = api;
+})();

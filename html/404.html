@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Byte & Blades error screen for missing feeds and offline data streams." />
+    <title>Signal Lost | Byte & Blades</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="icon" href="../assets/svg/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="../manifest.webmanifest" />
+    <script src="../js/i18n.js"></script>
+    <script src="../js/auth.js"></script>
+</head>
+
+<body>
+    <a href="../index.html" class="skip-link">Back to home</a>
+
+    <div class="container">
+        <header class="navbar">
+            <div class="logo-area">
+                <h1 class="logo">Byte & Blades Store</h1>
+                <p class="tagline">Offgrid error lane // feed lost</p>
+            </div>
+            <nav aria-label="Main Navigation">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./cyberwares.html">Cyberwares</a></li>
+                    <li><a href="./accessories.html">Accessories</a></li>
+                    <li><a href="./drugs.html">Drugs</a></li>
+                    <li><a href="./weapons.html">Weapons</a></li>
+                    <li><a href="./bundles.html">Bundles</a></li>
+                    <li><a href="./cart.html">Cart</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <main class="grid-shell" id="main-catalog">
+        <aside class="category-rail">
+            <header class="rail-header">
+                <span class="rail-title">SYSTEM: SIGNAL LOST</span>
+                <p class="rail-hint">The feed you asked for is missing or offline.</p>
+            </header>
+        </aside>
+
+        <section class="content-slab">
+            <div class="content-header">
+                <div class="content-titles">
+                    <h1>404 // Feed Offline</h1>
+                    <p class="content-sub" id="error-summary">Unable to reach the requested resource.</p>
+                </div>
+            </div>
+
+            <section class="items-section full">
+                <article class="item error-box">
+                    <h3>[!] SIGNAL LOST</h3>
+                    <p class="desc" id="error-source">Requested path not available.</p>
+                    <p class="desc" id="error-message">The DataTerm returned an error while loading this stream.</p>
+                    <p class="desc" id="error-hint" hidden></p>
+                    <div class="action-row" style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
+                        <a href="../index.html" class="btn-primary">Go Home</a>
+                        <a href="./cyberwares.html" class="btn-secondary">Open Cyberwares</a>
+                    </div>
+                </article>
+            </section>
+        </section>
+
+        <aside class="filter-sidebar" aria-hidden="true"></aside>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Byte & Blades Store. Hendo: All rights reserved.</p>
+            <p class="netwatch-warning">No Corps. No NetWatch. Offgrid market.</p>
+        </div>
+    </footer>
+
+    <script>
+        const errorT = (key, fallback, values = {}) => window.I18n
+            ? I18n.t(key, values, fallback)
+            : fallback;
+        const params = new URLSearchParams(window.location.search);
+        const source = params.get("source");
+        const message = params.get("message");
+        const hint = params.get("hint");
+
+        if (source) {
+            document.getElementById("error-source").innerHTML = errorT(
+                "error.cant_sync",
+                `Can't sync with DataTerm at <strong>${source}</strong>.`,
+                { source: `<strong>${source}</strong>` },
+            );
+        }
+
+        if (message) {
+            document.getElementById("error-message").textContent = errorT(
+                "error.debug_info",
+                `Debug info: ${message}`,
+                { message },
+            );
+        }
+
+        if (hint) {
+            const hintEl = document.getElementById("error-hint");
+            hintEl.hidden = false;
+            hintEl.textContent = errorT("error.pro_tip", `PRO TIP: ${hint}`, { hint });
+        }
+
+        if (source || message) {
+            document.getElementById("error-summary").textContent = errorT(
+                "error.feed_failed",
+                "The requested feed failed to load.",
+            );
+        }
+    </script>
+</body>
+</html>

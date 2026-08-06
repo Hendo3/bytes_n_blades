@@ -1,4 +1,11 @@
-const DRUGS_DATA_PATH = "../data/drugs.json";
+function drugT(key, fallback, params = {}) {
+  if (typeof window !== "undefined" && window.I18n) return window.I18n.t(key, params, fallback);
+  return String(fallback).replace(/\{([a-zA-Z0-9_]+)\}/g, (_match, name) => params[name] ?? `{${name}}`);
+}
+
+const DRUGS_DATA_PATH = typeof window !== "undefined" && window.I18n
+  ? window.I18n.dataPath("../data/drugs.json")
+  : "../data/drugs.json";
 const CART_STORAGE_KEY = "cyber_cart";
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -22,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     const payload = await fetchDrugsData();
     const options = payload?.data?.generatorOptions;
-    if (!options) throw new Error("Generator options not found.");
+    if (!options) throw new Error(drugT("drug.generator_missing", "Generator options not found."));
 
     hydrateForm(ui, options);
     bindNamePlaceholder(ui, options);
@@ -51,14 +58,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderResult(ui, firstBuild);
   } catch (error) {
     if (ui.result) {
-      ui.result.innerHTML = `<h3>[!] FORGE OFFLINE</h3><p class="desc">${error.message}</p>`;
+      ui.result.innerHTML = `<h3>${drugT("drug.forge_offline", "[!] FORGE OFFLINE")}</h3><p class="desc">${error.message}</p>`;
     }
   }
 });
 
 async function fetchDrugsData() {
   const response = await fetch(DRUGS_DATA_PATH, { cache: "no-store" });
-  if (!response.ok) throw new Error(`Failed to load drugs data: HTTP ${response.status}`);
+  if (!response.ok) throw new Error(drugT("drug.load_error", `Failed to load drugs data: HTTP ${response.status}`, { status: response.status }));
   return response.json();
 }
 
@@ -75,7 +82,10 @@ function hydrateForm(ui, options) {
     ui.strength,
     (options.strengthOptions || []).map((entry) => ({
       value: entry.value,
-      label: `STR ${entry.value} (mod ${entry.difficultyMod})`,
+      label: drugT("drug.strength_option", `STR ${entry.value} (mod ${entry.difficultyMod})`, {
+        value: entry.value,
+        mod: entry.difficultyMod,
+      }),
     })),
   );
 
@@ -112,7 +122,7 @@ function renderChecklist(entries, prefix) {
         <label class="generator-checkitem" for="${id}">
           <input id="${id}" type="checkbox" data-key="${entry.id}" data-mod="${mod}" />
           <span>${entry.label}</span>
-          <small>DIFF ${modText}</small>
+          <small>${drugT("drug.diff", "DIFF")} ${modText}</small>
         </label>
       `;
     })
@@ -130,7 +140,7 @@ function selectedChecklist(containerEl) {
 
 function generateDrug(ui, options) {
   const selectedType = ui.type.value;
-  const typeEntry = options.types[selectedType] || { label: selectedType };
+  const typeEntry = options.types?.[selectedType] || { label: selectedType };
 
   const strengthEntry = (options.strengthOptions || []).find((entry) => entry.value === ui.strength.value)
     || (options.strengthOptions || [])[0]
@@ -176,7 +186,7 @@ function generateDrug(ui, options) {
     duration: durationEntry.value,
     effects: effects.map((entry) => entry.label),
     sideEffects: risks.map((entry) => entry.label),
-    description: `${typeEntry.label} custom build generated from official street table.`,
+    description: drugT("drug.custom_description", `${typeEntry.label} custom build generated from official street table.`, { type: typeEntry.label }),
     buildMeta: {
       baseScore,
       strengthScore,
@@ -276,7 +286,12 @@ function randomizeSelections(ui, options) {
 function renderResult(ui, build) {
   const summary = `
     <h3>${escapeHtml(build.name)}</h3>
-    <p class="desc">Type: ${escapeHtml(build.type)} | STR ${escapeHtml(build.strength)} | Difficulty ${build.difficulty} | Cost ${build.price} eb</p>
+    <p class="desc">${drugT("drug.summary", `Type: ${escapeHtml(build.type)} | STR ${escapeHtml(build.strength)} | Difficulty ${build.difficulty} | Cost ${build.price} eb`, {
+      type: escapeHtml(build.type),
+      strength: escapeHtml(build.strength),
+      difficulty: build.difficulty,
+      cost: build.price,
+    })}</p>
     <div class="bundle-tags forge-scroll">
       <span class="bundle-tag">${escapeHtml(build.duration)}</span>
       ${build.effects.map((label) => `<span class="bundle-tag bundle-perk">FX: ${escapeHtml(label)}</span>`).join("")}
@@ -286,13 +301,13 @@ function renderResult(ui, build) {
 
   const fakeFormula = buildFakeFormula(build);
   const compositionItems = [
-    ["Type", build.type],
-    ["Strength", build.strength],
-    ["Duration", build.duration],
-    ["Difficulty", String(build.difficulty)],
-    ["Street Cost", `${build.price} eb`],
-    ["Effects", build.effects.length ? build.effects.join(" | ") : "none"],
-    ["Side Effects", build.sideEffects.length ? build.sideEffects.join(" | ") : "none"],
+    [drugT("drug.type", "Type"), build.type],
+    [drugT("drug.strength", "Strength"), build.strength],
+    [drugT("drug.duration", "Duration"), build.duration],
+    [drugT("drug.difficulty", "Difficulty"), String(build.difficulty)],
+    [drugT("drug.street_cost", "Street Cost"), `${build.price} eb`],
+    [drugT("drug.effects", "Effects"), build.effects.length ? build.effects.join(" | ") : drugT("common.none", "none")],
+    [drugT("drug.side_effects", "Side Effects"), build.sideEffects.length ? build.sideEffects.join(" | ") : drugT("common.none", "none")],
   ];
 
   const compositionList = compositionItems
@@ -303,14 +318,14 @@ function renderResult(ui, build) {
     ${summary}
     <div id="dg-sheet" class="generator-sheet">
       <div class="generator-formula">
-        <p class="formula-label">Compound Formula //</p>
+        <p class="formula-label">${drugT("drug.compound_formula", "Compound Formula //")}</p>
         <p class="formula-value">${escapeHtml(fakeFormula)}</p>
       </div>
       <ul class="generator-content-list forge-scroll">
         ${compositionList}
       </ul>
     </div>
-    <button id="dg-add-cart" type="button" class="btn-primary">Send to Cart</button>
+    <button id="dg-add-cart" type="button" class="btn-primary">${drugT("drug.send_cart", "Send to Cart")}</button>
   `;
 
   const addCartBtn = ui.result.querySelector("#dg-add-cart");
@@ -388,6 +403,9 @@ function addBuildToCart(build) {
     name: build.name,
     price: Number(build.price || 0),
     category: "drugs",
+    categoryLabel: window.I18n?.isPtBr?.() ? "Drogas" : "Drugs",
+    sourceCatalog: "drugs-generator",
+    locale: window.I18n?.getLocale?.() || "en-US",
     hl: 0,
     hlOriginal: "0",
     hlRaw: "0",
@@ -398,7 +416,10 @@ function addBuildToCart(build) {
   localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(stash));
 
   if (typeof Modal !== "undefined") {
-    Modal.alert("PUSHED TO CART", `${build.name} linked to cart stash.`);
+    Modal.alert(
+      drugT("drug.pushed_title", "PUSHED TO CART"),
+      drugT("drug.pushed_message", `${build.name} linked to cart stash.`, { name: build.name }),
+    );
   }
 }
 
@@ -409,4 +430,25 @@ function escapeHtml(value) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = {
+    fetchDrugsData,
+    hydrateForm,
+    fillSelect,
+    renderChecklist,
+    selectedChecklist,
+    generateDrug,
+    bindNamePlaceholder,
+    refreshNamePlaceholder,
+    previewFormulaCoreName,
+    randomizeSelections,
+    renderResult,
+    normalizeName,
+    buildFakeFormula,
+    buildFormulaCore,
+    addBuildToCart,
+    escapeHtml,
+  };
 }

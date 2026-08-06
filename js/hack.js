@@ -22,21 +22,24 @@ const HackSystem = {
     },
 
     createUI() {
+        const tr = (key, fallback) => typeof window !== "undefined" && window.I18n
+            ? window.I18n.t(key, {}, fallback)
+            : fallback;
         const overlay = document.createElement("div");
         overlay.className = "hack-overlay"
         overlay.id = "hack-overlay";
 
         overlay.innerHTML = `
             <div class="hack-terminal">
-                <h2>>> BREACH PROTOCOL <<</h2>
-                <div class="hack-status" id="hack-msg">INJECTING MALWARE... STOP IN THE BLUE ZONE</div>
+                <h2>>> ${tr("hack.title", "BREACH PROTOCOL")} <<</h2>
+                <div class="hack-status" id="hack-msg">${tr("hack.injecting", "INJECTING MALWARE... STOP IN THE BLUE ZONE")}</div>
                 
                 <div class="hack-screen" id="hack-screen">
                     <div class="hack-target-zone" id="hack-target"></div>
                     <div class="hack-cursor" id="hack-cursor"></div>
                 </div>
 
-                <button class="btn-hack-action" id="btn-hack-stop">EXECUTE</button>
+                <button class="btn-hack-action" id="btn-hack-stop">${tr("hack.execute", "EXECUTE")}</button>
             </div>
         `;
 
@@ -97,12 +100,16 @@ const HackSystem = {
         const btn = document.getElementById("btn-hack-stop");
 
         if (hit) {
-            msg.textContent = "ACCESS GRANTED. FUNDS DIVERTED.";
+            msg.textContent = typeof window !== "undefined" && window.I18n
+                ? window.I18n.t("hack.granted", {}, "ACCESS GRANTED. FUNDS DIVERTED.")
+                : "ACCESS GRANTED. FUNDS DIVERTED.";
             msg.style.color = "var(--neon-green)";
             btn.style.background = "var(--neon-green)";
             setTimeout(() => this.close(true), 1000);
         } else {
-            msg.textContent = "BREACH DETECTED. TRACE INITIATED.";
+            msg.textContent = typeof window !== "undefined" && window.I18n
+                ? window.I18n.t("hack.detected", {}, "BREACH DETECTED. TRACE INITIATED.")
+                : "BREACH DETECTED. TRACE INITIATED.";
             msg.style.color = "var(--alert-color)";
             setTimeout(() => this.close(false), 1000);
         }
@@ -112,4 +119,8 @@ const HackSystem = {
         document.getElementById("hack-overlay").remove();
         if (this.onComplete) this.onComplete(success);
     }
+}
+
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = HackSystem;
 }

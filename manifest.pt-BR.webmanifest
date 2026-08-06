@@ -1,0 +1,96 @@
+{
+  "id": "./",
+  "name": "Loja Byte & Blades",
+  "short_name": "Byte & Blades",
+  "description": "Loja de Cyberpunk 2020 para ciberware, equipamentos, armas, drogas de combate, pacotes e chips de perícia.",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "start_url": "./login.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#030305",
+  "theme_color": "#00ffd5",
+  "icons": [
+    {
+      "src": "./assets/svg/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": [
+    "shopping",
+    "business",
+    "technology",
+    "cyberpunk",
+    "lifestyle"
+  ],
+  "shortcuts": [
+    {
+      "name": "Ciberware",
+      "short_name": "Ciberware",
+      "description": "Explore cromo e equipamento neural.",
+      "url": "./html/cyberwares.html"
+    },
+    {
+      "name": "Acessórios",
+      "short_name": "Acessórios",
+      "description": "Explore equipamentos e acessórios.",
+      "url": "./html/accessories.html"
+    },
+    {
+      "name": "Armas",
+      "short_name": "Armas",
+      "description": "Explore o catálogo de armas.",
+      "url": "./html/weapons.html"
+    },
+    {
+      "name": "Drogas",
+      "short_name": "Drogas",
+      "description": "Explore drogas de combate e compostos químicos.",
+      "url": "./html/drugs.html"
+    },
+    {
+      "name": "Pacotes",
+      "short_name": "Pacotes",
+      "description": "Monte um pacote completo para seu runner.",
+      "url": "./html/bundles.html"
+    },
+    {
+      "name": "Chips PART",
+      "short_name": "PART",
+      "description": "Abra a tabela de chips de perícia PART.",
+      "url": "./html/aptr-chips.html"
+    },
+    {
+      "name": "Chips MRAM",
+      "short_name": "MRAM",
+      "description": "Abra a tabela de chips de perícia MRAM.",
+      "url": "./html/mram-chips.html"
+    },
+    {
+      "name": "Chips Visuais",
+      "short_name": "Visuais",
+      "description": "Abra a tabela de chips de reconhecimento visual.",
+      "url": "./html/visual-rec-chips.html"
+    },
+    {
+      "name": "Carrinho",
+      "short_name": "Carrinho",
+      "description": "Revise o equipamento atual.",
+      "url": "./html/cart.html"
+    }
+  ]
+}

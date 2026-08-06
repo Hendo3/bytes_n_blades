@@ -4,6 +4,9 @@
  */
 
 (function () {
+  const tr = (key, fallback, params = {}) => window.I18n
+    ? I18n.t(key, params, fallback)
+    : fallback;
   // 1. Evita loop na tela de login
   if (window.location.pathname.includes("login.html")) return;
 
@@ -29,7 +32,8 @@
     console.log(">> EXECUTING MEMORY WIPE...");
 
     // 1. Limpa LocalStorage (Carrinho, ID)
-    localStorage.clear();
+    if (window.I18n) I18n.preserveLocaleAndClear(localStorage);
+    else localStorage.clear();
 
     // 2. Limpa SessionStorage (Hack status, flags temporárias)
     sessionStorage.clear();
@@ -54,7 +58,7 @@
   function displayUserIdentity(id) {
     const tagline = document.querySelector(".tagline");
     if (tagline) {
-      tagline.innerHTML = `STATUS: <span style="color:var(--neon-green)">ONLINE</span> // USER: <span style="color:var(--secondary-color)">${id}</span>`;
+      tagline.innerHTML = `${tr("auth.status", "STATUS")}: <span style="color:var(--neon-green)">${tr("auth.online", "ONLINE")}</span> // ${tr("auth.user", "USER")}: <span style="color:var(--secondary-color)">${id}</span>`;
     }
   }
 
@@ -64,7 +68,7 @@
       const logoutLi = document.createElement("li");
       const logoutBtn = document.createElement("a");
 
-      logoutBtn.textContent = "[ JACK OUT ]";
+      logoutBtn.textContent = tr("auth.jack_out", "[ JACK OUT ]");
       logoutBtn.href = "#";
       logoutBtn.style.color = "var(--alert-color)";
       logoutBtn.style.borderColor = "var(--alert-color)";
@@ -73,8 +77,8 @@
       logoutBtn.onclick = (e) => {
         e.preventDefault();
         Modal.confirm(
-          "JACK OUT?",
-          "Sever connection and wipe local memory?<br>All session data will be lost.",
+          tr("auth.jack_out_title", "JACK OUT?"),
+          tr("auth.jack_out_message", "Sever connection and wipe local memory?<br>All session data will be lost."),
           () => {
             zeroOutSystem();
             redirectToLogin();

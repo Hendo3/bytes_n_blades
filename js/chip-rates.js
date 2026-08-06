@@ -1,4 +1,11 @@
-const CHIP_RATES_PATH = "../data/chip-rates.json";
+function chipT(key, fallback, params = {}) {
+  if (typeof window !== "undefined" && window.I18n) return window.I18n.t(key, params, fallback);
+  return String(fallback).replace(/\{([a-zA-Z0-9_]+)\}/g, (_match, name) => params[name] ?? `{${name}}`);
+}
+
+const CHIP_RATES_PATH = typeof window !== "undefined" && window.I18n
+  ? window.I18n.dataPath("../data/chip-rates.json")
+  : "../data/chip-rates.json";
 const STORAGE_KEY = "cyber_cart";
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -15,20 +22,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const json = await payload.json();
     const spec = json?.data?.[pageType];
-    if (!spec) throw new Error("Rate table unavailable for this type.");
+    if (!spec) throw new Error(chipT("chip.unavailable", "Rate table unavailable for this type."));
 
-    if (titleEl) titleEl.textContent = `${spec.label} Skill Chips`;
-    if (subtitleEl) subtitleEl.textContent = `Official street table loaded for ${spec.label}.`;
+    if (titleEl) titleEl.textContent = chipT("chip.title", `${spec.label} Skill Chips`, { label: spec.label });
+    if (subtitleEl) subtitleEl.textContent = chipT("chip.subtitle", `Official street table loaded for ${spec.label}.`, { label: spec.label });
 
     renderGroups(container, spec.sections || [], pageType);
   } catch (error) {
-    container.innerHTML = `<article class="item"><h3>[!] RATE FEED OFFLINE</h3><p class="desc">${escapeHtml(error.message)}</p></article>`;
+    container.innerHTML = `<article class="item"><h3>${chipT("chip.feed_offline", "[!] RATE FEED OFFLINE")}</h3><p class="desc">${escapeHtml(error.message)}</p></article>`;
   }
 });
 
 function renderGroups(container, sections, pageType) {
   if (!Array.isArray(sections) || sections.length === 0) {
-    container.innerHTML = `<article class="item"><h3>No rates found</h3><p class="desc">Awaiting source data.</p></article>`;
+    container.innerHTML = `<article class="item"><h3>${chipT("chip.no_rates", "No rates found")}</h3><p class="desc">${chipT("chip.awaiting", "Awaiting source data.")}</p></article>`;
     return;
   }
 
@@ -40,7 +47,10 @@ function renderGroups(container, sections, pageType) {
 
     const rows = (section.items || [])
       .map((entry) => {
-        const value = Number(entry.pricePerLevel);
+        const rawValue = entry.pricePerLevel;
+        const value = rawValue === null || rawValue === undefined || rawValue === ""
+          ? Number.NaN
+          : Number(rawValue);
         const levelPrices = Array.isArray(entry.levelPrices)
           ? entry.levelPrices.map((n) => Number(n)).filter((n) => Number.isFinite(n) && n >= 0)
           : null;
@@ -49,9 +59,9 @@ function renderGroups(container, sections, pageType) {
           ? `L1 ${levelPrices[0]} ed / L2 ${levelPrices[1]} ed / L3 ${levelPrices[2]} ed`
           : Number.isFinite(value)
             ? `${value} ed`
-            : "Varies";
+            : chipT("chip.varies", "Varies");
         const note = entry.note ? `<small>${escapeHtml(entry.note)}</small>` : "";
-        const skillSlug = slugify(entry.skill);
+        const skillSlug = slugify(entry.id || entry.skill);
         const sectionSlug = slugify(section.id || section.label || "section");
 
         const controls = hasLevelPrices || Number.isFinite(value)
@@ -62,10 +72,10 @@ function renderGroups(container, sections, pageType) {
                   <option value="2">L2</option>
                   <option value="3">L3</option>
                 </select>
-                <button type="button" class="btn-secondary" data-role="chip-add" data-rate="${Number.isFinite(value) ? value : 0}" data-level-prices="${hasLevelPrices ? levelPrices.join(",") : ""}" data-page-type="${pageType}" data-section="${sectionSlug}" data-skill="${escapeHtml(entry.skill)}" style="padding:4px 8px; font-size:.65rem;">ADD</button>
+                <button type="button" class="btn-secondary" data-role="chip-add" data-rate="${Number.isFinite(value) ? value : 0}" data-level-prices="${hasLevelPrices ? levelPrices.join(",") : ""}" data-page-type="${pageType}" data-section="${sectionSlug}" data-skill-id="${escapeHtml(entry.id || skillSlug)}" data-skill="${escapeHtml(entry.skill)}" style="padding:4px 8px; font-size:.65rem;">${chipT("chip.add", "ADD")}</button>
               </div>
             `
-          : `<small style="display:block; margin-top:6px; color:#9aa;">Set by ref decision</small>`;
+          : `<small style="display:block; margin-top:6px; color:#9aa;">${chipT("chip.ref_decision", "Set by ref decision")}</small>`;
 
         return `
           <li>
@@ -99,6 +109,7 @@ function handleAddChip(buttonEl) {
     .filter((v) => Number.isFinite(v) && v >= 0);
   const pageType = String(buttonEl.dataset.pageType || "chip").toLowerCase();
   const section = String(buttonEl.dataset.section || "base");
+  const skillId = String(buttonEl.dataset.skillId || slugify(buttonEl.dataset.skill || "unknown_skill"));
   const skill = String(buttonEl.dataset.skill || "Unknown Skill");
   const levelSelect = buttonEl.parentElement?.querySelector("select[data-role='chip-level']");
   const level = Number(levelSelect?.value || 1);
@@ -108,11 +119,15 @@ function handleAddChip(buttonEl) {
     : Math.max(0, rate * level);
   const tags = ["chipware", `${pageType}_chip`];
   if (pageType === "visual_recognition") tags.push("visual_recognition_chip");
+  const displayType = window.I18n?.isPtBr?.() && pageType === "aptr"
+    ? "PART"
+    : pageType.toUpperCase();
 
   const item = {
-    id: `${pageType}_${section}_${slugify(skill)}_lvl_${level}`,
-    name: `${pageType.toUpperCase()} Chip: ${skill} +${level}`,
-    category: "Chipware",
+    id: `${pageType}_${section}_${skillId}_lvl_${level}`,
+    name: `${displayType} Chip: ${skill} +${level}`,
+    category: window.I18n?.isPtBr?.() ? "Chipware" : "Chipware",
+    categoryLabel: "Chipware",
     price: finalPrice,
     hl: 0,
     hlOriginal: "0",
@@ -131,14 +146,22 @@ function handleAddChip(buttonEl) {
       },
     ],
     note: levelPrices.length >= 3
-      ? `Level table ${levelPrices.join("/")} ed | selected L${level}`
-      : `Rate ${rate}ed × level ${level}`,
+      ? chipT("chip.level_table", `Level table ${levelPrices.join("/")} ed | selected L${level}`, { prices: levelPrices.join("/"), level })
+      : chipT("chip.rate_note", `Rate ${rate}ed × level ${level}`, { rate, level }),
+    localization: {
+      catalog: "chip-rates",
+      pageType,
+      sectionId: section,
+      skillId,
+      level,
+    },
+    locale: window.I18n?.getLocale?.() || "en-US",
   };
 
   addToCart(item);
 
   const original = buttonEl.textContent;
-  buttonEl.textContent = "ADDED";
+  buttonEl.textContent = chipT("chip.added", "ADDED");
   buttonEl.disabled = true;
   setTimeout(() => {
     buttonEl.textContent = original;
@@ -177,4 +200,14 @@ function slugify(value) {
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, "_")
     .replace(/^_+|_+$/g, "");
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = {
+    renderGroups,
+    handleAddChip,
+    addToCart,
+    escapeHtml,
+    slugify,
+  };
 }

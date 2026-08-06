@@ -7,6 +7,15 @@ const BUNDLE_STORAGE_KEY = "cyber_cart";
 const AUTO_REFRESH_MIN_SECONDS = 45;
 const AUTO_REFRESH_MAX_SECONDS = 140;
 
+function bundleT(key, fallback, params = {}) {
+  if (typeof window !== "undefined" && window.I18n) return window.I18n.t(key, params, fallback);
+  return String(fallback).replace(/\{([a-zA-Z0-9_]+)\}/g, (_match, name) => params[name] ?? `{${name}}`);
+}
+
+function bundleDataPath(path) {
+  return typeof window !== "undefined" && window.I18n ? window.I18n.dataPath(path) : path;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const ui = {
     list: document.getElementById("bundle-list"),
@@ -24,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
 async function init(ui) {
   try {
     const [cyberwaresRaw, equipmentRaw] = await Promise.all([
-      fetchJson("../data/cyberwares.json"),
-      fetchJson("../data/equipment.json"),
+      fetchJson(bundleDataPath("../data/cyberwares.json")),
+      fetchJson(bundleDataPath("../data/equipment.json")),
     ]);
 
     const dataStore = {
@@ -78,12 +87,16 @@ async function init(ui) {
 
     function updateTimerLabel(seconds) {
       if (!ui.timer) return;
-      ui.timer.innerHTML = `NEXT DATA DRIP IN <span style="color:var(--primary-color)">${seconds}s</span>`;
+      ui.timer.innerHTML = bundleT(
+        "bundle.next_drip",
+        `NEXT DATA DRIP IN <span style="color:var(--primary-color)">${seconds}s</span>`,
+        { seconds: `<span style="color:var(--primary-color)">${seconds}</span>` },
+      );
     }
   } catch (error) {
     ui.list.innerHTML = `
       <article class="item">
-        <h3>[!] BUNDLE ENGINE OFFLINE</h3>
+        <h3>${bundleT("bundle.offline", "[!] BUNDLE ENGINE OFFLINE")}</h3>
         <p class="desc">${error.message}</p>
       </article>
     `;
@@ -115,14 +128,29 @@ function normalizeCatalog(data, sourceType) {
       if (price <= 0) return;
 
       items.push({
-        id: `${sourceType}:${categoryName}:${id}`,
+        id: item.id || id,
+        catalogId: `${sourceType}:${categoryName}:${id}`,
         key: id,
+        legacyIds: Array.isArray(item.legacyIds) ? item.legacyIds : [],
         sourceType,
         sourceCategory: categoryName,
+        sourceCategoryLabel: categoryValue.name || categoryName,
         name: String(name).trim(),
-        description: item.description || item.note || "No specs available.",
+        description: item.description || item.note || bundleT("catalog.no_specs", "No specs available."),
         price,
         hlRaw: item.HL || item.hl || item.humanity || "0",
+        tags: Array.isArray(item.tags) ? item.tags : [],
+        maxPurchases: Number(item.maxPurchases) || null,
+        alternativeAcquisition: Boolean(item.alternativeAcquisition),
+        attributeBonuses: Array.isArray(item.attributeBonuses) ? item.attributeBonuses : [],
+        skillBonuses: Array.isArray(item.skillBonuses) ? item.skillBonuses : [],
+        attributeSet: item.attributeSet && typeof item.attributeSet === "object"
+          ? item.attributeSet
+          : null,
+        priceModifiers: Array.isArray(item.priceModifiers) ? item.priceModifiers : [],
+        installation: item.installation && typeof item.installation === "object"
+          ? item.installation
+          : null,
       });
     });
 
@@ -142,10 +170,18 @@ function createBundleContext(dataStore) {
   const allWeapons = Object.values(weaponsByCategory).flat();
 
   const byName = new Map();
+  const byId = new Map();
   [...allCyber, ...allEquipment, ...allWeapons].forEach((item) => {
     const key = normalizeName(item.name);
     if (!byName.has(key)) byName.set(key, []);
     byName.get(key).push(item);
+
+    [item.id, ...(item.legacyIds || [])].forEach((candidateId) => {
+      const normalizedId = normalizeItemId(candidateId);
+      if (normalizedId && !byId.has(normalizedId)) {
+        byId.set(normalizedId, item);
+      }
+    });
   });
 
   return {
@@ -158,6 +194,9 @@ function createBundleContext(dataStore) {
     findByName(name) {
       const found = byName.get(normalizeName(name)) || [];
       return found[0] || null;
+    },
+    findById(id) {
+      return byId.get(normalizeItemId(id)) || null;
     },
     findInCategory(group, category) {
       if (group === "cyber") return cyberByCategory[category] || [];
@@ -187,10 +226,9 @@ function generateBundles(context, options) {
 
   return templates.map((template) => {
     const draft = template(context, options);
-    const coherentItems = enforceDependencies(draft.items, context);
-
-    const tunedItems = applyOptionFilters(coherentItems, options);
-    const signed = applyStoreSignature(draft, tunedItems, options);
+    const tunedItems = applyOptionFilters(draft.items, options);
+    const coherentItems = enforceDependencies(tunedItems, context);
+    const signed = applyStoreSignature(draft, coherentItems, options);
     const subtotal = signed.items.reduce((sum, item) => sum + item.price, 0);
     const discountPct = Math.min(
       30,
@@ -200,6 +238,8 @@ function generateBundles(context, options) {
 
     return {
       title: signed.title,
+      titleKey: draft.titleKey,
+      signatureKey: signed.signatureKey,
       subtitle: draft.subtitle,
       perks: signed.perks,
       vibe: draft.vibe || "balanced",
@@ -213,8 +253,8 @@ function generateBundles(context, options) {
 }
 
 function buildVirginBundle(context, options) {
-  const required = ["Neuralware Processor", "Chipware Socket"]
-    .map((name) => context.findByName(name))
+  const required = ["neuralware_processor", "chipware_socket"]
+    .map((id) => context.findById(id))
     .filter(Boolean);
 
   const chipPool = withStyleFlavor(context, [
@@ -225,9 +265,13 @@ function buildVirginBundle(context, options) {
   const selected = pickBundleItems(required, chipPool, randomInt(3, 4));
 
   return {
-    title: "Virgin Bundle",
-    subtitle: "First neural stack with socket + starter chips.",
-    perks: ["Quick-learning chip set", "Dependency-safe install"],
+    titleKey: "bundle.virgin_title",
+    title: bundleT("bundle.virgin_title", "Virgin Bundle"),
+    subtitle: bundleT("bundle.virgin_subtitle", "First neural stack with socket + starter chips."),
+    perks: [
+      bundleT("bundle.virgin_perk_1", "Quick-learning chip set"),
+      bundleT("bundle.virgin_perk_2", "Dependency-safe install"),
+    ],
     vibe: "balanced",
     items: selected,
     discountRange: [10, 16],
@@ -236,12 +280,12 @@ function buildVirginBundle(context, options) {
 
 function buildNetrunnerBundle(context, options) {
   const required = [
-    "Neuralware Processor",
-    "Cybermodem Link",
-    "Interface Plugs",
-    "DataTerm Link",
+    "neuralware_processor",
+    "cybermodem_link",
+    "interface_plugs",
+    "dataterm_link",
   ]
-    .map((name) => context.findByName(name))
+    .map((id) => context.findById(id))
     .filter(Boolean);
 
   const supportPool = withStyleFlavor(context, [
@@ -249,16 +293,20 @@ function buildNetrunnerBundle(context, options) {
     ...context.findInCategory("equipment", "tools"),
   ], options).filter((item) =>
     ["laptop", "interface", "keyboard", "tech", "modem"].some((token) =>
-      normalizeName(item.name).includes(token),
+      bundleSearchText(item).includes(token),
     ),
   );
 
   const selected = pickBundleItems(required, supportPool, 3);
 
   return {
-    title: "Netrunner Alley Pack",
-    subtitle: "Direct-link setup with deck support hardware.",
-    perks: ["Datajack ready", "Signal tooling included"],
+    titleKey: "bundle.netrunner_title",
+    title: bundleT("bundle.netrunner_title", "Netrunner Alley Pack"),
+    subtitle: bundleT("bundle.netrunner_subtitle", "Direct-link setup with deck support hardware."),
+    perks: [
+      bundleT("bundle.netrunner_perk_1", "Datajack ready"),
+      bundleT("bundle.netrunner_perk_2", "Signal tooling included"),
+    ],
     vibe: "netrunner",
     items: selected,
     discountRange: [8, 14],
@@ -267,11 +315,11 @@ function buildNetrunnerBundle(context, options) {
 
 function buildSoloBundle(context, options) {
   const required = [
-    "Neuralware Processor",
-    "Interface Plugs",
-    "Smartgun Link",
+    "neuralware_processor",
+    "interface_plugs",
+    "smartgun_link",
   ]
-    .map((name) => context.findByName(name))
+    .map((id) => context.findById(id))
     .filter(Boolean);
 
   const cyberSupport = withStyleFlavor(context, [
@@ -283,9 +331,13 @@ function buildSoloBundle(context, options) {
   const selected = pickBundleItems(required, cyberSupport, 4);
 
   return {
-    title: "Solo Smartgun Pack",
-    subtitle: "Combat link package tuned for direct-fire builds.",
-    perks: ["Combat-first tuning", "Urban suppression gear"],
+    titleKey: "bundle.solo_title",
+    title: bundleT("bundle.solo_title", "Solo Smartgun Pack"),
+    subtitle: bundleT("bundle.solo_subtitle", "Combat link package tuned for direct-fire builds."),
+    perks: [
+      bundleT("bundle.solo_perk_1", "Combat-first tuning"),
+      bundleT("bundle.solo_perk_2", "Urban suppression gear"),
+    ],
     vibe: "aggressive",
     items: selected,
     discountRange: [12, 20],
@@ -293,8 +345,8 @@ function buildSoloBundle(context, options) {
 }
 
 function buildReconBundle(context, options) {
-  const required = ["CYBEROPTIC", "Image Enhancement", "Amplified Hearing"]
-    .map((name) => context.findByName(name))
+  const required = ["cyberoptic", "image_enhancement", "amplified_hearing"]
+    .map((id) => context.findById(id))
     .filter(Boolean);
 
   const reconSupport = withStyleFlavor(context, [
@@ -302,16 +354,20 @@ function buildReconBundle(context, options) {
     ...context.findInCategory("equipment", "surveillance"),
   ], options).filter((item) =>
     ["scope", "hearing", "binocular", "ir", "scanner", "enhancement"].some((token) =>
-      normalizeName(item.name).includes(token),
+      bundleSearchText(item).includes(token),
     ),
   );
 
   const selected = pickBundleItems(required, reconSupport, 3);
 
   return {
-    title: "Ghost Recon Bundle",
-    subtitle: "Sensory stack for tracking, spotting and tactical intel.",
-    perks: ["Stealth optics lane", "Recon-grade sensory fusion"],
+    titleKey: "bundle.recon_title",
+    title: bundleT("bundle.recon_title", "Ghost Recon Bundle"),
+    subtitle: bundleT("bundle.recon_subtitle", "Sensory stack for tracking, spotting and tactical intel."),
+    perks: [
+      bundleT("bundle.recon_perk_1", "Stealth optics lane"),
+      bundleT("bundle.recon_perk_2", "Recon-grade sensory fusion"),
+    ],
     vibe: "stealth",
     items: selected,
     discountRange: [9, 15],
@@ -319,8 +375,8 @@ function buildReconBundle(context, options) {
 }
 
 function buildStreetMedicBundle(context, options) {
-  const required = ["Biomonitor", "Pain Editor"]
-    .map((name) => context.findByName(name))
+  const required = ["biomonitor", "pain_editor"]
+    .map((id) => context.findById(id))
     .filter(Boolean);
 
   const supportPool = withStyleFlavor(context, [
@@ -332,9 +388,13 @@ function buildStreetMedicBundle(context, options) {
   const selected = pickBundleItems(required, supportPool, 3);
 
   return {
-    title: "Street Medic Kit",
-    subtitle: "Patch-up stack for night runs and bad exits.",
-    perks: ["Emergency triage ready", "Surgery support loadout"],
+    titleKey: "bundle.medic_title",
+    title: bundleT("bundle.medic_title", "Street Medic Kit"),
+    subtitle: bundleT("bundle.medic_subtitle", "Patch-up stack for night runs and bad exits."),
+    perks: [
+      bundleT("bundle.medic_perk_1", "Emergency triage ready"),
+      bundleT("bundle.medic_perk_2", "Surgery support loadout"),
+    ],
     vibe: "balanced",
     items: selected,
     discountRange: [7, 13],
@@ -342,8 +402,8 @@ function buildStreetMedicBundle(context, options) {
 }
 
 function buildChromeStarBundle(context, options) {
-  const required = ["Neuralware Processor"]
-    .map((name) => context.findByName(name))
+  const required = ["neuralware_processor"]
+    .map((id) => context.findById(id))
     .filter(Boolean);
 
   const flairPool = withStyleFlavor(context, [
@@ -356,9 +416,13 @@ function buildChromeStarBundle(context, options) {
   const selected = pickBundleItems(required, flairPool, 4);
 
   return {
-    title: "Chrome Star Kit",
-    subtitle: "Style-forward chrome for flex, social ops and club heat.",
-    perks: ["High-presence fashionware", "Persona boost package"],
+    titleKey: "bundle.star_title",
+    title: bundleT("bundle.star_title", "Chrome Star Kit"),
+    subtitle: bundleT("bundle.star_subtitle", "Style-forward chrome for flex, social ops and club heat."),
+    perks: [
+      bundleT("bundle.star_perk_1", "High-presence fashionware"),
+      bundleT("bundle.star_perk_2", "Persona boost package"),
+    ],
     vibe: "balanced",
     items: selected,
     discountRange: [11, 18],
@@ -393,6 +457,12 @@ function withStyleFlavor(context, pool, options) {
   return base;
 }
 
+function bundleSearchText(item) {
+  return [item?.id, item?.key, item?.name]
+    .map((value) => String(value || "").toLowerCase())
+    .join(" ");
+}
+
 function applyOptionFilters(items, options) {
   let filtered = items.slice();
 
@@ -420,23 +490,27 @@ function applyStoreSignature(draft, items, options) {
 
   const styleSignature = {
     aggressive: {
-      label: "Combat Calibrated",
-      perks: ["Pressure-first tuning"],
+      key: "bundle.signature_aggressive",
+      label: bundleT("bundle.signature_aggressive", "Combat Calibrated"),
+      perks: [bundleT("bundle.signature_aggressive_perk", "Pressure-first tuning")],
       discountBoost: 1,
     },
     stealth: {
-      label: "Low-Profile Calibrated",
-      perks: ["Silent utility bias"],
+      key: "bundle.signature_stealth",
+      label: bundleT("bundle.signature_stealth", "Low-Profile Calibrated"),
+      perks: [bundleT("bundle.signature_stealth_perk", "Silent utility bias")],
       discountBoost: 1,
     },
     netrunner: {
-      label: "Netflow Calibrated",
-      perks: ["Signal-chain compatibility"],
+      key: "bundle.signature_netrunner",
+      label: bundleT("bundle.signature_netrunner", "Netflow Calibrated"),
+      perks: [bundleT("bundle.signature_netrunner_perk", "Signal-chain compatibility")],
       discountBoost: 1,
     },
     balanced: {
-      label: "House Balanced",
-      perks: ["Cross-role coherence check"],
+      key: "bundle.signature_balanced",
+      label: bundleT("bundle.signature_balanced", "House Balanced"),
+      perks: [bundleT("bundle.signature_balanced_perk", "Cross-role coherence check")],
       discountBoost: 0,
     },
   };
@@ -453,6 +527,7 @@ function applyStoreSignature(draft, items, options) {
 
   return {
     signature: signature.label,
+    signatureKey: signature.key,
     title,
     perks,
     items,
@@ -484,46 +559,207 @@ function pickBundleItems(required, pool, extrasAmount) {
 
 function enforceDependencies(items, context) {
   const selected = [];
+  const selectedIds = new Set();
   const selectedNames = new Set();
 
-  items.forEach((item) => {
-    if (!selectedNames.has(normalizeName(item.name))) {
-      selected.push(item);
-      selectedNames.add(normalizeName(item.name));
+  function addItem(item) {
+    if (!item) return false;
+    const normalizedId = normalizeItemId(item.id);
+    const normalizedName = normalizeName(item.name);
+    if (
+      (normalizedId && selectedIds.has(normalizedId))
+      || (!normalizedId && selectedNames.has(normalizedName))
+    ) {
+      return false;
     }
-  });
 
-  const rules = [
-    {
-      match: (item) => ["Chipware", "Behaviour Chips"].includes(item.sourceCategory),
-      requires: ["Neuralware Processor", "Chipware Socket"],
-    },
-    {
-      match: (item) => normalizeName(item.name).includes("smartgun link"),
-      requires: ["Interface Plugs", "Neuralware Processor"],
-    },
-    {
-      match: (item) => normalizeName(item.name).includes("cybermodem link"),
-      requires: ["Interface Plugs", "Neuralware Processor"],
-    },
-  ];
+    selected.push(item);
+    if (normalizedId) selectedIds.add(normalizedId);
+    if (normalizedName) selectedNames.add(normalizedName);
+    return true;
+  }
 
-  for (const rule of rules) {
-    const triggered = selected.some((item) => rule.match(item));
-    if (!triggered) continue;
+  function isSelected(id) {
+    return selectedIds.has(normalizeItemId(id));
+  }
 
-    for (const dependencyName of rule.requires) {
-      if (selectedNames.has(normalizeName(dependencyName))) continue;
+  function providerCapacityFor(candidate, family) {
+    const installation = candidate?.installation || {};
+    const normalizedFamily = normalizeItemId(family);
+    const capacities = [];
 
-      const dependencyItem = context.findByName(dependencyName);
-      if (dependencyItem) {
-        selected.push(dependencyItem);
-        selectedNames.add(normalizeName(dependencyName));
+    if (
+      installation.slotProvider
+      && normalizeItemId(installation.slotFamily || installation.slotProvider) === normalizedFamily
+    ) {
+      const capacity = Number(installation.slotCapacity);
+      capacities.push(Number.isFinite(capacity) ? capacity : Number.POSITIVE_INFINITY);
+    }
+
+    if (Array.isArray(installation.provides)) {
+      installation.provides.forEach((provider) => {
+        if (
+          provider
+          && normalizeItemId(provider.slotFamily) === normalizedFamily
+        ) {
+          const capacity = Number(provider.slotCapacity);
+          capacities.push(Number.isFinite(capacity) ? capacity : Number.POSITIVE_INFINITY);
+        }
+      });
+    }
+
+    return capacities.length > 0 ? Math.max(...capacities) : -1;
+  }
+
+  function chooseCandidate(ids, consumerInstallation = {}) {
+    const family = consumerInstallation.slotFamily;
+    const usage = Number(consumerInstallation.slotUsage);
+    const candidates = ids.map((id) => context.findById(id)).filter(Boolean);
+
+    if (family && Number.isFinite(usage) && usage > 0) {
+      const providers = candidates
+        .map((candidate) => ({
+          candidate,
+          capacity: providerCapacityFor(candidate, family),
+        }))
+        .filter((entry) => entry.capacity >= usage)
+        .sort((a, b) => {
+          if (b.capacity !== a.capacity) return b.capacity - a.capacity;
+          return a.candidate.price - b.candidate.price;
+        });
+      if (providers.length > 0) return providers[0].candidate;
+    }
+
+    return candidates.sort((a, b) => a.price - b.price)[0] || null;
+  }
+
+  function addProviderForSlotGap() {
+    const usageByFamily = new Map();
+    const capacityByFamily = new Map();
+    const unboundedFamilies = new Set();
+    const candidatesByFamily = new Map();
+
+    selected.forEach((selectedItem) => {
+      const rule = selectedItem.installation || {};
+      const family = normalizeItemId(rule.slotFamily);
+      const usage = Number(rule.slotUsage);
+      if (family && Number.isFinite(usage) && usage > 0) {
+        usageByFamily.set(family, (usageByFamily.get(family) || 0) + usage);
+
+        const candidateIds = [
+          ...listOfStrings(rule.requiresAny),
+          ...(Array.isArray(rule.requiresAnyGroups)
+            ? rule.requiresAnyGroups.flatMap(listOfStrings)
+            : []),
+        ];
+        if (!candidatesByFamily.has(family)) candidatesByFamily.set(family, new Set());
+        candidateIds.forEach((id) => candidatesByFamily.get(family).add(id));
       }
+
+      const directFamily = normalizeItemId(rule.slotFamily || rule.slotProvider);
+      if (rule.slotProvider && directFamily) {
+        const capacity = Number(rule.slotCapacity);
+        if (Number.isFinite(capacity)) {
+          capacityByFamily.set(
+            directFamily,
+            (capacityByFamily.get(directFamily) || 0) + capacity,
+          );
+        } else {
+          unboundedFamilies.add(directFamily);
+        }
+      }
+
+      if (Array.isArray(rule.provides)) {
+        rule.provides.forEach((provider) => {
+          const providedFamily = normalizeItemId(provider?.slotFamily);
+          if (!providedFamily) return;
+          const capacity = Number(provider.slotCapacity);
+          if (Number.isFinite(capacity)) {
+            capacityByFamily.set(
+              providedFamily,
+              (capacityByFamily.get(providedFamily) || 0) + capacity,
+            );
+          } else {
+            unboundedFamilies.add(providedFamily);
+          }
+        });
+      }
+    });
+
+    for (const [family, used] of usageByFamily) {
+      if (unboundedFamilies.has(family)) continue;
+      const capacity = capacityByFamily.get(family) || 0;
+      if (used <= capacity) continue;
+
+      const candidate = [...(candidatesByFamily.get(family) || [])]
+        .map((id) => context.findById(id))
+        .filter((entry) => entry && !isSelected(entry.id))
+        .map((entry) => ({
+          entry,
+          capacity: providerCapacityFor(entry, family),
+        }))
+        .filter((entry) => entry.capacity > 0)
+        .sort((a, b) => {
+          if (b.capacity !== a.capacity) return b.capacity - a.capacity;
+          return a.entry.price - b.entry.price;
+        })[0]?.entry;
+
+      if (candidate && addItem(candidate)) return true;
     }
+
+    return false;
+  }
+
+  items.forEach(addItem);
+
+  let cursor = 0;
+  let safety = 0;
+  while (safety < 2000) {
+    while (cursor < selected.length && safety < 2000) {
+      const item = selected[cursor];
+      const installation = item.installation || {};
+      const requires = listOfStrings(installation.requires);
+
+      requires.forEach((id) => {
+        if (!isSelected(id)) addItem(context.findById(id));
+      });
+
+      const anyGroups = [];
+      const requiresAny = listOfStrings(installation.requiresAny);
+      if (requiresAny.length > 0) anyGroups.push(requiresAny);
+
+      if (Array.isArray(installation.requiresAnyGroups)) {
+        installation.requiresAnyGroups.forEach((group) => {
+          const normalizedGroup = listOfStrings(group);
+          if (normalizedGroup.length > 0) anyGroups.push(normalizedGroup);
+        });
+      }
+
+      anyGroups.forEach((group) => {
+        if (group.some(isSelected)) return;
+        addItem(chooseCandidate(group, installation));
+      });
+
+      cursor += 1;
+      safety += 1;
+    }
+
+    if (!addProviderForSlotGap()) break;
   }
 
   return selected;
+}
+
+function listOfStrings(value) {
+  if (window.CyberUtils) return CyberUtils.stringList(value);
+  return Array.isArray(value)
+    ? value.map((entry) => String(entry || "").trim()).filter(Boolean)
+    : [];
+}
+
+function normalizeItemId(value) {
+  if (window.CyberUtils) return CyberUtils.normalizeId(value);
+  return String(value || "").trim().toLowerCase();
 }
 
 function renderBundles(container, bundles) {
@@ -539,7 +775,7 @@ function renderBundles(container, bundles) {
         (item) => `
           <li>
             <strong>${item.name}</strong>
-            <small>${item.sourceCategory} • ${formatCurrency(item.price)}</small>
+            <small>${item.sourceCategoryLabel || item.sourceCategory} • ${formatCurrency(item.price)}</small>
           </li>
         `,
       )
@@ -558,14 +794,14 @@ function renderBundles(container, bundles) {
       </div>
       <ul class="bundle-items">${listItems}</ul>
       <div class="bundle-summary">
-        <div><span>Subtotal:</span> <strong>${formatCurrency(bundle.subtotal)}</strong></div>
-        <div><span>Total:</span> <strong>${formatCurrency(bundle.total)}</strong></div>
+        <div><span>${bundleT("bundle.subtotal", "Subtotal")}:</span> <strong>${formatCurrency(bundle.subtotal)}</strong></div>
+        <div><span>${bundleT("bundle.total", "Total")}:</span> <strong>${formatCurrency(bundle.total)}</strong></div>
       </div>
     `;
 
     const addBtn = document.createElement("button");
     addBtn.className = "btn-add";
-    addBtn.textContent = "Add Bundle to Cart";
+    addBtn.textContent = bundleT("bundle.add", "Add Bundle to Cart");
     addBtn.onclick = () => addBundleToCart(bundle, addBtn);
 
     card.appendChild(addBtn);
@@ -585,14 +821,29 @@ function addBundleToCart(bundle, button) {
       : { value: parseNumeric(item.hlRaw), raw: String(item.hlRaw || "0"), log: "HL_FALLBACK" };
 
     return {
+      id: item.id,
+      legacyIds: item.legacyIds,
       name: `${item.name}`,
       category: `${item.sourceCategory} [${bundle.title}]`,
+      categoryLabel: `${item.sourceCategoryLabel || item.sourceCategory} [${bundle.title}]`,
+      sourceCatalog: item.sourceType,
+      locale: window.I18n?.getLocale?.() || "en-US",
       price: Number(item.price.toFixed(2)),
       hl: rolled.value,
       hlRaw: rolled.raw,
       hlLog: rolled.log,
+      tags: item.tags,
+      maxPurchases: item.maxPurchases,
+      alternativeAcquisition: item.alternativeAcquisition,
+      attributeBonuses: item.attributeBonuses,
+      skillBonuses: item.skillBonuses,
+      attributeSet: item.attributeSet,
+      priceModifiers: item.priceModifiers,
+      installation: item.installation,
       bundleId,
       bundleTitle: bundle.title,
+      bundleTitleKey: bundle.titleKey,
+      bundleSignatureKey: bundle.signatureKey,
       bundleDiscountPct: bundle.discountPct,
     };
   });
@@ -602,13 +853,16 @@ function addBundleToCart(bundle, button) {
   window.dispatchEvent(new Event("stash-updated"));
 
   const originalText = button.textContent;
-  button.textContent = "Bundle Added";
+  button.textContent = bundleT("bundle.added", "Bundle Added");
   button.disabled = true;
 
   if (typeof Modal !== "undefined") {
     Modal.alert(
-      "BUNDLE UPLOADED",
-      `${bundle.title} added to stash with ${bundle.items.length} items.`,
+      bundleT("bundle.uploaded", "BUNDLE UPLOADED"),
+      bundleT("bundle.uploaded_message", `${bundle.title} added to stash with ${bundle.items.length} items.`, {
+        title: bundle.title,
+        count: bundle.items.length,
+      }),
     );
   }
 
@@ -643,7 +897,10 @@ function parseNumeric(value) {
 
 function formatCurrency(value) {
   if (window.CyberUtils) return CyberUtils.formatCurrency(value);
-  return ((value || 0).toLocaleString("en-US", { style: "currency", currency: "USD" }).replace("$", "") + " eb");
+  return Number(value || 0).toLocaleString(window.I18n?.getLocale?.() || "en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }) + " eb";
 }
 
 function normalizeName(value) {
@@ -664,4 +921,27 @@ function toTitleCase(text) {
 
 function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = {
+    init,
+    fetchJson,
+    normalizeCatalog,
+    createBundleContext,
+    enforceDependencies,
+    generateBundles,
+    withStyleFlavor,
+    applyOptionFilters,
+    applyStoreSignature,
+    pickBundleItems,
+    renderBundles,
+    addBundleToCart,
+    getCart,
+    parseNumeric,
+    formatCurrency,
+    normalizeName,
+    toTitleCase,
+    randomInt,
+  };
 }
