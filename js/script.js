@@ -664,24 +664,46 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function isAmmoItem(item) {
-    const category = String(item.weaponClass || item.category || "").toLowerCase();
-    const typeCode = String(item.raw?.type_code || "").toLowerCase();
-    return category.includes("ammo") || typeCode === "ammo";
+    const category = normalizeCatalogToken(item.weaponClass || item.category);
+    const typeCode = normalizeCatalogToken(item.raw?.type_code || item.type_code);
+    const ammoTypeCodes = new Set(["ammo", "ammunition", "munition", "municao", "municoes"]);
+
+    if (ammoTypeCodes.has(typeCode)) return true;
+
+    return category === "ammo"
+      || /(^|\s)ammo($|\s)/.test(category)
+      || category.includes("ammunition")
+      || category.includes("munition")
+      || category.includes("municao")
+      || category.includes("municoes");
   }
 
   function isShotgunAmmoItem(item) {
-    const category = String(item.weaponClass || item.category || "").toLowerCase();
-    const ammoType = String(item.raw?.ammo_type || "").toLowerCase();
-    const name = String(item.name || "").toLowerCase();
+    const category = normalizeCatalogToken(item.weaponClass || item.category);
+    const ammoType = normalizeCatalogToken(item.raw?.ammo_type);
+    const name = normalizeCatalogToken(item.name);
     return category.includes("shotgun")
+      || category.includes("espingarda")
       || ammoType.includes("shotgun")
+      || ammoType.includes("espingarda")
+      || ammoType.includes("cartucho")
       || ammoType.includes("apfsds")
       || ammoType.includes("flare")
       || ammoType.includes("flash")
       || name.includes("shotgun")
+      || name.includes("espingarda")
+      || name.includes("cartucho")
       || name.includes("apfsds")
       || name.includes("flare")
       || name.includes("flash");
+  }
+
+  function normalizeCatalogToken(value) {
+    return String(value || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
   }
 
   function getAmmoOptionSet(item) {
