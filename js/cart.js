@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const dependencyLabels = new Map();
   const localizedItems = new Map();
   const localizedSkills = new Map();
+  const localizedDeckParts = new Map();
   const ui = {
     list: document.getElementById("cart-list"),
     total: document.getElementById("cart-total-value"),
@@ -60,6 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
           ["catalog", "../data/cyberwares.json"],
           ["catalog", "../data/equipment.json"],
         ];
+    if (window.I18n) {
+      const cartSources = new Set(getStash().map((item) => item.sourceCatalog));
+      if (cartSources.has("programs") || cartSources.has("cyberdecks")) {
+        sources.push(["programs", cartDataPath("../data/programs.json")]);
+      }
+      if (cartSources.has("cyberdecks")) {
+        sources.push(["cyberdecks", cartDataPath("../data/cyberdecks.json")]);
+      }
+    }
     const responses = await Promise.allSettled(
       sources.map(([_type, url]) => fetch(url, { cache: "no-store" })),
     );
@@ -97,6 +107,32 @@ document.addEventListener("DOMContentLoaded", () => {
             });
           });
         });
+        continue;
+      }
+      if (sourceType === "programs") {
+        const classes = new Map((payload.classes || []).map((entry) => [entry.id, entry.label]));
+        (payload.programs || []).forEach((item) => registerLocalizedItem(item.id, {
+          name: item.name,
+          categoryLabel: (item.class_ids || [item.class_id])
+            .map((id) => classes.get(id) || id)
+            .join(" / "),
+        }));
+        continue;
+      }
+      if (sourceType === "cyberdecks") {
+        (payload.decks || []).forEach((item) => registerLocalizedItem(item.id, {
+          name: item.name,
+          categoryLabel: cartT("net.decks", "Cyberdecks"),
+        }));
+        const builder = payload.builder || {};
+        [...(builder.chassis || []), ...(builder.connections || []), ...(builder.options || [])]
+          .forEach((entry) => localizedDeckParts.set(entry.id, entry.name));
+        (builder.options || []).forEach((entry) => (entry.choices || [])
+          .forEach((choice) => localizedDeckParts.set(`${entry.id}:${choice.id}`, choice.name)));
+        (builder.external_products || []).forEach((entry) => registerLocalizedItem(entry.id, {
+          name: entry.name,
+          categoryLabel: cartT("net.netgear", "Deck Support"),
+        }));
         continue;
       }
       const catalog = payload.data || payload;
@@ -151,6 +187,13 @@ document.addEventListener("DOMContentLoaded", () => {
           installation: item.installation,
         };
       }
+    }
+    if (item.deckConfiguration?.kind === "custom") {
+      return {
+        name: cartT("net.custom_deck", "Custom Cyberdeck"),
+        categoryLabel: cartT("net.decks", "Cyberdecks"),
+        installation: item.installation,
+      };
     }
     return localizedItems.get(String(item.id || "").trim().toLowerCase()) || item;
   }
@@ -361,6 +404,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderTechnicalInfo(item) {
     const details = [];
+
+    if (item.program) {
+      const situational = (item.program.strength?.situational || [])
+        .map((entry) => `${entry.value} ${entry.when}`)
+        .join("; ");
+      const strength = `${item.program.strength?.base ?? "?"}${situational ? ` (${situational})` : ""}`;
+      details.push(`${cartT("net.strength", "STR")} ${strength} | MU ${item.program.memory ?? cartT("net.variable", "Variable")}`);
+      if (item.program.platform) details.push(`${cartT("net.platform", "PLATFORM")} ${item.program.platform}`);
+    }
+
+    if (item.netgear) {
+      const unit = item.netgear.unit ? ` ${item.netgear.unit}` : "";
+      details.push(`${cartT("net.quantity", "QUANTITY")} ${item.netgear.quantity}${unit}`);
+    }
+
+    if (item.deckConfiguration) {
+      const deck = item.deckConfiguration;
+      const value = (candidate) => candidate == null ? cartT("net.unspecified", "Not specified") : candidate;
+      details.push(`CPU ${value(deck.cpu)} | MU ${value(deck.memory)} | ${cartT("net.speed", "Speed")} ${value(deck.speed)} | ${cartT("net.data_wall", "Data Wall")} ${value(deck.dataWall)}`);
+      if (deck.chassisId) details.push(`${cartT("net.chassis", "CHASSIS")} ${localizedDeckParts.get(deck.chassisId) || deck.chassisId}`);
+      if (deck.connectionId) details.push(`${cartT("net.connection", "CONNECTION")} ${localizedDeckParts.get(deck.connectionId) || deck.connectionId}`);
+      if (Array.isArray(deck.options) && deck.options.length > 0) {
+        const optionText = deck.options.map((entry) => {
+          const label = localizedDeckParts.get(entry.id) || entry.name || entry.id;
+          const choice = entry.choiceId
+            ? localizedDeckParts.get(`${entry.id}:${entry.choiceId}`) || entry.choiceName || entry.choiceId
+            : null;
+          return `${label}${choice ? `: ${choice}` : ""}${entry.quantity > 1 ? ` x${entry.quantity}` : ""}`;
+        }).join(" // ");
+        details.push(`${cartT("net.options", "OPTIONS")} ${optionText}`);
+      }
+      if (Array.isArray(deck.programIds) && deck.programIds.length > 0) {
+        const loaded = deck.programIds
+          .map((id) => localizedItems.get(String(id).toLowerCase())?.name || id)
+          .join(", ");
+        details.push(`${cartT("net.loaded", "LOADED")} ${loaded} (${deck.memoryUsed ?? "?"}/${deck.memory} MU)`);
+      }
+    }
 
     if (item.deck && typeof item.deck === "object") {
       const stats = item.deck.stats || {};

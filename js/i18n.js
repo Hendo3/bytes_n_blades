@@ -235,7 +235,36 @@
     "Check weapons.json": "Verificar weapons.json",
     "Storage Snapshot": "Capturar Armazenamento",
     "Simulate Error": "Simular Erro",
-    "Blackbox diagnostics for offgrid operators": "Diagnóstico blackbox para operadores fora da rede"
+    "Blackbox diagnostics for offgrid operators": "Diagnóstico blackbox para operadores fora da rede",
+    "Netrunning": "Netrunning",
+    "Programs": "Programas",
+    "Build a Deck": "Montar um Deck",
+    "Program Catalog": "Catálogo de Programas",
+    "160 standard software products from the Core Rulebook and Bartmoss sources. Fortress software is sold here, never assembled here.": "160 produtos de software padrão do Livro Básico e das fontes de Bartmoss. Software de Fortaleza é vendido aqui, nunca montado aqui.",
+    "Search": "Buscar",
+    "Name, effect or platform": "Nome, efeito ou plataforma",
+    "Class": "Classe",
+    "All Classes": "Todas as Classes",
+    "Include 107 optional Netrunner card conversions": "Incluir 107 conversões opcionais do card game Netrunner",
+    "27 standard published decks, plus five referee-approved conversions kept off the main shelf.": "27 decks publicados padrão, além de cinco conversões aprovadas pelo Mestre mantidas fora da prateleira principal.",
+    "Include optional Netrunner card conversions": "Incluir conversões opcionais do card game Netrunner",
+    "Deck Support": "Suporte para Decks",
+    "Infrastructure and bench gear sold separately. None of this opens a Fortress builder.": "Infraestrutura e equipamento de bancada vendidos separadamente. Nada disso abre um construtor de Fortaleza.",
+    "Custom Cyberdeck Builder": "Construtor de Cyberdeck Personalizado",
+    "Configure one cyberdeck and load compatible software. Data Fortresses are deliberately outside this tool.": "Configure um cyberdeck e carregue software compatível. Fortalezas de Dados ficam deliberadamente fora desta ferramenta.",
+    "Core Hardware": "Hardware Central",
+    "Chassis": "Chassi",
+    "Used standard deck (500 eb)": "Deck padrão usado (500 eb)",
+    "Expanded memory (20 MU, +5,000 eb)": "Memória expandida (20 MU, +5.000 eb)",
+    "Connection": "Conexão",
+    "Program Loadout": "Carga de Programas",
+    "Select each deck-compatible program once. Capacity is enforced live.": "Selecione uma vez cada programa compatível com deck. A capacidade é verificada ao vivo.",
+    "Include optional Netrunner conversions": "Incluir conversões opcionais de Netrunner",
+    "Build Summary": "Resumo da Montagem",
+    "Memory": "Memória",
+    "Total": "Total",
+    "Add Complete Deck to Cart": "Adicionar Deck Completo ao Carrinho",
+    "The deck and every loaded program are stored as one cart item.": "O deck e todos os programas carregados são armazenados como um único item do carrinho."
   };
 
   const PT_MESSAGES = {
@@ -460,6 +489,36 @@
     "bundle.base_wardrobe": "Guarda-Roupa Completo",
     "bundle.base_wardrobe_subtitle": "Um conjunto completo com o estilo de moda oficial selecionável.",
     "bundle.base_perk": "Moradia, comida e custos do cotidiano incluídos",
+    "net.decks": "Cyberdecks",
+    "net.custom_deck": "Cyberdeck Personalizado",
+    "net.added": "ADICIONADO",
+    "net.offline": "Feed de Netrunning desconectado",
+    "net.icon": "Ícone",
+    "net.strength": "FOR",
+    "net.capacity": "Capacidade",
+    "net.program_count": "{count} programas online",
+    "net.unspecified": "Não especificado",
+    "net.speed": "Velocidade",
+    "net.data_wall": "Muralha de Dados",
+    "net.no_options": "Nenhuma opção listada",
+    "net.programs": "programas",
+    "net.loadout": "Carga de Programas",
+    "net.chassis": "CHASSI",
+    "net.connection": "CONEXÃO",
+    "net.options": "OPÇÕES",
+    "net.loaded": "CARREGADOS",
+    "net.variable": "Variável",
+    "net.not_for_sale": "NÃO ESTÁ À VENDA",
+    "net.quote": "FALAR COM O ATRAVESSADOR",
+    "net.optional_conversion": "CONVERSÃO OPCIONAL",
+    "net.fortress_product": "PRODUTO DE FORTALEZA",
+    "net.deck_software": "SOFTWARE DE DECK",
+    "net.referee_approval": "OPCIONAL · APROVAÇÃO DO MESTRE",
+    "net.deck_count": "{count} decks online",
+    "net.reprinted_in": "Republicado em",
+    "net.netgear": "Suporte para Decks",
+    "net.platform": "PLATAFORMA",
+    "net.quantity": "QUANTIDADE",
     "auth.online": "ONLINE",
     "auth.status": "STATUS",
     "auth.user": "USUÁRIO",
@@ -616,6 +675,13 @@
   };
 
   root.I18n = api;
+  if (root.document && root.document.currentScript && !root.document.querySelector('script[data-global-cyber-controls]')) {
+    const controlsScript = root.document.createElement("script");
+    controlsScript.src = new URL("ui-controls.js", root.document.currentScript.src).href;
+    controlsScript.defer = true;
+    controlsScript.dataset.globalCyberControls = "true";
+    root.document.head.appendChild(controlsScript);
+  }
   if (root.document) root.document.addEventListener("DOMContentLoaded", boot);
   if (typeof module !== "undefined" && module.exports) module.exports = api;
 })();

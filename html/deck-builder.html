@@ -2,19 +2,19 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Build a rules-aware custom Cyberpunk 2020 cyberdeck and load Core Rulebook programs."><title>Cyberdeck Builder | Byte & Blades</title>
+  <meta name="description" content="Build a rules-aware custom Cyberpunk 2020 cyberdeck with published chassis, options and loadable software."><title>Cyberdeck Builder | Byte & Blades</title>
   <link rel="stylesheet" href="../css/styles.css"><script src="../js/i18n.js"></script><script src="../js/auth.js"></script>
   <link rel="icon" href="../assets/svg/favicon.svg" type="image/svg+xml"><link rel="manifest" href="../manifest.webmanifest">
 </head>
 <body data-netrunning-page="builder"><a href="#deck-builder-form" class="skip-link">Skip to deck builder</a>
   <div class="container"><header class="navbar"><div class="logo-area"><h1 class="logo">Byte & Blades Store</h1><p class="tagline">Build the deck, own the route</p></div>
     <nav aria-label="Main Navigation"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="./cyberwares.html">Cyberwares</a></li><li><a href="./accessories.html">Accessories</a></li><li><a class="nav-highlight" href="./cyberdecks.html">Netrunning</a></li><li><a href="./bundles.html">Bundles</a></li><li><a href="./cart.html">Cart</a></li></ul></nav></header></div>
-  <main class="container net-main" data-netrunning-page="builder"><section class="content-slab"><div class="content-header"><div class="content-titles"><h1>Custom Cyberdeck Builder</h1><p class="content-sub">Configure the chassis and load software without exceeding memory.</p></div>
+  <main class="container net-main" data-netrunning-page="builder"><section class="content-slab"><div class="content-header"><div class="content-titles"><h1>Custom Cyberdeck Builder</h1><p class="content-sub">Configure one cyberdeck and load compatible software. Data Fortresses are deliberately outside this tool.</p></div>
     <div class="net-tabs"><a href="./programs.html">Programs</a><a href="./cyberdecks.html">Cyberdecks</a><a class="active" href="./deck-builder.html">Build a Deck</a></div></div>
     <p id="net-status" class="net-status">Loading Netrunning feed…</p>
     <form id="deck-builder-form" class="deck-builder" onsubmit="event.preventDefault()">
       <section class="builder-panel"><h2>Core Hardware</h2><label>Chassis<select name="chassis"></select></label><label class="check-line"><input name="usedStandard" type="checkbox"> Used standard deck (500 eb)</label><label class="check-line"><input name="expandedMemory" type="checkbox"> Expanded memory (20 MU, +5,000 eb)</label><label>Speed<select name="speed"></select></label><label>Data Wall<select name="dataWall"></select></label><label>Connection<select name="connection"></select></label><div id="deck-options" class="builder-options"></div></section>
-      <section class="builder-panel program-loader"><h2>Program Loadout</h2><p>Select each program once. Capacity is enforced live.</p><div id="builder-programs" class="builder-programs"></div></section>
+      <section class="builder-panel program-loader"><h2>Program Loadout</h2><p>Select each deck-compatible program once. Capacity is enforced live.</p><label class="net-toggle"><input id="builder-conversions" type="checkbox"> Include optional Netrunner conversions</label><div id="builder-programs" class="builder-programs"></div></section>
       <aside class="builder-summary"><h2>Build Summary</h2><p id="builder-breakdown"></p><div><span>Memory</span><strong id="builder-capacity">0/10 MU</strong></div><div><span>Total</span><strong id="builder-total">0.00 eb</strong></div><button id="builder-add" type="button" class="btn-add">Add Complete Deck to Cart</button><p class="net-note">The deck and every loaded program are stored as one cart item.</p></aside>
     </form>
   </section></main>

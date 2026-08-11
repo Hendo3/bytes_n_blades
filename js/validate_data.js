@@ -38,6 +38,26 @@ const datasets = [
     data: path.resolve(__dirname, "../data/decks.pt-BR.json")
   },
   {
+    label: "programs",
+    schema: path.resolve(__dirname, "../data/programs.schema.json"),
+    data: path.resolve(__dirname, "../data/programs.json")
+  },
+  {
+    label: "programs.pt-BR",
+    schema: path.resolve(__dirname, "../data/programs.schema.json"),
+    data: path.resolve(__dirname, "../data/programs.pt-BR.json")
+  },
+  {
+    label: "cyberdecks",
+    schema: path.resolve(__dirname, "../data/cyberdecks.schema.json"),
+    data: path.resolve(__dirname, "../data/cyberdecks.json")
+  },
+  {
+    label: "cyberdecks.pt-BR",
+    schema: path.resolve(__dirname, "../data/cyberdecks.schema.json"),
+    data: path.resolve(__dirname, "../data/cyberdecks.pt-BR.json")
+  },
+  {
     label: "weapons",
     schema: path.resolve(__dirname, "../data/weapons-store.schema.json"),
     data: path.resolve(__dirname, "../data/weapons.json")

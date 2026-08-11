@@ -1,106 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Published Cyberpunk 2020 cyberdecks with fixed prices, specifications and Corebook sources." />
-
-    <title>Prebuilt Cyberdecks | Byte & Blades</title>
-
-    <link rel="stylesheet" href="../css/styles.css" />
-    <script src="../js/i18n.js"></script>
-    <script src="../js/auth.js"></script>
-    <link rel="icon" href="../assets/svg/favicon.svg" type="image/svg+xml" />
-    <link rel="manifest" href="../manifest.webmanifest" />
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Published Cyberpunk 2020 cyberdecks and custom deck access."><title>Cyberdecks | Byte & Blades</title>
+  <link rel="stylesheet" href="../css/styles.css"><script src="../js/i18n.js"></script><script src="../js/auth.js"></script>
+  <link rel="icon" href="../assets/svg/favicon.svg" type="image/svg+xml"><link rel="manifest" href="../manifest.webmanifest">
 </head>
-
-<body>
-    <a href="#main-catalog" class="skip-link">Skip to catalog</a>
-
-    <div class="container">
-        <header class="navbar">
-            <div class="logo-area">
-                <h1 class="logo">Byte & Blades Store</h1>
-                <p class="tagline">Factory decks, cracked seals, no warranty questions</p>
-            </div>
-
-            <nav aria-label="Main Navigation">
-                <ul class="nav-links">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="./cyberwares.html">Cyberwares</a></li>
-                    <li><a href="./accessories.html">Accessories</a></li>
-                    <li><a class="nav-highlight" href="./cyberdecks.html" aria-current="page">Cyberdecks</a></li>
-                    <li><a href="./drugs.html">Drugs</a></li>
-                    <li><a href="./weapons.html">Weapons</a></li>
-                    <li><a href="./bundles.html">Bundles</a></li>
-                    <li><a href="./cart.html">Cart</a></li>
-                </ul>
-            </nav>
-        </header>
-    </div>
-
-    <main class="grid-shell" id="main-catalog">
-        <nav aria-label="Cyberdeck Categories" id="category-section" class="category-rail">
-            <header class="rail-header">
-                <span class="rail-title">Deck Exchange</span>
-                <p class="rail-hint">Published hardware. Exact specs. No improvised silicon yet.</p>
-            </header>
-            <div id="category-list" class="category-list"></div>
-        </nav>
-
-        <section class="content-slab">
-            <div class="content-header">
-                <div class="content-titles">
-                    <h1 id="title-category">Pick a deck feed</h1>
-                    <p class="content-sub">Ready-made Corebook decks before we open the custom bench.</p>
-                </div>
-                <button id="filter-toggle" class="btn-primary" aria-expanded="false" aria-controls="filter-sidebar">
-                    Open Filters
-                </button>
-            </div>
-
-            <section id="items-section" class="items-section full">
-                <div id="items-list" class="items-list"></div>
-            </section>
-        </section>
-
-        <aside id="filter-sidebar" class="filter-sidebar hidden" aria-hidden="true">
-            <div class="filter-header">
-                <h3>Signal Filter</h3>
-                <button id="close-filter" class="btn-icon" aria-label="Close filters">×</button>
-            </div>
-
-            <form id="filter-form" onsubmit="event.preventDefault();">
-                <div class="filter-group">
-                    <label for="fs-category">Category</label>
-                    <select id="fs-category" name="category">
-                        <option value="">All Categories</option>
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label for="fs-price-max-input">Max Price (ED$)</label>
-                    <input id="fs-price-max-input" name="price" type="number" min="0" step="100" placeholder="e.g. 5000">
-                </div>
-
-                <div class="action-row">
-                    <button type="button" id="fs-apply" class="btn-primary">Run Filter</button>
-                    <button type="button" id="fs-clear" class="btn-secondary">Reset</button>
-                </div>
-            </form>
-        </aside>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Byte & Blades Store. Hendo: All rights reserved.</p>
-            <p class="netwatch-warning">No Corps. No NetWatch. Offgrid market.</p>
-        </div>
-    </footer>
-
-    <script src="../js/core-utils.js"></script>
-    <script src="../js/script.js"></script>
-    <script src="../js/modal.js"></script>
-</body>
-</html>
+<body data-netrunning-page="decks"><a href="#deck-list" class="skip-link">Skip to cyberdecks</a>
+  <div class="container"><header class="navbar"><div class="logo-area"><h1 class="logo">Byte & Blades Store</h1><p class="tagline">Hardware for the other side of the screen</p></div>
+    <nav aria-label="Main Navigation"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="./cyberwares.html">Cyberwares</a></li><li><a href="./accessories.html">Accessories</a></li><li><a class="nav-highlight" href="./cyberdecks.html">Netrunning</a></li><li><a href="./bundles.html">Bundles</a></li><li><a href="./cart.html">Cart</a></li></ul></nav></header></div>
+  <main class="container net-main" data-netrunning-page="decks"><section class="content-slab"><div class="content-header"><div class="content-titles"><h1>Cyberdecks</h1><p class="content-sub">27 standard published decks, plus five referee-approved conversions kept off the main shelf.</p></div>
+    <div class="net-tabs"><a href="./programs.html">Programs</a><a class="active" href="./cyberdecks.html">Cyberdecks</a><a href="./deck-builder.html">Build a Deck</a></div></div>
+    <label class="net-toggle"><input id="deck-conversions" type="checkbox"> Include optional Netrunner card conversions</label><p id="deck-count" class="net-status"></p><p id="net-status" class="net-status">Loading Netrunning feed…</p><div id="deck-list" class="items-list deck-list"></div>
+    <div class="content-header net-subheader"><div class="content-titles"><h2>Deck Support</h2><p class="content-sub">Infrastructure and bench gear sold separately. None of this opens a Fortress builder.</p></div></div><div id="netgear-list" class="items-list deck-list"></div></section></main>
+  <footer><div class="footer-content"><p>&copy; 2025 Byte & Blades Store. Hendo: All rights reserved.</p><p class="netwatch-warning">No Corps. No NetWatch. Offgrid market.</p></div></footer>
+  <script src="../js/core-utils.js"></script><script src="../js/netrunning.js"></script><script src="../js/modal.js"></script>
+</body></html>
