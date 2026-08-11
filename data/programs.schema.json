@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["schema_version", "locale", "classes", "programs"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "locale": { "enum": ["en-US", "pt-BR"] },
+    "classes": {
+      "type": "array", "minItems": 11, "maxItems": 11,
+      "items": {
+        "type": "object", "required": ["id", "label"],
+        "properties": { "id": { "type": "string" }, "label": { "type": "string" } }
+      }
+    },
+    "programs": {
+      "type": "array", "minItems": 70, "maxItems": 70,
+      "items": {
+        "type": "object",
+        "required": ["id", "class_id", "name", "strength", "memory", "price", "effect", "icon", "source"],
+        "properties": {
+          "id": { "type": "string" }, "class_id": { "type": "string" }, "name": { "type": "string" },
+          "strength": {
+            "type": "object", "required": ["base"],
+            "properties": {
+              "base": { "type": "integer", "minimum": 1 },
+              "situational": {
+                "type": "array",
+                "items": {
+                  "type": "object", "required": ["value", "when"],
+                  "properties": { "value": { "type": "integer" }, "when": { "type": "string" } }
+                }
+              }
+            }
+          },
+          "memory": { "type": "integer", "minimum": 1 },
+          "price": { "type": "number", "minimum": 0 },
+          "effect": { "type": "string" }, "icon": { "type": "string" },
+          "capacity": { "type": "integer", "minimum": 1 },
+          "copy_restriction": { "type": "string" },
+          "source": { "type": "object", "required": ["book", "pages"] }
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Byte & Blades Store",
   "short_name": "Byte & Blades",
-  "description": "Cyberpunk 2020 storefront for cyberware, gear, weapons, combat drugs, bundles, and skill chips.",
+  "description": "Cyberpunk 2020 storefront for cyberware, cyberdecks, gear, weapons, combat drugs, bundles, and skill chips.",
   "lang": "en-US",
   "dir": "ltr",
   "start_url": "./login.html",
@@ -49,6 +49,12 @@
       "short_name": "Accessories",
       "description": "Browse gear and accessories.",
       "url": "./html/accessories.html"
+    },
+    {
+      "name": "Cyberdecks",
+      "short_name": "Decks",
+      "description": "Browse published prebuilt cyberdecks.",
+      "url": "./html/cyberdecks.html"
     },
     {
       "name": "Weapons",

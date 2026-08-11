@@ -28,6 +28,16 @@ const datasets = [
     data: path.resolve(__dirname, "../data/equipment.pt-BR.json")
   },
   {
+    label: "decks",
+    schema: path.resolve(__dirname, "../data/decks.schema.json"),
+    data: path.resolve(__dirname, "../data/decks.json")
+  },
+  {
+    label: "decks.pt-BR",
+    schema: path.resolve(__dirname, "../data/decks.schema.json"),
+    data: path.resolve(__dirname, "../data/decks.pt-BR.json")
+  },
+  {
     label: "weapons",
     schema: path.resolve(__dirname, "../data/weapons-store.schema.json"),
     data: path.resolve(__dirname, "../data/weapons.json")

@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Offgrid weapons feed for edgerunners: pistols, SMGs, rifles and hard chrome with zero Corp oversight." />
-    <title>Weapons Catalog | Byte & Blades</title>
+    <meta name="description" content="Published Cyberpunk 2020 cyberdecks with fixed prices, specifications and Corebook sources." />
+
+    <title>Prebuilt Cyberdecks | Byte & Blades</title>
+
     <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="icon" href="../assets/svg/favicon.svg" type="image/svg+xml" />
-    <link rel="manifest" href="../manifest.webmanifest" />
     <script src="../js/i18n.js"></script>
     <script src="../js/auth.js"></script>
+    <link rel="icon" href="../assets/svg/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="../manifest.webmanifest" />
 </head>
 
 <body>
@@ -20,16 +22,17 @@
         <header class="navbar">
             <div class="logo-area">
                 <h1 class="logo">Byte & Blades Store</h1>
-                <p class="tagline">Weapons lane for chooms that need louder answers</p>
+                <p class="tagline">Factory decks, cracked seals, no warranty questions</p>
             </div>
+
             <nav aria-label="Main Navigation">
                 <ul class="nav-links">
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="./cyberwares.html">Cyberwares</a></li>
                     <li><a href="./accessories.html">Accessories</a></li>
-                    <li><a href="./cyberdecks.html">Cyberdecks</a></li>
+                    <li><a class="nav-highlight" href="./cyberdecks.html" aria-current="page">Cyberdecks</a></li>
                     <li><a href="./drugs.html">Drugs</a></li>
-                    <li><a class="nav-highlight" href="./weapons.html" aria-current="page">Weapons</a></li>
+                    <li><a href="./weapons.html">Weapons</a></li>
                     <li><a href="./bundles.html">Bundles</a></li>
                     <li><a href="./cart.html">Cart</a></li>
                 </ul>
@@ -38,10 +41,10 @@
     </div>
 
     <main class="grid-shell" id="main-catalog">
-        <nav aria-label="Weapon Categories" id="category-section" class="category-rail">
+        <nav aria-label="Cyberdeck Categories" id="category-section" class="category-rail">
             <header class="rail-header">
-                <span class="rail-title">Weapons Feed</span>
-                <p class="rail-hint">Street stock sorted by class and type.</p>
+                <span class="rail-title">Deck Exchange</span>
+                <p class="rail-hint">Published hardware. Exact specs. No improvised silicon yet.</p>
             </header>
             <div id="category-list" class="category-list"></div>
         </nav>
@@ -49,8 +52,8 @@
         <section class="content-slab">
             <div class="content-header">
                 <div class="content-titles">
-                    <h1 id="title-category">Pick a feed</h1>
-                    <p class="content-sub">Firearms and hardware listed with live stats. No corpo babysitting.</p>
+                    <h1 id="title-category">Pick a deck feed</h1>
+                    <p class="content-sub">Ready-made Corebook decks before we open the custom bench.</p>
                 </div>
                 <button id="filter-toggle" class="btn-primary" aria-expanded="false" aria-controls="filter-sidebar">
                     Open Filters
@@ -78,7 +81,7 @@
 
                 <div class="filter-group">
                     <label for="fs-price-max-input">Max Price (ED$)</label>
-                    <input id="fs-price-max-input" name="price" type="number" min="0" step="10" placeholder="e.g. 500">
+                    <input id="fs-price-max-input" name="price" type="number" min="0" step="100" placeholder="e.g. 5000">
                 </div>
 
                 <div class="action-row">

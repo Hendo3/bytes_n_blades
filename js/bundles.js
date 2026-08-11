@@ -7,6 +7,104 @@ const BUNDLE_STORAGE_KEY = "cyber_cart";
 const AUTO_REFRESH_MIN_SECONDS = 45;
 const AUTO_REFRESH_MAX_SECONDS = 140;
 
+const BUDGET_BANDS = {
+  scrape: { itemCap: 500, extras: 0, ammoBoxes: 1, weeks: 1, discountBoost: 2 },
+  street: { itemCap: 1500, extras: 1, ammoBoxes: 1, weeks: 2, discountBoost: 1 },
+  professional: { itemCap: 5000, extras: 2, ammoBoxes: 2, weeks: 4, discountBoost: 0 },
+  elite: { itemCap: 20000, extras: 3, ammoBoxes: 3, weeks: 6, discountBoost: 1 },
+  corporate: { itemCap: Number.POSITIVE_INFINITY, extras: 4, ammoBoxes: 4, weeks: 8, discountBoost: 2 },
+};
+
+const ROLE_PROFILES = {
+  rockerboy: {
+    labelKey: "bundle.profile_rockerboy", label: "Rockerboy", vibe: "social",
+    required: ["pocketCommo"],
+    gear: ["eletricGuitar", "amplifier", "digitalRecorder", "videoCam", "cellularPhone", "jacket", "mirrorshades"],
+    chrome: ["cyberaudio", "amplified_hearing", "radio_link", "sound_editing", "voice_synthesizer", "rocker_visual_rec_chip"],
+    field: ["nylonCarryBag", "firstAidKit", "pocketTV", "tapePlayer", "tape"],
+    weaponClasses: ["Medium Handgun", "Light Handgun"],
+  },
+  solo: {
+    labelKey: "bundle.profile_solo", label: "Solo", vibe: "combat",
+    required: ["neuralware_processor", "interface_plugs", "smartgun_link"],
+    gear: ["medkit", "firstAidKit", "binocular", "lightBoosterGoogle", "plasKuffs", "pocketCommo"],
+    chrome: ["cyberoptic", "targeting_scope", "low_lite", "subdermal_armor", "pain_editor", "skin_weave"],
+    field: ["trackingDevice", "movementSensor", "protectiveGoggles", "breathmask"],
+    weaponClasses: ["Heavy Handgun", "Very Heavy Handgun", "Medium SMG", "Heavy SMG"],
+  },
+  netrunner: {
+    labelKey: "bundle.profile_netrunner", label: "Netrunner", vibe: "netrunner",
+    required: ["neuralware_processor", "cybermodem_link", "interface_plugs", "dataterm_link"],
+    gear: ["interfaceCables", "lowImpedance", "keyboard", "terminal", "laptop", "pocketComputer"],
+    chrome: ["chipware_socket", "memory_compression", "crypto_chips", "cell_phone_implant"],
+    field: ["techToolkit", "eletronicToolkit", "dataChip", "pocketCommo", "firstAidKit"],
+    weaponClasses: ["Light Handgun", "Medium Handgun"],
+  },
+  techie: {
+    labelKey: "bundle.profile_techie", label: "Techie", vibe: "technical",
+    required: ["machine_tech_link"],
+    gear: ["techToolkit", "eletronicToolkit", "techscanner", "cuttingtorch", "protectiveGoggles", "pocketComputer"],
+    chrome: ["tool_hand", "socket_wrench", "cyberlimb_digital_recorder", "implant_digital_recorder"],
+    field: ["breakingEnteringTools", "flashtube", "rope", "breathmask", "interfaceCables"],
+    weaponClasses: ["Medium Handgun", "Heavy Handgun"],
+  },
+  medtechie: {
+    labelKey: "bundle.profile_medtechie", label: "Medtechie", vibe: "medical",
+    required: ["biomonitor"],
+    gear: ["medkit", "firstAidKit", "surgicalKit", "medscanner", "drugAnalyzer", "airhypho", "dermalStapler"],
+    chrome: ["pain_editor", "advanced_biomonitor", "chemical_analyser", "militech_cyberdoc", "enhanced_antibodies"],
+    field: ["spraySkin", "nylonCarryBag", "cellularPhone", "protectiveGoggles"],
+    weaponClasses: ["Light Handgun", "Medium Handgun"],
+  },
+  media: {
+    labelKey: "bundle.profile_media", label: "Media", vibe: "investigation",
+    required: ["digitalRecorder"],
+    gear: ["digitalCamera", "videoCam", "tapePlayer", "tape", "cellularPhone", "laptop", "binglasses"],
+    chrome: ["implant_digital_recorder", "audio_video_tape_recorder", "cyberoptic", "digital_camera", "microvideo_optic", "cell_phone_implant"],
+    field: ["pocketCommo", "trackingDevice", "tracerButton", "firstAidKit"],
+    weaponClasses: ["Light Handgun", "Medium Handgun"],
+  },
+  cop: {
+    labelKey: "bundle.profile_cop", label: "Cop", vibe: "law",
+    required: ["pocketCommo", "plasKuffs"],
+    gear: ["movementSensor", "trackingDevice", "tracerButton", "securityScanner", "binocular", "medkit"],
+    chrome: ["neuralware_processor", "interface_plugs", "smartgun_link", "radio_link", "voice_stress_analyser", "police_visual_rec_chip"],
+    field: ["passCard", "stripwireBlinders", "lightBoosterGoogle", "breathmask"],
+    weaponClasses: ["Heavy Handgun", "Medium Handgun", "Medium SMG"],
+  },
+  corporate: {
+    labelKey: "bundle.profile_corporate", label: "Corporate", vibe: "executive",
+    required: ["cellularPhone", "credChipAccount"],
+    gear: ["laptop", "miniCellPhone", "pants", "jacket", "glasses", "digitalRecorder"],
+    chrome: ["cell_phone_implant", "voice_stress_analyser", "corporate_visual_rec_chip", "biomonitor", "skinwatch"],
+    field: ["vocolock", "passCard", "healthPlan", "traumaTeamGold"],
+    weaponClasses: ["Medium Handgun", "Light Handgun"],
+  },
+  fixer: {
+    labelKey: "bundle.profile_fixer", label: "Fixer", vibe: "street-deal",
+    required: ["pocketCommo", "passCard"],
+    gear: ["cellularPhone", "miniCellPhone", "trackingDevice", "tracerButton", "breakingEnteringTools", "credChipAccount"],
+    chrome: ["cell_phone_implant", "voice_stress_analyser", "scrambler", "bug_detector", "digi_tone_id"],
+    field: ["plasKuffs", "poisonSniffer", "jammingTransmitter", "nylonCarryBag"],
+    weaponClasses: ["Medium Handgun", "Heavy Handgun", "Medium SMG"],
+  },
+  nomad: {
+    labelKey: "bundle.profile_nomad", label: "Nomad", vibe: "road",
+    required: ["nylonCarryBag", "sleepingBag"],
+    gear: ["motorcycle", "scooter", "techToolkit", "firstAidKit", "rope", "breathmask", "pocketCommo"],
+    chrome: ["vehicle_link", "interface_plugs", "nasal_filters", "skin_weave", "muscle_and_bone_lace"],
+    field: ["logcompass", "binocular", "glowstick", "flashtube", "genericPrepak"],
+    weaponClasses: ["Heavy Handgun", "Shotgun", "Medium Handgun"],
+  },
+};
+
+const ROLE_BUNDLE_VARIANTS = [
+  { id: "essentials", titleKey: "bundle.variant_essentials", title: "Essentials", gearCount: 2, chromeCount: 0, fieldCount: 1, weapon: false, discountRange: [5, 10] },
+  { id: "field", titleKey: "bundle.variant_field", title: "Field Loadout", gearCount: 2, chromeCount: 0, fieldCount: 2, weapon: true, discountRange: [7, 13] },
+  { id: "specialist", titleKey: "bundle.variant_specialist", title: "Specialist Stack", gearCount: 1, chromeCount: 3, fieldCount: 1, weapon: false, discountRange: [9, 16] },
+  { id: "complete", titleKey: "bundle.variant_complete", title: "Complete Build", gearCount: 3, chromeCount: 4, fieldCount: 3, weapon: true, discountRange: [12, 20] },
+];
+
 function bundleT(key, fallback, params = {}) {
   if (typeof window !== "undefined" && window.I18n) return window.I18n.t(key, params, fallback);
   return String(fallback).replace(/\{([a-zA-Z0-9_]+)\}/g, (_match, name) => params[name] ?? `{${name}}`);
@@ -20,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const ui = {
     list: document.getElementById("bundle-list"),
     timer: document.getElementById("bundle-timer"),
-    style: document.getElementById("kit-style"),
+    profile: document.getElementById("kit-profile"),
     budget: document.getElementById("kit-budget"),
     lowHL: document.getElementById("kit-low-hl"),
   };
@@ -32,15 +130,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function init(ui) {
   try {
-    const [cyberwaresRaw, equipmentRaw] = await Promise.all([
+    const [cyberwaresRaw, equipmentRaw, weaponsRaw] = await Promise.all([
       fetchJson(bundleDataPath("../data/cyberwares.json")),
       fetchJson(bundleDataPath("../data/equipment.json")),
+      fetchJson(bundleDataPath("../data/weapons.json")),
     ]);
 
     const dataStore = {
       cyberwares: normalizeCatalog(cyberwaresRaw.data || cyberwaresRaw, "cyberware"),
       equipment: normalizeCatalog(equipmentRaw.data || equipmentRaw, "equipment"),
-      weapons: {},
+      weapons: normalizeWeaponCatalog(weaponsRaw.weapons || weaponsRaw.data?.weapons || []),
     };
 
     const context = createBundleContext(dataStore);
@@ -48,7 +147,7 @@ async function init(ui) {
     let countdownIntervalId = null;
 
     const currentOptions = () => ({
-      style: ui.style?.value || "balanced",
+      profile: ui.profile?.value || "solo",
       budget: ui.budget?.value || "street",
       lowHL: !!ui.lowHL?.checked,
     });
@@ -58,7 +157,7 @@ async function init(ui) {
       renderBundles(ui.list, bundles);
     };
 
-    ui.style?.addEventListener("change", rerender);
+    ui.profile?.addEventListener("change", rerender);
     ui.budget?.addEventListener("change", rerender);
     ui.lowHL?.addEventListener("change", rerender);
 
@@ -126,6 +225,7 @@ function normalizeCatalog(data, sourceType) {
 
       const price = parseNumeric(item.price || item.cost || item.value || 0);
       if (price <= 0) return;
+      const modifierGroup = normalizeBundleModifierGroup(categoryValue.modifierGroup, id, item.id || id);
 
       items.push({
         id: item.id || id,
@@ -148,6 +248,7 @@ function normalizeCatalog(data, sourceType) {
           ? item.attributeSet
           : null,
         priceModifiers: Array.isArray(item.priceModifiers) ? item.priceModifiers : [],
+        modifierGroup,
         installation: item.installation && typeof item.installation === "object"
           ? item.installation
           : null,
@@ -157,6 +258,61 @@ function normalizeCatalog(data, sourceType) {
     if (items.length > 0) categories[categoryName] = items;
   });
 
+  return categories;
+}
+
+function normalizeBundleModifierGroup(group, itemKey, itemId) {
+  if (!group || typeof group !== "object") return null;
+  const appliesTo = Array.isArray(group.appliesTo) ? group.appliesTo.map(String) : [];
+  if (!appliesTo.includes(String(itemKey)) && !appliesTo.includes(String(itemId))) return null;
+  const options = (Array.isArray(group.options) ? group.options : [])
+    .map((option) => ({
+      id: String(option?.id || "").trim(),
+      label: String(option?.label || option?.id || "").trim(),
+      multiplier: Number(option?.multiplier),
+    }))
+    .filter((option) => option.id && option.label && Number.isFinite(option.multiplier) && option.multiplier > 0);
+  if (!group.id || !group.label || options.length === 0) return null;
+  return { id: String(group.id), label: String(group.label), options };
+}
+
+function normalizeWeaponCatalog(weapons) {
+  const categories = {};
+  (Array.isArray(weapons) ? weapons : []).forEach((weapon, index) => {
+    if (!weapon || typeof weapon !== "object") return;
+    const name = String(weapon.name || `Weapon ${index + 1}`).trim();
+    const category = String(weapon.class || "Unsorted").trim() || "Unsorted";
+    const price = parseNumeric(weapon.price);
+    if (!name || name.toUpperCase().includes("TODO") || price <= 0) return;
+    if (!categories[category]) categories[category] = [];
+    categories[category].push({
+      id: weapon.id || `weapon_${index}`,
+      catalogId: `weapon:${category}:${weapon.id || index}`,
+      key: weapon.id || `weapon_${index}`,
+      legacyIds: Array.isArray(weapon.legacyIds) ? weapon.legacyIds : [],
+      sourceType: "weapons",
+      sourceCategory: category,
+      sourceCategoryLabel: category,
+      name,
+      description: weapon.Note || weapon.note || bundleT("catalog.no_specs", "No specs available."),
+      price,
+      priceMaximum: Number.isFinite(Number(weapon.price_max)) ? Number(weapon.price_max) : null,
+      hlRaw: "0",
+      tags: ["weapon"],
+      maxPurchases: null,
+      alternativeAcquisition: false,
+      attributeBonuses: [],
+      skillBonuses: [],
+      attributeSet: null,
+      priceModifiers: [],
+      modifierGroup: null,
+      installation: weapon.installation && typeof weapon.installation === "object" ? weapon.installation : null,
+      weaponClass: category,
+      ammoType: weapon.ammo_type,
+      typeCode: weapon.type_code,
+      raw: weapon,
+    });
+  });
   return categories;
 }
 
@@ -214,7 +370,7 @@ function createBundleContext(dataStore) {
   };
 }
 
-function generateBundles(context, options) {
+function generateLegacyBundles(context, options) {
   const templates = [
     buildVirginBundle,
     buildNetrunnerBundle,
@@ -468,18 +624,13 @@ function applyOptionFilters(items, options) {
 
   if (options?.lowHL && window.CyberUtils) {
     const low = filtered.filter((item) => CyberUtils.hlComparable(item.hlRaw) <= 4);
-    if (low.length >= 3) filtered = low;
+    if (low.length > 0) filtered = low;
   }
 
-  const budgetCaps = {
-    street: 900,
-    pro: 3200,
-    opulence: Infinity,
-  };
-  const budgetCap = budgetCaps[options?.budget || "street"] ?? Infinity;
+  const budgetCap = getBudgetBand(options).itemCap;
 
   const budgeted = filtered.filter((item) => item.price <= budgetCap);
-  if (budgeted.length >= 3) filtered = budgeted;
+  if (budgeted.length > 0) filtered = budgeted;
 
   return filtered;
 }
@@ -533,6 +684,264 @@ function applyStoreSignature(draft, items, options) {
     items,
     discountBoost: signature.discountBoost + (budgetBoost[budget] || 0),
   };
+}
+
+function getBudgetBand(options) {
+  return BUDGET_BANDS[options?.budget] || BUDGET_BANDS.street;
+}
+
+function uniqueItems(items) {
+  const seen = new Set();
+  return (Array.isArray(items) ? items : []).filter((item) => {
+    const id = normalizeItemId(item?.id || item?.name);
+    if (!id || seen.has(id)) return false;
+    seen.add(id);
+    return true;
+  });
+}
+
+function selectBundleCandidates(context, ids, count, options) {
+  const candidates = uniqueItems((ids || []).map((id) => context.findById(id)).filter(Boolean));
+  if (candidates.length === 0 || count <= 0) return [];
+  const filtered = applyOptionFilters(candidates, options);
+  const pool = filtered.length > 0 ? filtered : candidates;
+  const shuffled = pool.slice().sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, Math.min(count, shuffled.length));
+}
+
+function selectRoleWeapon(context, profile, options) {
+  const wanted = new Set(profile.weaponClasses || []);
+  const candidates = context.allWeapons
+    .filter((item) => wanted.has(item.weaponClass) && normalizeName(item.weaponClass) !== "ammo")
+    .sort((a, b) => a.price - b.price);
+  if (candidates.length === 0) return null;
+
+  const cap = getBudgetBand(options).itemCap;
+  const affordable = candidates.filter((item) => item.price <= cap);
+  const pool = affordable.length > 0 ? affordable : candidates;
+  const percentile = {
+    scrape: 0,
+    street: 0.25,
+    professional: 0.5,
+    elite: 0.75,
+    corporate: 1,
+  }[options?.budget] ?? 0.25;
+  return pool[Math.min(pool.length - 1, Math.floor((pool.length - 1) * percentile))];
+}
+
+function findAmmoForWeapon(context, weapon) {
+  const weaponClass = String(weapon?.weaponClass || "").toLowerCase();
+  const ammoId = weaponClass.includes("shotgun")
+    ? "weapon_shotgun_shells_box_12"
+    : weaponClass.includes("very heavy handgun")
+      ? "weapon_very_heavy_handgun_ammo_box_100"
+      : weaponClass.includes("heavy handgun") || weaponClass.includes("heavy smg")
+        ? "weapon_heavy_handgun_heavy_smg_ammo_box_100"
+        : weaponClass.includes("medium handgun") || weaponClass.includes("medium smg")
+          ? "weapon_medium_handgun_medium_smg_ammo_box_100"
+          : "weapon_light_handgun_light_smg_ammo_box_100";
+  return context.findById(ammoId);
+}
+
+function defaultModifierOption(group, budget) {
+  if (!group) return null;
+  const optionIds = {
+    fashion_style: {
+      scrape: "generic_chic", street: "urban_flash", professional: "businesswear",
+      elite: "high_fashion", corporate: "high_fashion",
+    },
+    venue_quality: {
+      scrape: "fair", street: "fair", professional: "good", elite: "excellent", corporate: "excellent",
+    },
+    vehicle_controls: {
+      scrape: "standard_controls", street: "standard_controls", professional: "standard_controls",
+      elite: "cybercontrols", corporate: "cybercontrols",
+    },
+    housing_location: {
+      scrape: "combat_zone", street: "combat_zone", professional: "moderate_zone",
+      elite: "corporate_zone", corporate: "executive_zone",
+    },
+  };
+  const selectedId = optionIds[group.id]?.[budget];
+  return group.options.find((option) => option.id === selectedId) || group.options[0] || null;
+}
+
+function priceBundleItem(item, options, quantity = 1, modifierOptionId = null) {
+  const safeQuantity = Math.max(1, Math.floor(Number(quantity) || 1));
+  const modifier = item.modifierGroup
+    ? item.modifierGroup.options.find((option) => option.id === modifierOptionId)
+      || defaultModifierOption(item.modifierGroup, options?.budget || "street")
+    : null;
+  const baseUnitPrice = Number(item.baseUnitPrice ?? item.price) || 0;
+  const multiplier = modifier?.multiplier || 1;
+  const unitPrice = Number((baseUnitPrice * multiplier).toFixed(2));
+
+  return {
+    ...item,
+    baseUnitPrice,
+    unitPrice,
+    quantity: safeQuantity,
+    price: Number((unitPrice * safeQuantity).toFixed(2)),
+    selectedPriceModifier: modifier ? {
+      groupId: item.modifierGroup.id,
+      groupLabel: item.modifierGroup.label,
+      optionId: modifier.id,
+      label: modifier.label,
+      multiplier: modifier.multiplier,
+    } : null,
+  };
+}
+
+function recalculateBundle(bundle) {
+  bundle.subtotal = Number(bundle.items.reduce((sum, item) => sum + item.price, 0).toFixed(2));
+  bundle.total = Number((bundle.subtotal * (1 - bundle.discountPct / 100)).toFixed(2));
+  return bundle;
+}
+
+function finalizeBundleDraft(draft, rawItems, context, options, quantities = new Map()) {
+  const coherent = enforceDependencies(uniqueItems(rawItems), context);
+  const items = coherent.map((item) => priceBundleItem(
+    item,
+    options,
+    quantities.get(normalizeItemId(item.id)) || 1,
+  ));
+  const band = getBudgetBand(options);
+  const discountPct = Math.min(
+    30,
+    randomInt(draft.discountRange[0], draft.discountRange[1]) + band.discountBoost,
+  );
+  const bundle = {
+    ...draft,
+    discountPct,
+    items,
+    signature: bundleT(`bundle.budget_${options.budget}`, options.budget || "street"),
+    signatureKey: `bundle.budget_${options.budget}`,
+  };
+  return recalculateBundle(bundle);
+}
+
+function buildRoleVariant(context, options, variant) {
+  const profile = ROLE_PROFILES[options?.profile] || ROLE_PROFILES.solo;
+  const band = getBudgetBand(options);
+  const required = (profile.required || []).map((id) => context.findById(id)).filter(Boolean);
+  const gear = selectBundleCandidates(context, profile.gear, variant.gearCount + band.extras, options);
+  const chrome = selectBundleCandidates(context, profile.chrome, variant.chromeCount + band.extras, options);
+  const field = selectBundleCandidates(context, profile.field, variant.fieldCount + band.extras, options);
+  const selected = [...required, ...gear, ...chrome, ...field];
+  const quantities = new Map();
+
+  if (variant.weapon) {
+    const weapon = selectRoleWeapon(context, profile, options);
+    const ammo = findAmmoForWeapon(context, weapon);
+    if (weapon) selected.push(weapon);
+    if (ammo) {
+      selected.push(ammo);
+      quantities.set(normalizeItemId(ammo.id), band.ammoBoxes);
+    }
+  }
+
+  const profileLabel = bundleT(profile.labelKey, profile.label);
+  const variantLabel = bundleT(variant.titleKey, variant.title);
+  return finalizeBundleDraft({
+    family: "role",
+    profileKey: profile.labelKey,
+    profileLabel,
+    titleKey: variant.titleKey,
+    titleFallback: variant.title,
+    title: `${profileLabel} // ${variantLabel}`,
+    subtitle: bundleT(
+      "bundle.role_subtitle",
+      `${variantLabel} built for the ${profileLabel} role with gear, chrome and field support.`,
+      { role: profileLabel, variant: variantLabel },
+    ),
+    perks: [
+      bundleT("bundle.role_perk", "Role-focused selection"),
+      bundleT("bundle.dependencies_perk", "Dependencies resolved automatically"),
+    ],
+    vibe: profile.vibe,
+    variantId: variant.id,
+    discountRange: variant.discountRange,
+  }, selected, context, options, quantities);
+}
+
+function baseBundleInputs(context, options, variantId) {
+  const band = getBudgetBand(options);
+  const budget = options?.budget || "street";
+  const foodId = {
+    scrape: "kibble", street: "genericPrepak", professional: "goodPrepak",
+    elite: "freshFood", corporate: "freshFood",
+  }[budget];
+  const homeId = {
+    scrape: "coffin", street: "coffin", professional: "hotelRoom",
+    elite: "apartment", corporate: "house",
+  }[budget];
+  const get = (id) => context.findById(id);
+  const quantities = new Map();
+  let ids = [];
+
+  if (variantId === "survival") {
+    ids = [homeId, foodId, "pants", "top", "footwear", "nylonCarryBag", "firstAidKit"];
+    quantities.set(
+      normalizeItemId(homeId),
+      ["coffin", "hotelRoom"].includes(homeId)
+        ? band.weeks * 7
+        : Math.max(1, Math.ceil(band.weeks / 4)),
+    );
+    quantities.set(normalizeItemId(foodId), band.weeks);
+  } else if (variantId === "month_one") {
+    const permanentHome = budget === "corporate" ? "house" : "apartment";
+    ids = [permanentHome, "utilities", foodId, "cellPhoneService", "futon", "lamp"];
+    quantities.set(normalizeItemId(permanentHome), 1);
+    quantities.set(normalizeItemId(foodId), 4);
+  } else if (variantId === "road") {
+    ids = ["nylonCarryBag", "sleepingBag", foodId, "firstAidKit", "flashtube", "rope", "pocketCommo"];
+    quantities.set(normalizeItemId(foodId), band.weeks);
+    if (["professional", "elite", "corporate"].includes(budget)) {
+      ids.push(budget === "professional" ? "scooter" : "motorcycle");
+    }
+  } else {
+    ids = ["pants", "top", "jacket", "footwear", "accessory", "mirrorshades"];
+  }
+
+  return {
+    items: ids.map(get).filter(Boolean),
+    quantities,
+  };
+}
+
+function buildBaseBundle(context, options, spec) {
+  const inputs = baseBundleInputs(context, options, spec.id);
+  const title = bundleT(spec.titleKey, spec.title);
+  return finalizeBundleDraft({
+    family: "base",
+    profileKey: "bundle.base_profile",
+    profileLabel: bundleT("bundle.base_profile", "Base & Lifestyle"),
+    titleKey: spec.titleKey,
+    titleFallback: spec.title,
+    title,
+    subtitle: bundleT(spec.subtitleKey, spec.subtitle),
+    perks: [bundleT("bundle.base_perk", "Housing, food and daily-life costs included")],
+    vibe: "lifestyle",
+    variantId: spec.id,
+    discountRange: spec.discountRange,
+  }, inputs.items, context, options, inputs.quantities);
+}
+
+function generateBundles(context, options = {}) {
+  const normalizedOptions = {
+    profile: ROLE_PROFILES[options.profile] ? options.profile : "solo",
+    budget: BUDGET_BANDS[options.budget] ? options.budget : "street",
+    lowHL: Boolean(options.lowHL),
+  };
+  const roleBundles = ROLE_BUNDLE_VARIANTS.map((variant) => buildRoleVariant(context, normalizedOptions, variant));
+  const baseSpecs = [
+    { id: "survival", titleKey: "bundle.base_survival", title: "Street Survival", subtitleKey: "bundle.base_survival_subtitle", subtitle: "Budget-scaled short-term housing, food, basic clothes and emergency carry gear.", discountRange: [5, 10] },
+    { id: "month_one", titleKey: "bundle.base_month_one", title: "First Month", subtitleKey: "bundle.base_month_one_subtitle", subtitle: "A room, utilities, four weeks of food and basic household services.", discountRange: [7, 12] },
+    { id: "road", titleKey: "bundle.base_road", title: "Road Kit", subtitleKey: "bundle.base_road_subtitle", subtitle: "Portable shelter, food, comms and travel essentials.", discountRange: [6, 11] },
+    { id: "wardrobe", titleKey: "bundle.base_wardrobe", title: "Complete Wardrobe", subtitleKey: "bundle.base_wardrobe_subtitle", subtitle: "A full outfit with an official selectable fashion style.", discountRange: [8, 14] },
+  ];
+  const baseBundles = baseSpecs.map((spec) => buildBaseBundle(context, normalizedOptions, spec));
+  return [...roleBundles, ...baseBundles];
 }
 
 function pickBundleItems(required, pool, extrasAmount) {
@@ -765,17 +1174,42 @@ function normalizeItemId(value) {
 function renderBundles(container, bundles) {
   container.innerHTML = "";
   const fragment = document.createDocumentFragment();
+  let activeFamily = null;
 
   bundles.forEach((bundle) => {
+    if (bundle.family !== activeFamily) {
+      activeFamily = bundle.family;
+      const heading = document.createElement("h2");
+      heading.className = "bundle-family-title";
+      heading.textContent = activeFamily === "base"
+        ? bundleT("bundle.family_base", "Base & Lifestyle Bundles")
+        : bundleT("bundle.family_role", "Role Builds");
+      fragment.appendChild(heading);
+    }
+
     const card = document.createElement("article");
     card.className = "item bundle-card";
 
     const listItems = bundle.items
       .map(
-        (item) => `
+        (item, itemIndex) => `
           <li>
-            <strong>${item.name}</strong>
-            <small>${item.sourceCategoryLabel || item.sourceCategory} • ${formatCurrency(item.price)}</small>
+            <div class="bundle-item-main">
+              <strong>${Number(item.quantity) > 1 ? `${item.quantity}x ` : ""}${item.name}</strong>
+              ${item.modifierGroup ? `
+                <label class="bundle-modifier-label">
+                  <span>${item.modifierGroup.label}</span>
+                  <select data-bundle-modifier="${itemIndex}">
+                    ${item.modifierGroup.options.map((option) => `
+                      <option value="${option.id}" ${item.selectedPriceModifier?.optionId === option.id ? "selected" : ""}>
+                        ${option.label} (${option.multiplier}x)
+                      </option>
+                    `).join("")}
+                  </select>
+                </label>
+              ` : ""}
+            </div>
+            <small>${item.sourceCategoryLabel || item.sourceCategory} • <span data-bundle-item-price="${itemIndex}">${formatCurrency(item.price)}</span></small>
           </li>
         `,
       )
@@ -794,8 +1228,8 @@ function renderBundles(container, bundles) {
       </div>
       <ul class="bundle-items">${listItems}</ul>
       <div class="bundle-summary">
-        <div><span>${bundleT("bundle.subtotal", "Subtotal")}:</span> <strong>${formatCurrency(bundle.subtotal)}</strong></div>
-        <div><span>${bundleT("bundle.total", "Total")}:</span> <strong>${formatCurrency(bundle.total)}</strong></div>
+        <div><span>${bundleT("bundle.subtotal", "Subtotal")}:</span> <strong data-bundle-subtotal>${formatCurrency(bundle.subtotal)}</strong></div>
+        <div><span>${bundleT("bundle.total", "Total")}:</span> <strong data-bundle-total>${formatCurrency(bundle.total)}</strong></div>
       </div>
     `;
 
@@ -805,6 +1239,20 @@ function renderBundles(container, bundles) {
     addBtn.onclick = () => addBundleToCart(bundle, addBtn);
 
     card.appendChild(addBtn);
+    card.querySelectorAll("select[data-bundle-modifier]").forEach((select) => {
+      select.addEventListener("change", () => {
+        const itemIndex = Number(select.dataset.bundleModifier);
+        const currentItem = bundle.items[itemIndex];
+        bundle.items[itemIndex] = priceBundleItem(currentItem, {}, currentItem.quantity, select.value);
+        recalculateBundle(bundle);
+        const itemPrice = card.querySelector(`[data-bundle-item-price="${itemIndex}"]`);
+        const subtotal = card.querySelector("[data-bundle-subtotal]");
+        const total = card.querySelector("[data-bundle-total]");
+        if (itemPrice) itemPrice.textContent = formatCurrency(bundle.items[itemIndex].price);
+        if (subtotal) subtotal.textContent = formatCurrency(bundle.subtotal);
+        if (total) total.textContent = formatCurrency(bundle.total);
+      });
+    });
     fragment.appendChild(card);
   });
 
@@ -829,6 +1277,9 @@ function addBundleToCart(bundle, button) {
       sourceCatalog: item.sourceType,
       locale: window.I18n?.getLocale?.() || "en-US",
       price: Number(item.price.toFixed(2)),
+      basePrice: item.baseUnitPrice ?? item.price,
+      unitPrice: item.unitPrice ?? item.price,
+      quantity: item.quantity || 1,
       hl: rolled.value,
       hlRaw: rolled.raw,
       hlLog: rolled.log,
@@ -839,11 +1290,17 @@ function addBundleToCart(bundle, button) {
       skillBonuses: item.skillBonuses,
       attributeSet: item.attributeSet,
       priceModifiers: item.priceModifiers,
+      modifierGroup: item.modifierGroup,
+      selectedPriceModifier: item.selectedPriceModifier,
       installation: item.installation,
       bundleId,
       bundleTitle: bundle.title,
       bundleTitleKey: bundle.titleKey,
+      bundleTitleFallback: bundle.titleFallback || bundle.title,
+      bundleProfileKey: bundle.profileKey,
+      bundleProfileFallback: bundle.profileLabel || "",
       bundleSignatureKey: bundle.signatureKey,
+      bundleSignatureFallback: bundle.signature || "",
       bundleDiscountPct: bundle.discountPct,
     };
   });
@@ -925,15 +1382,33 @@ function randomInt(min, max) {
 
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
+    BUDGET_BANDS,
+    ROLE_PROFILES,
+    ROLE_BUNDLE_VARIANTS,
     init,
     fetchJson,
     normalizeCatalog,
+    normalizeBundleModifierGroup,
+    normalizeWeaponCatalog,
     createBundleContext,
     enforceDependencies,
     generateBundles,
+    generateLegacyBundles,
     withStyleFlavor,
     applyOptionFilters,
     applyStoreSignature,
+    getBudgetBand,
+    uniqueItems,
+    selectBundleCandidates,
+    selectRoleWeapon,
+    findAmmoForWeapon,
+    defaultModifierOption,
+    priceBundleItem,
+    recalculateBundle,
+    finalizeBundleDraft,
+    buildRoleVariant,
+    baseBundleInputs,
+    buildBaseBundle,
     pickBundleItems,
     renderBundles,
     addBundleToCart,

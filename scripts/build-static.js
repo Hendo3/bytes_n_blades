@@ -13,7 +13,7 @@ for (const directory of ["assets", "css", "data", "html", "js"]) {
   });
 }
 
-for (const filename of ["index.html", "login.html", "manifest.webmanifest"]) {
+for (const filename of ["index.html", "login.html", "manifest.webmanifest", "manifest.pt-BR.webmanifest"]) {
   fs.copyFileSync(path.join(root, filename), path.join(output, filename));
 }
 

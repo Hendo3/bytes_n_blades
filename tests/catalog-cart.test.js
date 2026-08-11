@@ -1,4 +1,6 @@
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
 const { afterEach, describe, test } = require("node:test");
 
 const {
@@ -7,6 +9,8 @@ const {
   flushPromises,
   jsonResponse,
 } = require("./helpers/browser-env.js");
+
+const projectRoot = path.resolve(__dirname, "..");
 
 let cleanups = [];
 
@@ -208,6 +212,74 @@ describe("catalog controller and purchase flow", () => {
     assert.equal(cart[1].ammoOptionKey, "ap");
     assert.equal(cart[2].price, 50);
     assert.equal(cart[2].ammoOptionPricingModel, "fixed");
+  });
+
+  test("keeps ammunition selectors separate from smartchips in both real catalogs", async () => {
+    for (const [locale, fileName, ammoClass] of [
+      ["en-US", "weapons.json", "Ammo"],
+      ["pt-BR", "weapons.pt-BR.json", "Munição"],
+    ]) {
+      const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data", fileName), "utf8"));
+      const expectedAmmo = payload.weapons.filter((weapon) => weapon.type_code === "AMMO");
+      const { document, window } = useBrowser({
+        html: catalogMarkup(),
+        url: "https://bytes.test/html/weapons.html",
+        fetchImpl: async () => jsonResponse(payload),
+        immediateTimers: true,
+      });
+      localStorage.setItem("preferred_locale", locale);
+      installCyberUtils();
+      requireFresh("js/script.js");
+      await flushPromises();
+
+      const ammoCategory = [...document.querySelectorAll("#category-list button")]
+        .find((button) => button.textContent === ammoClass.toUpperCase());
+      assert.ok(ammoCategory, `${locale}: ammunition category exists`);
+      ammoCategory.click();
+
+      const ammoCards = [...document.querySelectorAll("#items-list article")];
+      assert.equal(ammoCards.length, expectedAmmo.length, `${locale}: every ammunition item renders`);
+      for (const card of ammoCards) {
+        assert.ok(card.querySelector("select[id^='ammo-option-']"), `${locale}: ${card.querySelector("h3").textContent} keeps its selector`);
+        assert.equal(card.querySelector("input[id^='smartchipped-']"), null, `${locale}: ammunition never gets Smartchip`);
+      }
+
+      const weaponCategory = [...document.querySelectorAll("#category-list button")]
+        .find((button) => button.textContent !== ammoClass.toUpperCase());
+      weaponCategory.click();
+      const weaponCards = [...document.querySelectorAll("#items-list article")];
+      assert.ok(weaponCards.length > 0, `${locale}: weapon category renders`);
+      for (const card of weaponCards) {
+        assert.ok(card.querySelector("input[id^='smartchipped-']"), `${locale}: ${card.querySelector("h3").textContent} keeps Smartchip`);
+        assert.equal(card.querySelector("select[id^='ammo-option-']"), null, `${locale}: weapons do not receive ammunition selectors`);
+      }
+
+    }
+  });
+
+  test("recognizes localized ammunition categories even without a type code", async () => {
+    const payload = {
+      weapons: [
+        { id: "english-ammo", name: "English Box", class: "Ammunition", price: 10 },
+        { id: "portuguese-ammo", name: "Caixa Brasileira", class: "Munição", price: 20 },
+      ],
+    };
+    const { document } = useBrowser({
+      html: catalogMarkup(),
+      url: "https://bytes.test/html/weapons.html",
+      fetchImpl: async () => jsonResponse(payload),
+      immediateTimers: true,
+    });
+    installCyberUtils();
+    requireFresh("js/script.js");
+    await flushPromises();
+
+    for (const categoryButton of document.querySelectorAll("#category-list button")) {
+      categoryButton.click();
+      const card = document.querySelector("#items-list article");
+      assert.ok(card.querySelector("select[id^='ammo-option-']"));
+      assert.equal(card.querySelector("input[id^='smartchipped-']"), null);
+    }
   });
 
   test("filters drug difficulty and renders fetch failures through the error route", async () => {

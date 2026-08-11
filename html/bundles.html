@@ -30,6 +30,7 @@
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="./cyberwares.html">Cyberwares</a></li>
                     <li><a href="./accessories.html">Accessories</a></li>
+                    <li><a href="./cyberdecks.html">Cyberdecks</a></li>
                     <li><a href="./drugs.html">Drugs</a></li>
                     <li><a href="./weapons.html">Weapons</a></li>
                     <li><a class="nav-highlight" href="./bundles.html" aria-current="page">Bundles</a></li>
@@ -43,24 +44,32 @@
         <aside class="category-rail">
             <header class="rail-header">
                 <span class="rail-title">Smart Bundles</span>
-                <p class="rail-hint">Offgrid presets: chrome now, weapons and combat chems next.</p>
+                <p class="rail-hint">Role loadouts plus housing, food, clothing, weapons and compatible ammunition.</p>
             </header>
             <p id="bundle-timer" class="rail-hint">Bundle relay syncing...</p>
 
             <div class="kit-options">
-                <label for="kit-style">Build Profile</label>
-                <select id="kit-style" aria-label="Kit style">
-                    <option value="balanced">Balanced</option>
-                    <option value="aggressive">Aggressive</option>
-                    <option value="stealth">Stealth</option>
+                <label for="kit-profile">Build Profile</label>
+                <select id="kit-profile" aria-label="Build profile">
+                    <option value="rockerboy">Rockerboy</option>
+                    <option value="solo" selected>Solo</option>
                     <option value="netrunner">Netrunner</option>
+                    <option value="techie">Techie</option>
+                    <option value="medtechie">Medtechie</option>
+                    <option value="media">Media</option>
+                    <option value="cop">Cop</option>
+                    <option value="corporate">Corporate</option>
+                    <option value="fixer">Fixer</option>
+                    <option value="nomad">Nomad</option>
                 </select>
 
                 <label for="kit-budget">Budget Band</label>
                 <select id="kit-budget" aria-label="Kit budget">
-                    <option value="street">Street (cheap/efficient)</option>
-                    <option value="pro">Pro (mid-tier)</option>
-                    <option value="opulence">Opulence (max chrome)</option>
+                    <option value="scrape">Scrape (bare minimum)</option>
+                    <option value="street" selected>Street (cheap/efficient)</option>
+                    <option value="professional">Professional (job ready)</option>
+                    <option value="elite">Elite (premium hardware)</option>
+                    <option value="corporate">Corporate (blank check)</option>
                 </select>
 
                 <label class="kit-toggle">
@@ -92,10 +101,11 @@
                 <p>Every pack is validated before it hits your screen:</p>
                 <ul>
                     <li>Chipware requires Neuralware Processor + Chipware Socket</li>
-                    <li>Smartgun builds require Interface Plugs</li>
-                    <li>Netrunning links include compatible data gear</li>
-                    <li>Sensory bundles pair cyber senses with support tools</li>
-                    <li>Build Profile and Budget Band reshape every generated kit</li>
+                    <li>Every Role receives four distinct builds</li>
+                    <li>Weapons include a compatible standard ammunition box</li>
+                    <li>Chrome dependencies and slot providers are resolved recursively</li>
+                    <li>Base bundles include housing, food, clothing and recurring costs</li>
+                    <li>Official style, quality, location and cybercontrol modifiers remain selectable</li>
                 </ul>
                 <p class="rail-hint">Price sums first. Offgrid markdown applies after coherence checks.</p>
             </div>

@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["schema_version", "locale", "decks", "builder"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "locale": { "enum": ["en-US", "pt-BR"] },
+    "decks": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "description", "price", "cpu", "memory", "speed", "data_wall", "options", "source"],
+        "properties": {
+          "id": { "type": "string" }, "name": { "type": "string" }, "description": { "type": "string" },
+          "price": { "type": "number", "minimum": 0 }, "price_qualifier": { "enum": ["exact", "approximate"] },
+          "cpu": { "type": ["integer", "null"] }, "memory": { "type": "integer" },
+          "speed": { "type": "integer" }, "data_wall": { "type": ["integer", "null"] },
+          "portable": { "type": "boolean" }, "cellular": { "type": "boolean" },
+          "armor_sp": { "type": ["integer", "null"] }, "options": { "type": "array" },
+          "unspecified": { "type": "array" }, "source": { "type": "object" }
+        }
+      }
+    },
+    "builder": {
+      "type": "object",
+      "required": ["base_stats", "limits", "chassis", "upgrades", "connections", "options", "source"],
+      "properties": {
+        "base_stats": { "type": "object" }, "limits": { "type": "object" },
+        "chassis": { "type": "array", "minItems": 5, "maxItems": 5 },
+        "upgrades": { "type": "object" }, "connections": { "type": "array", "minItems": 3 },
+        "options": { "type": "array", "minItems": 6 }, "source": { "type": "object" }
+      }
+    }
+  }
+}

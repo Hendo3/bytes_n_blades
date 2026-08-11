@@ -23,6 +23,47 @@
                 "Alta Costura": "Roupas sofisticadas e caras para as classes superiores, com grifes como Miyake, Si-fui Yan e Anne Calvin.",
                 "Moda Urbana": "Videojaquetas, tecidos que mudam de cor, camuflagem, couro, tachas, logotipos, jeans, saias de couro e botas: o lado mais selvagem da cibermoda."
             },
+            "modifierGroup": {
+                "id": "fashion_style",
+                "label": "Estilo",
+                "appliesTo": [
+                    "pants",
+                    "top",
+                    "jacket",
+                    "footwear",
+                    "accessory",
+                    "mirrorshades",
+                    "contactlenses",
+                    "glasses"
+                ],
+                "options": [
+                    {
+                        "id": "generic_chic",
+                        "label": "Roupa Normal Elegante",
+                        "multiplier": 1
+                    },
+                    {
+                        "id": "leisurewear",
+                        "label": "Roupa Esporte",
+                        "multiplier": 2
+                    },
+                    {
+                        "id": "businesswear",
+                        "label": "Roupas Formais",
+                        "multiplier": 3
+                    },
+                    {
+                        "id": "high_fashion",
+                        "label": "Alta Costura",
+                        "multiplier": 4
+                    },
+                    {
+                        "id": "urban_flash",
+                        "label": "Moda Urbana",
+                        "multiplier": 2
+                    }
+                ]
+            },
             "list": {
                 "pants": {
                     "name": "Calças",
@@ -337,6 +378,31 @@
                 "Bom": "2x",
                 "Excelente": "3x"
             },
+            "modifierGroup": {
+                "id": "venue_quality",
+                "label": "Qualidade do Restaurante / Bar",
+                "appliesTo": [
+                    "wellDrink",
+                    "restaurant"
+                ],
+                "options": [
+                    {
+                        "id": "fair",
+                        "label": "Médio",
+                        "multiplier": 1
+                    },
+                    {
+                        "id": "good",
+                        "label": "Bom",
+                        "multiplier": 2
+                    },
+                    {
+                        "id": "excellent",
+                        "label": "Excelente",
+                        "multiplier": 3
+                    }
+                ]
+            },
             "list": {
                 "movie": {
                     "name": "Filme",
@@ -360,7 +426,8 @@
                 },
                 "wellDrink": {
                     "name": "Água de Fonte",
-                    "price": "3.0"
+                    "price": "3.0",
+                    "note": "aplica-se o modificador de qualidade do restaurante ou bar"
                 },
                 "restaurant": {
                     "name": "Refeição em Restaurante",
@@ -599,6 +666,31 @@
         "vehicles": {
             "name": "Veículos",
             "description": "Veículos típicos do início do século XXI. Cibercontroles dobram o custo indicado.",
+            "modifierGroup": {
+                "id": "vehicle_controls",
+                "label": "Controles",
+                "appliesTo": [
+                    "scooter",
+                    "motorcycle",
+                    "cityCar",
+                    "smallSubcompact",
+                    "mediumSedan",
+                    "sportsCar",
+                    "luxurySedan"
+                ],
+                "options": [
+                    {
+                        "id": "standard_controls",
+                        "label": "Controles Padrão",
+                        "multiplier": 1
+                    },
+                    {
+                        "id": "cybercontrols",
+                        "label": "Cibercontroles",
+                        "multiplier": 2
+                    }
+                ]
+            },
             "list": {
                 "scooter": {
                     "name": "Lambreta",
@@ -754,22 +846,54 @@
             "name": "Residência",
             "description": "Residência",
             "modifiers": {
-                "combatZone": "1x",
-                "moderateZone": "2x",
-                "corporateZone": "4x",
-                "executiveZone": "6x"
+                "Zona de Combate": "1x",
+                "Zona Moderada": "2x",
+                "Zona de Corporação": "4x",
+                "Zona Executiva": "6x"
+            },
+            "modifierGroup": {
+                "id": "housing_location",
+                "label": "Localização",
+                "appliesTo": [
+                    "coffin",
+                    "hotelRoom",
+                    "apartment",
+                    "house"
+                ],
+                "options": [
+                    {
+                        "id": "combat_zone",
+                        "label": "Zona de Combate",
+                        "multiplier": 1
+                    },
+                    {
+                        "id": "moderate_zone",
+                        "label": "Zona Moderada",
+                        "multiplier": 2
+                    },
+                    {
+                        "id": "corporate_zone",
+                        "label": "Zona de Corporação",
+                        "multiplier": 4
+                    },
+                    {
+                        "id": "executive_zone",
+                        "label": "Zona Executiva",
+                        "multiplier": 6
+                    }
+                ]
             },
             "list": {
                 "coffin": {
                     "name": "Caixão",
                     "price": "20.0",
-                    "note": "por noite",
+                    "note": "por noite; aplica-se o modificador de localização",
                     "description": "Caixa de dormir empilhável e operada por moedas, encontrada em aeroportos e pensões. Há espaço apenas para virar-se ou ler na cama; modelos caros podem incluir telefone ou mini-TV."
                 },
                 "hotelRoom": {
                     "name": "Quarto de Hotel",
                     "price": "100.0",
-                    "note": "por noite"
+                    "note": "por noite; aplica-se o modificador de localização"
                 },
                 "apartment": {
                     "name": "Apartamento em Condomínio",

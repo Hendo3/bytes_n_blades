@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ? [
           ["catalog", cartDataPath("../data/cyberwares.json")],
           ["catalog", cartDataPath("../data/equipment.json")],
+          ["catalog", cartDataPath("../data/decks.json")],
           ["weapons", cartDataPath("../data/weapons.json")],
           ["drugs", cartDataPath("../data/drugs.json")],
           ["chips", cartDataPath("../data/chip-rates.json")],
@@ -111,6 +112,17 @@ document.addEventListener("DOMContentLoaded", () => {
             name: item.name || key,
             categoryLabel: category.name,
             installation: item.installation,
+            deck: item.stats ? {
+              stats: item.stats,
+              features: item.features || {},
+              options: Array.isArray(item.options) ? item.options : [],
+              source: item.source || null,
+              approximatePrice: Boolean(item.approximatePrice),
+            } : null,
+            modifierGroup: category.modifierGroup && Array.isArray(category.modifierGroup.appliesTo)
+              && (category.modifierGroup.appliesTo.includes(key) || category.modifierGroup.appliesTo.includes(item.id))
+              ? category.modifierGroup
+              : null,
           });
           if (Array.isArray(item.legacyIds)) {
             item.legacyIds.forEach((legacyId) => {
@@ -145,11 +157,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function localizedBundleTitle(item) {
     if (!item.bundleTitleKey) return item.bundleTitle || cartT("common.bundle", "Bundle");
-    const baseTitle = cartT(item.bundleTitleKey, item.bundleTitle || "Bundle");
-    const signature = item.bundleSignatureKey
-      ? cartT(item.bundleSignatureKey, "")
+    const baseTitle = cartT(item.bundleTitleKey, item.bundleTitleFallback || item.bundleTitle || "Bundle");
+    const profile = item.bundleProfileKey
+      ? cartT(item.bundleProfileKey, item.bundleProfileFallback || "")
       : "";
-    return signature ? `${baseTitle} // ${signature}` : baseTitle;
+    const signature = item.bundleSignatureKey
+      ? cartT(item.bundleSignatureKey, item.bundleSignatureFallback || "")
+      : "";
+    return [profile, baseTitle, signature].filter(Boolean).join(" // ");
   }
 
   function requirementLabel(id) {
@@ -222,7 +237,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         ${hlText}
                 ${bundleTag}
                     </small>
-              ${renderTechnicalInfo({ ...item, installation: displayItem.installation || item.installation })}
+              ${renderTechnicalInfo({
+                ...item,
+                installation: displayItem.installation || item.installation,
+                deck: displayItem.deck || item.deck,
+                modifierGroup: displayItem.modifierGroup || item.modifierGroup,
+              })}
                 </div>
                 <div style="text-align:right; margin:0 15px; font-weight:bold; color:#fff;">
                     ${formatCurrency(item.price)}
@@ -342,6 +362,27 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderTechnicalInfo(item) {
     const details = [];
 
+    if (item.deck && typeof item.deck === "object") {
+      const stats = item.deck.stats || {};
+      const notListed = cartT("deck.not_listed", "Not listed");
+      const valueOrMissing = (value, formatter = String) => (
+        value === undefined || value === null ? notListed : formatter(value)
+      );
+      details.push(`${cartT("deck.speed", "SPEED")} ${valueOrMissing(stats.speed, (value) => `+${value}`)}`);
+      details.push(`${cartT("deck.cpu", "CPU")} ${valueOrMissing(stats.cpu)}`);
+      details.push(`${cartT("deck.memory", "MEMORY")} ${valueOrMissing(stats.memoryUnits, (value) => `${value} ${cartT("deck.mu", "MU")}`)}`);
+      details.push(`${cartT("deck.data_wall", "DATA WALL")} ${valueOrMissing(stats.dataWall, (value) => `+${value}`)}`);
+      if (item.deck.features?.cellular) details.push(cartT("deck.cellular_link", "CELLULAR LINK"));
+      if (item.deck.features?.portable === true) details.push(cartT("deck.portable_unit", "PORTABLE UNIT"));
+      const options = Array.isArray(item.deck.options)
+        ? item.deck.options.map((option) => option?.label).filter(Boolean)
+        : [];
+      if (options.length > 0) details.push(`${cartT("deck.options", "OPTIONS")} ${options.join(" // ")}`);
+      if (item.deck.source) {
+        details.push(`${cartT("deck.source", "SOURCE")} ${item.deck.source.book}, ${cartT("deck.page", "p.")} ${item.deck.source.page}`);
+      }
+    }
+
     if (Array.isArray(item.attributeBonuses) && item.attributeBonuses.length > 0) {
       const bonusText = item.attributeBonuses
         .map((bonus) => {
@@ -430,6 +471,20 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         details.push(`${cartT("cart.ammo_mod", "AMMO MOD")} ${ammoLabel} x${item.ammoOptionMultiplier}`);
       }
+    }
+    if (item.selectedPriceModifier) {
+      const localizedGroup = item.modifierGroup;
+      const localizedOption = localizedGroup?.options?.find(
+        (option) => option.id === item.selectedPriceModifier.optionId,
+      );
+      const groupLabel = localizedGroup?.label || item.selectedPriceModifier.groupLabel || "Modifier";
+      const optionLabel = localizedOption?.label || item.selectedPriceModifier.label;
+      details.push(
+        `${cartT("cart.price_modifier", "PRICE MODIFIER")} ${groupLabel}: ${optionLabel} x${item.selectedPriceModifier.multiplier}`,
+      );
+    }
+    if (Number(item.quantity) > 1) {
+      details.push(`${cartT("cart.quantity", "QUANTITY")} ${item.quantity}`);
     }
     if (details.length === 0) return "";
 

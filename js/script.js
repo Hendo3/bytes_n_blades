@@ -14,6 +14,33 @@ function catalogDataPath(path) {
   return typeof window !== "undefined" && window.I18n ? window.I18n.dataPath(path) : path;
 }
 
+function getApplicableModifierGroup(category, itemKey, itemId) {
+  const group = category?.modifierGroup;
+  if (!group || typeof group !== "object") return null;
+  const appliesTo = Array.isArray(group.appliesTo) ? group.appliesTo.map(String) : [];
+  if (!appliesTo.includes(String(itemKey)) && !appliesTo.includes(String(itemId || ""))) return null;
+
+  const options = (Array.isArray(group.options) ? group.options : [])
+    .map((option) => ({
+      id: String(option?.id || "").trim(),
+      label: String(option?.label || option?.id || "").trim(),
+      multiplier: Number(option?.multiplier),
+    }))
+    .filter((option) => option.id && option.label && Number.isFinite(option.multiplier) && option.multiplier > 0);
+
+  if (!group.id || !group.label || options.length === 0) return null;
+  return {
+    id: String(group.id),
+    label: String(group.label),
+    options,
+  };
+}
+
+function getPriceModifierOption(item, optionKey) {
+  const options = item?.modifierGroup?.options || [];
+  return options.find((option) => option.id === optionKey) || options[0] || null;
+}
+
 const PAGE_CONFIG = {
   cyberwares: {
     path: catalogDataPath("../data/cyberwares.json"),
@@ -22,6 +49,11 @@ const PAGE_CONFIG = {
   accessories: {
     path: catalogDataPath("../data/equipment.json"),
     title: "GEAR_STASH",
+  },
+  cyberdecks: {
+    path: catalogDataPath("../data/decks.json"),
+    title: "DECK_EXCHANGE",
+    deckCatalog: true,
   },
   drugs: {
     path: catalogDataPath("../data/drugs.json"),
@@ -155,6 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const dependencyLabels = new Map();
 
   let fullCatalog = {};
+  let installationCatalogItems = [];
   let activeCategory = null;
 
   init();
@@ -164,6 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
       fullCatalog = await fetchData(config.path);
       indexRequirementLabels(fullCatalog);
       await hydrateRequirementLabels(pageId);
+      await prepareInstallationCatalog();
       setupCategories(fullCatalog);
       setupFilters(fullCatalog);
       setupEvents();
@@ -290,7 +324,9 @@ document.addEventListener("DOMContentLoaded", () => {
         skillBonuses: Array.isArray(item.skillBonuses) ? item.skillBonuses : [],
         attributeSet: item.attributeSet && typeof item.attributeSet === "object" ? item.attributeSet : null,
         priceModifiers: Array.isArray(item.priceModifiers) ? item.priceModifiers : [],
+        modifierGroup: getApplicableModifierGroup(categoryData, key, item.id || key),
         installation: item.installation && typeof item.installation === "object" ? item.installation : inferredMeta.installation,
+        sourceCatalog: pageId,
         raw: item,
         category: categoryKey,
         categoryLabel,
@@ -353,6 +389,23 @@ document.addEventListener("DOMContentLoaded", () => {
       indexRequirementLabels(payload.data || payload);
     } catch {
       // Cross-catalog labels are an enhancement; the catalog remains usable offline.
+    }
+  }
+
+  async function prepareInstallationCatalog() {
+    if (pageId !== "cyberwares" || !window.CyberUtils) return;
+    installationCatalogItems = CyberUtils.flattenCatalog(
+      { data: fullCatalog },
+      "cyberwares",
+    );
+
+    try {
+      const response = await fetch(catalogDataPath("../data/equipment.json"), { cache: "no-store" });
+      if (!response.ok) return;
+      const payload = await response.json();
+      installationCatalogItems.push(...CyberUtils.flattenCatalog(payload, "accessories"));
+    } catch {
+      // Cross-catalog requirements remain detectable and fail atomically if unavailable.
     }
   }
 
@@ -429,13 +482,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const techMeta = renderTechnicalMeta(item);
 
       const { statsHtml, damageVal } = renderWeaponStats(item.raw);
+      const deckStatsHtml = renderDeckStats(item.raw);
       const smartchippedId = `smartchipped-${domId}`;
       const ammoOptionId = `ammo-option-${domId}`;
+      const modifierOptionId = `price-modifier-${domId}`;
 
       let diceButton = null;
-      if (!config.weaponCatalog && damageVal) {
+      if (pageId !== "cyberwares" && !config.weaponCatalog && damageVal) {
         diceButton = DiceEngine.createButton(damageVal, item.name);
-      } else if (!config.weaponCatalog) {
+      } else if (pageId !== "cyberwares" && !config.weaponCatalog) {
         const descDmg = item.description.match(DiceEngine.regex);
         if (descDmg)
           diceButton = DiceEngine.createButton(descDmg[0], item.name);
@@ -447,6 +502,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ${badges ? `<div class="meta">${badges}</div>` : ""}
                 ${techMeta}
                 ${statsHtml}
+                ${deckStatsHtml}
                 <div id="dice-area-${domId}"></div>
                 <div class="meta" style="margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end;">
               <strong id="price-${domId}" style="color:var(--primary-color); font-size:1.2em;">${formatDisplayedCatalogPrice(item, item.price, false)}</strong>
@@ -466,6 +522,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     return `<option value="${option.key}">${option.label} (${option.multiplier}x)</option>`;
                   }).join("")}
                 </select>` : ""}
+                ${item.modifierGroup ? `
+                <label for="${modifierOptionId}" class="item-modifier-label">${item.modifierGroup.label}</label>
+                <select id="${modifierOptionId}" class="item-modifier-select">
+                  ${item.modifierGroup.options.map((option) => `
+                    <option value="${option.id}">${option.label} (${option.multiplier}x)</option>
+                  `).join("")}
+                </select>` : ""}
             `;
 
       if (diceButton) {
@@ -476,11 +539,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const priceEl = card.querySelector(`#price-${domId}`);
       const smartchippedEl = config.weaponCatalog && !isAmmo ? card.querySelector(`#${smartchippedId}`) : null;
       const ammoOptionEl = isAmmo ? card.querySelector(`#${ammoOptionId}`) : null;
+      const modifierOptionEl = item.modifierGroup ? card.querySelector(`#${modifierOptionId}`) : null;
 
       if (smartchippedEl && priceEl) {
         smartchippedEl.addEventListener("change", () => {
           const selectedAmmoOption = ammoOptionEl ? ammoOptionEl.value : "base";
-          const finalPrice = computeCatalogPrice(item, smartchippedEl.checked, selectedAmmoOption);
+          const finalPrice = computeCatalogPrice(item, smartchippedEl.checked, selectedAmmoOption, modifierOptionEl?.value);
           priceEl.textContent = formatDisplayedCatalogPrice(item, finalPrice, smartchippedEl.checked);
         });
       }
@@ -488,7 +552,16 @@ document.addEventListener("DOMContentLoaded", () => {
       if (ammoOptionEl && priceEl) {
         ammoOptionEl.addEventListener("change", () => {
           const isSmartchipped = smartchippedEl ? smartchippedEl.checked : false;
-          const finalPrice = computeCatalogPrice(item, isSmartchipped, ammoOptionEl.value);
+          const finalPrice = computeCatalogPrice(item, isSmartchipped, ammoOptionEl.value, modifierOptionEl?.value);
+          priceEl.textContent = formatDisplayedCatalogPrice(item, finalPrice, isSmartchipped);
+        });
+      }
+
+      if (modifierOptionEl && priceEl) {
+        modifierOptionEl.addEventListener("change", () => {
+          const isSmartchipped = smartchippedEl ? smartchippedEl.checked : false;
+          const selectedAmmoOption = ammoOptionEl ? ammoOptionEl.value : "base";
+          const finalPrice = computeCatalogPrice(item, isSmartchipped, selectedAmmoOption, modifierOptionEl.value);
           priceEl.textContent = formatDisplayedCatalogPrice(item, finalPrice, isSmartchipped);
         });
       }
@@ -522,10 +595,24 @@ document.addEventListener("DOMContentLoaded", () => {
         handlePurchase(item, btn, {
           smartchipped: smartchippedEl ? smartchippedEl.checked : false,
           ammoOptionKey: ammoOptionEl ? ammoOptionEl.value : (isShotgunAmmo ? "shotgun_shells" : "base"),
+          priceModifierKey: modifierOptionEl?.value || null,
         });
       };
 
       card.appendChild(btn);
+
+      const isCatalogRedirect = item.id === "aptr_reflex_chips"
+        || item.id === "mram_memory_chips"
+        || isVisualRecognitionItem(item);
+      if (pageId === "cyberwares" && !isCatalogRedirect && window.CyberUtils) {
+        const installBtn = document.createElement("button");
+        installBtn.className = "btn-secondary btn-install";
+        installBtn.textContent = catalogT("catalog.install_complete", "COMPLETE INSTALL");
+        installBtn.style.width = "100%";
+        installBtn.style.marginTop = "8px";
+        installBtn.onclick = () => handleAssistedPurchase(item, installBtn);
+        card.appendChild(installBtn);
+      }
       fragment.appendChild(card);
     });
 
@@ -563,6 +650,45 @@ document.addEventListener("DOMContentLoaded", () => {
     html += `</ul>`;
 
     return { statsHtml: hasData ? html : "", damageVal: damageVal };
+  }
+
+  function renderDeckStats(raw) {
+    if (!config.deckCatalog || !raw || typeof raw !== "object") return "";
+
+    const stats = raw.stats || {};
+    const notListed = catalogT("deck.not_listed", "Not listed");
+    const valueOrMissing = (value, formatter = String) => (
+      value === undefined || value === null ? notListed : formatter(value)
+    );
+    const rows = [
+      [catalogT("deck.speed", "Speed"), valueOrMissing(stats.speed, (value) => `+${value}`)],
+      [catalogT("deck.cpu", "CPU"), valueOrMissing(stats.cpu)],
+      [catalogT("deck.memory", "Memory"), valueOrMissing(stats.memoryUnits, (value) => `${value} ${catalogT("deck.mu", "MU")}`)],
+      [catalogT("deck.data_wall", "Data Wall"), valueOrMissing(stats.dataWall, (value) => `+${value}`)],
+      [catalogT("deck.cellular", "Cellular"), raw.features?.cellular
+        ? catalogT("common.yes", "Yes")
+        : catalogT("common.no", "No")],
+      [catalogT("deck.portable", "Portable"), raw.features?.portable === null || raw.features?.portable === undefined
+        ? notListed
+        : raw.features.portable
+          ? catalogT("common.yes", "Yes")
+          : catalogT("common.no", "No")],
+    ];
+
+    const options = Array.isArray(raw.options)
+      ? raw.options.map((option) => option?.label).filter(Boolean)
+      : [];
+    const source = raw.source && typeof raw.source === "object"
+      ? `${raw.source.book}, ${catalogT("deck.page", "p.")} ${raw.source.page}`
+      : null;
+
+    return `
+      <dl class="deck-specs">
+        ${rows.map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join("")}
+      </dl>
+      ${options.length > 0 ? `<p class="deck-options"><strong>${catalogT("deck.options", "Options")}:</strong> ${options.join(" // ")}</p>` : ""}
+      ${source ? `<p class="deck-source">${catalogT("deck.source", "SOURCE")}: ${source}</p>` : ""}
+    `;
   }
 
   function renderTechnicalMeta(item) {
@@ -715,7 +841,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return options.find((option) => option.key === key) || options[0];
   }
 
-  function computeCatalogPrice(item, smartchipped, ammoOptionKey) {
+  function computeCatalogPrice(item, smartchipped, ammoOptionKey, priceModifierKey) {
     let finalPrice = Number(item.price || 0);
     if (!Number.isFinite(finalPrice)) finalPrice = 0;
 
@@ -732,6 +858,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    const priceModifier = getPriceModifierOption(item, priceModifierKey);
+    if (priceModifier && !isAmmoItem(item)) {
+      finalPrice *= priceModifier.multiplier;
+    }
+
     return Number(finalPrice.toFixed(2));
   }
 
@@ -741,10 +872,53 @@ document.addEventListener("DOMContentLoaded", () => {
       const multiplier = smartchipped ? 2 : 1;
       return `${formatCurrency(Number(item.price || 0) * multiplier)} - ${formatCurrency(maximum * multiplier)}`;
     }
-    return formatCurrency(finalPrice);
+    const formatted = formatCurrency(finalPrice);
+    if (config.deckCatalog && item.raw?.approximatePrice) {
+      return catalogT("deck.approx_price", `About ${formatted}`, { price: formatted });
+    }
+    return formatted;
   }
 
   // --- PURCHASE LOGIC (AUTO-ROLL HL) ---
+  function handleAssistedPurchase(item, btn) {
+    const plan = CyberUtils.resolveInstallationPlan(item, Stash.get(), installationCatalogItems);
+    const originalText = btn.textContent;
+
+    if (!plan.ok) {
+      const unresolved = plan.unresolved.map((entry) => formatName(entry.replace(/^[^:]+:/, ""))).join(", ");
+      btn.textContent = catalogT("catalog.install_failed", "INSTALL BLOCKED");
+      if (typeof Modal !== "undefined" && Modal?.alert) {
+        Modal.alert(
+          catalogT("catalog.install_failed_title", "INCOMPLETE INSTALLATION"),
+          catalogT("catalog.install_failed_message", `Missing catalog requirements: ${unresolved}`, { requirements: unresolved }),
+        );
+      }
+      setTimeout(() => { btn.textContent = originalText; }, 1200);
+      return;
+    }
+
+    const cartEntries = plan.items.map((plannedItem) => CyberUtils.createCartEntry(plannedItem, {
+      autoAdded: plannedItem !== item,
+      autoInstalledFor: item.id,
+    }));
+    CyberUtils.appendCartItems(cartEntries, STORAGE_KEY);
+
+    const totalHL = cartEntries.reduce((total, entry) => total + (Number(entry.hl) || 0), 0);
+    btn.textContent = catalogT(
+      "catalog.installed_complete",
+      `INSTALLED +${plan.dependencies.length} REQ ${totalHL > 0 ? `[HL -${totalHL}]` : ""}`,
+      {
+        count: plan.dependencies.length,
+        hl: totalHL > 0 ? `[${window.I18n?.isPtBr?.() ? "PH" : "HL"} -${totalHL}]` : "",
+      },
+    );
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }, 1200);
+  }
+
   function handlePurchase(item, btn, options = {}) {
     let finalHL = 0;
     let rollLog = "";
@@ -752,7 +926,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const ammoOption = isAmmoItem(item)
       ? getAmmoOption(item, options.ammoOptionKey)
       : { key: "base", label: catalogT("catalog.standard", "Standard"), multiplier: 1, pricingModel: "multiplier" };
-    const finalPrice = computeCatalogPrice(item, smartchipped, ammoOption.key);
+    const selectedPriceModifier = getPriceModifierOption(item, options.priceModifierKey);
+    const pricedTotal = computeCatalogPrice(item, smartchipped, ammoOption.key, selectedPriceModifier?.id);
 
     if (item.hl && item.hl !== "0") {
       if (window.CyberUtils) {
@@ -773,7 +948,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: item.id,
       legacyIds: item.legacyIds,
       name: item.name,
-      price: finalPrice,
+      price: pricedTotal,
       basePrice: item.price,
       category: item.category,
       categoryLabel: item.categoryLabel,
@@ -790,7 +965,21 @@ document.addEventListener("DOMContentLoaded", () => {
       skillBonuses: item.skillBonuses,
       attributeSet: item.attributeSet,
       priceModifiers: item.priceModifiers,
+      modifierGroup: item.modifierGroup,
+      selectedPriceModifier: selectedPriceModifier ? {
+        groupId: item.modifierGroup.id,
+        optionId: selectedPriceModifier.id,
+        label: selectedPriceModifier.label,
+        multiplier: selectedPriceModifier.multiplier,
+      } : null,
       installation: item.installation,
+      deck: config.deckCatalog ? {
+        stats: item.raw?.stats || {},
+        features: item.raw?.features || {},
+        options: Array.isArray(item.raw?.options) ? item.raw.options : [],
+        source: item.raw?.source || null,
+        approximatePrice: Boolean(item.raw?.approximatePrice),
+      } : null,
       Smartchipped: Boolean(smartchipped),
       ammoOptionKey: isAmmoItem(item) ? ammoOption.key : null,
       ammoOptionLabel: isAmmoItem(item) ? ammoOption.label : null,
@@ -875,6 +1064,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const path = window.location.pathname;
     if (path.includes("cyberwares")) return "cyberwares";
     if (path.includes("accessories")) return "accessories";
+    if (path.includes("cyberdecks")) return "cyberdecks";
     if (path.includes("drugs")) return "drugs";
     if (path.includes("weapons")) return "weapons";
     return null;
@@ -986,5 +1176,7 @@ if (typeof module !== "undefined" && module.exports) {
     SHOTGUN_AMMO_OPTIONS,
     DiceEngine,
     Stash,
+    getApplicableModifierGroup,
+    getPriceModifierOption,
   };
 }

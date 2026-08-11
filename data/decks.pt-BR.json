@@ -1,0 +1,125 @@
+{
+  "$id": "https://bytes-and-blades.local/schemas/decks.json",
+  "title": "Ciberterminais Prontos Publicados",
+  "description": "Modelos prontos de ciberterminais publicados no Livro Básico de Cyberpunk 2020.",
+  "version": "1.0.0",
+  "author": "Byte & Blades",
+  "type": "prebuilt-cyberdecks",
+  "data": {
+    "publishedModels": {
+      "name": "Ciberterminais Publicados",
+      "description": "Terminais de fábrica com preços e especificações fixas, transcritos diretamente dos anúncios do Livro Básico.",
+      "items": {
+        "kirama_lpd_12": {
+          "id": "kirama_lpd_12",
+          "name": "Kirama LPD-12",
+          "manufacturer": "Kirama",
+          "model": "LPD-12",
+          "description": "Ciberterminal de alta velocidade com 20 Unidades de Memória e ligação celular embutida. O anúncio publicado não informa sua CPU nem seu Muro de Dados.",
+          "price": 8025,
+          "approximatePrice": false,
+          "stats": {
+            "speed": 3,
+            "memoryUnits": 20
+          },
+          "features": {
+            "cellular": true,
+            "portable": null
+          },
+          "options": [
+            {
+              "id": "cellular_connection",
+              "label": "Ligação celular"
+            }
+          ],
+          "source": {
+            "bookId": "cp2020-corebook",
+            "book": "Cyberpunk 2020 - Livro Básico",
+            "page": 129
+          }
+        },
+        "sgi_elysia": {
+          "id": "sgi_elysia",
+          "name": "SGI Technologies \"Elysia\"",
+          "manufacturer": "SGI Technologies",
+          "model": "Elysia",
+          "description": "Ciberterminal portátil de alto desempenho fornecido com teclado, Monitor de Vídeo compacto, entrada para oito eletrodos e leitor de chips.",
+          "price": 4260,
+          "approximatePrice": false,
+          "stats": {
+            "speed": 3,
+            "cpu": 1,
+            "memoryUnits": 20,
+            "dataWall": 5
+          },
+          "features": {
+            "cellular": false,
+            "portable": true
+          },
+          "options": [
+            {
+              "id": "keyboard",
+              "label": "Teclado"
+            },
+            {
+              "id": "video_board_3x4",
+              "label": "Monitor de Vídeo de 3 x 4 pol."
+            },
+            {
+              "id": "eight_trode_input",
+              "label": "Entrada para oito eletrodos",
+              "quantity": 8
+            },
+            {
+              "id": "chip_reader",
+              "label": "Leitor de chips"
+            }
+          ],
+          "source": {
+            "bookId": "cp2020-corebook",
+            "book": "Cyberpunk 2020 - Livro Básico",
+            "page": 133
+          }
+        },
+        "zetatech_parraline_5750": {
+          "id": "zetatech_parraline_5750",
+          "name": "Zetatech Parraline 5750",
+          "manufacturer": "Zetatech",
+          "model": "Parraline 5750",
+          "description": "Ciberterminal de fábrica veloz, equipado com teclado, Monitor de Vídeo compacto e leitor de chips. O preço publicado é aproximado.",
+          "price": 3600,
+          "approximatePrice": true,
+          "stats": {
+            "speed": 2,
+            "cpu": 1,
+            "memoryUnits": 10,
+            "dataWall": 4
+          },
+          "features": {
+            "cellular": false,
+            "portable": null
+          },
+          "options": [
+            {
+              "id": "keyboard",
+              "label": "Teclado"
+            },
+            {
+              "id": "video_board_2x3",
+              "label": "Monitor de Vídeo de 2 x 3 pol."
+            },
+            {
+              "id": "chip_reader",
+              "label": "Leitor de chips"
+            }
+          ],
+          "source": {
+            "bookId": "cp2020-corebook",
+            "book": "Cyberpunk 2020 - Livro Básico",
+            "page": 133
+          }
+        }
+      }
+    }
+  }
+}

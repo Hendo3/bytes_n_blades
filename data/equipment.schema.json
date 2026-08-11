@@ -18,6 +18,7 @@
           "name": { "type": "string" },
           "description": { "type": "string" },
           "modifiers": { "type": "object", "additionalProperties": { "type": "string" } },
+          "modifierGroup": { "$ref": "#/definitions/modifierGroup" },
           "types": { "type": "object", "additionalProperties": { "type": "string" } },
           "list": { "$ref": "#/definitions/itemMap" },
           "items": { "$ref": "#/definitions/itemMap" }
@@ -28,6 +29,35 @@
   },
   "additionalProperties": false,
   "definitions": {
+    "modifierGroup": {
+      "type": "object",
+      "required": ["id", "label", "appliesTo", "options"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "appliesTo": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["id", "label", "multiplier"],
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "label": { "type": "string", "minLength": 1 },
+              "multiplier": { "type": "number", "exclusiveMinimum": 0 }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
     "itemMap": {
       "type": "object",
       "additionalProperties": {

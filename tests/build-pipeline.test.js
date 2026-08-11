@@ -62,7 +62,7 @@ describe("static build and artifact validation", () => {
     for (const directory of ["assets", "css", "data", "html", "js"]) {
       expected.push(...listFilesFrom(root, path.join(root, directory)));
     }
-    expected.push("index.html", "login.html", "manifest.webmanifest");
+    expected.push("index.html", "login.html", "manifest.webmanifest", "manifest.pt-BR.webmanifest");
     expected.sort();
 
     const actual = listFilesFrom(dist).sort();
@@ -106,7 +106,9 @@ describe("static build and artifact validation", () => {
       "weapons",
       "weapons.pt-BR",
       "drugs",
+      "drugs.pt-BR",
       "chip-rates",
+      "chip-rates.pt-BR",
     ]) {
       assert.match(valid.stdout, new RegExp(`Dataset "${label.replace(".", "\\.")}"`));
     }
@@ -136,6 +138,9 @@ describe("restoration and localization generators", () => {
       ["scripts/build-equipment-ptbr.py", "data/equipment.pt-BR.json"],
       ["scripts/repair-weapons-en.py", "data/weapons.json"],
       ["scripts/build-weapons-ptbr.py", "data/weapons.pt-BR.json"],
+      ["scripts/repair-drugs-en.py", "data/drugs.json"],
+      ["scripts/build-drugs-ptbr.py", "data/drugs.pt-BR.json"],
+      ["scripts/build-chip-rates-ptbr.py", "data/chip-rates.pt-BR.json"],
       ["scripts/build-cyberwares-ptbr.py", "data/cyberwares.pt-BR.json"],
     ];
 

@@ -23,6 +23,47 @@
                 "High Fashion": "Sophisticated and expensive dressing for the upper class. Designer labels include Miyake, Si-fui Yan and Anne Calvin.",
                 "Urban Flash": "Video jackets, colorshift fabrics, cammo, leathers, metal spikes, Logowear, jeans, leather skirts and boots. The wildest and most utterly chilled in cyberfashion."
             },
+            "modifierGroup": {
+                "id": "fashion_style",
+                "label": "Style",
+                "appliesTo": [
+                    "pants",
+                    "top",
+                    "jacket",
+                    "footwear",
+                    "accessory",
+                    "mirrorshades",
+                    "contactlenses",
+                    "glasses"
+                ],
+                "options": [
+                    {
+                        "id": "generic_chic",
+                        "label": "Generic Chic",
+                        "multiplier": 1
+                    },
+                    {
+                        "id": "leisurewear",
+                        "label": "Leisurewear",
+                        "multiplier": 2
+                    },
+                    {
+                        "id": "businesswear",
+                        "label": "Businesswear",
+                        "multiplier": 3
+                    },
+                    {
+                        "id": "high_fashion",
+                        "label": "High Fashion",
+                        "multiplier": 4
+                    },
+                    {
+                        "id": "urban_flash",
+                        "label": "Urban Flash",
+                        "multiplier": 2
+                    }
+                ]
+            },
             "list": {
                 "pants": {
                     "name": "Pants",
@@ -337,6 +378,31 @@
                 "Good": "2x",
                 "Excellent": "3x"
             },
+            "modifierGroup": {
+                "id": "venue_quality",
+                "label": "Restaurant / Bar Quality",
+                "appliesTo": [
+                    "wellDrink",
+                    "restaurant"
+                ],
+                "options": [
+                    {
+                        "id": "fair",
+                        "label": "Fair",
+                        "multiplier": 1
+                    },
+                    {
+                        "id": "good",
+                        "label": "Good",
+                        "multiplier": 2
+                    },
+                    {
+                        "id": "excellent",
+                        "label": "Excellent",
+                        "multiplier": 3
+                    }
+                ]
+            },
             "list": {
                 "movie": {
                     "name": "Movie",
@@ -360,7 +426,8 @@
                 },
                 "wellDrink": {
                     "name": "Well Drink",
-                    "price": "3.0"
+                    "price": "3.0",
+                    "note": "restaurant or bar quality modifier applies"
                 },
                 "restaurant": {
                     "name": "Restaurant Meal",
@@ -599,6 +666,31 @@
         "vehicles": {
             "name": "Vehicles",
             "description": "Typical vehicles of the early 21st century. Cybercontrols double the listed cost.",
+            "modifierGroup": {
+                "id": "vehicle_controls",
+                "label": "Controls",
+                "appliesTo": [
+                    "scooter",
+                    "motorcycle",
+                    "cityCar",
+                    "smallSubcompact",
+                    "mediumSedan",
+                    "sportsCar",
+                    "luxurySedan"
+                ],
+                "options": [
+                    {
+                        "id": "standard_controls",
+                        "label": "Standard Controls",
+                        "multiplier": 1
+                    },
+                    {
+                        "id": "cybercontrols",
+                        "label": "Cybercontrols",
+                        "multiplier": 2
+                    }
+                ]
+            },
             "list": {
                 "scooter": {
                     "name": "Scooter",
@@ -754,22 +846,54 @@
             "name": "Housing",
             "description": "Housing",
             "modifiers": {
-                "combatZone": "1x",
-                "moderateZone": "2x",
-                "corporateZone": "4x",
-                "executiveZone": "6x"
+                "Combat Zone": "1x",
+                "Moderate Zone": "2x",
+                "Corporate Zone": "4x",
+                "Executive Zone": "6x"
+            },
+            "modifierGroup": {
+                "id": "housing_location",
+                "label": "Location",
+                "appliesTo": [
+                    "coffin",
+                    "hotelRoom",
+                    "apartment",
+                    "house"
+                ],
+                "options": [
+                    {
+                        "id": "combat_zone",
+                        "label": "Combat Zone",
+                        "multiplier": 1
+                    },
+                    {
+                        "id": "moderate_zone",
+                        "label": "Moderate Zone",
+                        "multiplier": 2
+                    },
+                    {
+                        "id": "corporate_zone",
+                        "label": "Corporate Zone",
+                        "multiplier": 4
+                    },
+                    {
+                        "id": "executive_zone",
+                        "label": "Executive Zone",
+                        "multiplier": 6
+                    }
+                ]
             },
             "list": {
                 "coffin": {
                     "name": "Coffin",
                     "price": "20.0",
-                    "note": "per night",
+                    "note": "per night; location modifier applies",
                     "description": "A stacked, coin-operated sleeping box found in airports and flophouses. It has just enough room to turn around or read in bed; expensive models may include a phone or mini-TV."
                 },
                 "hotelRoom": {
                     "name": "Hotel Room",
                     "price": "100.0",
-                    "note": "per night"
+                    "note": "per night; location modifier applies"
                 },
                 "apartment": {
                     "name": "Apartment/Condo",

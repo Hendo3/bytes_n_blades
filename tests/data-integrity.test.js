@@ -41,7 +41,13 @@ describe("JSON schemas and semantic integrity", () => {
     ["weapons", "data/weapons-store.schema.json", "data/weapons.json"],
     ["weapons.pt-BR", "data/weapons-store.schema.json", "data/weapons.pt-BR.json"],
     ["drugs", "data/drugs.schema.json", "data/drugs.json"],
+    ["drugs.pt-BR", "data/drugs.schema.json", "data/drugs.pt-BR.json"],
     ["chip-rates", "data/chip-rates.schema.json", "data/chip-rates.json"],
+    ["chip-rates.pt-BR", "data/chip-rates.schema.json", "data/chip-rates.pt-BR.json"],
+    ["programs", "data/programs.schema.json", "data/programs.json"],
+    ["programs.pt-BR", "data/programs.schema.json", "data/programs.pt-BR.json"],
+    ["cyberdecks", "data/cyberdecks.schema.json", "data/cyberdecks.json"],
+    ["cyberdecks.pt-BR", "data/cyberdecks.schema.json", "data/cyberdecks.pt-BR.json"],
   ];
 
   for (const [label, schemaPath, dataPath] of datasets) {
@@ -161,6 +167,79 @@ describe("JSON schemas and semantic integrity", () => {
       assert.equal(new Set(ids).size, ids.length, `${key}: duplicate ID`);
     }
   });
+
+  test("drug localization preserves every mechanical value and official stock identity", () => {
+    const en = readJson("data/drugs.json").data;
+    const pt = readJson("data/drugs.pt-BR.json").data;
+    const enStock = en.street_stock.items;
+    const ptStock = pt.street_stock.items;
+    assert.deepEqual(Object.keys(ptStock), Object.keys(enStock));
+
+    for (const id of Object.keys(enStock)) {
+      for (const field of ["price", "difficulty", "strength"]) {
+        assert.deepEqual(ptStock[id][field], enStock[id][field], `${id}.${field}`);
+      }
+      assert.equal(
+        ptStock[id].duration.replace("turnos", "turns").replace("minutos", "minutes").replace("horas", "hours"),
+        enStock[id].duration,
+        `${id}.duration`,
+      );
+    }
+
+    assert.equal(ptStock.synthcoke.name, "Sintecoca");
+    assert.equal(ptStock.dorph.name, "Endorfina");
+    assert.equal(Object.keys(enStock).length, 9);
+
+    const enOptions = en.generatorOptions;
+    const ptOptions = pt.generatorOptions;
+    assert.deepEqual(Object.keys(ptOptions.types), Object.keys(enOptions.types));
+    for (const id of Object.keys(enOptions.types)) {
+      assert.equal(ptOptions.types[id].baseDifficulty, enOptions.types[id].baseDifficulty, id);
+      assert.equal(ptOptions.types[id].basePrice, enOptions.types[id].basePrice, id);
+    }
+    for (const optionKey of ["strengthOptions", "durationOptions", "effectOptions", "riskOptions"]) {
+      assert.equal(ptOptions[optionKey].length, enOptions[optionKey].length, optionKey);
+      for (let index = 0; index < enOptions[optionKey].length; index += 1) {
+        const source = enOptions[optionKey][index];
+        const localized = ptOptions[optionKey][index];
+        for (const field of ["id", "difficultyMod", "priceMod", "multiplier"]) {
+          if (source[field] !== undefined) assert.deepEqual(localized[field], source[field], `${optionKey}.${index}.${field}`);
+        }
+      }
+    }
+    assert.deepEqual(ptOptions.formula, { ...enOptions.formula, notes: ptOptions.formula.notes });
+  });
+
+  test("chip localization preserves stable skill IDs and all pricing rules", () => {
+    const en = readJson("data/chip-rates.json").data;
+    const pt = readJson("data/chip-rates.pt-BR.json").data;
+    assert.deepEqual(Object.keys(pt), Object.keys(en));
+    let count = 0;
+
+    for (const type of Object.keys(en)) {
+      assert.equal(pt[type].sections.length, en[type].sections.length, type);
+      for (let sectionIndex = 0; sectionIndex < en[type].sections.length; sectionIndex += 1) {
+        const sourceSection = en[type].sections[sectionIndex];
+        const localizedSection = pt[type].sections[sectionIndex];
+        assert.equal(localizedSection.id, sourceSection.id, `${type}.section`);
+        assert.equal(localizedSection.items.length, sourceSection.items.length, sourceSection.id);
+        for (let itemIndex = 0; itemIndex < sourceSection.items.length; itemIndex += 1) {
+          const source = sourceSection.items[itemIndex];
+          const localized = localizedSection.items[itemIndex];
+          assert.equal(localized.id, source.id, `${type}.${source.skill}`);
+          assert.ok(localized.id, `${type}.${source.skill}: missing stable ID`);
+          assert.deepEqual(localized.pricePerLevel, source.pricePerLevel, localized.id);
+          assert.deepEqual(localized.levelPrices, source.levelPrices, localized.id);
+          count += 1;
+        }
+      }
+    }
+
+    assert.equal(count, 60);
+    assert.equal(pt.aptr.label, "PART");
+    assert.equal(pt.aptr.sections[1].items.find((item) => item.id === "handgun").skill, "Armas Curtas");
+    assert.equal(pt.visual_recognition.label, "Reconhecimento Visual");
+  });
 });
 
 describe("static page and manifest contracts", () => {
@@ -203,6 +282,20 @@ describe("static page and manifest contracts", () => {
     }
   });
 
+  test("every page loads localization before its page controllers", () => {
+    for (const relativeFile of htmlFiles) {
+      const dom = new JSDOM(fs.readFileSync(path.join(root, relativeFile), "utf8"));
+      const sources = [...dom.window.document.querySelectorAll("script[src]")]
+        .map((script) => script.getAttribute("src"));
+      const i18nIndex = sources.findIndex((source) => source.endsWith("/i18n.js") || source === "js/i18n.js");
+      assert.ok(i18nIndex >= 0, `${relativeFile}: missing i18n.js`);
+      for (const controller of sources.filter((source) => !source.endsWith("/i18n.js") && !source.endsWith("/modal.js"))) {
+        assert.ok(i18nIndex < sources.indexOf(controller), `${relativeFile}: i18n.js must precede ${controller}`);
+      }
+      dom.window.close();
+    }
+  });
+
   test("pages contain the DOM contract required by their controller", () => {
     const contracts = {
       "html/cyberwares.html": ["category-list", "items-list", "title-category"],
@@ -215,6 +308,9 @@ describe("static page and manifest contracts", () => {
       "html/mram-chips.html": ["chip-rate-groups"],
       "html/visual-rec-chips.html": ["chip-rate-groups"],
       "html/drugs-generator.html": ["drug-generator-form", "dg-type", "dg-strength", "dg-duration", "dg-result"],
+      "html/programs.html": ["program-search", "program-class", "program-price", "program-conversions", "program-count", "program-list"],
+      "html/cyberdecks.html": ["deck-conversions", "deck-count", "deck-list", "netgear-list"],
+      "html/deck-builder.html": ["deck-builder-form", "deck-options", "builder-conversions", "builder-programs", "builder-capacity", "builder-total", "builder-add"],
       "login.html": ["login-form", "runner-handle", "btn-jack-in"],
     };
 
@@ -225,19 +321,27 @@ describe("static page and manifest contracts", () => {
     }
   });
 
-  test("manifest routes and icon declarations point to valid artifacts", () => {
-    const manifest = readJson("manifest.webmanifest");
-    assert.equal(manifest.lang, "en-US");
-    assert.equal(manifest.start_url, "./login.html");
-    assert.equal(manifest.display, "standalone");
+  test("localized manifests expose identical routes and valid icon declarations", () => {
+    const en = readJson("manifest.webmanifest");
+    const pt = readJson("manifest.pt-BR.webmanifest");
+    assert.equal(en.lang, "en-US");
+    assert.equal(pt.lang, "pt-BR");
+    assert.equal(en.start_url, "./login.html");
+    assert.equal(pt.start_url, en.start_url);
+    assert.equal(en.display, "standalone");
+    assert.equal(pt.display, en.display);
+    assert.deepEqual(pt.icons, en.icons);
+    assert.deepEqual(pt.shortcuts.map((shortcut) => shortcut.url), en.shortcuts.map((shortcut) => shortcut.url));
 
-    const declaredPaths = [
-      manifest.start_url,
-      ...manifest.icons.map((icon) => icon.src),
-      ...manifest.shortcuts.map((shortcut) => shortcut.url),
-    ];
-    for (const declared of declaredPaths) {
-      assert.ok(fs.existsSync(path.resolve(root, declared)), `manifest: ${declared}`);
+    for (const [label, manifest] of [["en-US", en], ["pt-BR", pt]]) {
+      const declaredPaths = [
+        manifest.start_url,
+        ...manifest.icons.map((icon) => icon.src),
+        ...manifest.shortcuts.map((shortcut) => shortcut.url),
+      ];
+      for (const declared of declaredPaths) {
+        assert.ok(fs.existsSync(path.resolve(root, declared)), `${label} manifest: ${declared}`);
+      }
     }
 
     for (const [relativeFile, expectedSize] of [

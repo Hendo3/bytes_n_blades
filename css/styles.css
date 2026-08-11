@@ -240,6 +240,49 @@ main { flex: 1; }
     gap: 30px; perspective: 1000px; /* Essencial para o 3D dos cards */
 }
 
+.deck-specs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin: 14px 0;
+}
+
+.deck-specs div {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    border: 1px solid rgba(0, 255, 213, 0.24);
+    background: rgba(0, 255, 213, 0.05);
+    padding: 8px;
+    font-family: var(--font-stack);
+    font-size: 0.72rem;
+}
+
+.deck-specs dt {
+    color: #8fdfff;
+    text-transform: uppercase;
+}
+
+.deck-specs dd {
+    margin: 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+.deck-options,
+.deck-source {
+    margin: 8px 0;
+    color: #b8d9e8;
+    font-size: 0.7rem;
+    line-height: 1.45;
+}
+
+.deck-source {
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
 /* =========================================
    --- CARDS HOLOGRÁFICOS (O NOVO VISUAL) ---
    ========================================= */
@@ -327,6 +370,8 @@ main { flex: 1; }
     background: var(--primary-color); color: #000;
     box-shadow: var(--glow-strong); text-shadow: none;
 }
+.btn-install { border-color: var(--secondary-color); color: var(--secondary-color); }
+.btn-install:hover { background: var(--secondary-color); color: #000; text-shadow: none; }
 .btn-danger { border-color: var(--alert-color); color: var(--alert-color); }
 .btn-danger:hover { background: var(--alert-color); color: #000; box-shadow: 0 0 20px var(--alert-color); }
 
@@ -704,6 +749,34 @@ main { flex: 1; }
     box-shadow: 0 0 10px var(--teal-transparent);
 }
 
+.item-modifier-label,
+.bundle-modifier-label span {
+    display: block;
+    margin-top: 12px;
+    color: #8fdfff;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.item-modifier-select,
+.bundle-modifier-label select {
+    width: 100%;
+    margin-top: 6px;
+    padding: 8px;
+    border: 1px solid #0f2e4a;
+    background: #080b15;
+    color: var(--primary-color);
+    font-family: inherit;
+}
+
+.item-modifier-select:focus,
+.bundle-modifier-label select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--teal-transparent);
+}
+
 .kit-toggle {
     display: flex;
     align-items: center;
@@ -719,6 +792,17 @@ main { flex: 1; }
 .bundle-rules li {
     margin-bottom: 8px;
     color: #ddd;
+}
+
+.bundle-family-title {
+    grid-column: 1 / -1;
+    margin: 18px 0 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0, 255, 213, 0.4);
+    color: var(--primary-color);
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
 .bundle-head {
@@ -778,6 +862,16 @@ main { flex: 1; }
 .bundle-items li small {
     color: #aaa;
     text-align: right;
+}
+
+.bundle-item-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.bundle-modifier-label {
+    display: block;
+    max-width: 260px;
 }
 
 .bundle-summary {
@@ -971,6 +1065,7 @@ footer { margin-top: auto; border-top: 2px solid #222; padding: 30px; text-align
     .nav-links { flex-wrap: wrap; justify-content: center; }
     .filter-sidebar { order: 3; } /* Filtros vão para baixo no mobile */
     .items-list { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+    .deck-specs { grid-template-columns: 1fr; }
     .debug-output { min-height: 300px; }
     .generator-grid { grid-template-columns: 1fr; }
 }

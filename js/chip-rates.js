@@ -7,6 +7,7 @@ const CHIP_RATES_PATH = typeof window !== "undefined" && window.I18n
   ? window.I18n.dataPath("../data/chip-rates.json")
   : "../data/chip-rates.json";
 const STORAGE_KEY = "cyber_cart";
+let installationCatalogPromise = null;
 
 document.addEventListener("DOMContentLoaded", async () => {
   const pageType = String(document.body?.dataset?.chipType || "").toLowerCase();
@@ -73,6 +74,7 @@ function renderGroups(container, sections, pageType) {
                   <option value="3">L3</option>
                 </select>
                 <button type="button" class="btn-secondary" data-role="chip-add" data-rate="${Number.isFinite(value) ? value : 0}" data-level-prices="${hasLevelPrices ? levelPrices.join(",") : ""}" data-page-type="${pageType}" data-section="${sectionSlug}" data-skill-id="${escapeHtml(entry.id || skillSlug)}" data-skill="${escapeHtml(entry.skill)}" style="padding:4px 8px; font-size:.65rem;">${chipT("chip.add", "ADD")}</button>
+                <button type="button" class="btn-secondary btn-install" data-role="chip-install" data-rate="${Number.isFinite(value) ? value : 0}" data-level-prices="${hasLevelPrices ? levelPrices.join(",") : ""}" data-page-type="${pageType}" data-section="${sectionSlug}" data-skill-id="${escapeHtml(entry.id || skillSlug)}" data-skill="${escapeHtml(entry.skill)}" style="padding:4px 8px; font-size:.65rem;">${chipT("chip.install", "INSTALL")}</button>
               </div>
             `
           : `<small style="display:block; margin-top:6px; color:#9aa;">${chipT("chip.ref_decision", "Set by ref decision")}</small>`;
@@ -99,9 +101,18 @@ function renderGroups(container, sections, pageType) {
   container.querySelectorAll("button[data-role='chip-add']").forEach((button) => {
     button.addEventListener("click", () => handleAddChip(button));
   });
+  container.querySelectorAll("button[data-role='chip-install']").forEach((button) => {
+    button.addEventListener("click", () => handleInstallChip(button));
+  });
 }
 
 function handleAddChip(buttonEl) {
+  const item = buildChipItem(buttonEl);
+  addToCart(item);
+  showButtonResult(buttonEl, chipT("chip.added", "ADDED"), 900);
+}
+
+function buildChipItem(buttonEl) {
   const rate = Number(buttonEl.dataset.rate || 0);
   const levelPrices = String(buttonEl.dataset.levelPrices || "")
     .split(",")
@@ -123,7 +134,7 @@ function handleAddChip(buttonEl) {
     ? "PART"
     : pageType.toUpperCase();
 
-  const item = {
+  return {
     id: `${pageType}_${section}_${skillId}_lvl_${level}`,
     name: `${displayType} Chip: ${skill} +${level}`,
     category: window.I18n?.isPtBr?.() ? "Chipware" : "Chipware",
@@ -156,17 +167,71 @@ function handleAddChip(buttonEl) {
       level,
     },
     locale: window.I18n?.getLocale?.() || "en-US",
+    sourceCatalog: "chip-rates",
   };
+}
 
-  addToCart(item);
-
+async function handleInstallChip(buttonEl) {
   const original = buttonEl.textContent;
-  buttonEl.textContent = chipT("chip.added", "ADDED");
+  try {
+    if (!window.CyberUtils) throw new Error("Installation resolver unavailable");
+    const item = buildChipItem(buttonEl);
+    const catalogItems = await loadInstallationCatalog();
+    const plan = CyberUtils.resolveInstallationPlan(item, CyberUtils.safeGetArray(STORAGE_KEY), catalogItems);
+    if (!plan.ok) throw new Error(plan.unresolved.join(", "));
+
+    const entries = plan.items.map((plannedItem) => CyberUtils.createCartEntry(plannedItem, {
+      autoAdded: plannedItem !== item,
+      autoInstalledFor: item.id,
+    }));
+    CyberUtils.appendCartItems(entries, STORAGE_KEY);
+    const totalHL = entries.reduce((total, entry) => total + (Number(entry.hl) || 0), 0);
+    showButtonResult(buttonEl, chipT("chip.installed", `INSTALLED +${plan.dependencies.length} REQ ${totalHL > 0 ? `[HL -${totalHL}]` : ""}`, {
+      count: plan.dependencies.length,
+      hl: totalHL > 0 ? `[${window.I18n?.isPtBr?.() ? "PH" : "HL"} -${totalHL}]` : "",
+    }), 1200);
+  } catch (error) {
+    buttonEl.title = error.message;
+    showButtonResult(buttonEl, chipT("chip.install_failed", "INSTALL BLOCKED"), 1200, original);
+  }
+}
+
+function showButtonResult(buttonEl, message, delay, originalText = buttonEl.textContent) {
+  buttonEl.textContent = message;
   buttonEl.disabled = true;
   setTimeout(() => {
-    buttonEl.textContent = original;
+    buttonEl.textContent = originalText;
     buttonEl.disabled = false;
-  }, 900);
+  }, delay);
+}
+
+function loadInstallationCatalog() {
+  if (installationCatalogPromise) return installationCatalogPromise;
+  if (!window.CyberUtils) return Promise.reject(new Error("Installation resolver unavailable"));
+
+  installationCatalogPromise = Promise.all([
+    fetch(chipDataPath("../data/cyberwares.json"), { cache: "no-store" }),
+    fetch(chipDataPath("../data/equipment.json"), { cache: "no-store" }),
+  ]).then(async ([cyberwareResponse, equipmentResponse]) => {
+    if (!cyberwareResponse.ok || !equipmentResponse.ok) throw new Error("Installation catalogs unavailable");
+    const [cyberware, equipment] = await Promise.all([
+      cyberwareResponse.json(),
+      equipmentResponse.json(),
+    ]);
+    return [
+      ...CyberUtils.flattenCatalog(cyberware, "cyberwares"),
+      ...CyberUtils.flattenCatalog(equipment, "accessories"),
+    ];
+  }).catch((error) => {
+    installationCatalogPromise = null;
+    throw error;
+  });
+
+  return installationCatalogPromise;
+}
+
+function chipDataPath(path) {
+  return typeof window !== "undefined" && window.I18n ? window.I18n.dataPath(path) : path;
 }
 
 function addToCart(item) {
@@ -206,6 +271,10 @@ if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     renderGroups,
     handleAddChip,
+    handleInstallChip,
+    buildChipItem,
+    loadInstallationCatalog,
+    showButtonResult,
     addToCart,
     escapeHtml,
     slugify,

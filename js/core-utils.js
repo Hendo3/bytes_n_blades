@@ -72,6 +72,273 @@
     return humanizeId(id);
   }
 
+  function flattenCatalog(payload, sourceCatalog = "cyberwares") {
+    const catalog = payload?.data || payload || {};
+    const items = [];
+
+    Object.entries(catalog).forEach(([categoryKey, category]) => {
+      if (!category || typeof category !== "object") return;
+      const rawItems = category.itens || category.items || category.list || {};
+
+      Object.entries(rawItems).forEach(([key, rawItem]) => {
+        if (!rawItem || typeof rawItem !== "object") return;
+        items.push({
+          ...rawItem,
+          id: rawItem.id || key,
+          legacyIds: stringList(rawItem.legacyIds),
+          name: rawItem.name || humanizeId(key),
+          price: parseNumeric(rawItem.price ?? rawItem.cost ?? rawItem.value),
+          hl: rawItem.HL ?? rawItem.hl ?? rawItem.humanity ?? "0",
+          category: categoryKey,
+          categoryLabel: category.name || categoryKey,
+          sourceCatalog,
+          tags: Array.isArray(rawItem.tags) ? rawItem.tags : [],
+          maxPurchases: Number(rawItem.maxPurchases) || null,
+          alternativeAcquisition: Boolean(rawItem.alternativeAcquisition),
+          attributeBonuses: Array.isArray(rawItem.attributeBonuses) ? rawItem.attributeBonuses : [],
+          skillBonuses: Array.isArray(rawItem.skillBonuses) ? rawItem.skillBonuses : [],
+          attributeSet: rawItem.attributeSet && typeof rawItem.attributeSet === "object"
+            ? rawItem.attributeSet
+            : null,
+          priceModifiers: Array.isArray(rawItem.priceModifiers) ? rawItem.priceModifiers : [],
+          installation: rawItem.installation && typeof rawItem.installation === "object"
+            ? rawItem.installation
+            : null,
+        });
+      });
+    });
+
+    return items;
+  }
+
+  function createCatalogIndex(items) {
+    const byId = new Map();
+    (Array.isArray(items) ? items : []).forEach((item) => {
+      itemIds(item).forEach((id) => {
+        if (!byId.has(id)) byId.set(id, item);
+      });
+    });
+    return {
+      items: Array.isArray(items) ? items : [],
+      findById(id) {
+        return byId.get(normalizeId(id)) || null;
+      },
+    };
+  }
+
+  function providerCapacityFor(item, family) {
+    const installation = item?.installation || {};
+    const normalizedFamily = normalizeId(family);
+    const capacities = [];
+    const register = (provider) => {
+      if (normalizeId(provider?.slotFamily) !== normalizedFamily) return;
+      const capacity = Number(provider.slotCapacity);
+      capacities.push(Number.isFinite(capacity) ? capacity : Number.POSITIVE_INFINITY);
+    };
+
+    if (installation.slotProvider) {
+      register({
+        slotFamily: installation.slotFamily || installation.slotProvider,
+        slotCapacity: installation.slotCapacity,
+      });
+    }
+    if (Array.isArray(installation.provides)) installation.provides.forEach(register);
+    return capacities.length > 0 ? Math.max(...capacities) : 0;
+  }
+
+  function resolveInstallationPlan(target, cart, catalogItems) {
+    const installed = Array.isArray(cart) ? cart : [];
+    const candidates = Array.isArray(catalogItems) ? catalogItems : [];
+    const index = createCatalogIndex([target, ...candidates].filter(Boolean));
+    const planned = [];
+    const unresolved = [];
+    const unresolvedKeys = new Set();
+    const resolving = new Set();
+
+    const allWorkingItems = (extra = []) => [...installed, ...planned, ...extra];
+    const isPresent = (id) => allWorkingItems().some((item) => itemIds(item).includes(normalizeId(id)));
+    const purchaseCount = (item) => {
+      const id = normalizeId(item?.id);
+      return allWorkingItems().filter((entry) => itemIds(entry).includes(id)).length;
+    };
+    const canAdd = (item) => {
+      const limit = Number(item?.maxPurchases);
+      return !Number.isFinite(limit) || limit <= 0 || purchaseCount(item) < limit;
+    };
+    const addUnresolved = (key) => {
+      if (!unresolvedKeys.has(key)) {
+        unresolvedKeys.add(key);
+        unresolved.push(key);
+      }
+    };
+    const isResolving = (id) => {
+      const found = index.findById(id);
+      return resolving.has(normalizeId(found?.id || id));
+    };
+    const slotTotals = (family, extra = []) => {
+      let used = 0;
+      let capacity = 0;
+      let unbounded = false;
+      allWorkingItems(extra).forEach((item) => {
+        const installation = item?.installation || {};
+        if (normalizeId(installation.slotFamily || installation.slotProvider) === family) {
+          const usage = Number(installation.slotUsage);
+          if (Number.isFinite(usage) && usage > 0) used += usage;
+        }
+        const itemCapacity = providerCapacityFor(item, family);
+        if (itemCapacity === Number.POSITIVE_INFINITY) unbounded = true;
+        else capacity += itemCapacity;
+      });
+      return { used, capacity: unbounded ? Number.POSITIVE_INFINITY : capacity };
+    };
+    const alternativeGroups = (installation) => {
+      const groups = [];
+      const directGroup = stringList(installation?.requiresAny);
+      if (directGroup.length > 0) groups.push(directGroup);
+      if (Array.isArray(installation?.requiresAnyGroups)) {
+        installation.requiresAnyGroups.forEach((group) => {
+          const values = stringList(group);
+          if (values.length > 0) groups.push(values);
+        });
+      }
+      return groups;
+    };
+
+    function chooseAlternative(ids, consumer) {
+      const family = normalizeId(consumer?.installation?.slotFamily);
+      const usage = Number(consumer?.installation?.slotUsage);
+      const available = ids
+        .map((id) => index.findById(id))
+        .filter((item) => item && !isResolving(item.id) && canAdd(item));
+      if (family && Number.isFinite(usage) && usage > 0) {
+        const provider = available.find((item) => providerCapacityFor(item, family) > 0);
+        if (provider) return provider;
+      }
+      return available[0] || null;
+    }
+
+    function ensureSlotProvider(consumer) {
+      const installation = consumer?.installation || {};
+      const family = normalizeId(installation.slotFamily || installation.slotProvider);
+      const usage = Number(installation.slotUsage);
+      if (!family || !Number.isFinite(usage) || usage <= 0) return;
+
+      let safety = 0;
+      while (safety < 100) {
+        const totals = slotTotals(family, [consumer]);
+        if (totals.capacity >= totals.used) return;
+
+        const preferredIds = alternativeGroups(installation).flat();
+        const preferred = preferredIds
+          .map((id) => index.findById(id))
+          .filter(Boolean);
+        const providers = [...preferred, ...index.items]
+          .filter((item, position, list) => list.indexOf(item) === position)
+          .filter((item) => !isResolving(item.id) && canAdd(item) && providerCapacityFor(item, family) > 0);
+        const provider = providers[0];
+        if (!provider) {
+          addUnresolved(`provider:${family}`);
+          return;
+        }
+
+        const before = planned.length;
+        ensureItem(provider, { forceInstance: true });
+        if (planned.length === before) {
+          addUnresolved(`provider:${family}`);
+          return;
+        }
+        safety += 1;
+      }
+      addUnresolved(`provider:${family}`);
+    }
+
+    function ensureItem(item, options = {}) {
+      if (!item) return;
+      const id = normalizeId(item.id || item.name);
+      if (!options.forceInstance && isPresent(id)) return;
+      if (resolving.has(id)) return;
+      if (!options.requested && !canAdd(item)) {
+        addUnresolved(`max:${id}`);
+        return;
+      }
+
+      resolving.add(id);
+      const installation = item.installation || {};
+      stringList(installation.requires).forEach((requiredId) => {
+        if (isPresent(requiredId) || isResolving(requiredId)) return;
+        const requiredItem = index.findById(requiredId);
+        if (requiredItem) ensureItem(requiredItem);
+        else addUnresolved(`missing:${normalizeId(requiredId)}`);
+      });
+
+      alternativeGroups(installation).forEach((group) => {
+        if (group.some((idValue) => isPresent(idValue) || isResolving(idValue))) return;
+        const choice = chooseAlternative(group, item);
+        if (choice) ensureItem(choice);
+        else addUnresolved(`missing-any:${group.map(normalizeId).join("|")}`);
+      });
+
+      ensureSlotProvider(item);
+      resolving.delete(id);
+      planned.push(item);
+    }
+
+    if (target) ensureItem(target, { forceInstance: true, requested: true });
+    else addUnresolved("missing:target");
+
+    return {
+      ok: unresolved.length === 0,
+      items: planned,
+      dependencies: planned.filter((item) => item !== target),
+      unresolved,
+    };
+  }
+
+  function createCartEntry(item, options = {}) {
+    const hlRaw = item?.hl ?? item?.HL ?? item?.humanity ?? "0";
+    const hlRoll = rollHL(hlRaw);
+    return {
+      id: item?.id,
+      legacyIds: stringList(item?.legacyIds),
+      name: item?.name || humanizeId(item?.id),
+      price: Number.isFinite(Number(item?.price)) ? Number(item.price) : parseNumeric(item?.price),
+      basePrice: Number.isFinite(Number(item?.price)) ? Number(item.price) : parseNumeric(item?.price),
+      category: item?.category,
+      categoryLabel: item?.categoryLabel || item?.category,
+      sourceCatalog: item?.sourceCatalog || "cyberwares",
+      locale: root.I18n?.getLocale?.() || "en-US",
+      hl: hlRoll.value,
+      hlOriginal: hlRaw,
+      hlRaw,
+      hlLog: hlRoll.log,
+      tags: Array.isArray(item?.tags) ? item.tags : [],
+      maxPurchases: Number(item?.maxPurchases) || null,
+      alternativeAcquisition: Boolean(item?.alternativeAcquisition),
+      attributeBonuses: Array.isArray(item?.attributeBonuses) ? item.attributeBonuses : [],
+      skillBonuses: Array.isArray(item?.skillBonuses) ? item.skillBonuses : [],
+      attributeSet: item?.attributeSet && typeof item.attributeSet === "object" ? item.attributeSet : null,
+      priceModifiers: Array.isArray(item?.priceModifiers) ? item.priceModifiers : [],
+      installation: item?.installation || null,
+      note: item?.note || null,
+      localization: item?.localization || null,
+      assistedInstallation: true,
+      autoAdded: Boolean(options.autoAdded),
+      autoInstalledFor: options.autoInstalledFor || item?.id || null,
+    };
+  }
+
+  function appendCartItems(items, storageKey = "cyber_cart") {
+    const additions = Array.isArray(items) ? items : [];
+    const current = safeGetArray(storageKey);
+    const stored = additions.map((item) => ({
+      ...item,
+      uid: Date.now() + Math.random().toString(16).slice(2),
+    }));
+    root.localStorage.setItem(storageKey, JSON.stringify([...current, ...stored]));
+    root.dispatchEvent(new root.Event("stash-updated"));
+    return stored;
+  }
+
   function analyzeConsistency(items, options = {}) {
     const cart = Array.isArray(items) ? items : [];
     const labels = options.labels;
@@ -375,6 +642,12 @@
     stringList,
     itemIds,
     resolveRequirementLabel,
+    flattenCatalog,
+    createCatalogIndex,
+    providerCapacityFor,
+    resolveInstallationPlan,
+    createCartEntry,
+    appendCartItems,
     analyzeConsistency,
     safeGetArray,
     rollHL,

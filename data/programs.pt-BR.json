@@ -1,54 +1,54 @@
 {
   "schema_version": "2.0.0",
-  "locale": "en-US",
+  "locale": "pt-BR",
   "classes": [
     {
       "id": "intrusion",
-      "label": "Intrusion"
+      "label": "Intrusão"
     },
     {
       "id": "decryption",
-      "label": "Decryption"
+      "label": "Decifrador"
     },
     {
       "id": "detection_alarm",
-      "label": "Detection/Alarm"
+      "label": "Detecção/Alarme"
     },
     {
       "id": "anti_system",
-      "label": "Anti-System"
+      "label": "Anti-sistema"
     },
     {
       "id": "evasion_stealth",
-      "label": "Evasion/Stealth"
+      "label": "Evasão/Furtividade"
     },
     {
       "id": "protection",
-      "label": "Protection"
+      "label": "Proteção"
     },
     {
       "id": "anti_program",
-      "label": "Anti-Program"
+      "label": "Anti-programa"
     },
     {
       "id": "anti_personnel",
-      "label": "Anti-Personnel"
+      "label": "Anti-pessoal"
     },
     {
       "id": "controller",
-      "label": "Controller"
+      "label": "Controlador"
     },
     {
       "id": "utility",
-      "label": "Utility"
+      "label": "Utilitário"
     },
     {
       "id": "demon",
-      "label": "Demon"
+      "label": "Demônio"
     },
     {
       "id": "multi_purpose",
-      "label": "Multi-Purpose"
+      "label": "Multiuso"
     },
     {
       "id": "daemon",
@@ -60,43 +60,43 @@
     },
     {
       "id": "upgraded_datawall",
-      "label": "Upgraded Data Wall"
+      "label": "Muro de Dados Aprimorado"
     },
     {
       "id": "transportation",
-      "label": "Transportation"
+      "label": "Transporte"
     },
     {
       "id": "rache_special",
-      "label": "Rache Special"
+      "label": "Especial de Rache"
     },
     {
       "id": "misc_anti_program",
-      "label": "Misc. Anti-Program"
+      "label": "Anti-programa Diverso"
     },
     {
       "id": "base_link",
-      "label": "Base Link"
+      "label": "Link de Base"
     },
     {
       "id": "virus",
-      "label": "Virus"
+      "label": "Vírus"
     },
     {
       "id": "ambush",
-      "label": "Ambush"
+      "label": "Emboscada"
     },
     {
       "id": "datawall",
-      "label": "Data Wall"
+      "label": "Muro de Dados"
     },
     {
       "id": "code_gate",
-      "label": "Code Gate"
+      "label": "Portão de Acesso"
     },
     {
       "id": "special",
-      "label": "Special"
+      "label": "Especial"
     }
   ],
   "programs": [
@@ -118,14 +118,14 @@
       "catalog_scope": "standard",
       "id": "hammer",
       "class_id": "intrusion",
-      "name": "Hammer",
+      "name": "Martelo",
       "strength": {
         "base": 4
       },
       "memory": 1,
       "price": 400,
-      "effect": "Reduces a Data Wall by 2D6 Strength per hit and alerts defenses within 10 spaces.",
-      "icon": "A glowing red hammer.",
+      "effect": "Reduz a Força de um Muro de Dados em 2D6 por acerto e alerta defesas num raio de 10 espaços.",
+      "icon": "Um martelo vermelho brilhante.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -149,14 +149,14 @@
       "catalog_scope": "standard",
       "id": "jackhammer",
       "class_id": "intrusion",
-      "name": "Jackhammer",
+      "name": "Britadeira",
       "strength": {
         "base": 2
       },
       "memory": 2,
       "price": 360,
-      "effect": "A quieter intrusion attack that reduces a Data Wall by 1D6 Strength per hit.",
-      "icon": "A red jackhammer firing white energy bolts.",
+      "effect": "Um ataque de intrusão mais silencioso que reduz a Força de um Muro de Dados em 1D6 por acerto.",
+      "icon": "Uma britadeira vermelha disparando raios brancos de energia.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -180,14 +180,14 @@
       "catalog_scope": "standard",
       "id": "worm",
       "class_id": "intrusion",
-      "name": "Worm",
+      "name": "Minhoca",
       "strength": {
         "base": 2
       },
       "memory": 5,
       "price": 660,
-      "effect": "Opens a Code or Data Wall from inside in two turns without raising an alarm.",
-      "icon": "A gold robotic worm with neon-green eyes.",
+      "effect": "Abre um Muro de Código ou Dados por dentro em dois turnos sem disparar o alarme.",
+      "icon": "Uma minhoca robótica dourada com olhos verde-neon.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -211,14 +211,14 @@
       "catalog_scope": "standard",
       "id": "codecracker",
       "class_id": "decryption",
-      "name": "Codecracker",
+      "name": "Quebra-Códigos",
       "strength": {
         "base": 3
       },
       "memory": 2,
       "price": 380,
-      "effect": "Breaks Code Gates by dismantling their program structure.",
-      "icon": "A thin white beam passing through the gate.",
+      "effect": "Rompe Portões de Acesso desmontando sua estrutura de programa.",
+      "icon": "Um fino feixe branco atravessando o portão.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -242,20 +242,20 @@
       "catalog_scope": "standard",
       "id": "wizards_book",
       "class_id": "decryption",
-      "name": "Wizard's Book",
+      "name": "Grimório",
       "strength": {
         "base": 4,
         "situational": [
           {
             "value": 6,
-            "when": "against Code Gates"
+            "when": "contra Portões de Acesso"
           }
         ]
       },
       "memory": 2,
       "price": 400,
-      "effect": "Tests billions of keys; its Strength rises to 6 against Code Gates.",
-      "icon": "A stream of blazing white symbols.",
+      "effect": "Testa bilhões de chaves; sua Força sobe para 6 contra Portões de Acesso.",
+      "icon": "Uma corrente de símbolos brancos brilhantes.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -279,14 +279,14 @@
       "catalog_scope": "standard",
       "id": "raffles",
       "class_id": "decryption",
-      "name": "Raffles",
+      "name": "Sorteio",
       "strength": {
         "base": 5
       },
       "memory": 3,
       "price": 560,
-      "effect": "Uses a sequence of questions to reveal passwords for Code Gates and File Locks.",
-      "icon": "A dapper young man in early-1990s evening clothes.",
+      "effect": "Usa uma sequência de perguntas para revelar senhas de Portões de Acesso e Fechaduras de Arquivo.",
+      "icon": "Um jovem elegante com roupas de festa do início dos anos 1990.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -310,14 +310,14 @@
       "catalog_scope": "standard",
       "id": "watchdog",
       "class_id": "detection_alarm",
-      "name": "Watchdog",
+      "name": "Cão de Guarda",
       "strength": {
         "base": 4
       },
       "memory": 5,
       "price": 610,
-      "effect": "Detects illegal entry and alerts its owner or an external alarm.",
-      "icon": "A large black metal dog with red eyes.",
+      "effect": "Detecta entradas ilegais e alerta seu dono ou um alarme externo.",
+      "icon": "Um grande cachorro preto de metal com olhos vermelhos.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -341,14 +341,14 @@
       "catalog_scope": "standard",
       "id": "bloodhound",
       "class_id": "detection_alarm",
-      "name": "Bloodhound",
+      "name": "Cão de Caça",
       "strength": {
         "base": 3
       },
       "memory": 5,
       "price": 700,
-      "effect": "Detects an intruder, traces the entry to its source and alerts its owner.",
-      "icon": "A gunmetal hound with blue eyes and a neon collar.",
+      "effect": "Detecta um intruso, rastreia a entrada até a origem e alerta seu dono.",
+      "icon": "Um cão cinza-metálico com olhos azuis e coleira de neon.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -378,8 +378,8 @@
       },
       "memory": 6,
       "price": 780,
-      "effect": "Detects and traces an intruder, then repeatedly cuts that access line.",
-      "icon": "A compact steel dog with red eyes and a red neon collar.",
+      "effect": "Detecta e rastreia um intruso, depois corta repetidamente aquela linha de acesso.",
+      "icon": "Um cão compacto de aço com olhos vermelhos e coleira de neon vermelho.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -403,14 +403,14 @@
       "catalog_scope": "standard",
       "id": "see_ya",
       "class_id": "detection_alarm",
-      "name": "See Ya",
+      "name": "Te Vejo",
       "strength": {
         "base": 3
       },
       "memory": 1,
       "price": 280,
-      "effect": "Reveals invisible icons within one subgrid.",
-      "icon": "A shimmering silver screen.",
+      "effect": "Revela ÍCONES invisíveis dentro de uma subgrade.",
+      "icon": "Uma tela prateada de brilho difuso.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -434,14 +434,14 @@
       "catalog_scope": "standard",
       "id": "hidden_virtue",
       "class_id": "detection_alarm",
-      "name": "Hidden Virtue",
+      "name": "Virtude Oculta",
       "strength": {
         "base": 3
       },
       "memory": 1,
       "price": 280,
-      "effect": "Distinguishes real icons and data objects from virtual simulations.",
-      "icon": "A glowing green ring used as a lens.",
+      "effect": "Distingue ÍCONES e objetos de dados reais de simulações virtuais.",
+      "icon": "Um anel verde brilhante usado como lente.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -465,14 +465,14 @@
       "catalog_scope": "standard",
       "id": "speedtrap",
       "class_id": "detection_alarm",
-      "name": "Speedtrap",
+      "name": "Radar",
       "strength": {
         "base": 4
       },
       "memory": 4,
       "price": 600,
-      "effect": "Detects offensive programs within 10 spaces, but not their exact position.",
-      "icon": "A flat crystal disk that displays a robotic monster.",
+      "effect": "Detecta programas ofensivos num raio de 10 espaços, mas não sua posição exata.",
+      "icon": "Um disco plano de cristal que exibe um monstro robótico.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -496,14 +496,14 @@
       "catalog_scope": "standard",
       "id": "flatline",
       "class_id": "anti_system",
-      "name": "Flatline",
+      "name": "Linha Reta",
       "strength": {
         "base": 3
       },
       "memory": 2,
       "price": 570,
-      "effect": "Destroys a cyberdeck's operating interface chip.",
-      "icon": "A yellow neon beam fired from the fingertips.",
+      "effect": "Destrói o chip de interface operacional de um ciberterminal.",
+      "icon": "Um feixe de neon amarelo disparado pelas pontas dos dedos.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -527,14 +527,14 @@
       "catalog_scope": "standard",
       "id": "poison_flatline",
       "class_id": "anti_system",
-      "name": "Poison Flatline",
+      "name": "Linha Reta Venenoso",
       "strength": {
         "base": 2
       },
       "memory": 2,
       "price": 540,
-      "effect": "Destroys both the deck interface and its memory, requiring full replacement.",
-      "icon": "A green neon beam fired from the fingertips.",
+      "effect": "Destrói a interface e a memória do terminal, exigindo substituição completa.",
+      "icon": "Um feixe de neon verde disparado pelas pontas dos dedos.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -564,8 +564,8 @@
       },
       "memory": 2,
       "price": 570,
-      "effect": "Crashes the nearest CPU for 1D6+1 turns; a deck drops its Netrunner immediately.",
-      "icon": "A large cartoon anarchist bomb.",
+      "effect": "Derruba a CPU mais próxima por 1D6+1 turnos; um terminal expulsa o Netrunner imediatamente.",
+      "icon": "Uma enorme bomba anarquista de desenho animado.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -589,14 +589,14 @@
       "catalog_scope": "standard",
       "id": "deckkrash",
       "class_id": "anti_system",
-      "name": "DeckKRASH",
+      "name": "TermiKRASH",
       "strength": {
         "base": 4
       },
       "memory": 2,
       "price": 600,
-      "effect": "A deck-only Krash that drops its Netrunner for 1D6 turns.",
-      "icon": "A cartoon stick of dynamite.",
+      "effect": "Um Krash exclusivo para terminais que expulsa o Netrunner por 1D6 turnos.",
+      "icon": "Uma banana de dinamite de desenho animado.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -626,8 +626,8 @@
       },
       "memory": 2,
       "price": 600,
-      "effect": "Forces the target deck or system to launch applications randomly.",
-      "icon": "Unpredictable by design.",
+      "effect": "Força o terminal ou sistema alvo a iniciar aplicativos aleatoriamente.",
+      "icon": "Imprevisível por definição.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -657,8 +657,8 @@
       },
       "memory": 2,
       "price": 600,
-      "effect": "Blocks one action of the target system or deck until shutdown.",
-      "icon": "A glittering DNA chain made of neon lights.",
+      "effect": "Bloqueia uma ação do sistema ou terminal alvo até ele ser desligado.",
+      "icon": "Uma cadeia de DNA cintilante feita de luzes de neon.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -688,8 +688,8 @@
       },
       "memory": 2,
       "price": 590,
-      "effect": "Randomly erases one selected file or program each turn until shutdown.",
-      "icon": "Blue metallic fog around a white neon DNA helix.",
+      "effect": "Apaga aleatoriamente um arquivo ou programa selecionado a cada turno até o desligamento.",
+      "icon": "Névoa azul metálica ao redor de uma hélice de DNA em neon branco.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -713,14 +713,14 @@
       "catalog_scope": "standard",
       "id": "invisibility",
       "class_id": "evasion_stealth",
-      "name": "Invisibility",
+      "name": "Invisibilidade",
       "strength": {
         "base": 3
       },
       "memory": 1,
       "price": 300,
-      "effect": "Masks the deck signal as harmless static so the Netrunner can pass unnoticed.",
-      "icon": "A flickering iridescent sheet.",
+      "effect": "Mascara o sinal do terminal como estática inofensiva para o Netrunner passar despercebido.",
+      "icon": "Uma camada tremeluzente e iridescente.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -744,14 +744,14 @@
       "catalog_scope": "standard",
       "id": "stealth",
       "class_id": "evasion_stealth",
-      "name": "Stealth",
+      "name": "Furtividade",
       "strength": {
         "base": 4
       },
       "memory": 3,
       "price": 480,
-      "effect": "Mutes the cyber-signal so offensive programs do not react, though Netrunners still can.",
-      "icon": "A sheet of black energy over the user's icon.",
+      "effect": "Abafa o cibersinal para programas ofensivos não reagirem, embora Netrunners ainda possam vê-lo.",
+      "icon": "Uma camada de energia negra sobre o ÍCONE do usuário.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -775,20 +775,20 @@
       "catalog_scope": "standard",
       "id": "replicator",
       "class_id": "evasion_stealth",
-      "name": "Replicator",
+      "name": "Replicador",
       "strength": {
         "base": 3,
         "situational": [
           {
             "value": 4,
-            "when": "against Dog programs and Hellhound"
+            "when": "contra programas Cão e Cão Infernal"
           }
         ]
       },
       "memory": 2,
       "price": 320,
-      "effect": "Creates false traces to mislead pursuers; Strength 4 against Dog programs and Hellhound.",
-      "icon": "A chrome sphere projecting many holographic copies.",
+      "effect": "Cria rastros falsos para enganar perseguidores; Força 4 contra programas Cão e Cão Infernal.",
+      "icon": "Uma esfera cromada projetando muitas cópias holográficas.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -812,14 +812,14 @@
       "catalog_scope": "standard",
       "id": "shield",
       "class_id": "protection",
-      "name": "Shield",
+      "name": "Escudo",
       "strength": {
         "base": 3
       },
       "memory": 1,
       "price": 150,
-      "effect": "Stops a direct attack against the Netrunner on a successful defense.",
-      "icon": "A shifting circular energy field.",
+      "effect": "Detém um ataque direto contra o Netrunner quando a defesa é bem-sucedida.",
+      "icon": "Um campo circular mutante de energia.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -843,14 +843,14 @@
       "catalog_scope": "standard",
       "id": "force_shield",
       "class_id": "protection",
-      "name": "Force Shield",
+      "name": "Escudo de Força",
       "strength": {
         "base": 4
       },
       "memory": 2,
       "price": 160,
-      "effect": "A stronger form of Shield.",
-      "icon": "A flickering silver energy barrier.",
+      "effect": "Uma versão mais forte do Escudo.",
+      "icon": "Uma barreira prateada e bruxuleante de energia.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -874,14 +874,14 @@
       "catalog_scope": "standard",
       "id": "reflector",
       "class_id": "protection",
-      "name": "Reflector",
+      "name": "Refletor",
       "strength": {
         "base": 5
       },
       "memory": 2,
       "price": 160,
-      "effect": "Repels Stun, Hellbolt and Knockout attacks, but no other Anti-Personnel programs.",
-      "icon": "Blue-green light forming a mirrored bowl.",
+      "effect": "Repele Atordoador, Raio Infernal e Nocaute, mas nenhum outro programa Anti-pessoal.",
+      "icon": "Luz verde-azulada formando um globo espelhado.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -905,14 +905,14 @@
       "catalog_scope": "standard",
       "id": "armor",
       "class_id": "protection",
-      "name": "Armor",
+      "name": "Armadura",
       "strength": {
         "base": 4
       },
       "memory": 2,
       "price": 170,
-      "effect": "Stops Anti-Personnel attacks or reduces listed black-program damage by 3 on a failed defense.",
-      "icon": "Glowing golden high-tech armor.",
+      "effect": "Detém ataques Anti-pessoal ou reduz em 3 o dano dos programas negros listados quando a defesa falha.",
+      "icon": "Armadura dourada brilhante de alta tecnologia.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -936,20 +936,20 @@
       "catalog_scope": "standard",
       "id": "flak",
       "class_id": "protection",
-      "name": "Flak",
+      "name": "Antiaéreo",
       "strength": {
         "base": 4,
         "situational": [
           {
             "value": 2,
-            "when": "against Dog programs and Hellhound"
+            "when": "contra programas Cão e Cão Infernal"
           }
         ]
       },
       "memory": 2,
       "price": 180,
-      "effect": "Creates visual static that helps evade attacks; only Strength 2 against Dog programs.",
-      "icon": "A blinding cloud of multicolored lights.",
+      "effect": "Cria estática visual para facilitar a evasão; tem apenas Força 2 contra programas Cão.",
+      "icon": "Uma nuvem cegante de luzes multicoloridas.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -979,8 +979,8 @@
       },
       "memory": 5,
       "price": 1320,
-      "effect": "Inflicts 1D6 damage to the Strength of any program.",
-      "icon": "A metallic samurai robot with a glowing katana.",
+      "effect": "Causa 1D6 de dano à Força de qualquer programa.",
+      "icon": "Um robô samurai metálico com uma katana brilhante.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1011,8 +1011,8 @@
       },
       "memory": 5,
       "price": 1400,
-      "effect": "Inflicts 1D6 damage to the Strength of any program.",
-      "icon": "A metallic samurai robot with a glowing katana.",
+      "effect": "Causa 1D6 de dano à Força de qualquer programa.",
+      "icon": "Um robô samurai metálico com uma katana brilhante.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1043,8 +1043,8 @@
       },
       "memory": 5,
       "price": 1480,
-      "effect": "Inflicts 1D6 damage to the Strength of any program.",
-      "icon": "A metallic samurai robot with a glowing katana.",
+      "effect": "Causa 1D6 de dano à Força de qualquer programa.",
+      "icon": "Um robô samurai metálico com uma katana brilhante.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1069,14 +1069,14 @@
       "catalog_scope": "standard",
       "id": "manticore",
       "class_id": "anti_program",
-      "name": "Manticore",
+      "name": "Manticora",
       "strength": {
         "base": 2
       },
       "memory": 3,
       "price": 880,
-      "effect": "Locates and destroys Demon programs; ignores targets without a Demon.",
-      "icon": "A red-neon lion shape with a scorpion tail.",
+      "effect": "Localiza e destrói programas Demônio; ignora alvos que não possuem um.",
+      "icon": "Uma silhueta de leão em neon vermelho com cauda de escorpião.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1101,14 +1101,14 @@
       "catalog_scope": "standard",
       "id": "hydra",
       "class_id": "anti_program",
-      "name": "Hydra",
+      "name": "Hidra",
       "strength": {
         "base": 3
       },
       "memory": 3,
       "price": 920,
-      "effect": "A stronger Demon-hunting program.",
-      "icon": "Glittering blue fog that encloses its target.",
+      "effect": "Um programa caçador de Demônios mais forte.",
+      "icon": "Névoa azul brilhante que envolve o alvo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1133,14 +1133,14 @@
       "catalog_scope": "standard",
       "id": "dragon",
       "class_id": "anti_program",
-      "name": "Dragon",
+      "name": "Dragão",
       "strength": {
         "base": 4
       },
       "memory": 3,
       "price": 960,
-      "effect": "The strongest standard Demon-hunting program.",
-      "icon": "A golden robotic dragon wrapped in electrical arcs.",
+      "effect": "O mais forte dos caçadores de Demônios padrão.",
+      "icon": "Um dragão robótico dourado envolto em descargas elétricas.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1171,14 +1171,14 @@
         "situational": [
           {
             "value": 0,
-            "when": "against anything except Worm"
+            "when": "contra qualquer alvo que não seja Minhoca"
           }
         ]
       },
       "memory": 3,
       "price": 1000,
-      "effect": "Finds and destroys Worm programs, including Demon subroutines; has no effect on other targets.",
-      "icon": "A tightening matrix of thin yellow neon lines.",
+      "effect": "Encontra e destrói programas Minhoca, inclusive subrotinas de Demônio; não afeta outros alvos.",
+      "icon": "Uma matriz de finas linhas amarelas de neon que se fecha sobre o alvo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1203,14 +1203,14 @@
       "catalog_scope": "standard",
       "id": "stun",
       "class_id": "anti_personnel",
-      "name": "Stun",
+      "name": "Atordoador",
       "strength": {
         "base": 3
       },
       "memory": 3,
       "price": 6000,
-      "effect": "Freezes the Netrunner in place for 1D6 turns.",
-      "icon": "A bolt of blue flame from an open palm.",
+      "effect": "Paralisa o Netrunner no lugar por 1D6 turnos.",
+      "icon": "Um raio de chama azul saindo da palma da mão.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1235,14 +1235,14 @@
       "catalog_scope": "standard",
       "id": "hellbolt",
       "class_id": "anti_personnel",
-      "name": "Hellbolt",
+      "name": "Raio Infernal",
       "strength": {
         "base": 4
       },
       "memory": 4,
       "price": 6750,
-      "effect": "Inflicts 1D10 physical damage per successful attack.",
-      "icon": "A bolt of crimson fire.",
+      "effect": "Causa 1D10 de dano físico por ataque bem-sucedido.",
+      "icon": "Um raio de fogo escarlate.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1267,14 +1267,14 @@
       "catalog_scope": "standard",
       "id": "sword",
       "class_id": "anti_personnel",
-      "name": "Sword",
+      "name": "Espada",
       "strength": {
         "base": 3
       },
       "memory": 4,
       "price": 6250,
-      "effect": "Inflicts 1D6 physical damage per successful attack.",
-      "icon": "A glowing energy katana.",
+      "effect": "Causa 1D6 de dano físico por ataque bem-sucedido.",
+      "icon": "Uma katana de energia brilhante.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1299,14 +1299,14 @@
       "catalog_scope": "standard",
       "id": "brainwipe",
       "class_id": "anti_personnel",
-      "name": "Brainwipe",
+      "name": "Lavagem Cerebral",
       "strength": {
         "base": 3
       },
       "memory": 4,
       "price": 6500,
-      "effect": "Tracks the victim and permanently reduces INT by 1D6 each turn until death at zero.",
-      "icon": "An acid-green electrical arc rising from the floor.",
+      "effect": "Rastreia a vítima e reduz permanentemente a INT em 1D6 por turno até a morte em zero.",
+      "icon": "Um arco elétrico verde-ácido saindo do chão.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1331,14 +1331,14 @@
       "catalog_scope": "standard",
       "id": "zombie",
       "class_id": "anti_personnel",
-      "name": "Zombie",
+      "name": "Zumbi",
       "strength": {
         "base": 5
       },
       "memory": 4,
       "price": 7500,
-      "effect": "A stronger Brainwipe that destroys 1D6 INT per turn.",
-      "icon": "A decaying skeletal figure in foul grey mist.",
+      "effect": "Uma Lavagem Cerebral mais forte que destrói 1D6 de INT por turno.",
+      "icon": "Uma figura esquelética apodrecida numa névoa cinzenta.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1363,14 +1363,14 @@
       "catalog_scope": "standard",
       "id": "liche",
       "class_id": "anti_personnel",
-      "name": "Liche",
+      "name": "Lichi",
       "strength": {
         "base": 4
       },
       "memory": 4,
       "price": 7250,
-      "effect": "Selectively removes 1D6 INT and leaves room for a controlled pseudo-personality.",
-      "icon": "A crowned metal skeleton in black robes.",
+      "effect": "Remove seletivamente 1D6 de INT e deixa espaço para uma pseudopersonalidade controlada.",
+      "icon": "Um esqueleto metálico coroado em robes negros.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1395,14 +1395,14 @@
       "catalog_scope": "standard",
       "id": "firestarter",
       "class_id": "anti_personnel",
-      "name": "Firestarter",
+      "name": "Incendiário",
       "strength": {
         "base": 4
       },
       "memory": 4,
       "price": 6250,
-      "effect": "Traces the intruder and sends a power surge through the real electrical system.",
-      "icon": "A pillar of fire that speaks the victim's name.",
+      "effect": "Rastreia o intruso e envia um surto pela instalação elétrica do mundo real.",
+      "icon": "Uma coluna de fogo que pronuncia o nome da vítima.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1427,14 +1427,14 @@
       "catalog_scope": "standard",
       "id": "hellhound",
       "class_id": "anti_personnel",
-      "name": "Hellhound",
+      "name": "Cão Infernal",
       "strength": {
         "base": 6
       },
       "memory": 6,
       "price": 10000,
-      "effect": "Tracks a victim across later connections and inflicts 2D10 physical damage.",
-      "icon": "A huge black metal wolf rippling with fire.",
+      "effect": "Rastreia a vítima em conexões futuras e causa 2D10 de dano físico.",
+      "icon": "Um imenso lobo negro de metal coberto por ondas de fogo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1459,14 +1459,14 @@
       "catalog_scope": "standard",
       "id": "spazz",
       "class_id": "anti_personnel",
-      "name": "Spazz",
+      "name": "Espasmo",
       "strength": {
         "base": 4
       },
       "memory": 3,
       "price": 6250,
-      "effect": "Halves the Netrunner's REF for 1D6 turns.",
-      "icon": "A nimbus of electrical energy around the target.",
+      "effect": "Reduz pela metade os REF do Netrunner por 1D6 turnos.",
+      "icon": "Uma nuvem de energia elétrica ao redor do alvo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1491,14 +1491,14 @@
       "catalog_scope": "standard",
       "id": "glue",
       "class_id": "anti_personnel",
-      "name": "Glue",
+      "name": "Cola",
       "strength": {
         "base": 5
       },
       "memory": 4,
       "price": 6500,
-      "effect": "Immobilizes the Netrunner for 1D10 turns, allowing a realspace trace.",
-      "icon": "Red shapes rising from the floor to entangle the target.",
+      "effect": "Imobiliza o Netrunner por 1D10 turnos, permitindo rastreá-lo no espaço real.",
+      "icon": "Formas vermelhas saindo do chão para enredar o alvo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1523,14 +1523,14 @@
       "catalog_scope": "standard",
       "id": "knockout",
       "class_id": "anti_personnel",
-      "name": "Knockout",
+      "name": "Nocaute",
       "strength": {
         "base": 4
       },
       "memory": 3,
       "price": 6250,
-      "effect": "Drops the Netrunner from the Net and leaves them in a coma for 1D6 hours.",
-      "icon": "A yellow neon boxer striking the target icon.",
+      "effect": "Expulsa o Netrunner da Rede e o deixa em coma por 1D6 horas.",
+      "icon": "Um boxeador amarelo de neon golpeando o ÍCONE alvo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1555,14 +1555,14 @@
       "catalog_scope": "standard",
       "id": "jack_attack",
       "class_id": "anti_personnel",
-      "name": "Jack Attack",
+      "name": "Ataque Rápido",
       "strength": {
         "base": 3
       },
       "memory": 3,
       "price": 6000,
-      "effect": "Prevents the Netrunner from disconnecting for 1D6 turns.",
-      "icon": "Glowing schematic handcuffs around the wrists.",
+      "effect": "Impede o Netrunner de se desconectar por 1D6 turnos.",
+      "icon": "Algemas esquemáticas brilhantes ao redor dos pulsos.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1587,14 +1587,14 @@
       "catalog_scope": "standard",
       "id": "viddy_master",
       "class_id": "controller",
-      "name": "Viddy Master",
+      "name": "Video Master",
       "strength": {
         "base": 4
       },
       "memory": 1,
       "price": 140,
-      "effect": "Controls video boards.",
-      "icon": "No icon.",
+      "effect": "Controla monitores de vídeo.",
+      "icon": "Sem ÍCONE.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1618,14 +1618,14 @@
       "catalog_scope": "standard",
       "id": "soundmachine",
       "class_id": "controller",
-      "name": "Soundmachine",
+      "name": "Máquina de Som",
       "strength": {
         "base": 4
       },
       "memory": 1,
       "price": 140,
-      "effect": "Controls microphones, speakers and voice coders.",
-      "icon": "No icon.",
+      "effect": "Controla microfones, alto-falantes e codificadores de voz.",
+      "icon": "Sem ÍCONE.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1649,14 +1649,14 @@
       "catalog_scope": "standard",
       "id": "open_sesame",
       "class_id": "controller",
-      "name": "Open Sesame",
+      "name": "Abre-te Sésamo",
       "strength": {
         "base": 3
       },
       "memory": 1,
       "price": 130,
-      "effect": "Low-level control of doors and elevators.",
-      "icon": "No icon.",
+      "effect": "Controle de baixo nível para portas e elevadores.",
+      "icon": "Sem ÍCONE.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1680,14 +1680,14 @@
       "catalog_scope": "standard",
       "id": "genie",
       "class_id": "controller",
-      "name": "Genie",
+      "name": "Gênio",
       "strength": {
         "base": 5
       },
       "memory": 1,
       "price": 150,
-      "effect": "High-level control of doors and elevators.",
-      "icon": "No icon.",
+      "effect": "Controle de alto nível para portas e elevadores.",
+      "icon": "Sem ÍCONE.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1717,8 +1717,8 @@
       },
       "memory": 1,
       "price": 130,
-      "effect": "Controls remote or robotic vehicles.",
-      "icon": "No icon.",
+      "effect": "Controla veículos remotos ou robotizados.",
+      "icon": "Sem ÍCONE.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1748,8 +1748,8 @@
       },
       "memory": 1,
       "price": 130,
-      "effect": "Controls robots, cleaning mechanisms and automated factories.",
-      "icon": "No icon.",
+      "effect": "Controla robôs, mecanismos de limpeza e fábricas automatizadas.",
+      "icon": "Sem ÍCONE.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1773,14 +1773,14 @@
       "catalog_scope": "standard",
       "id": "crystal_ball",
       "class_id": "controller",
-      "name": "Crystal Ball",
+      "name": "Bola de Cristal",
       "strength": {
         "base": 4
       },
       "memory": 1,
       "price": 140,
-      "effect": "Controls cameras and remote sensors.",
-      "icon": "No icon.",
+      "effect": "Controla câmeras e sensores remotos.",
+      "icon": "Sem ÍCONE.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1804,14 +1804,14 @@
       "catalog_scope": "standard",
       "id": "news_at_8",
       "class_id": "controller",
-      "name": "News At 8",
+      "name": "Noticiário das 8",
       "strength": {
         "base": 4
       },
       "memory": 1,
       "price": 140,
-      "effect": "Accesses DataTerms and screamsheets through the Net.",
-      "icon": "No icon.",
+      "effect": "Acessa DataTerms e screamsheets pela Rede.",
+      "icon": "Sem ÍCONE.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1835,20 +1835,20 @@
       "catalog_scope": "standard",
       "id": "phone_home",
       "class_id": "controller",
-      "name": "Phone Home",
+      "name": "Ligar pra Casa",
       "strength": {
         "base": 5,
         "situational": [
           {
             "value": 2,
-            "when": "to intercept calls"
+            "when": "para interceptar chamadas"
           }
         ]
       },
       "memory": 1,
       "price": 150,
-      "effect": "Places and receives calls through the Net; intercepts calls at Strength 2.",
-      "icon": "No icon.",
+      "effect": "Faz e recebe chamadas pela Rede; intercepta ligações com Força 2.",
+      "icon": "Sem ÍCONE.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1872,14 +1872,14 @@
       "catalog_scope": "standard",
       "id": "databaser",
       "class_id": "utility",
-      "name": "Databaser",
+      "name": "Base de Dados",
       "strength": {
         "base": 8
       },
       "memory": 2,
       "price": 180,
-      "effect": "Creates public files able to store information.",
-      "icon": "No fixed icon.",
+      "effect": "Cria arquivos públicos para armazenar informação.",
+      "icon": "Sem ÍCONE fixo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1909,8 +1909,8 @@
       },
       "memory": 2,
       "price": 160,
-      "effect": "Changes a file name to an innocuous false title.",
-      "icon": "No fixed icon.",
+      "effect": "Troca o nome de um arquivo por um título falso e inofensivo.",
+      "icon": "Sem ÍCONE fixo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1940,8 +1940,8 @@
       },
       "memory": 1,
       "price": 130,
-      "effect": "Recompiles damaged programs or files when a copy is available.",
-      "icon": "No fixed icon.",
+      "effect": "Recompila programas ou arquivos danificados quando existe uma cópia.",
+      "icon": "Sem ÍCONE fixo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1965,14 +1965,14 @@
       "catalog_scope": "standard",
       "id": "instant_replay",
       "class_id": "utility",
-      "name": "Instant Replay",
+      "name": "Replay Instantâneo",
       "strength": {
         "base": 8
       },
       "memory": 2,
       "price": 180,
-      "effect": "Records a Netrunner's trip so it can be retraced.",
-      "icon": "No fixed icon.",
+      "effect": "Grava a viagem do Netrunner para que seus passos possam ser refeitos.",
+      "icon": "Sem ÍCONE fixo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -1996,14 +1996,14 @@
       "catalog_scope": "standard",
       "id": "gatemaster",
       "class_id": "utility",
-      "name": "GateMaster",
+      "name": "Mestre dos Portões",
       "strength": {
         "base": 5
       },
       "memory": 1,
       "price": 150,
-      "effect": "Finds and destroys Virizz and Viral 15 without shutting down the deck.",
-      "icon": "No fixed icon.",
+      "effect": "Encontra e destrói Virizz e Viral 15 sem desligar o terminal.",
+      "icon": "Sem ÍCONE fixo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -2027,14 +2027,14 @@
       "catalog_scope": "standard",
       "id": "padlock",
       "class_id": "utility",
-      "name": "Padlock",
+      "name": "Cadeado",
       "strength": {
         "base": 4
       },
       "memory": 2,
       "price": 160,
-      "effect": "Prevents logon to a deck without the proper code.",
-      "icon": "No fixed icon.",
+      "effect": "Impede login no terminal sem o código correto.",
+      "icon": "Sem ÍCONE fixo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -2058,14 +2058,14 @@
       "catalog_scope": "standard",
       "id": "electrolock",
       "class_id": "utility",
-      "name": "ElectroLock",
+      "name": "Cadeado Eletrônico",
       "strength": {
         "base": 7
       },
       "memory": 2,
       "price": 170,
-      "effect": "Locks a public file as a Strength 3 Code Gate.",
-      "icon": "No fixed icon.",
+      "effect": "Tranca um arquivo público como um Portão de Acesso de Força 3.",
+      "icon": "Sem ÍCONE fixo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -2095,8 +2095,8 @@
       },
       "memory": 1,
       "price": 140,
-      "effect": "Locks a public file as a Strength 5 Code Gate using a chosen code word.",
-      "icon": "No fixed icon.",
+      "effect": "Tranca um arquivo público como um Portão de Acesso de Força 5 usando uma palavra-código.",
+      "icon": "Sem ÍCONE fixo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -2120,14 +2120,14 @@
       "catalog_scope": "standard",
       "id": "netmap",
       "class_id": "utility",
-      "name": "NetMap",
+      "name": "Mapeador da Rede",
       "strength": {
         "base": 4
       },
       "memory": 1,
       "price": 150,
-      "effect": "Maps major Net regions and adds +2 to System Knowledge checks made to find a place.",
-      "icon": "No fixed icon.",
+      "effect": "Mapeia as principais regiões da Rede e soma +2 a testes de Conhecimento de Sistema para achar um lugar.",
+      "icon": "Sem ÍCONE fixo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -2151,14 +2151,14 @@
       "catalog_scope": "standard",
       "id": "file_packer",
       "class_id": "utility",
-      "name": "File Packer",
+      "name": "Compactador de Arquivos",
       "strength": {
         "base": 4
       },
       "memory": 1,
       "price": 140,
-      "effect": "Compresses files to half their MU size; unpacking takes two turns.",
-      "icon": "No fixed icon.",
+      "effect": "Compacta arquivos para metade do tamanho em UM; descompactar demora dois turnos.",
+      "icon": "Sem ÍCONE fixo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -2188,8 +2188,8 @@
       },
       "memory": 1,
       "price": 140,
-      "effect": "Copies programs except Anti-Program and Anti-Personnel software; data chips and a reader are required.",
-      "icon": "No fixed icon.",
+      "effect": "Copia programas, exceto Anti-programa e Anti-pessoal; exige chips de dados e leitor.",
+      "icon": "Sem ÍCONE fixo.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -2219,8 +2219,8 @@
       },
       "memory": 3,
       "price": 1000,
-      "effect": "Carries two programs as subroutines, which use the Demon's Strength.",
-      "icon": "A small orange sphere with playful red eyes.",
+      "effect": "Transporta dois programas como subrotinas, que usam a Força do Demônio.",
+      "icon": "Uma pequena esfera laranja com olhos vermelhos divertidos.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -2251,8 +2251,8 @@
       },
       "memory": 4,
       "price": 1160,
-      "effect": "Carries three programs as subroutines, which use the Demon's Strength.",
-      "icon": "A tall muscular man in elegant clothes and a turban.",
+      "effect": "Transporta três programas como subrotinas, que usam a Força do Demônio.",
+      "icon": "Um homem alto e musculoso com roupas elegantes e turbante.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -2283,8 +2283,8 @@
       },
       "memory": 4,
       "price": 1200,
-      "effect": "Carries four programs as subroutines, which use the Demon's Strength.",
-      "icon": "A chrome winged feminine figure.",
+      "effect": "Transporta quatro programas como subrotinas, que usam a Força do Demônio.",
+      "icon": "Uma figura feminina cromada e alada.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -2315,8 +2315,8 @@
       },
       "memory": 5,
       "price": 1240,
-      "effect": "Carries four programs as subroutines, which use the Demon's Strength.",
-      "icon": "A massive armored figure with an energy blade and green tendrils.",
+      "effect": "Transporta quatro programas como subrotinas, que usam a Força do Demônio.",
+      "icon": "Uma figura imensa e armadurada com lâmina de energia e tentáculos verdes.",
       "source": {
         "book": "Cyberpunk 2020 Core Rulebook",
         "pages": "137-141"
@@ -2343,7 +2343,7 @@
         "kind": "fixed",
         "amount": 800
       },
-      "effect": "Inflicts 4D6 damage to Data Wall STR.",
+      "effect": "Causa 4D6 de dano à FOR do Muro de Dados.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2373,7 +2373,7 @@
         "kind": "fixed",
         "amount": 750
       },
-      "effect": "Opens a door through a Data Wall.",
+      "effect": "Abre uma passagem através de um Muro de Dados.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2403,7 +2403,7 @@
         "kind": "fixed",
         "amount": 600
       },
-      "effect": "Inflicts 3D6 damage to Data Wall STR.",
+      "effect": "Causa 3D6 de dano à FOR do Muro de Dados.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2433,7 +2433,7 @@
         "kind": "fixed",
         "amount": 160
       },
-      "effect": "Inflicts 1D6 damage to Data Wall STR.",
+      "effect": "Causa 1D6 de dano à FOR do Muro de Dados.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2463,7 +2463,7 @@
         "kind": "fixed",
         "amount": 900
       },
-      "effect": "Opens Code Gates and File Locks.",
+      "effect": "Abre Portões de Acesso e Fechaduras de Arquivo.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2493,7 +2493,7 @@
         "kind": "fixed",
         "amount": 600
       },
-      "effect": "Detects entry, alerts its master and hangs up on the intruder.",
+      "effect": "Detecta a entrada, alerta seu mestre e derruba a conexão do intruso.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2523,7 +2523,7 @@
         "kind": "fixed",
         "amount": 430
       },
-      "effect": "Tags itself and adds 4 to traces when copied.",
+      "effect": "Marca a própria cópia e acrescenta 4 às tentativas de rastreio.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2553,7 +2553,7 @@
         "kind": "fixed",
         "amount": 720
       },
-      "effect": "Detects and identifies icons within two subgrids, including invisible icons.",
+      "effect": "Detecta e identifica ÍCONES em duas subgrades, inclusive os invisíveis.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2583,7 +2583,7 @@
         "kind": "fixed",
         "amount": 720
       },
-      "effect": "Invisible alarm that detects entry and alerts its master.",
+      "effect": "Alarme invisível que detecta entradas e alerta seu mestre.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2612,9 +2612,9 @@
       "price_model": {
         "kind": "formula",
         "base": 270,
-        "label": "270+ eb; varies with STR"
+        "label": "270+ ed; varia com a FOR"
       },
-      "effect": "Detects disguised icons.",
+      "effect": "Detecta ÍCONES disfarçados.",
       "platform": "cyberdeck",
       "loadable": false,
       "availability": "quote",
@@ -2644,7 +2644,7 @@
         "kind": "fixed",
         "amount": 540
       },
-      "effect": "Degrades evasion programs.",
+      "effect": "Degrada programas de evasão.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2674,7 +2674,7 @@
         "kind": "fixed",
         "amount": 620
       },
-      "effect": "Detects programs within ten spaces and identifies attack programs.",
+      "effect": "Detecta programas em dez espaços e identifica programas de ataque.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2704,7 +2704,7 @@
         "kind": "fixed",
         "amount": 900
       },
-      "effect": "Erases 2D6 MU of random memory.",
+      "effect": "Apaga 2D6 UM aleatórias da memória.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2734,7 +2734,7 @@
         "kind": "fixed",
         "amount": 20000
       },
-      "effect": "Distorts Interface-generation algorithms.",
+      "effect": "Distorce algoritmos de geração de Interface.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2764,7 +2764,7 @@
         "kind": "fixed",
         "amount": 1000
       },
-      "effect": "Destroys the target CPU.",
+      "effect": "Destrói a CPU alvo.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2794,7 +2794,7 @@
         "kind": "fixed",
         "amount": 800
       },
-      "effect": "Forces a CPU to calculate Pi.",
+      "effect": "Força uma CPU a calcular Pi.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2824,7 +2824,7 @@
         "kind": "fixed",
         "amount": 3000
       },
-      "effect": "Makes the target system produce more Swarm programs.",
+      "effect": "Faz o sistema alvo produzir mais programas Swarm.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2854,7 +2854,7 @@
         "kind": "fixed",
         "amount": 2400
       },
-      "effect": "Infiltrates a runner and deletes files.",
+      "effect": "Infiltra o terminal do runner e apaga arquivos.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2884,7 +2884,7 @@
         "kind": "fixed",
         "amount": 630
       },
-      "effect": "Reduces target Speed by 1 per successful attack.",
+      "effect": "Reduz a Velocidade do alvo em 1 por ataque bem-sucedido.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2913,9 +2913,9 @@
       "price_model": {
         "kind": "formula",
         "base": 200,
-        "label": "200+ eb; varies by version"
+        "label": "200+ ed; varia por versão"
       },
-      "effect": "Makes an icon look like someone or something else.",
+      "effect": "Faz um ÍCONE parecer outra pessoa ou coisa.",
       "platform": "cyberdeck",
       "loadable": false,
       "availability": "quote",
@@ -2945,7 +2945,7 @@
         "kind": "fixed",
         "amount": 1500
       },
-      "effect": "Makes an icon look native to the current locale.",
+      "effect": "Faz um ÍCONE parecer nativo da região atual.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -2975,7 +2975,7 @@
         "kind": "fixed",
         "amount": 300
       },
-      "effect": "Adds 4 to Trace Difficulty.",
+      "effect": "Acrescenta 4 à Dificuldade de Rastreio.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3005,7 +3005,7 @@
         "kind": "fixed",
         "amount": 2320
       },
-      "effect": "AI suicide-replication sends copies of the core program into the Net.",
+      "effect": "Uma IA de replicação suicida espalha cópias do programa central pela Rede.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3035,7 +3035,7 @@
         "kind": "fixed",
         "amount": 500
       },
-      "effect": "Distracts the target, imposing -3 Initiative.",
+      "effect": "Distrai o alvo e impõe -3 à Iniciativa.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3065,7 +3065,7 @@
         "kind": "fixed",
         "amount": 320
       },
-      "effect": "Adds +3 to the deck's Data Wall.",
+      "effect": "Acrescenta +3 ao Muro de Dados do deck.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3095,7 +3095,7 @@
         "kind": "fixed",
         "amount": 150
       },
-      "effect": "Jacks the runner out when their body reaches Critical damage.",
+      "effect": "Desconecta o runner quando seu corpo atinge dano Crítico.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3125,7 +3125,7 @@
         "kind": "fixed",
         "amount": 440
       },
-      "effect": "Overloads Vampyre programs.",
+      "effect": "Sobrecarrega programas Vampyre.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3155,7 +3155,7 @@
         "kind": "fixed",
         "amount": 1650
       },
-      "effect": "A Killer IV hidden behind an active disguise.",
+      "effect": "Um Killer IV escondido por um disfarce ativo.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3185,7 +3185,7 @@
         "kind": "fixed",
         "amount": 1176
       },
-      "effect": "Chases and destroys tracing Dog programs.",
+      "effect": "Persegue e destrói programas Cão usados para rastrear.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3207,7 +3207,7 @@
         "situational": [
           {
             "value": 8,
-            "when": "against Spore"
+            "when": "contra Spore"
           }
         ]
       },
@@ -3221,7 +3221,7 @@
         "kind": "fixed",
         "amount": 1600
       },
-      "effect": "Acts as Killer V and destroys AI spores.",
+      "effect": "Age como Killer V e destrói esporos de IA.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3251,7 +3251,7 @@
         "kind": "fixed",
         "amount": 600
       },
-      "effect": "Removes the effects of Possession.",
+      "effect": "Remove os efeitos de Possessão.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3281,7 +3281,7 @@
         "kind": "fixed",
         "amount": 1200
       },
-      "effect": "Rebounds Hellbolts.",
+      "effect": "Rebate Hellbolts.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3311,7 +3311,7 @@
         "kind": "fixed",
         "amount": 1520
       },
-      "effect": "An invisible Killer.",
+      "effect": "Um Killer invisível.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3341,7 +3341,7 @@
         "kind": "fixed",
         "amount": 1000
       },
-      "effect": "Possesses other programs.",
+      "effect": "Possui outros programas.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3371,7 +3371,7 @@
         "kind": "fixed",
         "amount": 1000
       },
-      "effect": "Blinds any program.",
+      "effect": "Cega qualquer programa.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3401,7 +3401,7 @@
         "kind": "fixed",
         "amount": 1500
       },
-      "effect": "A Killer disguised as a Watchdog.",
+      "effect": "Um Killer disfarçado de Watchdog.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3431,7 +3431,7 @@
         "kind": "fixed",
         "amount": 5000
       },
-      "effect": "Slows runner movement to one square for 1D6+3 turns.",
+      "effect": "Reduz o movimento do runner a um quadrado por 1D6+3 turnos.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3461,7 +3461,7 @@
         "kind": "fixed",
         "amount": 9500
       },
-      "effect": "A Pit Bull that fires Hellbolts.",
+      "effect": "Um Pit Bull que dispara Hellbolts.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3491,7 +3491,7 @@
         "kind": "fixed",
         "amount": 10750
       },
-      "effect": "A Hellhound hidden behind an attractive disguise.",
+      "effect": "Um Hellhound escondido por um disfarce atraente.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3521,7 +3521,7 @@
         "kind": "fixed",
         "amount": 3500
       },
-      "effect": "Leaves a glowing trail behind the runner for 3D6 turns.",
+      "effect": "Deixa um rastro brilhante atrás do runner por 3D6 turnos.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3551,7 +3551,7 @@
         "kind": "fixed",
         "amount": 7750
       },
-      "effect": "Reduces the runner's INT and REF for 1D6+1 turns.",
+      "effect": "Reduz INT e REF do runner por 1D6+1 turnos.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3581,7 +3581,7 @@
         "kind": "fixed",
         "amount": 14000
       },
-      "effect": "Causes unconsciousness for 1D6 hours and leaves lasting trauma.",
+      "effect": "Causa inconsciência por 1D6 horas e deixa trauma duradouro.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3611,7 +3611,7 @@
         "kind": "fixed",
         "amount": 6750
       },
-      "effect": "Paralyzes the runner for 1D6 turns.",
+      "effect": "Paralisa o runner por 1D6 turnos.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3641,7 +3641,7 @@
         "kind": "fixed",
         "amount": 10000
       },
-      "effect": "Prevents the runner from moving for five turns.",
+      "effect": "Impede o runner de se mover por cinco turnos.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3671,7 +3671,7 @@
         "kind": "fixed",
         "amount": 8000
       },
-      "effect": "Reduces INT and REF until the runner destroys the program.",
+      "effect": "Reduz INT e REF até que o runner destrua o programa.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3701,7 +3701,7 @@
         "kind": "fixed",
         "amount": 7000
       },
-      "effect": "Makes the runner so nervous that they jack out.",
+      "effect": "Deixa o runner nervoso o bastante para se desconectar.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3731,7 +3731,7 @@
         "kind": "fixed",
         "amount": 13000
       },
-      "effect": "An invisible Hellhound variant.",
+      "effect": "Uma variante invisível de Hellhound.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3761,7 +3761,7 @@
         "kind": "fixed",
         "amount": 1200
       },
-      "effect": "Hides data inside virtual realities.",
+      "effect": "Oculta dados dentro de realidades virtuais.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3791,7 +3791,7 @@
         "kind": "fixed",
         "amount": 4480
       },
-      "effect": "Hides the runner in a cloud that attacks programs with lightning.",
+      "effect": "Oculta o runner numa nuvem que ataca programas com relâmpagos.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3821,7 +3821,7 @@
         "kind": "fixed",
         "amount": 450
       },
-      "effect": "A fake, disguisable program.",
+      "effect": "Um programa falso que pode ser disfarçado.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3851,7 +3851,7 @@
         "kind": "fixed",
         "amount": 2700
       },
-      "effect": "Combines Shield and Krash functions.",
+      "effect": "Combina as funções de Shield e Krash.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3881,7 +3881,7 @@
         "kind": "fixed",
         "amount": 4800
       },
-      "effect": "An online assistant.",
+      "effect": "Um assistente online.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3911,7 +3911,7 @@
         "kind": "fixed",
         "amount": 1540
       },
-      "effect": "Six bugs attack ICE before it can act.",
+      "effect": "Seis insetos atacam o ICE antes que ele possa agir.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3941,7 +3941,7 @@
         "kind": "fixed",
         "amount": 18500
       },
-      "effect": "Derezzes programs, fries CPU chips and temporarily reduces INT by 2D6.",
+      "effect": "Descompila programas, frita chips de CPU e reduz temporariamente INT em 2D6.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -3969,9 +3969,9 @@
       "price": null,
       "price_model": {
         "kind": "not_for_sale",
-        "label": "N/A"
+        "label": "N/D"
       },
-      "effect": "Stops and disassembles programs for copying.",
+      "effect": "Detém e desmonta programas para cópia.",
       "platform": "cyberdeck",
       "loadable": false,
       "availability": "not_for_sale",
@@ -4001,7 +4001,7 @@
         "kind": "fixed",
         "amount": 15200
       },
-      "effect": "Damages programs and Demons for 1D6 and runners for 1D10.",
+      "effect": "Causa 1D6 de dano a programas e Demônios e 1D10 a runners.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4031,7 +4031,7 @@
         "kind": "fixed",
         "amount": 220
       },
-      "effect": "Operates remote vehicles autonomously.",
+      "effect": "Opera veículos remotos de forma autônoma.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4061,7 +4061,7 @@
         "kind": "fixed",
         "amount": 200
       },
-      "effect": "Operates microphones and voice boxes autonomously.",
+      "effect": "Opera microfones e caixas de voz de forma autônoma.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4091,7 +4091,7 @@
         "kind": "fixed",
         "amount": 260
       },
-      "effect": "Controls terminals.",
+      "effect": "Controla terminais.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4121,7 +4121,7 @@
         "kind": "fixed",
         "amount": 290
       },
-      "effect": "Finds new LDL link routes.",
+      "effect": "Encontra novas rotas de link LDL.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4151,7 +4151,7 @@
         "kind": "fixed",
         "amount": 200
       },
-      "effect": "Maps Data Fortresses.",
+      "effect": "Mapeia Fortalezas de Dados.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4181,7 +4181,7 @@
         "kind": "fixed",
         "amount": 310
       },
-      "effect": "Cleans Pacifica of junk data.",
+      "effect": "Limpa dados inúteis de Pacifica.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4211,7 +4211,7 @@
         "kind": "fixed",
         "amount": 300
       },
-      "effect": "Broadcasts a Net distress signal.",
+      "effect": "Emite um sinal de socorro pela Rede.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4241,7 +4241,7 @@
         "kind": "fixed",
         "amount": 225
       },
-      "effect": "Controls a Flip Switch.",
+      "effect": "Controla um Flip Switch.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4271,7 +4271,7 @@
         "kind": "fixed",
         "amount": 250
       },
-      "effect": "Controls a Flip Switch with enhanced iconography.",
+      "effect": "Controla um Flip Switch com iconografia aprimorada.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4301,7 +4301,7 @@
         "kind": "fixed",
         "amount": 200
       },
-      "effect": "Observes activity in an area.",
+      "effect": "Observa a atividade de uma área.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4331,7 +4331,7 @@
         "kind": "fixed",
         "amount": 2000
       },
-      "effect": "Allows multiple runners to operate through one computer.",
+      "effect": "Permite que vários runners operem por um único computador.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4361,7 +4361,7 @@
         "kind": "fixed",
         "amount": 240
       },
-      "effect": "Turns pictures into virtual objects.",
+      "effect": "Transforma imagens em objetos virtuais.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4391,7 +4391,7 @@
         "kind": "fixed",
         "amount": 1160
       },
-      "effect": "Carries three programs.",
+      "effect": "Carrega três programas.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4423,7 +4423,7 @@
         "kind": "fixed",
         "amount": 1240
       },
-      "effect": "Carries four programs.",
+      "effect": "Carrega quatro programas.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4455,7 +4455,7 @@
         "kind": "fixed",
         "amount": 1000
       },
-      "effect": "Carries two programs.",
+      "effect": "Carrega dois programas.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4487,7 +4487,7 @@
         "kind": "fixed",
         "amount": 1200
       },
-      "effect": "Carries four programs.",
+      "effect": "Carrega quatro programas.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4519,7 +4519,7 @@
         "kind": "fixed",
         "amount": 10440
       },
-      "effect": "Has permanent subroutines that damage program STR and runners for 1D6.",
+      "effect": "Possui sub-rotinas permanentes que causam 1D6 de dano à FOR de programas e a runners.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4549,7 +4549,7 @@
         "kind": "fixed",
         "amount": 2300
       },
-      "effect": "Can absorb up to six programs.",
+      "effect": "Pode absorver até seis programas.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4580,7 +4580,7 @@
         "kind": "fixed",
         "amount": 1125
       },
-      "effect": "Carries Poison Flatline, Killer IV and Murphy.",
+      "effect": "Carrega Poison Flatline, Killer IV e Murphy.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4611,7 +4611,7 @@
         "kind": "fixed",
         "amount": 975
       },
-      "effect": "Carries one program, usually Databaser.",
+      "effect": "Carrega um programa, normalmente Databaser.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4636,15 +4636,15 @@
       "memory_model": {
         "kind": "per_cpu",
         "amount": 5,
-        "label": "5 MU per CPU"
+        "label": "5 UM por CPU"
       },
       "price": null,
       "price_model": {
         "kind": "per_cpu",
         "amount": 4000,
-        "label": "4,000 eb per CPU"
+        "label": "4.000 ed por CPU"
       },
-      "effect": "Cloaks an entire Data Fortress.",
+      "effect": "Oculta uma Fortaleza de Dados inteira.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "quote",
@@ -4674,7 +4674,7 @@
         "kind": "fixed",
         "amount": 14000
       },
-      "effect": "A disguised VR cell with trace capability.",
+      "effect": "Uma célula de RV disfarçada com capacidade de rastreio.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "retail",
@@ -4704,7 +4704,7 @@
         "kind": "fixed",
         "amount": 950
       },
-      "effect": "Roving internal Net security.",
+      "effect": "Segurança interna móvel da Rede.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "retail",
@@ -4734,7 +4734,7 @@
         "kind": "fixed",
         "amount": 20000
       },
-      "effect": "A Monitor that inflicts 1D6 damage to runners and program STR.",
+      "effect": "Um Monitor que causa 1D6 de dano a runners e à FOR de programas.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "retail",
@@ -4764,9 +4764,9 @@
         "kind": "formula",
         "base": 3000,
         "per_strength": 1000,
-        "label": "3,000 + 1,000 eb/STR"
+        "label": "3.000 + 1.000 ed/FOR"
       },
-      "effect": "Makes a Code Gate invisible.",
+      "effect": "Torna um Portão de Acesso invisível.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "quote",
@@ -4789,15 +4789,15 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": null,
       "price_model": {
         "kind": "formula",
         "base": 4960,
-        "label": "4,960+ eb"
+        "label": "4.960+ ed"
       },
-      "effect": "Data Walls that attack intrusion programs.",
+      "effect": "Muros de Dados que atacam programas de intrusão.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "quote",
@@ -4820,15 +4820,15 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": null,
       "price_model": {
         "kind": "formula",
         "base": 31000,
-        "label": "31,000+ eb"
+        "label": "31.000+ ed"
       },
-      "effect": "Data Walls that attack runners.",
+      "effect": "Muros de Dados que atacam runners.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "quote",
@@ -4858,7 +4858,7 @@
         "kind": "fixed",
         "amount": 300
       },
-      "effect": "Adds 20% MU and reduces Speed by 1.",
+      "effect": "Acrescenta 20% de UM e reduz a Velocidade em 1.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4892,7 +4892,7 @@
         "kind": "fixed",
         "amount": 500
       },
-      "effect": "Doubles remaining MU after its own 4 MU cost and reduces Speed by 1.",
+      "effect": "Duplica as UM restantes após seu próprio custo de 4 UM e reduz a Velocidade em 1.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "retail",
@@ -4926,7 +4926,7 @@
         "kind": "fixed",
         "amount": 270
       },
-      "effect": "Attracts Dog programs from across the Net.",
+      "effect": "Atrai programas Cão de toda a Rede.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "restricted",
@@ -4954,9 +4954,9 @@
       "price": null,
       "price_model": {
         "kind": "not_for_sale",
-        "label": "N/A"
+        "label": "N/D"
       },
-      "effect": "Alerts LDLs to illegal calls.",
+      "effect": "Alerta LDLs sobre chamadas ilegais.",
       "platform": "cyberdeck",
       "loadable": false,
       "availability": "not_for_sale",
@@ -4984,9 +4984,9 @@
       "price": null,
       "price_model": {
         "kind": "not_for_sale",
-        "label": "N/A"
+        "label": "N/D"
       },
-      "effect": "Functions as SeeYa at greater Strength.",
+      "effect": "Funciona como SeeYa com FOR maior.",
       "platform": "cyberdeck",
       "loadable": false,
       "availability": "not_for_sale",
@@ -5014,9 +5014,9 @@
       "price": null,
       "price_model": {
         "kind": "not_for_sale",
-        "label": "N/A"
+        "label": "N/D"
       },
-      "effect": "Adds 1 to Net movement allowance.",
+      "effect": "Acrescenta 1 ao deslocamento na Rede.",
       "platform": "cyberdeck",
       "loadable": false,
       "availability": "not_for_sale",
@@ -5044,9 +5044,9 @@
       "price": null,
       "price_model": {
         "kind": "not_for_sale",
-        "label": "N/A"
+        "label": "N/D"
       },
-      "effect": "Allows walking on the sides of the sidewalks in the Olympia region.",
+      "effect": "Permite caminhar pelas laterais das calçadas na região de Olympia.",
       "platform": "cyberdeck",
       "loadable": false,
       "availability": "not_for_sale",
@@ -5076,7 +5076,7 @@
         "kind": "fixed",
         "amount": 230
       },
-      "effect": "A strong Worm variant.",
+      "effect": "Uma variante forte de Worm.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5106,7 +5106,7 @@
         "kind": "fixed",
         "amount": 210
       },
-      "effect": "A weak Worm variant.",
+      "effect": "Uma variante fraca de Worm.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5136,7 +5136,7 @@
         "kind": "fixed",
         "amount": 260
       },
-      "effect": "Takes two turns to work; each extra turn adds +1 STR, to a maximum of 7.",
+      "effect": "Leva dois turnos para agir; cada turno extra acrescenta +1 FOR, até o máximo de 7.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5166,7 +5166,7 @@
         "kind": "fixed",
         "amount": 900
       },
-      "effect": "An extremely loud Hammer that inflicts 5D6 damage to Data Wall STR.",
+      "effect": "Um Hammer absurdamente barulhento que causa 5D6 de dano à FOR do Muro de Dados.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5196,7 +5196,7 @@
         "kind": "fixed",
         "amount": 700
       },
-      "effect": "A Raffles variant.",
+      "effect": "Uma variante de Raffles.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5226,7 +5226,7 @@
         "kind": "fixed",
         "amount": 300
       },
-      "effect": "A stealthy decryption program.",
+      "effect": "Um programa furtivo de decifração.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5256,7 +5256,7 @@
         "kind": "fixed",
         "amount": 610
       },
-      "effect": "Watchdog variants.",
+      "effect": "Variantes de Watchdog.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5286,7 +5286,7 @@
         "kind": "fixed",
         "amount": 1000
       },
-      "effect": "A patient Bloodhound variant.",
+      "effect": "Uma variante paciente de Bloodhound.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5316,7 +5316,7 @@
         "kind": "fixed",
         "amount": 1300
       },
-      "effect": "A Pit Bull variant.",
+      "effect": "Uma variante de Pit Bull.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5346,7 +5346,7 @@
         "kind": "fixed",
         "amount": 1600
       },
-      "effect": "An improved Pit Bull variant.",
+      "effect": "Uma variante aprimorada de Pit Bull.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5376,7 +5376,7 @@
         "kind": "fixed",
         "amount": 700
       },
-      "effect": "A Bloodhound variant.",
+      "effect": "Uma variante de Bloodhound.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5406,7 +5406,7 @@
         "kind": "fixed",
         "amount": 900
       },
-      "effect": "A Bloodhound variant.",
+      "effect": "Uma variante de Bloodhound.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5436,7 +5436,7 @@
         "kind": "fixed",
         "amount": 350
       },
-      "effect": "Creeps into a fortress to look around.",
+      "effect": "Entra sorrateiramente numa Fortaleza para observar.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5466,7 +5466,7 @@
         "kind": "fixed",
         "amount": 540
       },
-      "effect": "A reconnaissance-drone SeeYa variant.",
+      "effect": "Uma variante de SeeYa que age como drone de reconhecimento.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5496,7 +5496,7 @@
         "kind": "fixed",
         "amount": 1000
       },
-      "effect": "A Pit Bull variant.",
+      "effect": "Uma variante de Pit Bull.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5526,7 +5526,7 @@
         "kind": "fixed",
         "amount": 800
       },
-      "effect": "A Flatline variant.",
+      "effect": "Uma variante de Flatline.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5556,7 +5556,7 @@
         "kind": "fixed",
         "amount": 800
       },
-      "effect": "Makes programs switch on and off at random.",
+      "effect": "Liga e desliga programas aleatoriamente.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5586,7 +5586,7 @@
         "kind": "fixed",
         "amount": 1130
       },
-      "effect": "Imposes -1 STR on programs and -1 Initiative on runners, sysops and AIs.",
+      "effect": "Impõe -1 FOR a programas e -1 Iniciativa a runners, sysops e IAs.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5616,7 +5616,7 @@
         "kind": "fixed",
         "amount": 1000
       },
-      "effect": "A Poison Flatline variant.",
+      "effect": "Uma variante de Poison Flatline.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5646,7 +5646,7 @@
         "kind": "fixed",
         "amount": 660
       },
-      "effect": "A Viral 15 variant.",
+      "effect": "Uma variante de Viral 15.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5676,7 +5676,7 @@
         "kind": "fixed",
         "amount": 800
       },
-      "effect": "Has a 30% chance to derez ICE when it activates.",
+      "effect": "Tem 30% de chance de descompilar o ICE quando ele é ativado.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5706,7 +5706,7 @@
         "kind": "fixed",
         "amount": 660
       },
-      "effect": "A Poison Flatline variant.",
+      "effect": "Uma variante de Poison Flatline.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5736,7 +5736,7 @@
         "kind": "fixed",
         "amount": 1200
       },
-      "effect": "Relocates the runner outside the Data Fortress.",
+      "effect": "Reposiciona o runner para fora da Fortaleza de Dados.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5766,7 +5766,7 @@
         "kind": "fixed",
         "amount": 2000
       },
-      "effect": "An Invisibility variant.",
+      "effect": "Uma variante de Invisibility.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5796,7 +5796,7 @@
         "kind": "fixed",
         "amount": 330
       },
-      "effect": "Routes traces through an extended phone link.",
+      "effect": "Desvia rastreios por uma conexão telefônica prolongada.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5818,7 +5818,7 @@
         "situational": [
           {
             "value": 5,
-            "when": "against Dog programs"
+            "when": "contra programas Cão"
           }
         ]
       },
@@ -5832,7 +5832,7 @@
         "kind": "fixed",
         "amount": 360
       },
-      "effect": "Has STR 5 against Dogs and adds +2 Speed.",
+      "effect": "Tem FOR 5 contra Cães e acrescenta +2 à Velocidade.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5862,7 +5862,7 @@
         "kind": "fixed",
         "amount": 400
       },
-      "effect": "A Stealth program.",
+      "effect": "Um programa de Furtividade.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5892,7 +5892,7 @@
         "kind": "fixed",
         "amount": 190
       },
-      "effect": "Absorbs Anti-Personnel damage.",
+      "effect": "Absorve dano Anti-pessoal.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5922,7 +5922,7 @@
         "kind": "fixed",
         "amount": 1280
       },
-      "effect": "A Killer that inflicts 1D6 damage.",
+      "effect": "Um Killer que causa 1D6 de dano.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5952,7 +5952,7 @@
         "kind": "fixed",
         "amount": 2000
       },
-      "effect": "An alluring Killer that inflicts 2D6 damage.",
+      "effect": "Um Killer sedutor que causa 2D6 de dano.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -5982,7 +5982,7 @@
         "kind": "fixed",
         "amount": 1000
       },
-      "effect": "A Killer that inflicts 1D6 damage.",
+      "effect": "Um Killer que causa 1D6 de dano.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6012,7 +6012,7 @@
         "kind": "fixed",
         "amount": 1360
       },
-      "effect": "A Killer that inflicts 1D6 damage.",
+      "effect": "Um Killer que causa 1D6 de dano.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6042,7 +6042,7 @@
         "kind": "fixed",
         "amount": 1480
       },
-      "effect": "A Killer that inflicts 1D6 damage.",
+      "effect": "Um Killer que causa 1D6 de dano.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6072,7 +6072,7 @@
         "kind": "fixed",
         "amount": 800
       },
-      "effect": "Defends against Anti-Personnel programs, damages program STR and then jacks the runner out.",
+      "effect": "Defende contra programas Anti-pessoal, danifica a FOR do programa e então desconecta o runner.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6102,7 +6102,7 @@
         "kind": "fixed",
         "amount": 1320
       },
-      "effect": "A Killer that inflicts 1D6 damage.",
+      "effect": "Um Killer que causa 1D6 de dano.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6132,7 +6132,7 @@
         "kind": "fixed",
         "amount": 600
       },
-      "effect": "A Killer that inflicts 1D6 damage.",
+      "effect": "Um Killer que causa 1D6 de dano.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6162,7 +6162,7 @@
         "kind": "fixed",
         "amount": 1200
       },
-      "effect": "A Killer that inflicts 1D6 damage.",
+      "effect": "Um Killer que causa 1D6 de dano.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6192,7 +6192,7 @@
         "kind": "fixed",
         "amount": 1440
       },
-      "effect": "A Killer that inflicts 1D6 damage.",
+      "effect": "Um Killer que causa 1D6 de dano.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6222,7 +6222,7 @@
         "kind": "fixed",
         "amount": 1320
       },
-      "effect": "A Killer variant.",
+      "effect": "Uma variante de Killer.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6252,7 +6252,7 @@
         "kind": "fixed",
         "amount": 3000
       },
-      "effect": "Gains +2 STR whenever it destroys another program.",
+      "effect": "Recebe +2 FOR sempre que destrói outro programa.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6282,7 +6282,7 @@
         "kind": "fixed",
         "amount": 1280
       },
-      "effect": "Destroys a target program if it has just been rezzed.",
+      "effect": "Destrói o programa alvo se ele acabou de ser ativado.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6312,7 +6312,7 @@
         "kind": "fixed",
         "amount": 1400
       },
-      "effect": "A Killer that inflicts 1D6 damage.",
+      "effect": "Um Killer que causa 1D6 de dano.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6342,7 +6342,7 @@
         "kind": "fixed",
         "amount": 920
       },
-      "effect": "A Killer that inflicts 1D6 damage.",
+      "effect": "Um Killer que causa 1D6 de dano.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6375,7 +6375,7 @@
         "kind": "fixed",
         "amount": 3600
       },
-      "effect": "Damages Data Walls and programs for 1D6 and decrypts Code Gates.",
+      "effect": "Causa 1D6 de dano a Muros de Dados e programas e decifra Portões de Acesso.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6408,7 +6408,7 @@
         "kind": "fixed",
         "amount": 1500
       },
-      "effect": "Damages Data Walls and programs for 1D6 and decrypts Code Gates, but may crash.",
+      "effect": "Causa 1D6 de dano a Muros de Dados e programas e decifra Portões de Acesso, mas pode travar.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6441,7 +6441,7 @@
         "kind": "fixed",
         "amount": 1500
       },
-      "effect": "Compiles four programs chosen from Anti-Program, Intrusion and Decryption.",
+      "effect": "Compila quatro programas escolhidos entre Anti-programa, Intrusão e Decifração.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6471,7 +6471,7 @@
         "kind": "fixed",
         "amount": 8000
       },
-      "effect": "Inflicts 4D6 damage to the runner.",
+      "effect": "Causa 4D6 de dano ao runner.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6501,7 +6501,7 @@
         "kind": "fixed",
         "amount": 9000
       },
-      "effect": "A Firestarter variant.",
+      "effect": "Uma variante de Firestarter.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6531,7 +6531,7 @@
         "kind": "fixed",
         "amount": 7500
       },
-      "effect": "A Zombie variant.",
+      "effect": "Uma variante de Zombie.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6561,7 +6561,7 @@
         "kind": "fixed",
         "amount": 6500
       },
-      "effect": "A Brainwipe variant.",
+      "effect": "Uma variante de Brainwipe.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6591,7 +6591,7 @@
         "kind": "fixed",
         "amount": 5500
       },
-      "effect": "Inflicts 3D6 damage to the runner.",
+      "effect": "Causa 3D6 de dano ao runner.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6621,7 +6621,7 @@
         "kind": "fixed",
         "amount": 8000
       },
-      "effect": "A Firestarter variant.",
+      "effect": "Uma variante de Firestarter.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6651,7 +6651,7 @@
         "kind": "fixed",
         "amount": 12000
       },
-      "effect": "A Hellhound variant that reduces INT, inflicts damage and alerts its master.",
+      "effect": "Uma variante de Hellhound que reduz INT, causa dano e alerta seu mestre.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6681,7 +6681,7 @@
         "kind": "fixed",
         "amount": 6250
       },
-      "effect": "A Sword variant.",
+      "effect": "Uma variante de Sword.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6711,7 +6711,7 @@
         "kind": "fixed",
         "amount": 6000
       },
-      "effect": "A Stun variant.",
+      "effect": "Uma variante de Stun.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6741,7 +6741,7 @@
         "kind": "fixed",
         "amount": 6250
       },
-      "effect": "A Knockout variant.",
+      "effect": "Uma variante de Knockout.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6771,7 +6771,7 @@
         "kind": "fixed",
         "amount": 550
       },
-      "effect": "Fills out false purchase orders.",
+      "effect": "Preenche ordens de compra falsas.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6801,7 +6801,7 @@
         "kind": "fixed",
         "amount": 250
       },
-      "effect": "Skims files from an administration or accounting sector at 1 MU per turn.",
+      "effect": "Copia arquivos de um setor administrativo ou contábil a 1 UM por turno.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6831,7 +6831,7 @@
         "kind": "fixed",
         "amount": 330
       },
-      "effect": "Correlates data and presents a synopsis.",
+      "effect": "Correlaciona dados e apresenta uma sinopse.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6861,7 +6861,7 @@
         "kind": "fixed",
         "amount": 330
       },
-      "effect": "Doubles the data a runner can skim each turn.",
+      "effect": "Duplica a quantidade de dados que o runner pode copiar por turno.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6891,7 +6891,7 @@
         "kind": "fixed",
         "amount": 300
       },
-      "effect": "Randomly steals programs.",
+      "effect": "Rouba programas aleatoriamente.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6921,7 +6921,7 @@
         "kind": "fixed",
         "amount": 200
       },
-      "effect": "Skims newsgroups.",
+      "effect": "Copia dados de grupos de notícias.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6951,7 +6951,7 @@
         "kind": "fixed",
         "amount": 250
       },
-      "effect": "Skims files from a specific R&D sector at 1 MU per turn.",
+      "effect": "Copia arquivos de um setor específico de P&D a 1 UM por turno.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -6981,7 +6981,7 @@
         "kind": "fixed",
         "amount": 250
       },
-      "effect": "Accesses shredded files in a trash buffer.",
+      "effect": "Acessa arquivos fragmentados no buffer de lixo.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -7011,7 +7011,7 @@
         "kind": "fixed",
         "amount": 300
       },
-      "effect": "Packs one program to half MU and unpacks it instantly at -1 Initiative.",
+      "effect": "Compacta um programa para metade das UM e o descompacta instantaneamente com -1 Iniciativa.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -7041,7 +7041,7 @@
         "kind": "fixed",
         "amount": 130
       },
-      "effect": "Sets up multiple phone links for the runner.",
+      "effect": "Configura várias conexões telefônicas para o runner.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -7070,9 +7070,9 @@
       "price_model": {
         "kind": "formula",
         "base": 600,
-        "label": "600+ eb"
+        "label": "600+ ed"
       },
-      "effect": "Creates Road Map routes with back doors through private phones.",
+      "effect": "Cria rotas de Road Map com backdoors por telefones privados.",
       "platform": "cyberdeck",
       "loadable": false,
       "availability": "quote",
@@ -7102,7 +7102,7 @@
         "kind": "fixed",
         "amount": 380
       },
-      "effect": "Triggers false alarms.",
+      "effect": "Dispara alarmes falsos.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -7132,7 +7132,7 @@
         "kind": "fixed",
         "amount": 400
       },
-      "effect": "An Eavesdropper variant.",
+      "effect": "Uma variante de Eavesdropper.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -7162,7 +7162,7 @@
         "kind": "fixed",
         "amount": 1080
       },
-      "effect": "An Eavesdropper for administration and accounting sectors.",
+      "effect": "Um Eavesdropper para setores administrativos e contábeis.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -7192,7 +7192,7 @@
         "kind": "fixed",
         "amount": 1600
       },
-      "effect": "Eats files and turns them into more Cockroaches.",
+      "effect": "Devora arquivos e os transforma em mais Cockroaches.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -7222,7 +7222,7 @@
         "kind": "fixed",
         "amount": 1080
       },
-      "effect": "An Eavesdropper for R&D sectors.",
+      "effect": "Um Eavesdropper para setores de P&D.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -7252,7 +7252,7 @@
         "kind": "fixed",
         "amount": 570
       },
-      "effect": "Subtly corrupts project files.",
+      "effect": "Corrompe sutilmente arquivos de projeto.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -7282,7 +7282,7 @@
         "kind": "fixed",
         "amount": 7000
       },
-      "effect": "Produces more Gremlins and randomly launches programs.",
+      "effect": "Produz mais Gremlins e inicia programas aleatoriamente.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -7312,7 +7312,7 @@
         "kind": "fixed",
         "amount": 760
       },
-      "effect": "Reproduces other programs.",
+      "effect": "Reproduz outros programas.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -7342,7 +7342,7 @@
         "kind": "fixed",
         "amount": 2200
       },
-      "effect": "Weakens one type of ICE.",
+      "effect": "Enfraquece um tipo de ICE.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -7372,7 +7372,7 @@
         "kind": "fixed",
         "amount": 1320
       },
-      "effect": "Inflates project costs.",
+      "effect": "Infla os custos de um projeto.",
       "platform": "cyberdeck",
       "loadable": true,
       "availability": "referee_approval",
@@ -7395,14 +7395,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": null,
       "price_model": {
         "kind": "variable",
-        "label": "Variable"
+        "label": "Variável"
       },
-      "effect": "Adds Invisibility to ICE.",
+      "effect": "Acrescenta Invisibilidade ao ICE.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "quote",
@@ -7432,7 +7432,7 @@
         "kind": "fixed",
         "amount": 1160
       },
-      "effect": "An invisible Manticore.",
+      "effect": "Uma Manticore invisível.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7455,14 +7455,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 500000,
       "price_model": {
         "kind": "fixed",
         "amount": 500000
       },
-      "effect": "Drains 1D6 INT per turn into computer memory.",
+      "effect": "Drena 1D6 INT por turno para a memória do computador.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7485,14 +7485,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 200000,
       "price_model": {
         "kind": "fixed",
         "amount": 200000
       },
-      "effect": "A node containing three Asps.",
+      "effect": "Um nó contendo três Asps.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7515,14 +7515,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 3000,
       "price_model": {
         "kind": "fixed",
         "amount": 3000
       },
-      "effect": "A Data Wall.",
+      "effect": "Um Muro de Dados.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7545,14 +7545,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 500,
       "price_model": {
         "kind": "fixed",
         "amount": 500
       },
-      "effect": "A Data Wall.",
+      "effect": "Um Muro de Dados.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7575,14 +7575,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 1000,
       "price_model": {
         "kind": "fixed",
         "amount": 1000
       },
-      "effect": "A Data Wall.",
+      "effect": "Um Muro de Dados.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7605,14 +7605,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 4000,
       "price_model": {
         "kind": "fixed",
         "amount": 4000
       },
-      "effect": "A Data Wall.",
+      "effect": "Um Muro de Dados.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7635,14 +7635,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 34000,
       "price_model": {
         "kind": "fixed",
         "amount": 34000
       },
-      "effect": "A wall that inflicts 1D6 damage to the runner.",
+      "effect": "Um muro que causa 1D6 de dano ao runner.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7665,14 +7665,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 36000,
       "price_model": {
         "kind": "fixed",
         "amount": 36000
       },
-      "effect": "A wall that inflicts 2D6 damage to the runner.",
+      "effect": "Um muro que causa 2D6 de dano ao runner.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7695,14 +7695,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 4000,
       "price_model": {
         "kind": "fixed",
         "amount": 4000
       },
-      "effect": "A Data Wall.",
+      "effect": "Um Muro de Dados.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7725,14 +7725,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 5000,
       "price_model": {
         "kind": "fixed",
         "amount": 5000
       },
-      "effect": "A Data Wall.",
+      "effect": "Um Muro de Dados.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7755,14 +7755,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 40000,
       "price_model": {
         "kind": "fixed",
         "amount": 40000
       },
-      "effect": "A wall that inflicts 2D6 damage to the runner.",
+      "effect": "Um muro que causa 2D6 de dano ao runner.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7785,14 +7785,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 44000,
       "price_model": {
         "kind": "fixed",
         "amount": 44000
       },
-      "effect": "A wall that inflicts 2D6 damage to the runner.",
+      "effect": "Um muro que causa 2D6 de dano ao runner.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7815,14 +7815,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 2000,
       "price_model": {
         "kind": "fixed",
         "amount": 2000
       },
-      "effect": "A Data Wall.",
+      "effect": "Um Muro de Dados.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7845,14 +7845,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 20000,
       "price_model": {
         "kind": "fixed",
         "amount": 20000
       },
-      "effect": "A Code Gate that tests the runner three times.",
+      "effect": "Um Portão de Acesso que testa o runner três vezes.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7882,7 +7882,7 @@
         "kind": "fixed",
         "amount": 8000
       },
-      "effect": "A Code Gate that tests the runner twice.",
+      "effect": "Um Portão de Acesso que testa o runner duas vezes.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7905,14 +7905,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 1000,
       "price_model": {
         "kind": "fixed",
         "amount": 1000
       },
-      "effect": "A Code Gate.",
+      "effect": "Um Portão de Acesso.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7942,7 +7942,7 @@
         "kind": "fixed",
         "amount": 80000
       },
-      "effect": "A Code Gate loaded with Psychodrome.",
+      "effect": "Um Portão de Acesso carregado com Psychodrome.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7965,14 +7965,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 5000,
       "price_model": {
         "kind": "fixed",
         "amount": 5000
       },
-      "effect": "A Code Gate.",
+      "effect": "Um Portão de Acesso.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -7995,14 +7995,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 6000,
       "price_model": {
         "kind": "fixed",
         "amount": 6000
       },
-      "effect": "A Code Gate.",
+      "effect": "Um Portão de Acesso.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -8025,14 +8025,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 50000,
       "price_model": {
         "kind": "fixed",
         "amount": 50000
       },
-      "effect": "A Code Gate that inflicts 4D6 damage to the runner.",
+      "effect": "Um Portão de Acesso que causa 4D6 de dano ao runner.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -8055,14 +8055,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 3000,
       "price_model": {
         "kind": "fixed",
         "amount": 3000
       },
-      "effect": "A Code Gate.",
+      "effect": "Um Portão de Acesso.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -8085,14 +8085,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 4000,
       "price_model": {
         "kind": "fixed",
         "amount": 4000
       },
-      "effect": "A Code Gate.",
+      "effect": "Um Portão de Acesso.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -8115,14 +8115,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 2000,
       "price_model": {
         "kind": "fixed",
         "amount": 2000
       },
-      "effect": "A Code Gate.",
+      "effect": "Um Portão de Acesso.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -8145,14 +8145,14 @@
       "memory": null,
       "memory_model": {
         "kind": "variable",
-        "label": "N/A"
+        "label": "N/D"
       },
       "price": 50000,
       "price_model": {
         "kind": "fixed",
         "amount": 50000
       },
-      "effect": "A Code Gate that tags the runner.",
+      "effect": "Um Portão de Acesso que marca o runner.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -8182,7 +8182,7 @@
         "kind": "fixed",
         "amount": 13000
       },
-      "effect": "A weaker Dazzler.",
+      "effect": "Um Dazzler mais fraco.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -8212,7 +8212,7 @@
         "kind": "fixed",
         "amount": 1000
       },
-      "effect": "Forces the runner to choose the right door.",
+      "effect": "Força o runner a escolher a porta correta.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",
@@ -8240,9 +8240,9 @@
       "price": null,
       "price_model": {
         "kind": "not_for_sale",
-        "label": "N/A"
+        "label": "N/D"
       },
-      "effect": "A Soulkiller that converts a runner into an electronic entity.",
+      "effect": "Um Soulkiller que converte o runner em entidade eletrônica.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "not_for_sale",
@@ -8272,7 +8272,7 @@
         "kind": "fixed",
         "amount": 14500
       },
-      "effect": "A Compiler that inflicts 1D6 physical damage to the runner.",
+      "effect": "Um Compiler que causa 1D6 de dano físico ao runner.",
       "platform": "data_fortress",
       "loadable": false,
       "availability": "referee_approval",

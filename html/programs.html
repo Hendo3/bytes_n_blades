@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cyberpunk 2020 Netrunning program catalog with all 70 Core Rulebook programs.">
+  <title>Netrunning Programs | Byte & Blades</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/i18n.js"></script><script src="../js/auth.js"></script>
+  <link rel="icon" href="../assets/svg/favicon.svg" type="image/svg+xml"><link rel="manifest" href="../manifest.webmanifest">
+</head>
+<body data-netrunning-page="programs">
+  <a href="#program-list" class="skip-link">Skip to programs</a>
+  <div class="container"><header class="navbar"><div class="logo-area"><h1 class="logo">Byte & Blades Store</h1><p class="tagline">Black-market software, clean checksums</p></div>
+    <nav aria-label="Main Navigation"><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="./cyberwares.html">Cyberwares</a></li><li><a href="./accessories.html">Accessories</a></li><li><a class="nav-highlight" href="./cyberdecks.html">Netrunning</a></li><li><a href="./bundles.html">Bundles</a></li><li><a href="./cart.html">Cart</a></li></ul></nav></header></div>
+  <main class="container net-main" data-netrunning-page="programs">
+    <section class="content-slab"><div class="content-header"><div class="content-titles"><h1>Program Catalog</h1><p class="content-sub">All 70 programs from the Cyberpunk 2020 Core Rulebook, indexed by class.</p></div>
+      <div class="net-tabs"><a class="active" href="./programs.html">Programs</a><a href="./cyberdecks.html">Cyberdecks</a><a href="./deck-builder.html">Build a Deck</a></div></div>
+      <div class="net-filters"><label>Search<input id="program-search" type="search" placeholder="Name, effect or icon"></label><label>Class<select id="program-class"><option value="">All Classes</option></select></label><label>Max Price (ED$)<input id="program-price" type="number" min="0" step="10"></label></div>
+      <p id="program-count" class="net-status"></p><p id="net-status" class="net-status">Loading Netrunning feed…</p><div id="program-list" class="items-list"></div>
+    </section>
+  </main>
+  <footer><div class="footer-content"><p>&copy; 2025 Byte & Blades Store. Hendo: All rights reserved.</p><p class="netwatch-warning">No Corps. No NetWatch. Offgrid market.</p></div></footer>
+  <script src="../js/core-utils.js"></script><script src="../js/netrunning.js"></script><script src="../js/modal.js"></script>
+</body></html>

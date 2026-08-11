@@ -72,6 +72,7 @@ describe("bundle catalog normalization and lookup", () => {
       legacyIds: ["old"],
       sourceType: "cyberware",
       sourceCategory: "category",
+      sourceCategoryLabel: "category",
       name: "Product",
       description: "Specs",
       price: 200,
@@ -236,6 +237,29 @@ describe("bundle selection and dependency closure", () => {
 });
 
 describe("generated bundles and browser presentation", () => {
+  test("Netrunner bundles include a published deck with programs inside its MU limit", () => {
+    const { bundles } = setup();
+    const dataStore = {
+      cyberwares: bundles.normalizeCatalog(readJson("data/cyberwares.json").data, "cyberware"),
+      equipment: bundles.normalizeCatalog(readJson("data/equipment.json").data, "equipment"),
+      weapons: {},
+      programs: readJson("data/programs.json").programs,
+      cyberdecks: readJson("data/cyberdecks.json").decks,
+    };
+    const context = bundles.createBundleContext(dataStore);
+    for (const budget of ["street", "pro", "opulence"]) {
+      const generated = bundles.generateBundles(context, { style: "netrunner", budget, lowHL: false });
+      const netrunner = generated.find((bundle) => bundle.titleKey === "bundle.netrunner_title");
+      const deck = netrunner.items.find((item) => item.deckConfiguration);
+      assert.ok(deck, budget);
+      assert.ok(deck.deckConfiguration.programIds.length > 0, budget);
+      assert.ok(deck.deckConfiguration.memoryUsed <= deck.deckConfiguration.memory, budget);
+      assert.equal(deck.sourceType, "cyberdecks");
+    }
+    const tiny = bundles.selectProgramsForDeck(dataStore.programs, 1, 10);
+    assert.deepEqual(tiny, []);
+  });
+
   test("all style/budget/HL combinations produce six coherent real bundles", () => {
     const { bundles, utils } = setup();
     const dataStore = {

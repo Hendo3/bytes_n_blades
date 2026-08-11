@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Loja Byte & Blades",
   "short_name": "Byte & Blades",
-  "description": "Loja de Cyberpunk 2020 para ciberware, equipamentos, armas, drogas de combate, pacotes e chips de perícia.",
+  "description": "Loja de Cyberpunk 2020 para ciberware, ciberterminais, equipamentos, armas, drogas de combate, pacotes e chips de perícia.",
   "lang": "pt-BR",
   "dir": "ltr",
   "start_url": "./login.html",
@@ -49,6 +49,12 @@
       "short_name": "Acessórios",
       "description": "Explore equipamentos e acessórios.",
       "url": "./html/accessories.html"
+    },
+    {
+      "name": "Ciberterminais",
+      "short_name": "Terminais",
+      "description": "Explore ciberterminais prontos publicados.",
+      "url": "./html/cyberdecks.html"
     },
     {
       "name": "Armas",
