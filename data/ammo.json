@@ -1,0 +1,2938 @@
+{
+  "$id": "https://local/bytes-and-blades/ammo.en-US.json",
+  "version": 1,
+  "locale": "en-US",
+  "title": "Cyberpunk 2020 Ammo & Add-ons",
+  "source": "Cyberpunk 2020 Ammo & Add-ons, revision 1998-11-25",
+  "items": [
+    {
+      "id": "ammo_ammunition_reloads_light_pistol_smg_100",
+      "category": "Ammunition Reloads",
+      "name": "Light Pistol & SMG (100)",
+      "effect": "Standard reload, 100 rounds",
+      "description": "Standard reload, 100 rounds",
+      "price": 15,
+      "compatibility": "Light pistols and SMGs",
+      "legacyIds": [
+        "weapon_light_handgun_light_smg_ammo_box_100"
+      ]
+    },
+    {
+      "id": "ammo_ammunition_reloads_medium_pistol_smg_100",
+      "category": "Ammunition Reloads",
+      "name": "Medium Pistol & SMG (100)",
+      "effect": "Standard reload, 100 rounds",
+      "description": "Standard reload, 100 rounds",
+      "price": 30,
+      "compatibility": "Medium pistols and SMGs",
+      "legacyIds": [
+        "weapon_medium_handgun_medium_smg_ammo_box_100"
+      ]
+    },
+    {
+      "id": "ammo_ammunition_reloads_heavy_pistol_smg_100",
+      "category": "Ammunition Reloads",
+      "name": "Heavy Pistol & SMG (100)",
+      "effect": "Standard reload, 100 rounds",
+      "description": "Standard reload, 100 rounds",
+      "price": 36,
+      "compatibility": "Heavy pistols and SMGs",
+      "legacyIds": [
+        "weapon_heavy_handgun_heavy_smg_ammo_box_100"
+      ]
+    },
+    {
+      "id": "ammo_ammunition_reloads_very_heavy_pistol_100",
+      "category": "Ammunition Reloads",
+      "name": "Very Heavy Pistol (100)",
+      "effect": "Standard reload, 100 rounds",
+      "description": "Standard reload, 100 rounds",
+      "price": 40,
+      "compatibility": "Very heavy pistols",
+      "legacyIds": [
+        "weapon_very_heavy_handgun_ammo_box_100"
+      ]
+    },
+    {
+      "id": "ammo_ammunition_reloads_assault_rifle_100",
+      "category": "Ammunition Reloads",
+      "name": "Assault Rifle (100)",
+      "effect": "Standard reload, 100 rounds",
+      "description": "Standard reload, 100 rounds",
+      "price": 40,
+      "compatibility": "Assault rifles",
+      "legacyIds": [
+        "weapon_assault_rifle_ammo_box_100"
+      ]
+    },
+    {
+      "id": "ammo_ammunition_reloads_airgun_pellets_100",
+      "category": "Ammunition Reloads",
+      "name": "Airgun Pellets (100)",
+      "effect": "Standard pellets",
+      "description": "Standard pellets",
+      "price": 6,
+      "compatibility": "Airguns"
+    },
+    {
+      "id": "ammo_ammunition_reloads_acid_or_drug_pellets_100",
+      "category": "Ammunition Reloads",
+      "name": "Acid or Drug Pellets (100)",
+      "effect": "Payload pellets",
+      "description": "Payload pellets",
+      "price": 30,
+      "compatibility": "Airguns"
+    },
+    {
+      "id": "ammo_ammunition_reloads_needlegun_rounds_100",
+      "category": "Ammunition Reloads",
+      "name": "Needlegun Rounds (100)",
+      "effect": "Standard needles",
+      "description": "Standard needles",
+      "price": 50,
+      "compatibility": "Needleguns"
+    },
+    {
+      "id": "ammo_ammunition_reloads_20mm_cannon_round",
+      "category": "Ammunition Reloads",
+      "name": "20mm Cannon Round",
+      "effect": "One cannon round",
+      "description": "One cannon round",
+      "price": 25,
+      "compatibility": "20mm cannon"
+    },
+    {
+      "id": "ammo_ammunition_reloads_flamethrower_reload",
+      "category": "Ammunition Reloads",
+      "name": "Flamethrower Reload",
+      "effect": "Fuel reload",
+      "description": "Fuel reload",
+      "price": 50,
+      "compatibility": "Flamethrowers"
+    },
+    {
+      "id": "ammo_ammunition_reloads_paintloads_100",
+      "category": "Ammunition Reloads",
+      "name": "Paintloads (100)",
+      "effect": "Paint payloads",
+      "description": "Paint payloads",
+      "price": 10,
+      "compatibility": "Paint weapons"
+    },
+    {
+      "id": "ammo_ammunition_reloads_acid_drug_or_poison_loads_100",
+      "category": "Ammunition Reloads",
+      "name": "Acid, Drug or Poison Loads (100)",
+      "effect": "Payload loads",
+      "description": "Payload loads",
+      "price": 30,
+      "compatibility": "Compatible launchers"
+    },
+    {
+      "id": "ammo_ammunition_reloads_glass_ceramic_or_steel_balls_20",
+      "category": "Ammunition Reloads",
+      "name": "Glass, Ceramic or Steel Balls (20)",
+      "effect": "Ball ammunition",
+      "description": "Ball ammunition",
+      "price": 5,
+      "compatibility": "Ball launchers"
+    },
+    {
+      "id": "ammo_ammunition_types_normal",
+      "category": "Ammunition Types",
+      "name": "Normal",
+      "effect": "No SP or damage modifier",
+      "description": "No SP or damage modifier",
+      "price": 1,
+      "price_label": "1x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_brass_cased",
+      "category": "Ammunition Types",
+      "name": "Brass Cased",
+      "effect": "No SP or damage modifier",
+      "description": "No SP or damage modifier",
+      "price": 3,
+      "price_label": "3x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_plasticase",
+      "category": "Ammunition Types",
+      "name": "Plasticase",
+      "effect": "Poor availability",
+      "description": "Poor availability",
+      "price": 1,
+      "price_label": "1x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_armor_piercing",
+      "category": "Ammunition Types",
+      "name": "Armor Piercing",
+      "effect": "SP x1/2; penetrating damage x1/2",
+      "description": "SP x1/2; penetrating damage x1/2",
+      "price": 3,
+      "price_label": "3x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_api",
+      "category": "Ammunition Types",
+      "name": "API",
+      "effect": "SP x1/2; penetrating damage x1/2; +1d6 then 1d6/2; 50% fire chance",
+      "description": "SP x1/2; penetrating damage x1/2; +1d6 then 1d6/2; 50% fire chance",
+      "price": 4,
+      "price_label": "4x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_dual_purpose",
+      "category": "Ammunition Types",
+      "name": "Dual-Purpose",
+      "effect": "SP x1/2; choose half penetrating damage or x1.5 damage",
+      "description": "SP x1/2; choose half penetrating damage or x1.5 damage",
+      "price": 4,
+      "price_label": "4x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_electrothermal",
+      "category": "Ammunition Types",
+      "name": "Electrothermal",
+      "effect": "Damage x1.5",
+      "description": "Damage x1.5",
+      "price": 2,
+      "price_label": "2x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_hollowpoints",
+      "category": "Ammunition Types",
+      "name": "Hollowpoints",
+      "effect": "SP x2; penetrating damage x1.5",
+      "description": "SP x2; penetrating damage x1.5",
+      "price": 1.125,
+      "price_label": "1.125x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_frag_flechettes",
+      "category": "Ammunition Types",
+      "name": "Frag Flechettes",
+      "effect": "Soft SP x1/2; rare and very illegal",
+      "description": "Soft SP x1/2; rare and very illegal",
+      "price": 5,
+      "price_label": "5x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_rubber_bullets",
+      "category": "Ammunition Types",
+      "name": "Rubber Bullets",
+      "effect": "Stun damage beyond 3m",
+      "description": "Stun damage beyond 3m",
+      "price": 0.333,
+      "price_label": "0.333x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_safety_rounds",
+      "category": "Ammunition Types",
+      "name": "Safety Rounds",
+      "effect": "SP x2; penetrating damage x3; shatter on SP10 or SDP30",
+      "description": "SP x2; penetrating damage x3; shatter on SP10 or SDP30",
+      "price": 6,
+      "price_label": "6x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_electric_fire",
+      "category": "Ammunition Types",
+      "name": "Electric Fire",
+      "effect": "Caseless rounds",
+      "description": "Caseless rounds",
+      "price": 0.9,
+      "price_label": "0.9x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_wasp_flechette",
+      "category": "Ammunition Types",
+      "name": "Wasp Flechette",
+      "effect": "Soft SP x1/2; damage x1d6/2",
+      "description": "Soft SP x1/2; damage x1d6/2",
+      "price": 10,
+      "price_label": "10x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_12mm_anti_personnel",
+      "category": "Ammunition Types",
+      "name": "12mm Anti-Personnel",
+      "effect": "SP x1/2; damage x2",
+      "description": "SP x1/2; damage x2",
+      "price": 10,
+      "price_label": "10x",
+      "compatibility": "12mm bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_silver_bullets",
+      "category": "Ammunition Types",
+      "name": "Silver Bullets",
+      "effect": "No mechanical modifier",
+      "description": "No mechanical modifier",
+      "price": 5,
+      "price_label": "5x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_dumdums",
+      "category": "Ammunition Types",
+      "name": "DumDums",
+      "effect": "SP x2; penetrating damage x1.75",
+      "description": "SP x2; penetrating damage x1.75",
+      "price": 1,
+      "price_label": "1x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_titanium",
+      "category": "Ammunition Types",
+      "name": "Titanium",
+      "effect": "SP x1/2",
+      "description": "SP x1/2",
+      "price": 10,
+      "price_label": "10x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_tungsten_carbide",
+      "category": "Ammunition Types",
+      "name": "Tungsten Carbide",
+      "effect": "SP x1/3; penetrating damage x1/2",
+      "description": "SP x1/3; penetrating damage x1/2",
+      "price": 15,
+      "price_label": "15x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_depleted_uranium",
+      "category": "Ammunition Types",
+      "name": "Depleted Uranium",
+      "effect": "SP x1/4; +1d6; penetrating damage x1/2",
+      "description": "SP x1/4; +1d6; penetrating damage x1/2",
+      "price": 150,
+      "price_label": "150x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_memory_expander",
+      "category": "Ammunition Types",
+      "name": "Memory Expander",
+      "effect": "Soft SP x1/4; penetrating damage x1.5",
+      "description": "Soft SP x1/4; penetrating damage x1.5",
+      "price": 10,
+      "price_label": "10x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_tracers",
+      "category": "Ammunition Types",
+      "name": "Tracers",
+      "effect": "+1d3 x 1d6 damage",
+      "description": "+1d3 x 1d6 damage",
+      "price": 1.5,
+      "price_label": "1.5x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_subsonic",
+      "category": "Ammunition Types",
+      "name": "Subsonic",
+      "effect": "SP x1.5",
+      "description": "SP x1.5",
+      "price": 2,
+      "price_label": "2x",
+      "compatibility": "Bullets"
+    },
+    {
+      "id": "ammo_ammunition_types_acid",
+      "category": "Ammunition Types",
+      "name": "Acid",
+      "effect": "1d4 for 3 turns; ceramic shell shatters on SP4+",
+      "description": "1d4 for 3 turns; ceramic shell shatters on SP4+",
+      "price": 75,
+      "compatibility": "20 rounds"
+    },
+    {
+      "id": "ammo_ammunition_types_heartbreaker",
+      "category": "Ammunition Types",
+      "name": "Heartbreaker",
+      "effect": "Heart attack in 1d6 rounds; shatters on SP5+",
+      "description": "Heart attack in 1d6 rounds; shatters on SP5+",
+      "price": 50,
+      "compatibility": "Each"
+    },
+    {
+      "id": "ammo_410_28_gauge_shotshell",
+      "category": ".410 / 28 Gauge",
+      "name": "Shotshell",
+      "effect": "2d6 / 1d6+2 / 1d6 by range band",
+      "description": "2d6 / 1d6+2 / 1d6 by range band",
+      "price": 15,
+      "compatibility": "12 rounds"
+    },
+    {
+      "id": "ammo_410_28_gauge_slug",
+      "category": ".410 / 28 Gauge",
+      "name": "Slug",
+      "effect": "3d6+1 AP; soft SP halves penetrating damage",
+      "description": "3d6+1 AP; soft SP halves penetrating damage",
+      "price": 15,
+      "compatibility": "12 rounds"
+    },
+    {
+      "id": "ammo_410_28_gauge_triplex_shell",
+      "category": ".410 / 28 Gauge",
+      "name": "Triplex Shell",
+      "effect": "1d6 / 2x2d6",
+      "description": "1d6 / 2x2d6",
+      "price": 15,
+      "compatibility": "12 rounds"
+    },
+    {
+      "id": "ammo_20_gauge_shotshell",
+      "category": "20 Gauge",
+      "name": "Shotshell",
+      "effect": "3d6 / 2d6 / 1d6 by range band",
+      "description": "3d6 / 2d6 / 1d6 by range band",
+      "price": 15,
+      "compatibility": "12 rounds"
+    },
+    {
+      "id": "ammo_20_gauge_flare",
+      "category": "20 Gauge",
+      "name": "Flare",
+      "effect": "Illuminates 30m; 2d6+2 and 1d6/2 on hit",
+      "description": "Illuminates 30m; 2d6+2 and 1d6/2 on hit",
+      "price": 25,
+      "compatibility": "25 rounds"
+    },
+    {
+      "id": "ammo_20_gauge_flash_bang",
+      "category": "20 Gauge",
+      "name": "Flash-Bang",
+      "effect": "Flash-bang effects; 2m/5m; maximum range 25m",
+      "description": "Flash-bang effects; 2m/5m; maximum range 25m",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_20_gauge_flash",
+      "category": "20 Gauge",
+      "name": "Flash",
+      "effect": "Flash-bang grenade in a 25m x 3m pattern",
+      "description": "Flash-bang grenade in a 25m x 3m pattern",
+      "price": 30,
+      "compatibility": "25 rounds"
+    },
+    {
+      "id": "ammo_20_gauge_slug",
+      "category": "20 Gauge",
+      "name": "Slug",
+      "effect": "3d6+1 AP; soft SP halves penetrating damage",
+      "description": "3d6+1 AP; soft SP halves penetrating damage",
+      "price": 15,
+      "compatibility": "12 rounds"
+    },
+    {
+      "id": "ammo_12_gauge_shotshell",
+      "category": "12 Gauge",
+      "name": "Shotshell",
+      "effect": "4d6 / 3d6 / 2d6; range pattern 1-3m x 50m",
+      "description": "4d6 / 3d6 / 2d6; range pattern 1-3m x 50m",
+      "price": 15,
+      "compatibility": "12 rounds"
+    },
+    {
+      "id": "ammo_12_gauge_apfsds",
+      "category": "12 Gauge",
+      "name": "APFSDS",
+      "effect": "6d6 AP; 25m range",
+      "description": "6d6 AP; 25m range",
+      "price": 10
+    },
+    {
+      "id": "ammo_12_gauge_flare",
+      "category": "12 Gauge",
+      "name": "Flare",
+      "effect": "Illuminates 30m; 2d6+2 and 1d6/2 on hit",
+      "description": "Illuminates 30m; 2d6+2 and 1d6/2 on hit",
+      "price": 25,
+      "compatibility": "25 rounds"
+    },
+    {
+      "id": "ammo_12_gauge_flash_bang",
+      "category": "12 Gauge",
+      "name": "Flash-Bang",
+      "effect": "Flash-bang effects; 2m/5m; maximum range 25m",
+      "description": "Flash-bang effects; 2m/5m; maximum range 25m",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_12_gauge_flash",
+      "category": "12 Gauge",
+      "name": "Flash",
+      "effect": "Flash-bang grenade in a 25m x 3m pattern",
+      "description": "Flash-bang grenade in a 25m x 3m pattern",
+      "price": 30,
+      "compatibility": "25 rounds"
+    },
+    {
+      "id": "ammo_12_gauge_flechettes",
+      "category": "12 Gauge",
+      "name": "Flechettes",
+      "effect": "4d6 AP; armor and penetrating damage x1/4",
+      "description": "4d6 AP; armor and penetrating damage x1/4",
+      "price": 8
+    },
+    {
+      "id": "ammo_12_gauge_gas",
+      "category": "12 Gauge",
+      "name": "Gas",
+      "effect": "Tear, sleep or biotoxin gas; 1m radius",
+      "description": "Tear, sleep or biotoxin gas; 1m radius",
+      "price": 5,
+      "price_max": 25
+    },
+    {
+      "id": "ammo_12_gauge_he",
+      "category": "12 Gauge",
+      "name": "HE",
+      "effect": "4d6; 0.5m radius",
+      "description": "4d6; 0.5m radius",
+      "price": 5
+    },
+    {
+      "id": "ammo_12_gauge_heat",
+      "category": "12 Gauge",
+      "name": "HEAT",
+      "effect": "4d6 HEAT",
+      "description": "4d6 HEAT",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_12_gauge_non_lethal",
+      "category": "12 Gauge",
+      "name": "Non-Lethal",
+      "effect": "4d6 Stun; soft SP resists no more than half damage",
+      "description": "4d6 Stun; soft SP resists no more than half damage",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_12_gauge_slug",
+      "category": "12 Gauge",
+      "name": "Slug",
+      "effect": "4d6+2 AP; soft SP halves penetrating damage",
+      "description": "4d6+2 AP; soft SP halves penetrating damage",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_12_gauge_smoke",
+      "category": "12 Gauge",
+      "name": "Smoke",
+      "effect": "3m smoke cloud",
+      "description": "3m smoke cloud",
+      "price": 15,
+      "compatibility": "25 rounds"
+    },
+    {
+      "id": "ammo_12_gauge_stinger",
+      "category": "12 Gauge",
+      "name": "Stinger",
+      "effect": "4d6 Stun beyond 3m",
+      "description": "4d6 Stun beyond 3m",
+      "price": 15,
+      "compatibility": "25 rounds"
+    },
+    {
+      "id": "ammo_12_gauge_stundart",
+      "category": "12 Gauge",
+      "name": "Stundart",
+      "effect": "Stun -2; penetrates soft SP10",
+      "description": "Stun -2; penetrates soft SP10",
+      "price": 20,
+      "compatibility": "4 rounds"
+    },
+    {
+      "id": "ammo_12_gauge_thermite",
+      "category": "12 Gauge",
+      "name": "Thermite",
+      "effect": "8d6 AP in half-width pattern; 10% chance to ruin barrel",
+      "description": "8d6 AP in half-width pattern; 10% chance to ruin barrel",
+      "price": 30
+    },
+    {
+      "id": "ammo_12_gauge_slasher",
+      "category": "12 Gauge",
+      "name": "Slasher",
+      "effect": "4d6; SP x1/3; 1m pattern; WA -3; 10m range",
+      "description": "4d6; SP x1/3; 1m pattern; WA -3; 10m range",
+      "price": 75
+    },
+    {
+      "id": "ammo_12_gauge_ball_bearing_x2",
+      "category": "12 Gauge",
+      "name": "Ball Bearing (x2)",
+      "effect": "5d6+1 / 4d6+1 / 3d6+1; 1-2m pattern",
+      "description": "5d6+1 / 4d6+1 / 3d6+1; 1-2m pattern",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_12_gauge_magnum_buckshot",
+      "category": "12 Gauge Magnum",
+      "name": "Buckshot",
+      "effect": "4d6+2 / 3d6+2 / 2d6+2",
+      "description": "4d6+2 / 3d6+2 / 2d6+2",
+      "price": 1
+    },
+    {
+      "id": "ammo_12_gauge_magnum_he_slug",
+      "category": "12 Gauge Magnum",
+      "name": "HE Slug",
+      "effect": "3d6; 1m radius",
+      "description": "3d6; 1m radius",
+      "price": 2
+    },
+    {
+      "id": "ammo_12_gauge_magnum_ap_slug",
+      "category": "12 Gauge Magnum",
+      "name": "AP Slug",
+      "effect": "3d6 HEP",
+      "description": "3d6 HEP",
+      "price": 3
+    },
+    {
+      "id": "ammo_10_gauge_shotshell",
+      "category": "10 Gauge",
+      "name": "Shotshell",
+      "effect": "5d6 / 4d6 / 3d6; otherwise as 12 gauge",
+      "description": "5d6 / 4d6 / 3d6; otherwise as 12 gauge",
+      "price": 15,
+      "compatibility": "12 rounds"
+    },
+    {
+      "id": "ammo_10_gauge_flare",
+      "category": "10 Gauge",
+      "name": "Flare",
+      "effect": "Illuminates 30m; 2d6+2 and 1d6/2 on hit",
+      "description": "Illuminates 30m; 2d6+2 and 1d6/2 on hit",
+      "price": 30,
+      "compatibility": "25 rounds"
+    },
+    {
+      "id": "ammo_10_gauge_flash",
+      "category": "10 Gauge",
+      "name": "Flash",
+      "effect": "Flash-bang grenade in a 25m x 3m pattern",
+      "description": "Flash-bang grenade in a 25m x 3m pattern",
+      "price": 35,
+      "compatibility": "25 rounds"
+    },
+    {
+      "id": "ammo_10_gauge_flechettes",
+      "category": "10 Gauge",
+      "name": "Flechettes",
+      "effect": "5d6 AP; armor and penetrating damage x1/4",
+      "description": "5d6 AP; armor and penetrating damage x1/4",
+      "price": 8
+    },
+    {
+      "id": "ammo_10_gauge_gas",
+      "category": "10 Gauge",
+      "name": "Gas",
+      "effect": "Tear, sleep or biotoxin gas; 2m radius",
+      "description": "Tear, sleep or biotoxin gas; 2m radius",
+      "price": 5,
+      "price_max": 25
+    },
+    {
+      "id": "ammo_10_gauge_non_lethal",
+      "category": "10 Gauge",
+      "name": "Non-Lethal",
+      "effect": "5d6 Stun; soft SP resists no more than half damage",
+      "description": "5d6 Stun; soft SP resists no more than half damage",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_10_gauge_slug",
+      "category": "10 Gauge",
+      "name": "Slug",
+      "effect": "5d6+3 AP; soft SP halves penetrating damage",
+      "description": "5d6+3 AP; soft SP halves penetrating damage",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_10_gauge_smoke",
+      "category": "10 Gauge",
+      "name": "Smoke",
+      "effect": "3m smoke cloud",
+      "description": "3m smoke cloud",
+      "price": 20,
+      "compatibility": "25 rounds"
+    },
+    {
+      "id": "ammo_10_gauge_stinger",
+      "category": "10 Gauge",
+      "name": "Stinger",
+      "effect": "5d6 Stun beyond 9m",
+      "description": "5d6 Stun beyond 9m",
+      "price": 20,
+      "compatibility": "25 rounds"
+    },
+    {
+      "id": "ammo_10_gauge_3_inch_magnum_shotshell",
+      "category": "10 Gauge 3-inch Magnum",
+      "name": "Shotshell",
+      "effect": "6d6 / 5d6 / 4d6",
+      "description": "6d6 / 5d6 / 4d6",
+      "price": 0,
+      "compatibility": "Requires +20% weapon modification; cannot use normal 10 gauge",
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_10_gauge_3_inch_magnum_stinger",
+      "category": "10 Gauge 3-inch Magnum",
+      "name": "Stinger",
+      "effect": "6d6 / 5d6 / 4d6 Stun beyond 9m",
+      "description": "6d6 / 5d6 / 4d6 Stun beyond 9m",
+      "price": 19,
+      "compatibility": "25 rounds"
+    },
+    {
+      "id": "ammo_10_gauge_3_inch_magnum_gas",
+      "category": "10 Gauge 3-inch Magnum",
+      "name": "Gas",
+      "effect": "3m gas cloud",
+      "description": "3m gas cloud",
+      "price": 0,
+      "compatibility": "Requires +20% weapon modification",
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_10_gauge_3_inch_magnum_flare",
+      "category": "10 Gauge 3-inch Magnum",
+      "name": "Flare",
+      "effect": "Illuminates 40m for 3 turns; 3d6 then 2d6",
+      "description": "Illuminates 40m for 3 turns; 3d6 then 2d6",
+      "price": 0,
+      "compatibility": "Requires +20% weapon modification",
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_10_gauge_3_inch_magnum_smoke",
+      "category": "10 Gauge 3-inch Magnum",
+      "name": "Smoke",
+      "effect": "4m smoke cloud for 5 turns",
+      "description": "4m smoke cloud for 5 turns",
+      "price": 0,
+      "compatibility": "Requires +20% weapon modification",
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_4_gauge_claw_000_buckshot",
+      "category": "4 Gauge CLAW",
+      "name": "#000 Buckshot",
+      "effect": "8d6",
+      "description": "8d6",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_4_gauge_claw_slug",
+      "category": "4 Gauge CLAW",
+      "name": "Slug",
+      "effect": "9d6+2 AP; soft SP halves penetrating damage",
+      "description": "9d6+2 AP; soft SP halves penetrating damage",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_4_gauge_claw_apfsds",
+      "category": "4 Gauge CLAW",
+      "name": "APFSDS",
+      "effect": "5d10 AP",
+      "description": "5d10 AP",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_4_gauge_claw_heat",
+      "category": "4 Gauge CLAW",
+      "name": "HEAT",
+      "effect": "7d10; SP x1/2",
+      "description": "7d10; SP x1/2",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_4_gauge_claw_slasher",
+      "category": "4 Gauge CLAW",
+      "name": "Slasher",
+      "effect": "2.5m pattern; 4d6; SP x1/3",
+      "description": "2.5m pattern; 4d6; SP x1/3",
+      "price": 75
+    },
+    {
+      "id": "ammo_4_gauge_claw_flechette_special_shells",
+      "category": "4 Gauge CLAW",
+      "name": "Flechette / Special Shells",
+      "effect": "Flechettes, mini-grenades, non-lethal batons, thermite, flash-bombs, HEP and gas shells available",
+      "description": "Flechettes, mini-grenades, non-lethal batons, thermite, flash-bombs, HEP and gas shells available",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_hand_grenades_he",
+      "category": "Hand Grenades",
+      "name": "HE",
+      "effect": "7d6 fragmentation to 5m; 3d6 from 6-10m",
+      "description": "7d6 fragmentation to 5m; 3d6 from 6-10m",
+      "price": 25
+    },
+    {
+      "id": "ammo_hand_grenades_anti_tank",
+      "category": "Hand Grenades",
+      "name": "Anti-Tank",
+      "effect": "5d10 HEAT; 3d6 fragmentation to 5m; half throwing range",
+      "description": "5d10 HEAT; 3d6 fragmentation to 5m; half throwing range",
+      "price": 30
+    },
+    {
+      "id": "ammo_hand_grenades_chemical",
+      "category": "Hand Grenades",
+      "name": "Chemical",
+      "effect": "Gas, smoke or paint; 10m radius",
+      "description": "Gas, smoke or paint; 10m radius",
+      "price": 20
+    },
+    {
+      "id": "ammo_hand_grenades_wp_incendiary",
+      "category": "Hand Grenades",
+      "name": "WP / Incendiary",
+      "effect": "4d6 for 3 turns; 5m radius; soft SP -2 per round",
+      "description": "4d6 for 3 turns; 5m radius; soft SP -2 per round",
+      "price": 30
+    },
+    {
+      "id": "ammo_hand_grenades_flash_bang",
+      "category": "Hand Grenades",
+      "name": "Flash-Bang",
+      "effect": "Stun -2 or Difficulty 4; REF 20 or blinded; 5m/15m",
+      "description": "Stun -2 or Difficulty 4; REF 20 or blinded; 5m/15m",
+      "price": 25
+    },
+    {
+      "id": "ammo_hand_grenades_concussion",
+      "category": "Hand Grenades",
+      "name": "Concussion",
+      "effect": "Stun -5; 5m/15m",
+      "description": "Stun -5; 5m/15m",
+      "price": 25
+    },
+    {
+      "id": "ammo_hand_grenades_flash",
+      "category": "Hand Grenades",
+      "name": "Flash",
+      "effect": "REF 20+ or blinded for 40 seconds; 10m",
+      "description": "REF 20+ or blinded for 40 seconds; 10m",
+      "price": 25
+    },
+    {
+      "id": "ammo_hand_grenades_sonic",
+      "category": "Hand Grenades",
+      "name": "Sonic",
+      "effect": "Stun -1; BOD 20+ or deaf for 40 seconds; 6m",
+      "description": "Stun -1; BOD 20+ or deaf for 40 seconds; 6m",
+      "price": 40
+    },
+    {
+      "id": "ammo_hand_grenades_motion_restraint",
+      "category": "Hand Grenades",
+      "name": "Motion Restraint",
+      "effect": "Dodge 25+; BOD 30+ to escape; 1m",
+      "description": "Dodge 25+; BOD 30+ to escape; 1m",
+      "price": 25
+    },
+    {
+      "id": "ammo_hand_grenades_emp",
+      "category": "Hand Grenades",
+      "name": "EMP",
+      "effect": "Disorientation 1d6x10 seconds; pulse effect; 4-10m",
+      "description": "Disorientation 1d6x10 seconds; pulse effect; 4-10m",
+      "price": 200,
+      "price_max": 400
+    },
+    {
+      "id": "ammo_hand_grenades_saucer",
+      "category": "Hand Grenades",
+      "name": "Saucer",
+      "effect": "2d6+3 fragmentation; 15m; +2 to throw",
+      "description": "2d6+3 fragmentation; 15m; +2 to throw",
+      "price": 65
+    },
+    {
+      "id": "ammo_hand_grenades_mini_grenade",
+      "category": "Hand Grenades",
+      "name": "Mini-Grenade",
+      "effect": "1d6+3; 3m; 1.5-inch body",
+      "description": "1d6+3; 3m; 1.5-inch body",
+      "price": 40
+    },
+    {
+      "id": "ammo_hand_grenades_scatter",
+      "category": "Hand Grenades",
+      "name": "Scatter",
+      "effect": "IR-defeating cloud for 5 turns; 5m",
+      "description": "IR-defeating cloud for 5 turns; 5m",
+      "price": 70
+    },
+    {
+      "id": "ammo_hand_grenades_spraypaint",
+      "category": "Hand Grenades",
+      "name": "Spraypaint",
+      "effect": "Blinds 1-2 minutes on center hit; 4m",
+      "description": "Blinds 1-2 minutes on center hit; 4m",
+      "price": 20
+    },
+    {
+      "id": "ammo_hand_grenades_stench",
+      "category": "Hand Grenades",
+      "name": "Stench",
+      "effect": "Very Difficult COOL/BOD roll; 5m x 5m",
+      "description": "Very Difficult COOL/BOD roll; 5m x 5m",
+      "price": 20
+    },
+    {
+      "id": "ammo_hand_grenades_ln2",
+      "category": "Hand Grenades",
+      "name": "LN2",
+      "effect": "2d6+2 (minimum 6); 1d6/2+1 area; 3m",
+      "description": "2d6+2 (minimum 6); 1d6/2+1 area; 3m",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_hand_grenades_smoke_pellets",
+      "category": "Hand Grenades",
+      "name": "Smoke Pellets",
+      "effect": "Requires a Stealth roll to escape the area",
+      "description": "Requires a Stealth roll to escape the area",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_hand_grenades_acid",
+      "category": "Hand Grenades",
+      "name": "Acid",
+      "effect": "Acid cloud; 1 point per location per turn",
+      "description": "Acid cloud; 1 point per location per turn",
+      "price": 50
+    },
+    {
+      "id": "ammo_hand_grenades_blind_gas",
+      "category": "Hand Grenades",
+      "name": "Blind Gas",
+      "effect": "BOD -2 (+3 difficulty) or blind for 1d10+2 turns",
+      "description": "BOD -2 (+3 difficulty) or blind for 1d10+2 turns",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_chemical",
+      "category": "Militech 25mm Grenades",
+      "name": "Chemical",
+      "effect": "Smoke or gas; 5m",
+      "description": "Smoke or gas; 5m",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_flechette",
+      "category": "Militech 25mm Grenades",
+      "name": "Flechette",
+      "effect": "2d6 x 1d6 AP; 2m x 25m pattern",
+      "description": "2d6 x 1d6 AP; 2m x 25m pattern",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_fragmentation",
+      "category": "Militech 25mm Grenades",
+      "name": "Fragmentation",
+      "effect": "2d6+1; penetration 1; 5m",
+      "description": "2d6+1; penetration 1; 5m",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_hep",
+      "category": "Militech 25mm Grenades",
+      "name": "HEP",
+      "effect": "5d6 HEP; penetration 3; armor -2 levels",
+      "description": "5d6 HEP; penetration 3; armor -2 levels",
+      "price": 40
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_stundart",
+      "category": "Militech 25mm Grenades",
+      "name": "Stundart",
+      "effect": "Stun -4 through soft SP10; 100m range",
+      "description": "Stun -4 through soft SP10; 100m range",
+      "price": 5
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_slasher",
+      "category": "Militech 25mm Grenades",
+      "name": "Slasher",
+      "effect": "4d6; SP x1/3; 2m; WA -2; 50m range",
+      "description": "4d6; SP x1/3; 2m; WA -2; 50m range",
+      "price": 75
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_frag",
+      "category": "Militech 25mm Grenades",
+      "name": "Frag",
+      "effect": "3d6; 3m",
+      "description": "3d6; 3m",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_flash",
+      "category": "Militech 25mm Grenades",
+      "name": "Flash",
+      "effect": "50% chance of -5 REF and Awareness for 3 turns; 5m",
+      "description": "50% chance of -5 REF and Awareness for 3 turns; 5m",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_incendiary",
+      "category": "Militech 25mm Grenades",
+      "name": "Incendiary",
+      "effect": "4d6 / 2d6 / 1d6; 1m",
+      "description": "4d6 / 2d6 / 1d6; 1m",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_concussion",
+      "category": "Militech 25mm Grenades",
+      "name": "Concussion",
+      "effect": "3d6 Stun; SP x1/3; 4m",
+      "description": "3d6 Stun; SP x1/3; 4m",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_ln2",
+      "category": "Militech 25mm Grenades",
+      "name": "LN2",
+      "effect": "2d6 (minimum 4) to two areas plus LN2 effects; 2m",
+      "description": "2d6 (minimum 4) to two areas plus LN2 effects; 2m",
+      "price": 30
+    },
+    {
+      "id": "ammo_tsunami_high_pressure_25mm_grenades_frag",
+      "category": "Tsunami High-Pressure 25mm Grenades",
+      "name": "Frag",
+      "effect": "3d6+1; penetration 1; 5m; 1500m range",
+      "description": "3d6+1; penetration 1; 5m; 1500m range",
+      "price": 15
+    },
+    {
+      "id": "ammo_tsunami_high_pressure_25mm_grenades_he",
+      "category": "Tsunami High-Pressure 25mm Grenades",
+      "name": "HE",
+      "effect": "5d6; penetration 2; 3m; 1500m range",
+      "description": "5d6; penetration 2; 3m; 1500m range",
+      "price": 15
+    },
+    {
+      "id": "ammo_tsunami_high_pressure_25mm_grenades_hep",
+      "category": "Tsunami High-Pressure 25mm Grenades",
+      "name": "HEP",
+      "effect": "5d6; penetration 3; armor damaged two levels; 1500m range",
+      "description": "5d6; penetration 3; armor damaged two levels; 1500m range",
+      "price": 25
+    },
+    {
+      "id": "ammo_tsunami_high_pressure_25mm_grenades_incendiary",
+      "category": "Tsunami High-Pressure 25mm Grenades",
+      "name": "Incendiary",
+      "effect": "4d6 / 3d6 / 2d6; penetration 2; 2m; 1500m range",
+      "description": "4d6 / 3d6 / 2d6; penetration 2; 2m; 1500m range",
+      "price": 15
+    },
+    {
+      "id": "ammo_militech_25mm_pistol_grenades_concussion",
+      "category": "Militech 25mm Pistol Grenades",
+      "name": "Concussion",
+      "effect": "3d6 Stun; SP x1/3; 4m",
+      "description": "3d6 Stun; SP x1/3; 4m",
+      "price": 15
+    },
+    {
+      "id": "ammo_militech_25mm_pistol_grenades_defensive_frag",
+      "category": "Militech 25mm Pistol Grenades",
+      "name": "Defensive Frag",
+      "effect": "2d6+1; 3m",
+      "description": "2d6+1; 3m",
+      "price": 20
+    },
+    {
+      "id": "ammo_militech_25mm_pistol_grenades_flashbomb",
+      "category": "Militech 25mm Pistol Grenades",
+      "name": "FlashBomb",
+      "effect": "Stun save; -5 REF and Awareness for 5 turns; 5m",
+      "description": "Stun save; -5 REF and Awareness for 5 turns; 5m",
+      "price": 15
+    },
+    {
+      "id": "ammo_militech_25mm_pistol_grenades_hep",
+      "category": "Militech 25mm Pistol Grenades",
+      "name": "HEP",
+      "effect": "5d6 HEP",
+      "description": "5d6 HEP",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_pistol_grenades_incendiary",
+      "category": "Militech 25mm Pistol Grenades",
+      "name": "Incendiary",
+      "effect": "4d6 / 3d6 / 2d6; 1m",
+      "description": "4d6 / 3d6 / 2d6; 1m",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_pistol_grenades_offensive_frag",
+      "category": "Militech 25mm Pistol Grenades",
+      "name": "Offensive Frag",
+      "effect": "5d6; 3m",
+      "description": "5d6; 3m",
+      "price": 25
+    },
+    {
+      "id": "ammo_militech_25mm_pistol_grenades_chemical",
+      "category": "Militech 25mm Pistol Grenades",
+      "name": "Chemical",
+      "effect": "Smoke or tear gas; 3m",
+      "description": "Smoke or tear gas; 3m",
+      "price": 20
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_he",
+      "category": "40mm Launched Grenades",
+      "name": "HE",
+      "effect": "7d6; penetration 2; 5m; arms after 10m",
+      "description": "7d6; penetration 2; 5m; arms after 10m",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_hedp",
+      "category": "40mm Launched Grenades",
+      "name": "HEDP",
+      "effect": "4d10 HEAT; penetration 4; 4d6 over 1m",
+      "description": "4d10 HEAT; penetration 4; 4d6 over 1m",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_illumination",
+      "category": "40mm Launched Grenades",
+      "name": "Illumination",
+      "effect": "20m plus 20m low-light, or 1d6x6; parachute option 5eb",
+      "description": "20m plus 20m low-light, or 1d6x6; parachute option 5eb",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_chemical",
+      "category": "40mm Launched Grenades",
+      "name": "Chemical",
+      "effect": "Carries gas or smoke; 10m; parachute option 5eb",
+      "description": "Carries gas or smoke; 10m; parachute option 5eb",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_bean_bag",
+      "category": "40mm Launched Grenades",
+      "name": "Bean Bag",
+      "effect": "2d6; Stun -5; +1 per 15 SP; 50m; REF 20+",
+      "description": "2d6; Stun -5; +1 per 15 SP; 50m; REF 20+",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_wp",
+      "category": "40mm Launched Grenades",
+      "name": "WP",
+      "effect": "4d6 for 3 turns; penetration 2; 10m",
+      "description": "4d6 for 3 turns; penetration 2; 10m",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_flechette",
+      "category": "40mm Launched Grenades",
+      "name": "Flechette",
+      "effect": "1d6/2 x 2d6 AP; penetration 1; 3m x 25m",
+      "description": "1d6/2 x 2d6 AP; penetration 1; 3m x 25m",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_hep",
+      "category": "40mm Launched Grenades",
+      "name": "HEP",
+      "effect": "7d6 HEP; SP -5 levels; WA -1",
+      "description": "7d6 HEP; SP -5 levels; WA -1",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_flash_bang",
+      "category": "40mm Launched Grenades",
+      "name": "Flash-Bang",
+      "effect": "Stun -2; stun and deaf 4 turns; 5m/15m; REF 20+ or blind 2 turns",
+      "description": "Stun -2; stun and deaf 4 turns; 5m/15m; REF 20+ or blind 2 turns",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_grapnel",
+      "category": "40mm Launched Grenades",
+      "name": "Grapnel",
+      "effect": "Half range; WA -2; 1d6 damage; 50% catch",
+      "description": "Half range; WA -2; 1d6 damage; 50% catch",
+      "price": 30
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_net",
+      "category": "40mm Launched Grenades",
+      "name": "Net",
+      "effect": "25m; WA -5; 1d6; 50% wrap; REF 20+ or BOD 25+ to escape",
+      "description": "25m; WA -5; 1d6; 50% wrap; REF 20+ or BOD 25+ to escape",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_splatshell",
+      "category": "40mm Launched Grenades",
+      "name": "Splatshell",
+      "effect": "1d6+1 hits; pattern from 5m x 2m to 15m x 6m",
+      "description": "1d6+1 hits; pattern from 5m x 2m to 15m x 6m",
+      "price": 10
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_slasher",
+      "category": "40mm Launched Grenades",
+      "name": "Slasher",
+      "effect": "4d6; SP x1/3; 3m; WA -2; 50m",
+      "description": "4d6; SP x1/3; 3m; WA -2; 50m",
+      "price": 75
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_spraypaint",
+      "category": "40mm Launched Grenades",
+      "name": "Spraypaint",
+      "effect": "Blind for 1d6/3 turns; 4m",
+      "description": "Blind for 1d6/3 turns; 4m",
+      "price": 20
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_emp",
+      "category": "40mm Launched Grenades",
+      "name": "EMP",
+      "effect": "Disorient 10 seconds; cyberware disabled 4/10 minutes; 5m",
+      "description": "Disorient 10 seconds; cyberware disabled 4/10 minutes; 5m",
+      "price": 400
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_ln2",
+      "category": "40mm Launched Grenades",
+      "name": "LN2",
+      "effect": "2d6+2 (minimum 6); 1d6/2+1 area; 3m",
+      "description": "2d6+2 (minimum 6); 1d6/2+1 area; 3m",
+      "price": 50
+    },
+    {
+      "id": "ammo_rifle_grenades_classic_he",
+      "category": "Rifle Grenades",
+      "name": "Classic HE",
+      "effect": "8d6; 5m; WA -3; 100m",
+      "description": "8d6; 5m; WA -3; 100m",
+      "price": 50
+    },
+    {
+      "id": "ammo_rifle_grenades_classic_heat",
+      "category": "Rifle Grenades",
+      "name": "Classic HEAT",
+      "effect": "8d10 HEAT; 4d6 over 1m; WA -3; 100m",
+      "description": "8d10 HEAT; 4d6 over 1m; WA -3; 100m",
+      "price": 50
+    },
+    {
+      "id": "ammo_rifle_grenades_classic_chemical",
+      "category": "Rifle Grenades",
+      "name": "Classic Chemical",
+      "effect": "Gas or smoke; 10m; WA -3; 100m",
+      "description": "Gas or smoke; 10m; WA -3; 100m",
+      "price": 50
+    },
+    {
+      "id": "ammo_rifle_grenades_classic_emp",
+      "category": "Rifle Grenades",
+      "name": "Classic EMP",
+      "effect": "Disorient 1d6x10 seconds; cyberware 4-10 minutes; 5m",
+      "description": "Disorient 1d6x10 seconds; cyberware 4-10 minutes; 5m",
+      "price": 400
+    },
+    {
+      "id": "ammo_rifle_grenades_dcr_he",
+      "category": "Rifle Grenades",
+      "name": "DCR HE",
+      "effect": "7d6 to 5m; 3d6 from 6-10m; WA -1; 150m",
+      "description": "7d6 to 5m; 3d6 from 6-10m; WA -1; 150m",
+      "price": 50
+    },
+    {
+      "id": "ammo_rifle_grenades_dcr_smoke",
+      "category": "Rifle Grenades",
+      "name": "DCR Smoke",
+      "effect": "Smoke over 10m; WA -1; 150m",
+      "description": "Smoke over 10m; WA -1; 150m",
+      "price": 50
+    },
+    {
+      "id": "ammo_rifle_grenades_dcr_heat",
+      "category": "Rifle Grenades",
+      "name": "DCR HEAT",
+      "effect": "5d10 HEAT; 3d6 to 5m; WA +0; 150m",
+      "description": "5d10 HEAT; 3d6 to 5m; WA +0; 150m",
+      "price": 50
+    },
+    {
+      "id": "ammo_special_projectiles_det_web",
+      "category": "Special Projectiles",
+      "name": "Det Web",
+      "effect": "40 AP; WA +0; 25m",
+      "description": "40 AP; WA +0; 25m",
+      "price": 450,
+      "compatibility": "Web launchers"
+    },
+    {
+      "id": "ammo_special_projectiles_taser_net",
+      "category": "Special Projectiles",
+      "name": "Taser Net",
+      "effect": "As taser; WA +0; 25m",
+      "description": "As taser; WA +0; 25m",
+      "price": 100,
+      "compatibility": "Web launchers"
+    },
+    {
+      "id": "ammo_special_projectiles_web",
+      "category": "Special Projectiles",
+      "name": "Web",
+      "effect": "Entangle; Nearly Impossible BOD+REF; 30m",
+      "description": "Entangle; Nearly Impossible BOD+REF; 30m",
+      "price": 0,
+      "compatibility": "Web launchers",
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_special_projectiles_sharpwire",
+      "category": "Special Projectiles",
+      "name": "Sharpwire",
+      "effect": "WA +2; BOD/2 damage; SP x1/2; 10m",
+      "description": "WA +2; BOD/2 damage; SP x1/2; 10m",
+      "price": 450,
+      "compatibility": "Net launchers"
+    },
+    {
+      "id": "ammo_special_projectiles_micromissile_he",
+      "category": "Special Projectiles",
+      "name": "Micromissile HE",
+      "effect": "4d6; 2m",
+      "description": "4d6; 2m",
+      "price": 50,
+      "compatibility": "Micromissiles"
+    },
+    {
+      "id": "ammo_special_projectiles_micromissile_anti_armor",
+      "category": "Special Projectiles",
+      "name": "Micromissile Anti-Armor",
+      "effect": "4d6 HEAT; SP x1/2; 1m",
+      "description": "4d6 HEAT; SP x1/2; 1m",
+      "price": 75,
+      "compatibility": "Micromissiles"
+    },
+    {
+      "id": "ammo_special_projectiles_micromissile_hep",
+      "category": "Special Projectiles",
+      "name": "Micromissile HEP",
+      "effect": "4d6+4; no burst",
+      "description": "4d6+4; no burst",
+      "price": 200,
+      "compatibility": "Micromissiles"
+    },
+    {
+      "id": "ammo_special_projectiles_13mm_hep_shells_12",
+      "category": "Special Projectiles",
+      "name": "13mm HEP Shells (12)",
+      "effect": "4d6+2",
+      "description": "4d6+2",
+      "price": 45,
+      "compatibility": "13mm"
+    },
+    {
+      "id": "ammo_special_projectiles_13mm_api_shells_12",
+      "category": "Special Projectiles",
+      "name": "13mm API Shells (12)",
+      "effect": "4d6+3; SP x1/2; then 1d6 and 1d6/2 at SP0",
+      "description": "4d6+3; SP x1/2; then 1d6 and 1d6/2 at SP0",
+      "price": 45,
+      "compatibility": "13mm"
+    },
+    {
+      "id": "ammo_special_projectiles_13mm_acid_shells_12",
+      "category": "Special Projectiles",
+      "name": "13mm Acid Shells (12)",
+      "effect": "1d6 for 4 turns",
+      "description": "1d6 for 4 turns",
+      "price": 20,
+      "compatibility": "13mm"
+    },
+    {
+      "id": "ammo_special_projectiles_13mm_ln2_shell",
+      "category": "Special Projectiles",
+      "name": "13mm LN2 Shell",
+      "effect": "1d6+2 to one location plus LN2 effects",
+      "description": "1d6+2 to one location plus LN2 effects",
+      "price": 0,
+      "compatibility": "13mm",
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_special_projectiles_15mm_kurtz_practice",
+      "category": "Special Projectiles",
+      "name": "15mm Kurtz Practice",
+      "effect": "4d10+3",
+      "description": "4d10+3",
+      "price": 8,
+      "compatibility": "15mm Kurtz"
+    },
+    {
+      "id": "ammo_special_projectiles_15mm_kurtz_he",
+      "category": "Special Projectiles",
+      "name": "15mm Kurtz HE",
+      "effect": "3d10; 1m",
+      "description": "3d10; 1m",
+      "price": 20,
+      "compatibility": "15mm Kurtz"
+    },
+    {
+      "id": "ammo_special_projectiles_25mm_cockerill_ap",
+      "category": "Special Projectiles",
+      "name": "25mm Cockerill AP",
+      "effect": "5d10+10 AP; penetration 5",
+      "description": "5d10+10 AP; penetration 5",
+      "price": 0,
+      "compatibility": "25mm Cockerill cannon",
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_special_projectiles_25mm_cockerill_hep",
+      "category": "Special Projectiles",
+      "name": "25mm Cockerill HEP",
+      "effect": "5d10+10 HEP; penetration 6",
+      "description": "5d10+10 HEP; penetration 6",
+      "price": 0,
+      "compatibility": "25mm Cockerill cannon",
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_special_projectiles_25mm_cockerill_flechette",
+      "category": "Special Projectiles",
+      "name": "25mm Cockerill Flechette",
+      "effect": "1d6+3 x 1d6+1 AP; 1m/2m/4m x 100m",
+      "description": "1d6+3 x 1d6+1 AP; 1m/2m/4m x 100m",
+      "price": 0,
+      "compatibility": "25mm Cockerill cannon",
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_special_projectiles_30mm_rockets_6",
+      "category": "Special Projectiles",
+      "name": "30mm Rockets (6)",
+      "effect": "HE 5d6; penetration 1; 3m",
+      "description": "HE 5d6; penetration 1; 3m",
+      "price": 200,
+      "compatibility": "30mm rocket systems"
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_rpg_a_heat",
+      "category": "Rocket and Missile Reloads",
+      "name": "RPG-A HEAT",
+      "effect": "6d10 AP",
+      "description": "6d10 AP",
+      "price": 250
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_rpg_a_he",
+      "category": "Rocket and Missile Reloads",
+      "name": "RPG-A HE",
+      "effect": "6d10; penetration 3; 6m",
+      "description": "6d10; penetration 3; 6m",
+      "price": 250
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_rpg_b_heat",
+      "category": "Rocket and Missile Reloads",
+      "name": "RPG-B HEAT",
+      "effect": "9d10 AP",
+      "description": "9d10 AP",
+      "price": 400
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_2_inch_rocket",
+      "category": "Rocket and Missile Reloads",
+      "name": "2-inch Rocket",
+      "effect": "6d10; one space per 12",
+      "description": "6d10; one space per 12",
+      "price": 100
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_2_75_inch_rocket",
+      "category": "Rocket and Missile Reloads",
+      "name": "2.75-inch Rocket",
+      "effect": "8d10; one space per 10",
+      "description": "8d10; one space per 10",
+      "price": 200
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_3_5_inch_rocket",
+      "category": "Rocket and Missile Reloads",
+      "name": "3.5-inch Rocket",
+      "effect": "9d10; one space per 6",
+      "description": "9d10; one space per 6",
+      "price": 400
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_5_inch_rocket",
+      "category": "Rocket and Missile Reloads",
+      "name": "5-inch Rocket",
+      "effect": "13d10",
+      "description": "13d10",
+      "price": 1000
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_latgm",
+      "category": "Rocket and Missile Reloads",
+      "name": "LATGM",
+      "effect": "12d10 AP; one-fifth space",
+      "description": "12d10 AP; one-fifth space",
+      "price": 1500
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_hatgm",
+      "category": "Rocket and Missile Reloads",
+      "name": "HATGM",
+      "effect": "18d10 AP; one-third space",
+      "description": "18d10 AP; one-third space",
+      "price": 3500
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_hellfire",
+      "category": "Rocket and Missile Reloads",
+      "name": "Hellfire",
+      "effect": "20d10 AP; one space",
+      "description": "20d10 AP; one space",
+      "price": 10000
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_60mm_mortar_shell",
+      "category": "Rocket and Missile Reloads",
+      "name": "60mm Mortar Shell",
+      "effect": "8d10",
+      "description": "8d10",
+      "price": 50
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_80mm_mortar_shell",
+      "category": "Rocket and Missile Reloads",
+      "name": "80mm Mortar Shell",
+      "effect": "9d10; one space per 20",
+      "description": "9d10; one space per 20",
+      "price": 150
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_120mm_mortar_shell",
+      "category": "Rocket and Missile Reloads",
+      "name": "120mm Mortar Shell",
+      "effect": "13d10; one space per 10",
+      "description": "13d10; one space per 10",
+      "price": 250
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_105mm_howitzer_shell",
+      "category": "Rocket and Missile Reloads",
+      "name": "105mm Howitzer Shell",
+      "effect": "11d10; one space per 5",
+      "description": "11d10; one space per 5",
+      "price": 500
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_150mm_howitzer_shell",
+      "category": "Rocket and Missile Reloads",
+      "name": "150mm Howitzer Shell",
+      "effect": "13d10; one space",
+      "description": "13d10; one space",
+      "price": 1000
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_200mm_howitzer_shell",
+      "category": "Rocket and Missile Reloads",
+      "name": "200mm Howitzer Shell",
+      "effect": "28d10; one space",
+      "description": "28d10; one space",
+      "price": 2000
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_230mm_rocket",
+      "category": "Rocket and Missile Reloads",
+      "name": "230mm Rocket",
+      "effect": "4d10 AP",
+      "description": "4d10 AP",
+      "price": 2500
+    },
+    {
+      "id": "ammo_chemical_loads_smoke",
+      "category": "Chemical Loads",
+      "name": "Smoke",
+      "effect": "Shell cost x0.3; grenade 15eb+",
+      "description": "Shell cost x0.3; grenade 15eb+",
+      "price": 15
+    },
+    {
+      "id": "ammo_chemical_loads_hot_smoke",
+      "category": "Chemical Loads",
+      "name": "Hot Smoke",
+      "effect": "Shell cost x1; grenade 35eb+",
+      "description": "Shell cost x1; grenade 35eb+",
+      "price": 35
+    },
+    {
+      "id": "ammo_chemical_loads_tear_gas",
+      "category": "Chemical Loads",
+      "name": "Tear Gas",
+      "effect": "Shell cost x2; grenade 15-20eb",
+      "description": "Shell cost x2; grenade 15-20eb",
+      "price": 15,
+      "price_max": 20
+    },
+    {
+      "id": "ammo_chemical_loads_nausea_gas",
+      "category": "Chemical Loads",
+      "name": "Nausea Gas",
+      "effect": "Shell cost x2; grenade 25-50eb",
+      "description": "Shell cost x2; grenade 25-50eb",
+      "price": 25,
+      "price_max": 50
+    },
+    {
+      "id": "ammo_chemical_loads_knock_out_gas",
+      "category": "Chemical Loads",
+      "name": "Knock-out Gas",
+      "effect": "Shell cost x3; grenade 50-75eb",
+      "description": "Shell cost x3; grenade 50-75eb",
+      "price": 50,
+      "price_max": 75
+    },
+    {
+      "id": "ammo_chemical_loads_mace",
+      "category": "Chemical Loads",
+      "name": "Mace",
+      "effect": "Shell cost x3; grenade 45-80eb",
+      "description": "Shell cost x3; grenade 45-80eb",
+      "price": 45,
+      "price_max": 80
+    },
+    {
+      "id": "ammo_chemical_loads_nerve_gas",
+      "category": "Chemical Loads",
+      "name": "Nerve Gas",
+      "effect": "Shell cost x20; grenade price not listed",
+      "description": "Shell cost x20; grenade price not listed",
+      "price": 20,
+      "price_label": "20x"
+    },
+    {
+      "id": "ammo_chemical_loads_white_phosphorous",
+      "category": "Chemical Loads",
+      "name": "White Phosphorous",
+      "effect": "Shell cost x4; grenade price not listed",
+      "description": "Shell cost x4; grenade price not listed",
+      "price": 4,
+      "price_label": "4x"
+    },
+    {
+      "id": "ammo_arrowheads_target_arrow",
+      "category": "Arrowheads",
+      "name": "Target Arrow",
+      "effect": "SP x1/2; normal damage",
+      "description": "SP x1/2; normal damage",
+      "price": 24,
+      "compatibility": "12 arrows"
+    },
+    {
+      "id": "ammo_arrowheads_broadhead_arrow",
+      "category": "Arrowheads",
+      "name": "Broadhead Arrow",
+      "effect": "Soft SP x1/2; penetrating damage x2",
+      "description": "Soft SP x1/2; penetrating damage x2",
+      "price": 40,
+      "compatibility": "12 arrows"
+    },
+    {
+      "id": "ammo_arrowheads_stun_arrow",
+      "category": "Arrowheads",
+      "name": "Stun Arrow",
+      "effect": "Damage is Stun",
+      "description": "Damage is Stun",
+      "price": 20,
+      "compatibility": "12 arrows"
+    },
+    {
+      "id": "ammo_arrowheads_spinner_arrow",
+      "category": "Arrowheads",
+      "name": "Spinner Arrow",
+      "effect": "Soft SP x1/2; penetrating damage x3",
+      "description": "Soft SP x1/2; penetrating damage x3",
+      "price": 80,
+      "compatibility": "12 arrows"
+    },
+    {
+      "id": "ammo_arrowheads_warhead_arrow",
+      "category": "Arrowheads",
+      "name": "Warhead Arrow",
+      "effect": "25mm pistol grenade; WA -2",
+      "description": "25mm pistol grenade; WA -2",
+      "price": 0,
+      "compatibility": "Price and effect vary",
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_arrowheads_target_quarrel",
+      "category": "Arrowheads",
+      "name": "Target Quarrel",
+      "effect": "SP x1/2; normal damage",
+      "description": "SP x1/2; normal damage",
+      "price": 30,
+      "compatibility": "12 quarrels"
+    },
+    {
+      "id": "ammo_arrowheads_broadhead_quarrel",
+      "category": "Arrowheads",
+      "name": "Broadhead Quarrel",
+      "effect": "Soft SP x1/2; penetrating damage x2",
+      "description": "Soft SP x1/2; penetrating damage x2",
+      "price": 50,
+      "compatibility": "12 quarrels"
+    },
+    {
+      "id": "ammo_arrowheads_stun_quarrel",
+      "category": "Arrowheads",
+      "name": "Stun Quarrel",
+      "effect": "Damage is Stun",
+      "description": "Damage is Stun",
+      "price": 25,
+      "compatibility": "12 quarrels"
+    },
+    {
+      "id": "ammo_arrowheads_spinner_quarrel",
+      "category": "Arrowheads",
+      "name": "Spinner Quarrel",
+      "effect": "Soft SP x1/2; penetrating damage x3",
+      "description": "Soft SP x1/2; penetrating damage x3",
+      "price": 100,
+      "compatibility": "12 quarrels"
+    },
+    {
+      "id": "ammo_arrowheads_warhead_quarrel",
+      "category": "Arrowheads",
+      "name": "Warhead Quarrel",
+      "effect": "25mm pistol grenade; WA -2",
+      "description": "25mm pistol grenade; WA -2",
+      "price": 0,
+      "compatibility": "Price and effect vary",
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_arrowheads_silver_quarrel",
+      "category": "Arrowheads",
+      "name": "Silver Quarrel",
+      "effect": "SP x1/2",
+      "description": "SP x1/2",
+      "price": 3,
+      "price_label": "3x",
+      "compatibility": "Crossbow quarrels"
+    },
+    {
+      "id": "ammo_airgun_and_needlegun_loads_drugged_splatball",
+      "category": "Airgun and Needlegun Loads",
+      "name": "Drugged Splatball",
+      "effect": "Effect determined by drug",
+      "description": "Effect determined by drug",
+      "price": 5,
+      "price_label": "5x",
+      "compatibility": "Airguns"
+    },
+    {
+      "id": "ammo_airgun_and_needlegun_loads_acid_splatball",
+      "category": "Airgun and Needlegun Loads",
+      "name": "Acid Splatball",
+      "effect": "1d6 for 3 turns",
+      "description": "1d6 for 3 turns",
+      "price": 5,
+      "price_label": "5x",
+      "compatibility": "Airguns"
+    },
+    {
+      "id": "ammo_airgun_and_needlegun_loads_normal_needlegun_load_100",
+      "category": "Airgun and Needlegun Loads",
+      "name": "Normal Needlegun Load (100)",
+      "effect": "Soft SP x1/2",
+      "description": "Soft SP x1/2",
+      "price": 50,
+      "compatibility": "Needleguns"
+    },
+    {
+      "id": "ammo_airgun_and_needlegun_loads_drugged_needlegun_load",
+      "category": "Airgun and Needlegun Loads",
+      "name": "Drugged Needlegun Load",
+      "effect": "Soft SP x1/2 plus drug effect",
+      "description": "Soft SP x1/2 plus drug effect",
+      "price": 5,
+      "price_label": "5x",
+      "compatibility": "Needleguns"
+    },
+    {
+      "id": "ammo_airgun_and_needlegun_loads_anti_armor_needlegun_load",
+      "category": "Airgun and Needlegun Loads",
+      "name": "Anti-Armor Needlegun Load",
+      "effect": "Soft SP x1/4; hard SP x1/2",
+      "description": "Soft SP x1/4; hard SP x1/2",
+      "price": 4,
+      "price_label": "4x",
+      "compatibility": "Needleguns"
+    },
+    {
+      "id": "ammo_airgun_and_needlegun_loads_he_impact_needlegun_load",
+      "category": "Airgun and Needlegun Loads",
+      "name": "HE Impact Needlegun Load",
+      "effect": "4d6",
+      "description": "4d6",
+      "price": 5,
+      "price_label": "5x",
+      "compatibility": "Needleguns"
+    },
+    {
+      "id": "ammo_airgun_and_needlegun_loads_he_timer_liquid_needlegun_load",
+      "category": "Airgun and Needlegun Loads",
+      "name": "HE Timer/Liquid Needlegun Load",
+      "effect": "Soft SP x1/2; +4d6",
+      "description": "Soft SP x1/2; +4d6",
+      "price": 5,
+      "price_label": "5x",
+      "compatibility": "Needleguns"
+    },
+    {
+      "id": "ammo_firearm_accessories_holster",
+      "category": "Firearm Accessories",
+      "name": "Holster",
+      "effect": "Shoulder, thigh or leg holster",
+      "description": "Shoulder, thigh or leg holster",
+      "price": 20
+    },
+    {
+      "id": "ammo_firearm_accessories_shoulder_sling",
+      "category": "Firearm Accessories",
+      "name": "Shoulder Sling",
+      "effect": "For rifles, shotguns and SMGs",
+      "description": "For rifles, shotguns and SMGs",
+      "price": 5
+    },
+    {
+      "id": "ammo_firearm_accessories_silencer_suppressor",
+      "category": "Firearm Accessories",
+      "name": "Silencer / Suppressor",
+      "effect": "WA -1; concealability +1; Awareness roll to hear",
+      "description": "WA -1; concealability +1; Awareness roll to hear",
+      "price": 100
+    },
+    {
+      "id": "ammo_firearm_accessories_laser_sight",
+      "category": "Firearm Accessories",
+      "name": "Laser Sight",
+      "effect": "WA +1",
+      "description": "WA +1",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_firearm_accessories_commercial_under_barrel_grenade_launcher",
+      "category": "Firearm Accessories",
+      "name": "Commercial Under-Barrel Grenade Launcher",
+      "effect": "HVY +0 L R; 30-40mm; 1 shot; ROF 1; ST; 225m",
+      "description": "HVY +0 L R; 30-40mm; 1 shot; ROF 1; ST; 225m",
+      "price": 150
+    },
+    {
+      "id": "ammo_firearm_accessories_cyberleg_holster",
+      "category": "Firearm Accessories",
+      "name": "Cyberleg Holster",
+      "effect": "One light pistol through medium SMG and one clip",
+      "description": "One light pistol through medium SMG and one clip",
+      "price": 100
+    },
+    {
+      "id": "ammo_firearm_accessories_cybernetic_pop_up_gun",
+      "category": "Firearm Accessories",
+      "name": "Cybernetic Pop-up Gun",
+      "effect": "Holds light pistol through medium SMG",
+      "description": "Holds light pistol through medium SMG",
+      "price": 1,
+      "price_max": 800
+    },
+    {
+      "id": "ammo_firearm_accessories_weapon_mount_link",
+      "category": "Firearm Accessories",
+      "name": "Weapon Mount & Link",
+      "effect": "Cyberlimb hardpoint for a weapon",
+      "description": "Cyberlimb hardpoint for a weapon",
+      "price": 100
+    },
+    {
+      "id": "ammo_firearm_accessories_smartgun_link",
+      "category": "Firearm Accessories",
+      "name": "Smartgun Link",
+      "effect": "WA +2 with smartgun",
+      "description": "WA +2 with smartgun",
+      "price": 100
+    },
+    {
+      "id": "ammo_firearm_accessories_cyberoptic_targeting_scope",
+      "category": "Firearm Accessories",
+      "name": "Cyberoptic Targeting Scope",
+      "effect": "WA +1 to smartgun attacks only",
+      "description": "WA +1 to smartgun attacks only",
+      "price": 400
+    },
+    {
+      "id": "ammo_firearm_accessories_smart_vision_goggles",
+      "category": "Firearm Accessories",
+      "name": "Smart / Vision Goggles",
+      "effect": "Four option spaces; options cost 10% less",
+      "description": "Four option spaces; options cost 10% less",
+      "price": 200
+    },
+    {
+      "id": "ammo_firearm_accessories_smartlink_scope",
+      "category": "Firearm Accessories",
+      "name": "Smartlink Scope",
+      "effect": "WA +1; total +3 with smartgun",
+      "description": "WA +1; total +3 with smartgun",
+      "price": 360
+    },
+    {
+      "id": "ammo_firearm_accessories_magnification",
+      "category": "Firearm Accessories",
+      "name": "Magnification",
+      "effect": "Up to x25 magnification",
+      "description": "Up to x25 magnification",
+      "price": 200
+    },
+    {
+      "id": "ammo_firearm_accessories_image_intensifiers",
+      "category": "Firearm Accessories",
+      "name": "Image Intensifiers",
+      "effect": "Awareness +2",
+      "description": "Awareness +2",
+      "price": 250
+    },
+    {
+      "id": "ammo_firearm_accessories_thermograph",
+      "category": "Firearm Accessories",
+      "name": "Thermograph",
+      "effect": "As cyberoptic thermograph",
+      "description": "As cyberoptic thermograph",
+      "price": 200
+    },
+    {
+      "id": "ammo_firearm_accessories_scopesight",
+      "category": "Firearm Accessories",
+      "name": "Scopesight",
+      "effect": "Aimed attack: +2 Long/Extreme, +1 Medium",
+      "description": "Aimed attack: +2 Long/Extreme, +1 Medium",
+      "price": 200
+    },
+    {
+      "id": "ammo_firearm_accessories_low_lite_scope",
+      "category": "Firearm Accessories",
+      "name": "Low Lite Scope",
+      "effect": "Aimed attack: +2 Long/Extreme, +1 Medium",
+      "description": "Aimed attack: +2 Long/Extreme, +1 Medium",
+      "price": 300
+    },
+    {
+      "id": "ammo_firearm_accessories_computer_sights",
+      "category": "Firearm Accessories",
+      "name": "Computer Sights",
+      "effect": "Aimed attack: +3 Long/Extreme, +2 Medium; Low Light",
+      "description": "Aimed attack: +3 Long/Extreme, +2 Medium; Low Light",
+      "price": 500
+    },
+    {
+      "id": "ammo_firearm_accessories_computer_thermo_sight",
+      "category": "Firearm Accessories",
+      "name": "Computer + Thermo Sight",
+      "effect": "Aimed attack: +3 Long/Extreme, +2 Medium; Low Light and Thermograph",
+      "description": "Aimed attack: +3 Long/Extreme, +2 Medium; Low Light and Thermograph",
+      "price": 700
+    },
+    {
+      "id": "ammo_firearm_accessories_bipod",
+      "category": "Firearm Accessories",
+      "name": "Bipod",
+      "effect": "WA +2 while braced and stationary",
+      "description": "WA +2 while braced and stationary",
+      "price": 10
+    },
+    {
+      "id": "ammo_firearm_accessories_bayonet",
+      "category": "Firearm Accessories",
+      "name": "Bayonet",
+      "effect": "3d6 AP while fixed",
+      "description": "3d6 AP while fixed",
+      "price": 15
+    },
+    {
+      "id": "ammo_firearm_accessories_gyro_mount",
+      "category": "Firearm Accessories",
+      "name": "Gyro Mount",
+      "effect": "Negates hip-fire and movement penalties",
+      "description": "Negates hip-fire and movement penalties",
+      "price": 250
+    },
+    {
+      "id": "ammo_firearm_accessories_portable_laser_rangefinder",
+      "category": "Firearm Accessories",
+      "name": "Portable Laser Rangefinder",
+      "effect": "Determines exact range",
+      "description": "Determines exact range",
+      "price": 50
+    },
+    {
+      "id": "ammo_firearm_accessories_power_exo_mount",
+      "category": "Firearm Accessories",
+      "name": "Power Exo-Mount",
+      "effect": "For heavy weapons; WA -1, MA -1, REF -2",
+      "description": "For heavy weapons; WA -1, MA -1, REF -2",
+      "price": 5000
+    },
+    {
+      "id": "ammo_firearm_accessories_m_205_grenade_launcher",
+      "category": "Firearm Accessories",
+      "name": "M-205 Grenade Launcher",
+      "effect": "HVY +1 L P; 40mm; 1 shot; ROF 1; VR; 200m",
+      "description": "HVY +1 L P; 40mm; 1 shot; ROF 1; VR; 200m",
+      "price": 250
+    },
+    {
+      "id": "ammo_firearm_accessories_classic_rifle_grenade_adapter",
+      "category": "Firearm Accessories",
+      "name": "Classic Rifle Grenade Adapter",
+      "effect": "HVY -3 N P; 1 shot; ROF 0.5; VR; 100m",
+      "description": "HVY -3 N P; 1 shot; ROF 0.5; VR; 100m",
+      "price": 50
+    },
+    {
+      "id": "ammo_firearm_accessories_cot_sight",
+      "category": "Firearm Accessories",
+      "name": "COT Sight",
+      "effect": "Smartgun sight; WA +3",
+      "description": "Smartgun sight; WA +3",
+      "price": 4000
+    },
+    {
+      "id": "ammo_firearm_accessories_cookie_cutter",
+      "category": "Firearm Accessories",
+      "name": "Cookie Cutter",
+      "effect": "Smartgun will not fire at badge wearers",
+      "description": "Smartgun will not fire at badge wearers",
+      "price": 300
+    },
+    {
+      "id": "ammo_firearm_accessories_extra_cookie_cutter_badge",
+      "category": "Firearm Accessories",
+      "name": "Extra Cookie Cutter Badge",
+      "effect": "Additional protected badge",
+      "description": "Additional protected badge",
+      "price": 15
+    },
+    {
+      "id": "ammo_firearm_accessories_new_frames",
+      "category": "Firearm Accessories",
+      "name": "New Frames",
+      "effect": "Bullpup frame may improve concealability",
+      "description": "Bullpup frame may improve concealability",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_firearm_accessories_braces_and_stocks",
+      "category": "Firearm Accessories",
+      "name": "Braces and Stocks",
+      "effect": "WA +1",
+      "description": "WA +1",
+      "price": 50
+    },
+    {
+      "id": "ammo_firearm_accessories_cooling_shroud",
+      "category": "Firearm Accessories",
+      "name": "Cooling Shroud",
+      "effect": "Reliability +1",
+      "description": "Reliability +1",
+      "price": 50
+    },
+    {
+      "id": "ammo_firearm_accessories_magazine_extensions",
+      "category": "Firearm Accessories",
+      "name": "Magazine Extensions",
+      "effect": "Double or triple capacity",
+      "description": "Double or triple capacity",
+      "price": 40
+    },
+    {
+      "id": "ammo_firearm_accessories_techtronica_scangrip",
+      "category": "Firearm Accessories",
+      "name": "Techtronica Scangrip",
+      "effect": "Weapon scanning grip",
+      "description": "Weapon scanning grip",
+      "price": 200
+    },
+    {
+      "id": "ammo_firearm_accessories_cybernetic_targeting_system",
+      "category": "Firearm Accessories",
+      "name": "Cybernetic Targeting System",
+      "effect": "Built-in gyro mount",
+      "description": "Built-in gyro mount",
+      "price": 1300
+    },
+    {
+      "id": "ammo_firearm_accessories_gun_cleaning_kit",
+      "category": "Firearm Accessories",
+      "name": "Gun Cleaning Kit",
+      "effect": "Avoids Reliability -1 from poor maintenance",
+      "description": "Avoids Reliability -1 from poor maintenance",
+      "price": 50
+    },
+    {
+      "id": "ammo_firearm_accessories_digital_weapon_link",
+      "category": "Firearm Accessories",
+      "name": "Digital Weapon Link",
+      "effect": "TECH +2 to unjam weapon",
+      "description": "TECH +2 to unjam weapon",
+      "price": 500
+    },
+    {
+      "id": "ammo_firearm_accessories_dud_smartgun_controller",
+      "category": "Firearm Accessories",
+      "name": "DUD Smartgun Controller",
+      "effect": "Voice-activated weapons; requires DUD",
+      "description": "Voice-activated weapons; requires DUD",
+      "price": 720
+    },
+    {
+      "id": "ammo_firearm_accessories_militech_pump_mini_grenade_launcher",
+      "category": "Firearm Accessories",
+      "name": "Militech Pump Mini-Grenade Launcher",
+      "effect": "HVY -1 L C; 25mm; 4 shots; ROF 2; ST; 150m",
+      "description": "HVY -1 L C; 25mm; 4 shots; ROF 2; ST; 150m",
+      "price": 255
+    },
+    {
+      "id": "ammo_firearm_accessories_militech_drum_mini_grenade_launcher",
+      "category": "Firearm Accessories",
+      "name": "Militech Drum Mini-Grenade Launcher",
+      "effect": "HVY +0 N P; 25mm; 16 shots; ROF 2; ST; 150m",
+      "description": "HVY +0 N P; 25mm; 16 shots; ROF 2; ST; 150m",
+      "price": 475
+    },
+    {
+      "id": "ammo_firearm_accessories_dcr_rifle_grenade_adapter",
+      "category": "Firearm Accessories",
+      "name": "DCR Rifle Grenade Adapter",
+      "effect": "HVY -1 N P; 1 shot; ROF 0.5; VR; 150m",
+      "description": "HVY -1 N P; 1 shot; ROF 0.5; VR; 150m",
+      "price": 50,
+      "price_max": 100
+    },
+    {
+      "id": "ammo_firearm_accessories_speedholster",
+      "category": "Firearm Accessories",
+      "name": "Speedholster",
+      "effect": "Fast Draw +1",
+      "description": "Fast Draw +1",
+      "price": 100
+    },
+    {
+      "id": "ammo_firearm_accessories_quickdraw_cyberarm_holster",
+      "category": "Firearm Accessories",
+      "name": "Quickdraw Cyberarm Holster",
+      "effect": "Fast Draw +2; P concealability",
+      "description": "Fast Draw +2; P concealability",
+      "price": 200
+    },
+    {
+      "id": "ammo_firearm_accessories_stutter_chipping",
+      "category": "Firearm Accessories",
+      "name": "Stutter Chipping",
+      "effect": "Prevents fire at designated friendlies; 10-second response",
+      "description": "Prevents fire at designated friendlies; 10-second response",
+      "price": 310
+    },
+    {
+      "id": "ammo_firearm_accessories_nine_eleven_chip",
+      "category": "Firearm Accessories",
+      "name": "Nine-Eleven Chip",
+      "effect": "Calls for help; arrival in 1d10+2 minutes",
+      "description": "Calls for help; arrival in 1d10+2 minutes",
+      "price": 175
+    },
+    {
+      "id": "ammo_firearm_accessories_security_chipping",
+      "category": "Firearm Accessories",
+      "name": "Security Chipping",
+      "effect": "Very Difficult smartlock",
+      "description": "Very Difficult smartlock",
+      "price": 250
+    },
+    {
+      "id": "ammo_firearm_accessories_gun_cam",
+      "category": "Firearm Accessories",
+      "name": "Gun-Cam",
+      "effect": "Stores 10 digital pictures",
+      "description": "Stores 10 digital pictures",
+      "price": 100
+    },
+    {
+      "id": "ammo_firearm_accessories_et_battery",
+      "category": "Firearm Accessories",
+      "name": "ET Battery",
+      "effect": "100-shot battery",
+      "description": "100-shot battery",
+      "price": 150
+    },
+    {
+      "id": "ammo_firearm_accessories_22_muzzle_adapter",
+      "category": "Firearm Accessories",
+      "name": ".22 Muzzle Adapter",
+      "effect": "50eb fitting cost; fires rifle/pistol grenades",
+      "description": "50eb fitting cost; fires rifle/pistol grenades",
+      "price": 200
+    },
+    {
+      "id": "ammo_firearm_accessories_under_barrel_capacitor_laser",
+      "category": "Firearm Accessories",
+      "name": "Under-Barrel Capacitor Laser",
+      "effect": "RIF +2; 3d6; 2 shots; ROF 2; UR; 25m",
+      "description": "RIF +2; 3d6; 2 shots; ROF 2; UR; 25m",
+      "price": 950
+    },
+    {
+      "id": "ammo_firearm_accessories_under_barrel_microwaver",
+      "category": "Firearm Accessories",
+      "name": "Under-Barrel Microwaver",
+      "effect": "EX +0; 1d6 plus special; 4 shots; ROF 2; ST; 20m",
+      "description": "EX +0; 1d6 plus special; 4 shots; ROF 2; ST; 20m",
+      "price": 500
+    },
+    {
+      "id": "ammo_firearm_accessories_hip_mounted_powerpack",
+      "category": "Firearm Accessories",
+      "name": "Hip-Mounted Powerpack",
+      "effect": "Double shots; +5m microwaver range; 4kg",
+      "description": "Double shots; +5m microwaver range; 4kg",
+      "price": 250
+    },
+    {
+      "id": "ammo_firearm_accessories_under_barrel_micro_missile_pod",
+      "category": "Firearm Accessories",
+      "name": "Under-Barrel Micro-Missile Pod",
+      "effect": "HVY +1 L P; 4d6; 1 shot; ROF 1; ST; 200m",
+      "description": "HVY +1 L P; 4d6; 1 shot; ROF 1; ST; 200m",
+      "price": 200
+    },
+    {
+      "id": "ammo_firearm_accessories_under_barrel_sharpwire_net",
+      "category": "Firearm Accessories",
+      "name": "Under-Barrel Sharpwire Net",
+      "effect": "Launches sharpwire net",
+      "description": "Launches sharpwire net",
+      "price": 450
+    },
+    {
+      "id": "ammo_firearm_accessories_kleen_bore_nanoagents",
+      "category": "Firearm Accessories",
+      "name": "Kleen Bore Nanoagents",
+      "effect": "Cleans the weapon",
+      "description": "Cleans the weapon",
+      "price": 50
+    },
+    {
+      "id": "ammo_firearm_accessories_midnight_arms_smart_glove",
+      "category": "Firearm Accessories",
+      "name": "Midnight Arms Smart Glove",
+      "effect": "Smartgun glove; +200eb per smartgun",
+      "description": "Smartgun glove; +200eb per smartgun",
+      "price": 110
+    },
+    {
+      "id": "ammo_firearm_accessories_smartgoggle_mirrorshades",
+      "category": "Firearm Accessories",
+      "name": "Smartgoggle Mirrorshades",
+      "effect": "Two option spaces; options cost 10% less",
+      "description": "Two option spaces; options cost 10% less",
+      "price": 450
+    },
+    {
+      "id": "ammo_firearm_accessories_smartplate_link",
+      "category": "Firearm Accessories",
+      "name": "Smartplate Link",
+      "effect": "Smartgun costs three times base",
+      "description": "Smartgun costs three times base",
+      "price": 300
+    },
+    {
+      "id": "ammo_bow_accessories_bow_string_silencer",
+      "category": "Bow Accessories",
+      "name": "Bow String Silencer",
+      "effect": "Makes bow completely silent",
+      "description": "Makes bow completely silent",
+      "price": 50
+    },
+    {
+      "id": "ammo_bow_accessories_crossbow_autoloader",
+      "category": "Bow Accessories",
+      "name": "Crossbow Autoloader",
+      "effect": "Half normal capacity (6); ROF x2; WA -1",
+      "description": "Half normal capacity (6); ROF x2; WA -1",
+      "price": 25,
+      "price_label": "25%x"
+    },
+    {
+      "id": "ammo_bow_accessories_basic_bow_sights",
+      "category": "Bow Accessories",
+      "name": "Basic Bow Sights",
+      "effect": "WA +1 when aimed",
+      "description": "WA +1 when aimed",
+      "price": 50
+    },
+    {
+      "id": "ammo_bow_accessories_cyber_targeting",
+      "category": "Bow Accessories",
+      "name": "Cyber-Targeting",
+      "effect": "WA +1, or +2; requires smartgoggles or optic",
+      "description": "WA +1, or +2; requires smartgoggles or optic",
+      "price": 250
+    },
+    {
+      "id": "ammo_bow_accessories_ir_sight",
+      "category": "Bow Accessories",
+      "name": "IR Sight",
+      "effect": "As cyberoptic IR option",
+      "description": "As cyberoptic IR option",
+      "price": 200
+    },
+    {
+      "id": "ammo_bow_accessories_lowlite_sight",
+      "category": "Bow Accessories",
+      "name": "LowLite Sight",
+      "effect": "Negates darkness penalties",
+      "description": "Negates darkness penalties",
+      "price": 150
+    },
+    {
+      "id": "ammo_bow_accessories_gyro_stabilizer",
+      "category": "Bow Accessories",
+      "name": "Gyro-Stabilizer",
+      "effect": "Halves movement penalties for self-bow",
+      "description": "Halves movement penalties for self-bow",
+      "price": 100
+    },
+    {
+      "id": "ammo_melee_accessories_monomolecular_edge",
+      "category": "Melee Accessories",
+      "name": "Monomolecular Edge",
+      "effect": "Damage +1d6; soft SP x1/3; hard SP x2/3",
+      "description": "Damage +1d6; soft SP x1/3; hard SP x2/3",
+      "price": 5,
+      "price_label": "5x"
+    },
+    {
+      "id": "ammo_gun_customization_custom_grip",
+      "category": "Gun Customization",
+      "name": "Custom Grip",
+      "effect": "Fast Draw and Snapshot WA +1",
+      "description": "Fast Draw and Snapshot WA +1",
+      "price": 0.3,
+      "price_label": "0.3x"
+    },
+    {
+      "id": "ammo_gun_customization_adjustable_stock",
+      "category": "Gun Customization",
+      "name": "Adjustable Stock",
+      "effect": "One extra aiming turn; Snapshot WA +1",
+      "description": "One extra aiming turn; Snapshot WA +1",
+      "price": 0.6,
+      "price_label": "0.6x"
+    },
+    {
+      "id": "ammo_gun_customization_folding_stock_rifle",
+      "category": "Gun Customization",
+      "name": "Folding Stock - Rifle",
+      "effect": "Concealability +1; WA -1/-2",
+      "description": "Concealability +1; WA -1/-2",
+      "price": 0.3,
+      "price_label": "0.3x"
+    },
+    {
+      "id": "ammo_gun_customization_stock_pistol_or_light_smg",
+      "category": "Gun Customization",
+      "name": "Stock - Pistol or Light SMG",
+      "effect": "WA +0/+1 at Long and Extreme",
+      "description": "WA +0/+1 at Long and Extreme",
+      "price": 0.3,
+      "price_label": "0.3x"
+    },
+    {
+      "id": "ammo_gun_customization_solenoid_trigger",
+      "category": "Gun Customization",
+      "name": "Solenoid Trigger",
+      "effect": "WA +1 at Extreme; weight +10%",
+      "description": "WA +1 at Extreme; weight +10%",
+      "price": 1,
+      "price_label": "1x"
+    },
+    {
+      "id": "ammo_gun_customization_build_solenoid_trigger",
+      "category": "Gun Customization",
+      "name": "Build Solenoid Trigger",
+      "effect": "Replaces trigger with firing stud",
+      "description": "Replaces trigger with firing stud",
+      "price": 0.5,
+      "price_label": "0.5x"
+    },
+    {
+      "id": "ammo_gun_customization_electric_trigger",
+      "category": "Gun Customization",
+      "name": "Electric Trigger",
+      "effect": "WA +1 at Extreme",
+      "description": "WA +1 at Extreme",
+      "price": 1,
+      "price_label": "1x"
+    },
+    {
+      "id": "ammo_gun_customization_electric_fire_ammo_conversion",
+      "category": "Gun Customization",
+      "name": "Electric Fire Ammo Conversion",
+      "effect": "Modify 100 rounds for electric fire",
+      "description": "Modify 100 rounds for electric fire",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_gun_customization_barrel_chopping",
+      "category": "Gun Customization",
+      "name": "Barrel Chopping",
+      "effect": "Concealability +1; half range; pattern +50%",
+      "description": "Concealability +1; half range; pattern +50%",
+      "price": 0.3,
+      "price_label": "0.3x"
+    },
+    {
+      "id": "ammo_gun_customization_chop_pistol_or_smg",
+      "category": "Gun Customization",
+      "name": "Chop Pistol or SMG",
+      "effect": "WA -1; half range",
+      "description": "WA -1; half range",
+      "price": 0.3,
+      "price_label": "0.3x"
+    },
+    {
+      "id": "ammo_gun_customization_cheap_barrel_chopping",
+      "category": "Gun Customization",
+      "name": "Cheap Barrel Chopping",
+      "effect": "WA -2; jams on 1-2; fumble explodes",
+      "description": "WA -2; jams on 1-2; fumble explodes",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_gun_customization_barrel_extension",
+      "category": "Gun Customization",
+      "name": "Barrel Extension",
+      "effect": "Concealability -1; range +25%",
+      "description": "Concealability -1; range +25%",
+      "price": 0.3,
+      "price_label": "0.3x"
+    },
+    {
+      "id": "ammo_gun_customization_burst_fire",
+      "category": "Gun Customization",
+      "name": "Burst Fire",
+      "effect": "WA -1; Reliability -1; enables three-round burst",
+      "description": "WA -1; Reliability -1; enables three-round burst",
+      "price": 1.5,
+      "price_label": "1.5x"
+    },
+    {
+      "id": "ammo_gun_customization_pure_auto_fire",
+      "category": "Gun Customization",
+      "name": "Pure Auto Fire",
+      "effect": "Fires half magazine, maximum 30; WA -1; Reliability -2",
+      "description": "Fires half magazine, maximum 30; WA -1; Reliability -2",
+      "price": 1,
+      "price_label": "1x"
+    },
+    {
+      "id": "ammo_gun_customization_selective_fire",
+      "category": "Gun Customization",
+      "name": "Selective Fire",
+      "effect": "Single, three-round or auto at WA -2; Reliability -1",
+      "description": "Single, three-round or auto at WA -2; Reliability -1",
+      "price": 2,
+      "price_label": "2x"
+    },
+    {
+      "id": "ammo_gun_customization_heat_resistant_barrel",
+      "category": "Gun Customization",
+      "name": "Heat Resistant Barrel",
+      "effect": "Counters one level of Reliability loss",
+      "description": "Counters one level of Reliability loss",
+      "price": 0.5,
+      "price_label": "0.5x"
+    },
+    {
+      "id": "ammo_gun_customization_make_resistant_barrel",
+      "category": "Gun Customization",
+      "name": "Make Resistant Barrel",
+      "effect": "Weaponsmith manufacturing option",
+      "description": "Weaponsmith manufacturing option",
+      "price": 0.2,
+      "price_label": "0.2x"
+    },
+    {
+      "id": "ammo_gun_customization_quality",
+      "category": "Gun Customization",
+      "name": "Quality",
+      "effect": "Reliability +1 up to VR",
+      "description": "Reliability +1 up to VR",
+      "price": 0.5,
+      "price_label": "0.5x"
+    },
+    {
+      "id": "ammo_gun_customization_compensation",
+      "category": "Gun Customization",
+      "name": "Compensation",
+      "effect": "ROF +1 for ROF 1 or 2 semi-automatics",
+      "description": "ROF +1 for ROF 1 or 2 semi-automatics",
+      "price": 0.4,
+      "price_label": "0.4x"
+    },
+    {
+      "id": "ammo_gun_customization_electrothermal_enhancement",
+      "category": "Gun Customization",
+      "name": "Electrothermal Enhancement",
+      "effect": "Damage and range +50%; +0.5-1kg; cased only",
+      "description": "Damage and range +50%; +0.5-1kg; cased only",
+      "price": 0.5,
+      "price_label": "0.5x"
+    },
+    {
+      "id": "ammo_gun_customization_smartgun_modification",
+      "category": "Gun Customization",
+      "name": "Smartgun Modification",
+      "effect": "WA +2 with Smartgun Link",
+      "description": "WA +2 with Smartgun Link",
+      "price": 1,
+      "price_label": "1x"
+    },
+    {
+      "id": "ammo_gun_customization_smart_plate_modification",
+      "category": "Gun Customization",
+      "name": "Smart Plate Modification",
+      "effect": "Enables Smartgun2 SmartPlate",
+      "description": "Enables Smartgun2 SmartPlate",
+      "price": 0.2,
+      "price_label": "0.2x"
+    },
+    {
+      "id": "ammo_gun_customization_smart_glove_modification",
+      "category": "Gun Customization",
+      "name": "Smart Glove Modification",
+      "effect": "Enables Smart Glove",
+      "description": "Enables Smart Glove",
+      "price": 200
+    },
+    {
+      "id": "ammo_gun_customization_brass_catcher",
+      "category": "Gun Customization",
+      "name": "Brass Catcher",
+      "effect": "Soft or hard versions",
+      "description": "Soft or hard versions",
+      "price": 0.1,
+      "price_label": "0.1x"
+    },
+    {
+      "id": "ammo_gun_customization_bayonet_lug",
+      "category": "Gun Customization",
+      "name": "Bayonet Lug",
+      "effect": "Allows bayonet mounting",
+      "description": "Allows bayonet mounting",
+      "price": 0.1,
+      "price_label": "0.1x"
+    },
+    {
+      "id": "ammo_gun_customization_standard_finish",
+      "category": "Gun Customization",
+      "name": "Standard Finish",
+      "effect": "Matte black, blued or nickel",
+      "description": "Matte black, blued or nickel",
+      "price": 0,
+      "price_label": "0x"
+    },
+    {
+      "id": "ammo_gun_customization_natural_color_finish",
+      "category": "Gun Customization",
+      "name": "Natural Color Finish",
+      "effect": "Red, green, black and similar colors",
+      "description": "Red, green, black and similar colors",
+      "price": 0.1,
+      "price_label": "0.1x"
+    },
+    {
+      "id": "ammo_gun_customization_bowling_ball_finish",
+      "category": "Gun Customization",
+      "name": "Bowling Ball Finish",
+      "effect": "Two or more mixed colors",
+      "description": "Two or more mixed colors",
+      "price": 0.3,
+      "price_label": "0.3x"
+    },
+    {
+      "id": "ammo_gun_customization_custom_finish",
+      "category": "Gun Customization",
+      "name": "Custom Finish",
+      "effect": "Chrome, pearlescent, camouflage or gloss",
+      "description": "Chrome, pearlescent, camouflage or gloss",
+      "price": 1,
+      "price_label": "1x"
+    },
+    {
+      "id": "ammo_gun_customization_neon_glow_finish",
+      "category": "Gun Customization",
+      "name": "Neon Glow Finish",
+      "effect": "Iridescent light-emitting finish",
+      "description": "Iridescent light-emitting finish",
+      "price": 1.5,
+      "price_label": "1.5x"
+    },
+    {
+      "id": "ammo_gun_customization_printless_finish",
+      "category": "Gun Customization",
+      "name": "Printless Finish",
+      "effect": "Nearly Impossible TECH roll to lift prints",
+      "description": "Nearly Impossible TECH roll to lift prints",
+      "price": 2,
+      "price_label": "2x"
+    },
+    {
+      "id": "ammo_gun_customization_extended_magazine",
+      "category": "Gun Customization",
+      "name": "Extended Magazine",
+      "effect": "Up to five times original capacity; 1eb per cased round",
+      "description": "Up to five times original capacity; 1eb per cased round",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_gun_customization_extended_magazine_over_2x",
+      "category": "Gun Customization",
+      "name": "Extended Magazine over 2x",
+      "effect": "Concealability -1; Reliability -1; Snapshot -1/-2; 0.5eb per caseless round",
+      "description": "Concealability -1; Reliability -1; Snapshot -1/-2; 0.5eb per caseless round",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_gun_customization_heavy_weapon_extended_magazine",
+      "category": "Gun Customization",
+      "name": "Heavy Weapon Extended Magazine",
+      "effect": "2-3eb per round",
+      "description": "2-3eb per round",
+      "price": 0,
+      "price_label": "Price not listed"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_chemical",
+      "category": "IMI 25mm Grenades",
+      "name": "Chemical",
+      "effect": "Smoke or gas; 5m; 100m; SOF2 pattern",
+      "description": "Smoke or gas; 5m; 100m; SOF2 pattern",
+      "price": 45,
+      "compatibility": "IMI 25mm launchers"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_flechette",
+      "category": "IMI 25mm Grenades",
+      "name": "Flechette",
+      "effect": "2d6 x 1d6 AP; 2m x 25m pattern; 100m; SOF2 pattern",
+      "description": "2d6 x 1d6 AP; 2m x 25m pattern; 100m; SOF2 pattern",
+      "price": 45,
+      "compatibility": "IMI 25mm launchers"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_fragmentation",
+      "category": "IMI 25mm Grenades",
+      "name": "Fragmentation",
+      "effect": "2d6+1; penetration 1; 5m; 100m; SOF2 pattern",
+      "description": "2d6+1; penetration 1; 5m; 100m; SOF2 pattern",
+      "price": 45,
+      "compatibility": "IMI 25mm launchers"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_hep",
+      "category": "IMI 25mm Grenades",
+      "name": "HEP",
+      "effect": "5d6 HEP; penetration 3; armor -2 levels; 100m; SOF2 pattern",
+      "description": "5d6 HEP; penetration 3; armor -2 levels; 100m; SOF2 pattern",
+      "price": 60,
+      "compatibility": "IMI 25mm launchers"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_stundart",
+      "category": "IMI 25mm Grenades",
+      "name": "Stundart",
+      "effect": "Stun -4 through soft SP10; 100m range; 100m; SOF2 pattern",
+      "description": "Stun -4 through soft SP10; 100m range; 100m; SOF2 pattern",
+      "price": 7.5,
+      "compatibility": "IMI 25mm launchers"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_slasher",
+      "category": "IMI 25mm Grenades",
+      "name": "Slasher",
+      "effect": "4d6; SP x1/3; 2m; WA -2; 50m range; 100m; SOF2 pattern",
+      "description": "4d6; SP x1/3; 2m; WA -2; 50m range; 100m; SOF2 pattern",
+      "price": 112.5,
+      "compatibility": "IMI 25mm launchers"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_frag",
+      "category": "IMI 25mm Grenades",
+      "name": "Frag",
+      "effect": "3d6; 3m; 100m; SOF2 pattern",
+      "description": "3d6; 3m; 100m; SOF2 pattern",
+      "price": 45,
+      "compatibility": "IMI 25mm launchers"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_flash",
+      "category": "IMI 25mm Grenades",
+      "name": "Flash",
+      "effect": "50% chance of -5 REF and Awareness for 3 turns; 5m; 100m; SOF2 pattern",
+      "description": "50% chance of -5 REF and Awareness for 3 turns; 5m; 100m; SOF2 pattern",
+      "price": 45,
+      "compatibility": "IMI 25mm launchers"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_incendiary",
+      "category": "IMI 25mm Grenades",
+      "name": "Incendiary",
+      "effect": "4d6 / 2d6 / 1d6; 1m; 100m; SOF2 pattern",
+      "description": "4d6 / 2d6 / 1d6; 1m; 100m; SOF2 pattern",
+      "price": 45,
+      "compatibility": "IMI 25mm launchers"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_concussion",
+      "category": "IMI 25mm Grenades",
+      "name": "Concussion",
+      "effect": "3d6 Stun; SP x1/3; 4m; 100m; SOF2 pattern",
+      "description": "3d6 Stun; SP x1/3; 4m; 100m; SOF2 pattern",
+      "price": 45,
+      "compatibility": "IMI 25mm launchers"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_ln2",
+      "category": "IMI 25mm Grenades",
+      "name": "LN2",
+      "effect": "2d6 (minimum 4) to two areas plus LN2 effects; 2m; 100m; SOF2 pattern",
+      "description": "2d6 (minimum 4) to two areas plus LN2 effects; 2m; 100m; SOF2 pattern",
+      "price": 45,
+      "compatibility": "IMI 25mm launchers"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_he",
+      "category": "30mm Launched Grenades",
+      "name": "HE",
+      "effect": "7d6; penetration 2; 5m; arms after 10m; 200m, or 1300m from automatic launcher",
+      "description": "7d6; penetration 2; 5m; arms after 10m; 200m, or 1300m from automatic launcher",
+      "price": 50,
+      "compatibility": "30mm grenade launchers"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_hedp",
+      "category": "30mm Launched Grenades",
+      "name": "HEDP",
+      "effect": "4d10 HEAT; penetration 4; 4d6 over 1m; 200m, or 1300m from automatic launcher",
+      "description": "4d10 HEAT; penetration 4; 4d6 over 1m; 200m, or 1300m from automatic launcher",
+      "price": 50,
+      "compatibility": "30mm grenade launchers"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_illumination",
+      "category": "30mm Launched Grenades",
+      "name": "Illumination",
+      "effect": "20m plus 20m low-light, or 1d6x6; parachute option 5eb; 200m, or 1300m from automatic launcher",
+      "description": "20m plus 20m low-light, or 1d6x6; parachute option 5eb; 200m, or 1300m from automatic launcher",
+      "price": 50,
+      "compatibility": "30mm grenade launchers"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_chemical",
+      "category": "30mm Launched Grenades",
+      "name": "Chemical",
+      "effect": "Carries gas or smoke; 10m; parachute option 5eb; 200m, or 1300m from automatic launcher",
+      "description": "Carries gas or smoke; 10m; parachute option 5eb; 200m, or 1300m from automatic launcher",
+      "price": 50,
+      "compatibility": "30mm grenade launchers"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_bean_bag",
+      "category": "30mm Launched Grenades",
+      "name": "Bean Bag",
+      "effect": "2d6; Stun -5; +1 per 15 SP; 50m; REF 20+; 200m, or 1300m from automatic launcher",
+      "description": "2d6; Stun -5; +1 per 15 SP; 50m; REF 20+; 200m, or 1300m from automatic launcher",
+      "price": 50,
+      "compatibility": "30mm grenade launchers"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_wp",
+      "category": "30mm Launched Grenades",
+      "name": "WP",
+      "effect": "4d6 for 3 turns; penetration 2; 10m; 200m, or 1300m from automatic launcher",
+      "description": "4d6 for 3 turns; penetration 2; 10m; 200m, or 1300m from automatic launcher",
+      "price": 50,
+      "compatibility": "30mm grenade launchers"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_flechette",
+      "category": "30mm Launched Grenades",
+      "name": "Flechette",
+      "effect": "1d6/2 x 2d6 AP; penetration 1; 3m x 25m; 200m, or 1300m from automatic launcher",
+      "description": "1d6/2 x 2d6 AP; penetration 1; 3m x 25m; 200m, or 1300m from automatic launcher",
+      "price": 50,
+      "compatibility": "30mm grenade launchers"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_hep",
+      "category": "30mm Launched Grenades",
+      "name": "HEP",
+      "effect": "7d6 HEP; SP -5 levels; WA -1; 200m, or 1300m from automatic launcher",
+      "description": "7d6 HEP; SP -5 levels; WA -1; 200m, or 1300m from automatic launcher",
+      "price": 50,
+      "compatibility": "30mm grenade launchers"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_flash_bang",
+      "category": "30mm Launched Grenades",
+      "name": "Flash-Bang",
+      "effect": "Stun -2; stun and deaf 4 turns; 5m/15m; REF 20+ or blind 2 turns; 200m, or 1300m from automatic launcher",
+      "description": "Stun -2; stun and deaf 4 turns; 5m/15m; REF 20+ or blind 2 turns; 200m, or 1300m from automatic launcher",
+      "price": 50,
+      "compatibility": "30mm grenade launchers"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_grapnel",
+      "category": "30mm Launched Grenades",
+      "name": "Grapnel",
+      "effect": "Half range; WA -2; 1d6 damage; 50% catch; 200m, or 1300m from automatic launcher",
+      "description": "Half range; WA -2; 1d6 damage; 50% catch; 200m, or 1300m from automatic launcher",
+      "price": 30,
+      "compatibility": "30mm grenade launchers"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_net",
+      "category": "30mm Launched Grenades",
+      "name": "Net",
+      "effect": "25m; WA -5; 1d6; 50% wrap; REF 20+ or BOD 25+ to escape; 200m, or 1300m from automatic launcher",
+      "description": "25m; WA -5; 1d6; 50% wrap; REF 20+ or BOD 25+ to escape; 200m, or 1300m from automatic launcher",
+      "price": 50,
+      "compatibility": "30mm grenade launchers"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_splatshell",
+      "category": "30mm Launched Grenades",
+      "name": "Splatshell",
+      "effect": "1d6+1 hits; pattern from 5m x 2m to 15m x 6m; 200m, or 1300m from automatic launcher",
+      "description": "1d6+1 hits; pattern from 5m x 2m to 15m x 6m; 200m, or 1300m from automatic launcher",
+      "price": 10,
+      "compatibility": "30mm grenade launchers"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_spraypaint",
+      "category": "30mm Launched Grenades",
+      "name": "Spraypaint",
+      "effect": "Blind for 1d6/3 turns; 4m; 200m, or 1300m from automatic launcher",
+      "description": "Blind for 1d6/3 turns; 4m; 200m, or 1300m from automatic launcher",
+      "price": 20,
+      "compatibility": "30mm grenade launchers"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_emp",
+      "category": "30mm Launched Grenades",
+      "name": "EMP",
+      "effect": "Disorient 10 seconds; cyberware disabled 4/10 minutes; 5m; 200m, or 1300m from automatic launcher",
+      "description": "Disorient 10 seconds; cyberware disabled 4/10 minutes; 5m; 200m, or 1300m from automatic launcher",
+      "price": 400,
+      "compatibility": "30mm grenade launchers"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_ln2",
+      "category": "30mm Launched Grenades",
+      "name": "LN2",
+      "effect": "2d6+2 (minimum 6); 1d6/2+1 area; 3m; 200m, or 1300m from automatic launcher",
+      "description": "2d6+2 (minimum 6); 1d6/2+1 area; 3m; 200m, or 1300m from automatic launcher",
+      "price": 50,
+      "compatibility": "30mm grenade launchers"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_slasher",
+      "category": "30mm Launched Grenades",
+      "name": "Slasher",
+      "effect": "4d6; SP x1/3; 2.5m; WA -2; 50m",
+      "description": "4d6; SP x1/3; 2.5m; WA -2; 50m",
+      "price": 75,
+      "compatibility": "30mm grenade launchers"
+    }
+  ]
+}

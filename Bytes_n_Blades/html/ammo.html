@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ammo, grenades, special loads and weapon add-ons for Cyberpunk 2020." />
+  <title>Ammo & Add-ons | Byte & Blades</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" href="../assets/svg/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <script src="../js/dialog-a11y.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/editorial-sources.js"></script>
+  <script src="../js/auth.js"></script>
+</head>
+<body>
+  <a href="#main-catalog" class="skip-link">Skip to catalog</a>
+  <div class="container">
+    <header class="navbar">
+      <div class="logo-area"><h1 class="logo">Byte & Blades Store</h1><p class="tagline">Special loads for very specific problems</p></div>
+      <nav aria-label="Main Navigation"><ul class="nav-links">
+        <li><a href="../index.html">Home</a></li><li><a href="./cyberwares.html">Cyberwares</a></li>
+        <li><a href="./accessories.html">Accessories</a></li><li><a href="./cyberdecks.html">Netrunning</a></li>
+        <li><a href="./drugs.html">Drugs</a></li><li><a href="./weapons.html">Weapons</a></li>
+        <li><a class="nav-highlight" href="./ammo.html" aria-current="page">Ammo</a></li>
+        <li><a href="./bundles.html">Bundles</a></li><li><a href="./cart.html">Cart</a></li>
+      </ul></nav>
+    </header>
+  </div>
+  <main class="grid-shell" id="main-catalog">
+    <nav aria-label="Ammo Categories" id="category-section" class="category-rail">
+      <header class="rail-header"><span class="rail-title">Ammo Feed</span><p class="rail-hint">Loads, grenades, accessories and weapon modifications.</p></header>
+      <div id="category-list" class="category-list"></div>
+    </nav>
+    <section class="content-slab">
+      <div class="content-header"><div class="content-titles"><h1 id="title-category">Pick a feed</h1><p class="content-sub">Every payload is listed separately with its own effect and compatibility.</p></div>
+        <button id="filter-toggle" class="btn-primary" aria-expanded="false" aria-controls="filter-sidebar">Open Filters</button>
+      </div>
+      <section id="items-section" class="items-section full"><div id="items-list" class="items-list"></div></section>
+    </section>
+    <aside id="filter-sidebar" class="filter-sidebar hidden" aria-hidden="true">
+      <div class="filter-header"><h3>Signal Filter</h3><button id="close-filter" class="btn-icon" aria-label="Close filters">×</button></div>
+      <form id="filter-form" onsubmit="event.preventDefault();">
+        <div class="filter-group"><label for="fs-category">Category</label><select id="fs-category" name="category"><option value="">All Categories</option></select></div>
+        <div class="filter-group"><label for="fs-price-max-input">Max Price (ED$)</label><input id="fs-price-max-input" name="price" type="number" min="0" step="10" placeholder="e.g. 500"></div>
+        <div class="action-row"><button type="button" id="fs-apply" class="btn-primary">Run Filter</button><button type="button" id="fs-clear" class="btn-secondary">Reset</button></div>
+      </form>
+    </aside>
+  </main>
+  <footer><div class="footer-content"><p>&copy; 2025 Byte & Blades Store. Hendo: All rights reserved.</p><p class="netwatch-warning">No Corps. No NetWatch. Offgrid market.</p></div></footer>
+  <script src="../js/core-utils.js"></script><script src="../js/permalinks.js"></script><script src="../js/script.js"></script><script src="../js/modal.js"></script>
+</body>
+</html>

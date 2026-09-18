@@ -1,0 +1,365 @@
+{
+  "$id": "./data/chip-rates.json",
+  "title": "Chip Skill Rates",
+  "description": "APTR, MRAM and Visual Recognition chip price tables per level.",
+  "version": "1.0.0",
+  "data": {
+    "mram": {
+      "label": "MRAM",
+      "sections": [
+        {
+          "id": "attr_mram",
+          "label": "ATTR (MRAM)",
+          "items": [
+            {
+              "skill": "Personal Grooming",
+              "pricePerLevel": 100,
+              "id": "personal_grooming"
+            },
+            {
+              "skill": "Wardrobe & Style",
+              "pricePerLevel": 100,
+              "id": "wardrobe_style"
+            }
+          ]
+        },
+        {
+          "id": "int_mram",
+          "label": "INT (MRAM)",
+          "items": [
+            {
+              "skill": "Accounting",
+              "pricePerLevel": 150,
+              "id": "accounting"
+            },
+            {
+              "skill": "Anthropology",
+              "pricePerLevel": 150,
+              "id": "anthropology"
+            },
+            {
+              "skill": "Biology",
+              "pricePerLevel": 150,
+              "id": "biology"
+            },
+            {
+              "skill": "Botany",
+              "pricePerLevel": 150,
+              "id": "botany"
+            },
+            {
+              "skill": "Chemistry",
+              "pricePerLevel": 150,
+              "id": "chemistry"
+            },
+            {
+              "skill": "Education & Gen. Know",
+              "pricePerLevel": 200,
+              "id": "education_gen_know"
+            },
+            {
+              "skill": "Expert (pick subject)",
+              "pricePerLevel": null,
+              "note": "Ref decision",
+              "id": "expert_pick_subject"
+            },
+            {
+              "skill": "Geology",
+              "pricePerLevel": 150,
+              "id": "geology"
+            },
+            {
+              "skill": "History",
+              "pricePerLevel": 150,
+              "id": "history"
+            },
+            {
+              "skill": "Know Language (choose)",
+              "pricePerLevel": 200,
+              "id": "know_language_choose"
+            },
+            {
+              "skill": "Mathematics",
+              "pricePerLevel": 200,
+              "id": "mathematics"
+            },
+            {
+              "skill": "Physics",
+              "pricePerLevel": 200,
+              "id": "physics"
+            },
+            {
+              "skill": "Programming",
+              "pricePerLevel": 300,
+              "id": "programming"
+            },
+            {
+              "skill": "Stock Market",
+              "pricePerLevel": 300,
+              "id": "stock_market"
+            },
+            {
+              "skill": "Wilderness Survival",
+              "pricePerLevel": 200,
+              "id": "wilderness_survival"
+            },
+            {
+              "skill": "Zoology",
+              "pricePerLevel": 150,
+              "id": "zoology"
+            },
+            {
+              "skill": "Daytimer-Chip",
+              "pricePerLevel": 100,
+              "id": "daytimer_chip"
+            }
+          ]
+        }
+      ]
+    },
+    "aptr": {
+      "label": "APTR",
+      "sections": [
+        {
+          "id": "body_aptr",
+          "label": "BODY (APTR)",
+          "items": [
+            {
+              "skill": "Swimming",
+              "pricePerLevel": 100,
+              "id": "swimming"
+            }
+          ]
+        },
+        {
+          "id": "ref_aptr",
+          "label": "REF (APTR)",
+          "items": [
+            {
+              "skill": "Archery",
+              "pricePerLevel": 300,
+              "id": "archery"
+            },
+            {
+              "skill": "Dance",
+              "pricePerLevel": 150,
+              "id": "dance"
+            },
+            {
+              "skill": "Driving",
+              "pricePerLevel": 150,
+              "id": "driving"
+            },
+            {
+              "skill": "Fencing",
+              "pricePerLevel": 300,
+              "id": "fencing"
+            },
+            {
+              "skill": "Handgun",
+              "pricePerLevel": 300,
+              "id": "handgun"
+            },
+            {
+              "skill": "Heavy Weapons",
+              "pricePerLevel": 400,
+              "id": "heavy_weapons"
+            },
+            {
+              "skill": "Martial Art (choose type)",
+              "pricePerLevel": 350,
+              "id": "martial_art_choose_type"
+            },
+            {
+              "skill": "Melee",
+              "pricePerLevel": 150,
+              "id": "melee"
+            },
+            {
+              "skill": "Motorcycle",
+              "pricePerLevel": 150,
+              "id": "motorcycle"
+            },
+            {
+              "skill": "Operate Hvy. Machinery",
+              "pricePerLevel": 200,
+              "id": "operate_hvy_machinery"
+            },
+            {
+              "skill": "Pilot (Gyro)",
+              "pricePerLevel": 300,
+              "id": "pilot_gyro"
+            },
+            {
+              "skill": "Pilot (Fixed Wing)",
+              "pricePerLevel": 300,
+              "id": "pilot_fixed_wing"
+            },
+            {
+              "skill": "Pilot (Dirigible)",
+              "pricePerLevel": 300,
+              "id": "pilot_dirigible"
+            },
+            {
+              "skill": "Pilot (Vect. Thrust Vehicle)",
+              "pricePerLevel": 350,
+              "id": "pilot_vect_thrust_vehicle"
+            },
+            {
+              "skill": "Rifle",
+              "pricePerLevel": 300,
+              "id": "rifle"
+            },
+            {
+              "skill": "Submachinegun",
+              "pricePerLevel": 300,
+              "id": "submachinegun"
+            }
+          ]
+        },
+        {
+          "id": "tech_aptr",
+          "label": "TECH (APTR)",
+          "items": [
+            {
+              "skill": "Aero Tech",
+              "pricePerLevel": 250,
+              "id": "aero_tech"
+            },
+            {
+              "skill": "AV Tech",
+              "pricePerLevel": 300,
+              "id": "av_tech"
+            },
+            {
+              "skill": "Basic Tech",
+              "pricePerLevel": 200,
+              "id": "basic_tech"
+            },
+            {
+              "skill": "Cryotank Operation",
+              "pricePerLevel": 150,
+              "id": "cryotank_operation"
+            },
+            {
+              "skill": "Cyberdeck Design",
+              "pricePerLevel": 200,
+              "id": "cyberdeck_design"
+            },
+            {
+              "skill": "CyberTech",
+              "pricePerLevel": 300,
+              "id": "cybertech"
+            },
+            {
+              "skill": "Demolitions",
+              "pricePerLevel": 300,
+              "id": "demolitions"
+            },
+            {
+              "skill": "Disguise",
+              "pricePerLevel": 150,
+              "id": "disguise"
+            },
+            {
+              "skill": "Electronics",
+              "pricePerLevel": 150,
+              "id": "electronics"
+            },
+            {
+              "skill": "Elect Security",
+              "pricePerLevel": 200,
+              "id": "elect_security"
+            },
+            {
+              "skill": "First Aid",
+              "pricePerLevel": 150,
+              "id": "first_aid"
+            },
+            {
+              "skill": "Forgery",
+              "pricePerLevel": 200,
+              "id": "forgery"
+            },
+            {
+              "skill": "Gyro Tech",
+              "pricePerLevel": 300,
+              "id": "gyro_tech"
+            },
+            {
+              "skill": "Pharmaceuticals",
+              "pricePerLevel": 200,
+              "id": "pharmaceuticals"
+            },
+            {
+              "skill": "Pick Lock",
+              "pricePerLevel": 150,
+              "id": "pick_lock"
+            },
+            {
+              "skill": "Pick Pocket",
+              "pricePerLevel": 150,
+              "id": "pick_pocket"
+            },
+            {
+              "skill": "Play Instrument",
+              "pricePerLevel": 150,
+              "id": "play_instrument"
+            },
+            {
+              "skill": "Weaponsmith",
+              "pricePerLevel": 200,
+              "id": "weaponsmith"
+            }
+          ]
+        }
+      ]
+    },
+    "visual_recognition": {
+      "label": "Visual Recognition",
+      "sections": [
+        {
+          "id": "visual_profiles",
+          "label": "Visual Recognition Profiles",
+          "items": [
+            {
+              "skill": "Techie",
+              "pricePerLevel": 100,
+              "id": "techie"
+            },
+            {
+              "skill": "Corporate",
+              "levelPrices": [
+                50,
+                100,
+                150
+              ],
+              "id": "corporate"
+            },
+            {
+              "skill": "Police",
+              "pricePerLevel": 200,
+              "id": "police"
+            },
+            {
+              "skill": "Military",
+              "pricePerLevel": 300,
+              "note": "3x base profile",
+              "id": "military"
+            },
+            {
+              "skill": "Rocker",
+              "pricePerLevel": 100,
+              "id": "rocker"
+            },
+            {
+              "skill": "Secretarial",
+              "pricePerLevel": 100,
+              "id": "secretarial"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

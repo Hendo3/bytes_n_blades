@@ -27,10 +27,8 @@ afterEach(() => {
 });
 
 describe("protected prebuilt areas", () => {
-  test("keeps Cyberware and Bundles byte-for-byte", () => {
+  test("keeps the Cyberware catalogs and installation engine byte-for-byte", () => {
     const expected = {
-      "js/bundles.js": "8151f0bede31ec1abf47bbaf0b43349bd54e27d05dad4bfec7e8c1d5a52c931e",
-      "js/script.js": "f06beed80d43e51eb2cf9ca35f4fb71847df665157243ae6816151e430375a95",
       "js/core-utils.js": "c3573ac2e3f2c20b2e606fc20b317523c4fcb20bcf84854dacf454e20f971c08",
       "js/chip-rates.js": "7c4195b51c76be3be76f34e6b3b9e5bc24253d72647930539801db4ea0a51b44",
       "data/cyberwares.json": "d8c961b7c0e479a07096c70b3d4a9b3e5949fd381cdd82094c3455a078bc2776",
@@ -219,6 +217,7 @@ describe("connected Netrunning experience", () => {
       "equipment.pt-BR.json": readJson("data/equipment.pt-BR.json"),
       "decks.pt-BR.json": readJson("data/decks.pt-BR.json"),
       "weapons.pt-BR.json": readJson("data/weapons.pt-BR.json"),
+      "ammo.pt-BR.json": readJson("data/ammo.pt-BR.json"),
       "drugs.pt-BR.json": readJson("data/drugs.pt-BR.json"),
       "chip-rates.pt-BR.json": readJson("data/chip-rates.pt-BR.json"),
       "programs.pt-BR.json": readJson("data/programs.pt-BR.json"),

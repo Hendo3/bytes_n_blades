@@ -1,0 +1,2938 @@
+{
+  "$id": "https://local/bytes-and-blades/ammo.pt-BR.json",
+  "version": 1,
+  "locale": "pt-BR",
+  "title": "Munições e Add-ons de Cyberpunk 2020",
+  "source": "Cyberpunk 2020 Munições e Add-ons, revisão 1998-11-25",
+  "items": [
+    {
+      "id": "ammo_ammunition_reloads_light_pistol_smg_100",
+      "category": "Recargas de Munição",
+      "name": "Pistola Leve e Submetralhadora (100)",
+      "effect": "Recarga padrão, 100 cartuchos",
+      "description": "Recarga padrão, 100 cartuchos",
+      "price": 15,
+      "compatibility": "pistolas leves e submetralhadoras",
+      "legacyIds": [
+        "weapon_light_handgun_light_smg_ammo_box_100"
+      ]
+    },
+    {
+      "id": "ammo_ammunition_reloads_medium_pistol_smg_100",
+      "category": "Recargas de Munição",
+      "name": "Pistola Média e Submetralhadora (100)",
+      "effect": "Recarga padrão, 100 cartuchos",
+      "description": "Recarga padrão, 100 cartuchos",
+      "price": 30,
+      "compatibility": "pistolas médias e submetralhadoras",
+      "legacyIds": [
+        "weapon_medium_handgun_medium_smg_ammo_box_100"
+      ]
+    },
+    {
+      "id": "ammo_ammunition_reloads_heavy_pistol_smg_100",
+      "category": "Recargas de Munição",
+      "name": "Pistola Pesada e Submetralhadora (100)",
+      "effect": "Recarga padrão, 100 cartuchos",
+      "description": "Recarga padrão, 100 cartuchos",
+      "price": 36,
+      "compatibility": "pistolas pesadas e submetralhadoras",
+      "legacyIds": [
+        "weapon_heavy_handgun_heavy_smg_ammo_box_100"
+      ]
+    },
+    {
+      "id": "ammo_ammunition_reloads_very_heavy_pistol_100",
+      "category": "Recargas de Munição",
+      "name": "Pistola Muito Pesada (100)",
+      "effect": "Recarga padrão, 100 cartuchos",
+      "description": "Recarga padrão, 100 cartuchos",
+      "price": 40,
+      "compatibility": "pistolas muito pesadas",
+      "legacyIds": [
+        "weapon_very_heavy_handgun_ammo_box_100"
+      ]
+    },
+    {
+      "id": "ammo_ammunition_reloads_assault_rifle_100",
+      "category": "Recargas de Munição",
+      "name": "Fuzil de Assalto (100)",
+      "effect": "Recarga padrão, 100 cartuchos",
+      "description": "Recarga padrão, 100 cartuchos",
+      "price": 40,
+      "compatibility": "fuzis de assalto",
+      "legacyIds": [
+        "weapon_assault_rifle_ammo_box_100"
+      ]
+    },
+    {
+      "id": "ammo_ammunition_reloads_airgun_pellets_100",
+      "category": "Recargas de Munição",
+      "name": "Chumbinhos de Arma de Ar (100)",
+      "effect": "Chumbinhos padrão",
+      "description": "Chumbinhos padrão",
+      "price": 6,
+      "compatibility": "armas de ar"
+    },
+    {
+      "id": "ammo_ammunition_reloads_acid_or_drug_pellets_100",
+      "category": "Recargas de Munição",
+      "name": "Chumbinhos de Ácido ou Droga (100)",
+      "effect": "Chumbinhos com substância",
+      "description": "Chumbinhos com substância",
+      "price": 30,
+      "compatibility": "armas de ar"
+    },
+    {
+      "id": "ammo_ammunition_reloads_needlegun_rounds_100",
+      "category": "Recargas de Munição",
+      "name": "Agulhas (100)",
+      "effect": "Agulhas padrão",
+      "description": "Agulhas padrão",
+      "price": 50,
+      "compatibility": "armas de agulhas"
+    },
+    {
+      "id": "ammo_ammunition_reloads_20mm_cannon_round",
+      "category": "Recargas de Munição",
+      "name": "Projétil de Canhão 20 mm",
+      "effect": "Um projétil de canhão",
+      "description": "Um projétil de canhão",
+      "price": 25,
+      "compatibility": "canhão de 20 mm"
+    },
+    {
+      "id": "ammo_ammunition_reloads_flamethrower_reload",
+      "category": "Recargas de Munição",
+      "name": "Recarga de Lança-Chamas",
+      "effect": "Recarga de combustível",
+      "description": "Recarga de combustível",
+      "price": 50,
+      "compatibility": "lança-chamas"
+    },
+    {
+      "id": "ammo_ammunition_reloads_paintloads_100",
+      "category": "Recargas de Munição",
+      "name": "Cargas de Tinta (100)",
+      "effect": "Cargas de tinta",
+      "description": "Cargas de tinta",
+      "price": 10,
+      "compatibility": "armas de tinta"
+    },
+    {
+      "id": "ammo_ammunition_reloads_acid_drug_or_poison_loads_100",
+      "category": "Recargas de Munição",
+      "name": "Cargas de Ácido, Droga ou Veneno (100)",
+      "effect": "Cargas com substância",
+      "description": "Cargas com substância",
+      "price": 30,
+      "compatibility": "lançadores compatíveis"
+    },
+    {
+      "id": "ammo_ammunition_reloads_glass_ceramic_or_steel_balls_20",
+      "category": "Recargas de Munição",
+      "name": "Esferas de Vidro, Cerâmica ou Aço (20)",
+      "effect": "Munição esférica",
+      "description": "Munição esférica",
+      "price": 5,
+      "compatibility": "lançadores de esferas"
+    },
+    {
+      "id": "ammo_ammunition_types_normal",
+      "category": "Tipos de Munição",
+      "name": "Normal",
+      "effect": "Sem modificador de SP ou dano",
+      "description": "Sem modificador de SP ou dano",
+      "price": 1,
+      "price_label": "1x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_brass_cased",
+      "category": "Tipos de Munição",
+      "name": "Estojo de Latão",
+      "effect": "Sem modificador de SP ou dano",
+      "description": "Sem modificador de SP ou dano",
+      "price": 3,
+      "price_label": "3x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_plasticase",
+      "category": "Tipos de Munição",
+      "name": "Estojo Plástico",
+      "effect": "Disponibilidade baixa",
+      "description": "Disponibilidade baixa",
+      "price": 1,
+      "price_label": "1x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_armor_piercing",
+      "category": "Tipos de Munição",
+      "name": "Perfurante de Armadura",
+      "effect": "SP x1/2; dano penetrante x1/2",
+      "description": "SP x1/2; dano penetrante x1/2",
+      "price": 3,
+      "price_label": "3x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_api",
+      "category": "Tipos de Munição",
+      "name": "API",
+      "effect": "SP x1/2; dano penetrante x1/2; +1d6 e depois 1d6/2; 50% de chance de incêndio",
+      "description": "SP x1/2; dano penetrante x1/2; +1d6 e depois 1d6/2; 50% de chance de incêndio",
+      "price": 4,
+      "price_label": "4x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_dual_purpose",
+      "category": "Tipos de Munição",
+      "name": "Dupla Finalidade",
+      "effect": "SP x1/2; escolha entre metade do dano penetrante ou dano x1,5",
+      "description": "SP x1/2; escolha entre metade do dano penetrante ou dano x1,5",
+      "price": 4,
+      "price_label": "4x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_electrothermal",
+      "category": "Tipos de Munição",
+      "name": "Eletrotérmica",
+      "effect": "Dano x1,5",
+      "description": "Dano x1,5",
+      "price": 2,
+      "price_label": "2x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_hollowpoints",
+      "category": "Tipos de Munição",
+      "name": "Ponta Oca",
+      "effect": "SP x2; dano penetrante x1,5",
+      "description": "SP x2; dano penetrante x1,5",
+      "price": 1.125,
+      "price_label": "1.125x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_frag_flechettes",
+      "category": "Tipos de Munição",
+      "name": "Flechettes de Fragmentação",
+      "effect": "SP de armadura leve x1/2; rara e extremamente ilegal",
+      "description": "SP de armadura leve x1/2; rara e extremamente ilegal",
+      "price": 5,
+      "price_label": "5x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_rubber_bullets",
+      "category": "Tipos de Munição",
+      "name": "Balas de Borracha",
+      "effect": "Dano de Atordoamento além de 3 m",
+      "description": "Dano de Atordoamento além de 3 m",
+      "price": 0.333,
+      "price_label": "0.333x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_safety_rounds",
+      "category": "Tipos de Munição",
+      "name": "Munição de Segurança",
+      "effect": "SP x2; dano penetrante x3; estilhaça contra SP 10 ou SDP 30",
+      "description": "SP x2; dano penetrante x3; estilhaça contra SP 10 ou SDP 30",
+      "price": 6,
+      "price_label": "6x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_electric_fire",
+      "category": "Tipos de Munição",
+      "name": "Disparo Elétrico",
+      "effect": "Munição sem estojo",
+      "description": "Munição sem estojo",
+      "price": 0.9,
+      "price_label": "0.9x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_wasp_flechette",
+      "category": "Tipos de Munição",
+      "name": "Flechette Vespa",
+      "effect": "SP de armadura leve x1/2; dano x1d6/2",
+      "description": "SP de armadura leve x1/2; dano x1d6/2",
+      "price": 10,
+      "price_label": "10x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_12mm_anti_personnel",
+      "category": "Tipos de Munição",
+      "name": "Antipessoal 12 mm",
+      "effect": "SP x1/2; dano x2",
+      "description": "SP x1/2; dano x2",
+      "price": 10,
+      "price_label": "10x",
+      "compatibility": "balas de 12 mm"
+    },
+    {
+      "id": "ammo_ammunition_types_silver_bullets",
+      "category": "Tipos de Munição",
+      "name": "Balas de Prata",
+      "effect": "Sem modificador mecânico",
+      "description": "Sem modificador mecânico",
+      "price": 5,
+      "price_label": "5x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_dumdums",
+      "category": "Tipos de Munição",
+      "name": "Dum-Dum",
+      "effect": "SP x2; dano penetrante x1,75",
+      "description": "SP x2; dano penetrante x1,75",
+      "price": 1,
+      "price_label": "1x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_titanium",
+      "category": "Tipos de Munição",
+      "name": "Titânio",
+      "effect": "SP x1/2",
+      "description": "SP x1/2",
+      "price": 10,
+      "price_label": "10x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_tungsten_carbide",
+      "category": "Tipos de Munição",
+      "name": "Carbeto de Tungstênio",
+      "effect": "SP x1/3; dano penetrante x1/2",
+      "description": "SP x1/3; dano penetrante x1/2",
+      "price": 15,
+      "price_label": "15x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_depleted_uranium",
+      "category": "Tipos de Munição",
+      "name": "Urânio Empobrecido",
+      "effect": "SP x1/4; +1d6; dano penetrante x1/2",
+      "description": "SP x1/4; +1d6; dano penetrante x1/2",
+      "price": 150,
+      "price_label": "150x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_memory_expander",
+      "category": "Tipos de Munição",
+      "name": "Expansora",
+      "effect": "SP de armadura leve x1/4; dano penetrante x1,5",
+      "description": "SP de armadura leve x1/4; dano penetrante x1,5",
+      "price": 10,
+      "price_label": "10x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_tracers",
+      "category": "Tipos de Munição",
+      "name": "Traçantes",
+      "effect": "+1d3 x 1d6 de dano",
+      "description": "+1d3 x 1d6 de dano",
+      "price": 1.5,
+      "price_label": "1.5x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_subsonic",
+      "category": "Tipos de Munição",
+      "name": "Subsônica",
+      "effect": "SP x1,5",
+      "description": "SP x1,5",
+      "price": 2,
+      "price_label": "2x",
+      "compatibility": "balas"
+    },
+    {
+      "id": "ammo_ammunition_types_acid",
+      "category": "Tipos de Munição",
+      "name": "Ácido",
+      "effect": "1d4 por 3 turnos; o projétil cerâmico estilhaça contra SP 4+",
+      "description": "1d4 por 3 turnos; o projétil cerâmico estilhaça contra SP 4+",
+      "price": 75,
+      "compatibility": "20 cartuchos"
+    },
+    {
+      "id": "ammo_ammunition_types_heartbreaker",
+      "category": "Tipos de Munição",
+      "name": "Quebra-Corações",
+      "effect": "Ataque cardíaco em 1d6 turnos; estilhaça contra SP 5+",
+      "description": "Ataque cardíaco em 1d6 turnos; estilhaça contra SP 5+",
+      "price": 50,
+      "compatibility": "cada"
+    },
+    {
+      "id": "ammo_410_28_gauge_shotshell",
+      "category": "Calibre .410 / 28",
+      "name": "Cartucho de Chumbos",
+      "effect": "2d6 / 1d6+2 / 1d6 por faixa de alcance",
+      "description": "2d6 / 1d6+2 / 1d6 por faixa de alcance",
+      "price": 15,
+      "compatibility": "12 cartuchos"
+    },
+    {
+      "id": "ammo_410_28_gauge_slug",
+      "category": "Calibre .410 / 28",
+      "name": "Balote",
+      "effect": "3d6+1 AP; o SP de armadura leve reduz pela metade o dano penetrante",
+      "description": "3d6+1 AP; o SP de armadura leve reduz pela metade o dano penetrante",
+      "price": 15,
+      "compatibility": "12 cartuchos"
+    },
+    {
+      "id": "ammo_410_28_gauge_triplex_shell",
+      "category": "Calibre .410 / 28",
+      "name": "Cartucho Triplex",
+      "effect": "1d6 / 2x2d6",
+      "description": "1d6 / 2x2d6",
+      "price": 15,
+      "compatibility": "12 cartuchos"
+    },
+    {
+      "id": "ammo_20_gauge_shotshell",
+      "category": "Calibre 20",
+      "name": "Cartucho de Chumbos",
+      "effect": "3d6 / 2d6 / 1d6 por faixa de alcance",
+      "description": "3d6 / 2d6 / 1d6 por faixa de alcance",
+      "price": 15,
+      "compatibility": "12 cartuchos"
+    },
+    {
+      "id": "ammo_20_gauge_flare",
+      "category": "Calibre 20",
+      "name": "Sinalizador",
+      "effect": "Ilumina 30 m; 2d6+2 e 1d6/2 ao acertar",
+      "description": "Ilumina 30 m; 2d6+2 e 1d6/2 ao acertar",
+      "price": 25,
+      "compatibility": "25 cartuchos"
+    },
+    {
+      "id": "ammo_20_gauge_flash_bang",
+      "category": "Calibre 20",
+      "name": "Luz e Som",
+      "effect": "Efeitos de luz e som; 2 m/5 m; alcance máximo de 25 m",
+      "description": "Efeitos de luz e som; 2 m/5 m; alcance máximo de 25 m",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_20_gauge_flash",
+      "category": "Calibre 20",
+      "name": "Clarão",
+      "effect": "Granada de luz e som em um padrão de 25 m x 3 m",
+      "description": "Granada de luz e som em um padrão de 25 m x 3 m",
+      "price": 30,
+      "compatibility": "25 cartuchos"
+    },
+    {
+      "id": "ammo_20_gauge_slug",
+      "category": "Calibre 20",
+      "name": "Balote",
+      "effect": "3d6+1 AP; o SP de armadura leve reduz pela metade o dano penetrante",
+      "description": "3d6+1 AP; o SP de armadura leve reduz pela metade o dano penetrante",
+      "price": 15,
+      "compatibility": "12 cartuchos"
+    },
+    {
+      "id": "ammo_12_gauge_shotshell",
+      "category": "Calibre 12",
+      "name": "Cartucho de Chumbos",
+      "effect": "4d6 / 3d6 / 2d6; padrão de alcance 1-3 m x 50 m",
+      "description": "4d6 / 3d6 / 2d6; padrão de alcance 1-3 m x 50 m",
+      "price": 15,
+      "compatibility": "12 cartuchos"
+    },
+    {
+      "id": "ammo_12_gauge_apfsds",
+      "category": "Calibre 12",
+      "name": "APFSDS",
+      "effect": "6d6 AP; alcance de 25 m",
+      "description": "6d6 AP; alcance de 25 m",
+      "price": 10
+    },
+    {
+      "id": "ammo_12_gauge_flare",
+      "category": "Calibre 12",
+      "name": "Sinalizador",
+      "effect": "Ilumina 30 m; 2d6+2 e 1d6/2 ao acertar",
+      "description": "Ilumina 30 m; 2d6+2 e 1d6/2 ao acertar",
+      "price": 25,
+      "compatibility": "25 cartuchos"
+    },
+    {
+      "id": "ammo_12_gauge_flash_bang",
+      "category": "Calibre 12",
+      "name": "Luz e Som",
+      "effect": "Efeitos de luz e som; 2 m/5 m; alcance máximo de 25 m",
+      "description": "Efeitos de luz e som; 2 m/5 m; alcance máximo de 25 m",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_12_gauge_flash",
+      "category": "Calibre 12",
+      "name": "Clarão",
+      "effect": "Granada de luz e som em um padrão de 25 m x 3 m",
+      "description": "Granada de luz e som em um padrão de 25 m x 3 m",
+      "price": 30,
+      "compatibility": "25 cartuchos"
+    },
+    {
+      "id": "ammo_12_gauge_flechettes",
+      "category": "Calibre 12",
+      "name": "Flechettes",
+      "effect": "4d6 AP; SP da armadura e dano penetrante x1/4",
+      "description": "4d6 AP; SP da armadura e dano penetrante x1/4",
+      "price": 8
+    },
+    {
+      "id": "ammo_12_gauge_gas",
+      "category": "Calibre 12",
+      "name": "Gás",
+      "effect": "Gás lacrimogêneo, sonífero ou biotoxina; raio de 1 m",
+      "description": "Gás lacrimogêneo, sonífero ou biotoxina; raio de 1 m",
+      "price": 5,
+      "price_max": 25
+    },
+    {
+      "id": "ammo_12_gauge_he",
+      "category": "Calibre 12",
+      "name": "HE",
+      "effect": "4d6; raio de 0,5 m",
+      "description": "4d6; raio de 0,5 m",
+      "price": 5
+    },
+    {
+      "id": "ammo_12_gauge_heat",
+      "category": "Calibre 12",
+      "name": "HEAT",
+      "effect": "4d6 HEAT",
+      "description": "4d6 HEAT",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_12_gauge_non_lethal",
+      "category": "Calibre 12",
+      "name": "Não Letal",
+      "effect": "4d6 Atordoamento; o SP de armadura leve resiste no máximo à metade do dano",
+      "description": "4d6 Atordoamento; o SP de armadura leve resiste no máximo à metade do dano",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_12_gauge_slug",
+      "category": "Calibre 12",
+      "name": "Balote",
+      "effect": "4d6+2 AP; o SP de armadura leve reduz pela metade o dano penetrante",
+      "description": "4d6+2 AP; o SP de armadura leve reduz pela metade o dano penetrante",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_12_gauge_smoke",
+      "category": "Calibre 12",
+      "name": "Fumaça",
+      "effect": "Nuvem de fumaça de 3 m",
+      "description": "Nuvem de fumaça de 3 m",
+      "price": 15,
+      "compatibility": "25 cartuchos"
+    },
+    {
+      "id": "ammo_12_gauge_stinger",
+      "category": "Calibre 12",
+      "name": "Ferrão",
+      "effect": "4d6 de Atordoamento além de 3 m",
+      "description": "4d6 de Atordoamento além de 3 m",
+      "price": 15,
+      "compatibility": "25 cartuchos"
+    },
+    {
+      "id": "ammo_12_gauge_stundart",
+      "category": "Calibre 12",
+      "name": "Stundart",
+      "effect": "Atordoamento -2; penetra SP 10 de armadura leve",
+      "description": "Atordoamento -2; penetra SP 10 de armadura leve",
+      "price": 20,
+      "compatibility": "4 cartuchos"
+    },
+    {
+      "id": "ammo_12_gauge_thermite",
+      "category": "Calibre 12",
+      "name": "Termita",
+      "effect": "8d6 AP em padrão de meia largura; 10% de chance de arruinar o cano",
+      "description": "8d6 AP em padrão de meia largura; 10% de chance de arruinar o cano",
+      "price": 30
+    },
+    {
+      "id": "ammo_12_gauge_slasher",
+      "category": "Calibre 12",
+      "name": "Retalhadora",
+      "effect": "4d6; SP x1/3; padrão de 1 m; WA -3; alcance de 10 m",
+      "description": "4d6; SP x1/3; padrão de 1 m; WA -3; alcance de 10 m",
+      "price": 75
+    },
+    {
+      "id": "ammo_12_gauge_ball_bearing_x2",
+      "category": "Calibre 12",
+      "name": "Esferas de Rolamento (x2)",
+      "effect": "5d6+1 / 4d6+1 / 3d6+1; 1-padrão de 2 m",
+      "description": "5d6+1 / 4d6+1 / 3d6+1; 1-padrão de 2 m",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_12_gauge_magnum_buckshot",
+      "category": "Magnum Calibre 12",
+      "name": "Chumbo Grosso",
+      "effect": "4d6+2 / 3d6+2 / 2d6+2",
+      "description": "4d6+2 / 3d6+2 / 2d6+2",
+      "price": 1
+    },
+    {
+      "id": "ammo_12_gauge_magnum_he_slug",
+      "category": "Magnum Calibre 12",
+      "name": "Balote HE",
+      "effect": "3d6; raio de 1 m",
+      "description": "3d6; raio de 1 m",
+      "price": 2
+    },
+    {
+      "id": "ammo_12_gauge_magnum_ap_slug",
+      "category": "Magnum Calibre 12",
+      "name": "Balote AP",
+      "effect": "3d6 HEP",
+      "description": "3d6 HEP",
+      "price": 3
+    },
+    {
+      "id": "ammo_10_gauge_shotshell",
+      "category": "Calibre 10",
+      "name": "Cartucho de Chumbos",
+      "effect": "5d6 / 4d6 / 3d6; demais regras iguais ao calibre 12",
+      "description": "5d6 / 4d6 / 3d6; demais regras iguais ao calibre 12",
+      "price": 15,
+      "compatibility": "12 cartuchos"
+    },
+    {
+      "id": "ammo_10_gauge_flare",
+      "category": "Calibre 10",
+      "name": "Sinalizador",
+      "effect": "Ilumina 30 m; 2d6+2 e 1d6/2 ao acertar",
+      "description": "Ilumina 30 m; 2d6+2 e 1d6/2 ao acertar",
+      "price": 30,
+      "compatibility": "25 cartuchos"
+    },
+    {
+      "id": "ammo_10_gauge_flash",
+      "category": "Calibre 10",
+      "name": "Clarão",
+      "effect": "Granada de luz e som em um padrão de 25 m x 3 m",
+      "description": "Granada de luz e som em um padrão de 25 m x 3 m",
+      "price": 35,
+      "compatibility": "25 cartuchos"
+    },
+    {
+      "id": "ammo_10_gauge_flechettes",
+      "category": "Calibre 10",
+      "name": "Flechettes",
+      "effect": "5d6 AP; SP da armadura e dano penetrante x1/4",
+      "description": "5d6 AP; SP da armadura e dano penetrante x1/4",
+      "price": 8
+    },
+    {
+      "id": "ammo_10_gauge_gas",
+      "category": "Calibre 10",
+      "name": "Gás",
+      "effect": "Gás lacrimogêneo, sonífero ou biotoxina; raio de 2 m",
+      "description": "Gás lacrimogêneo, sonífero ou biotoxina; raio de 2 m",
+      "price": 5,
+      "price_max": 25
+    },
+    {
+      "id": "ammo_10_gauge_non_lethal",
+      "category": "Calibre 10",
+      "name": "Não Letal",
+      "effect": "5d6 Atordoamento; o SP de armadura leve resiste no máximo à metade do dano",
+      "description": "5d6 Atordoamento; o SP de armadura leve resiste no máximo à metade do dano",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_10_gauge_slug",
+      "category": "Calibre 10",
+      "name": "Balote",
+      "effect": "5d6+3 AP; o SP de armadura leve reduz pela metade o dano penetrante",
+      "description": "5d6+3 AP; o SP de armadura leve reduz pela metade o dano penetrante",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_10_gauge_smoke",
+      "category": "Calibre 10",
+      "name": "Fumaça",
+      "effect": "Nuvem de fumaça de 3 m",
+      "description": "Nuvem de fumaça de 3 m",
+      "price": 20,
+      "compatibility": "25 cartuchos"
+    },
+    {
+      "id": "ammo_10_gauge_stinger",
+      "category": "Calibre 10",
+      "name": "Ferrão",
+      "effect": "5d6 Atordoamento além de 9 m",
+      "description": "5d6 Atordoamento além de 9 m",
+      "price": 20,
+      "compatibility": "25 cartuchos"
+    },
+    {
+      "id": "ammo_10_gauge_3_inch_magnum_shotshell",
+      "category": "Magnum Calibre 10 de 3 polegadas",
+      "name": "Cartucho de Chumbos",
+      "effect": "6d6 / 5d6 / 4d6",
+      "description": "6d6 / 5d6 / 4d6",
+      "price": 0,
+      "compatibility": "exige modificação de +20% na arma; não aceita munição normal calibre 10",
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_10_gauge_3_inch_magnum_stinger",
+      "category": "Magnum Calibre 10 de 3 polegadas",
+      "name": "Ferrão",
+      "effect": "6d6 / 5d6 / 4d6 Atordoamento além de 9 m",
+      "description": "6d6 / 5d6 / 4d6 Atordoamento além de 9 m",
+      "price": 19,
+      "compatibility": "25 cartuchos"
+    },
+    {
+      "id": "ammo_10_gauge_3_inch_magnum_gas",
+      "category": "Magnum Calibre 10 de 3 polegadas",
+      "name": "Gás",
+      "effect": "Nuvem de gás de 3 m",
+      "description": "Nuvem de gás de 3 m",
+      "price": 0,
+      "compatibility": "exige modificação de +20% na arma",
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_10_gauge_3_inch_magnum_flare",
+      "category": "Magnum Calibre 10 de 3 polegadas",
+      "name": "Sinalizador",
+      "effect": "Ilumina 40 m por 3 turnos; 3d6 e depois 2d6",
+      "description": "Ilumina 40 m por 3 turnos; 3d6 e depois 2d6",
+      "price": 0,
+      "compatibility": "exige modificação de +20% na arma",
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_10_gauge_3_inch_magnum_smoke",
+      "category": "Magnum Calibre 10 de 3 polegadas",
+      "name": "Fumaça",
+      "effect": "Nuvem de fumaça de 4 m por 5 turnos",
+      "description": "Nuvem de fumaça de 4 m por 5 turnos",
+      "price": 0,
+      "compatibility": "exige modificação de +20% na arma",
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_4_gauge_claw_000_buckshot",
+      "category": "CLAW Calibre 4",
+      "name": "Chumbo Grosso #000",
+      "effect": "8d6",
+      "description": "8d6",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_4_gauge_claw_slug",
+      "category": "CLAW Calibre 4",
+      "name": "Balote",
+      "effect": "9d6+2 AP; o SP de armadura leve reduz pela metade o dano penetrante",
+      "description": "9d6+2 AP; o SP de armadura leve reduz pela metade o dano penetrante",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_4_gauge_claw_apfsds",
+      "category": "CLAW Calibre 4",
+      "name": "APFSDS",
+      "effect": "5d10 AP",
+      "description": "5d10 AP",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_4_gauge_claw_heat",
+      "category": "CLAW Calibre 4",
+      "name": "HEAT",
+      "effect": "7d10; SP x1/2",
+      "description": "7d10; SP x1/2",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_4_gauge_claw_slasher",
+      "category": "CLAW Calibre 4",
+      "name": "Retalhadora",
+      "effect": "padrão de 2,5 m; 4d6; SP x1/3",
+      "description": "padrão de 2,5 m; 4d6; SP x1/3",
+      "price": 75
+    },
+    {
+      "id": "ammo_4_gauge_claw_flechette_special_shells",
+      "category": "CLAW Calibre 4",
+      "name": "Flechettes / Projéteis Especiais",
+      "effect": "Flechettes, minigranadas, bastões não letais, termita, bombas de clarão e projéteis HEP e de gás disponíveis",
+      "description": "Flechettes, minigranadas, bastões não letais, termita, bombas de clarão e projéteis HEP e de gás disponíveis",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_hand_grenades_he",
+      "category": "Granadas de Mão",
+      "name": "HE",
+      "effect": "7d6 fragmentação até 5 m; 3d6 de 6-10 m",
+      "description": "7d6 fragmentação até 5 m; 3d6 de 6-10 m",
+      "price": 25
+    },
+    {
+      "id": "ammo_hand_grenades_anti_tank",
+      "category": "Granadas de Mão",
+      "name": "Antitanque",
+      "effect": "5d10 HEAT; 3d6 fragmentação até 5 m; metade do alcance de arremesso",
+      "description": "5d10 HEAT; 3d6 fragmentação até 5 m; metade do alcance de arremesso",
+      "price": 30
+    },
+    {
+      "id": "ammo_hand_grenades_chemical",
+      "category": "Granadas de Mão",
+      "name": "Química",
+      "effect": "Gás, fumaça ou tinta; raio de 10 m",
+      "description": "Gás, fumaça ou tinta; raio de 10 m",
+      "price": 20
+    },
+    {
+      "id": "ammo_hand_grenades_wp_incendiary",
+      "category": "Granadas de Mão",
+      "name": "WP / Incendiária",
+      "effect": "4d6 por 3 turnos; raio de 5 m; SP de armadura leve -2 por turno",
+      "description": "4d6 por 3 turnos; raio de 5 m; SP de armadura leve -2 por turno",
+      "price": 30
+    },
+    {
+      "id": "ammo_hand_grenades_flash_bang",
+      "category": "Granadas de Mão",
+      "name": "Luz e Som",
+      "effect": "Atordoamento -2 ou Dificuldade 4; REF 20 ou cegueira; 5 m/15 m",
+      "description": "Atordoamento -2 ou Dificuldade 4; REF 20 ou cegueira; 5 m/15 m",
+      "price": 25
+    },
+    {
+      "id": "ammo_hand_grenades_concussion",
+      "category": "Granadas de Mão",
+      "name": "Concussão",
+      "effect": "Atordoamento -5; 5 m/15 m",
+      "description": "Atordoamento -5; 5 m/15 m",
+      "price": 25
+    },
+    {
+      "id": "ammo_hand_grenades_flash",
+      "category": "Granadas de Mão",
+      "name": "Clarão",
+      "effect": "REF 20+ ou cegueira por 40 segundos; 10 m",
+      "description": "REF 20+ ou cegueira por 40 segundos; 10 m",
+      "price": 25
+    },
+    {
+      "id": "ammo_hand_grenades_sonic",
+      "category": "Granadas de Mão",
+      "name": "Sônica",
+      "effect": "Atordoamento -1; BOD 20+ ou surdez por 40 segundos; 6 m",
+      "description": "Atordoamento -1; BOD 20+ ou surdez por 40 segundos; 6 m",
+      "price": 40
+    },
+    {
+      "id": "ammo_hand_grenades_motion_restraint",
+      "category": "Granadas de Mão",
+      "name": "Restrição de Movimento",
+      "effect": "Esquiva 25+; BOD 30+ para escapar; 1 m",
+      "description": "Esquiva 25+; BOD 30+ para escapar; 1 m",
+      "price": 25
+    },
+    {
+      "id": "ammo_hand_grenades_emp",
+      "category": "Granadas de Mão",
+      "name": "EMP",
+      "effect": "Desorientação por 1d6x10 segundos; efeito de pulso; 4-10 m",
+      "description": "Desorientação por 1d6x10 segundos; efeito de pulso; 4-10 m",
+      "price": 200,
+      "price_max": 400
+    },
+    {
+      "id": "ammo_hand_grenades_saucer",
+      "category": "Granadas de Mão",
+      "name": "Disco",
+      "effect": "2d6+3 fragmentação; 15 m; +2 em Arremesso",
+      "description": "2d6+3 fragmentação; 15 m; +2 em Arremesso",
+      "price": 65
+    },
+    {
+      "id": "ammo_hand_grenades_mini_grenade",
+      "category": "Granadas de Mão",
+      "name": "Minigranada",
+      "effect": "1d6+3; 3 m; corpo de 1,5 polegada",
+      "description": "1d6+3; 3 m; corpo de 1,5 polegada",
+      "price": 40
+    },
+    {
+      "id": "ammo_hand_grenades_scatter",
+      "category": "Granadas de Mão",
+      "name": "Dispersora",
+      "effect": "Nuvem que bloqueia IR por 5 turnos; 5 m",
+      "description": "Nuvem que bloqueia IR por 5 turnos; 5 m",
+      "price": 70
+    },
+    {
+      "id": "ammo_hand_grenades_spraypaint",
+      "category": "Granadas de Mão",
+      "name": "Tinta em Spray",
+      "effect": "Cega por 1–2 minutos ao acertar o centro; 4 m",
+      "description": "Cega por 1–2 minutos ao acertar o centro; 4 m",
+      "price": 20
+    },
+    {
+      "id": "ammo_hand_grenades_stench",
+      "category": "Granadas de Mão",
+      "name": "Fedor",
+      "effect": "Teste Muito Difícil de COOL/BOD; 5 m x 5 m",
+      "description": "Teste Muito Difícil de COOL/BOD; 5 m x 5 m",
+      "price": 20
+    },
+    {
+      "id": "ammo_hand_grenades_ln2",
+      "category": "Granadas de Mão",
+      "name": "LN2",
+      "effect": "2d6+2 (mínimo 6); 1d6/2+1 na área; 3 m",
+      "description": "2d6+2 (mínimo 6); 1d6/2+1 na área; 3 m",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_hand_grenades_smoke_pellets",
+      "category": "Granadas de Mão",
+      "name": "Pelotas de Fumaça",
+      "effect": "Exige um teste de Furtividade para escapar da área",
+      "description": "Exige um teste de Furtividade para escapar da área",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_hand_grenades_acid",
+      "category": "Granadas de Mão",
+      "name": "Ácido",
+      "effect": "Nuvem de ácido; 1 ponto por local por turno",
+      "description": "Nuvem de ácido; 1 ponto por local por turno",
+      "price": 50
+    },
+    {
+      "id": "ammo_hand_grenades_blind_gas",
+      "category": "Granadas de Mão",
+      "name": "Gás Cegante",
+      "effect": "BOD -2 (+3 de dificuldade) ou cegueira por 1d10+2 turnos",
+      "description": "BOD -2 (+3 de dificuldade) ou cegueira por 1d10+2 turnos",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_chemical",
+      "category": "Granadas Militech de 25 mm",
+      "name": "Química",
+      "effect": "Fumaça ou gás; 5 m",
+      "description": "Fumaça ou gás; 5 m",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_flechette",
+      "category": "Granadas Militech de 25 mm",
+      "name": "Flechette",
+      "effect": "2d6 x 1d6 AP; 2 m x padrão de 25 m",
+      "description": "2d6 x 1d6 AP; 2 m x padrão de 25 m",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_fragmentation",
+      "category": "Granadas Militech de 25 mm",
+      "name": "Fragmentação",
+      "effect": "2d6+1; penetração 1; 5 m",
+      "description": "2d6+1; penetração 1; 5 m",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_hep",
+      "category": "Granadas Militech de 25 mm",
+      "name": "HEP",
+      "effect": "5d6 HEP; penetração 3; armadura -2 níveis",
+      "description": "5d6 HEP; penetração 3; armadura -2 níveis",
+      "price": 40
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_stundart",
+      "category": "Granadas Militech de 25 mm",
+      "name": "Stundart",
+      "effect": "Atordoamento -4 através de SP 10 de armadura leve; alcance de 100 m",
+      "description": "Atordoamento -4 através de SP 10 de armadura leve; alcance de 100 m",
+      "price": 5
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_slasher",
+      "category": "Granadas Militech de 25 mm",
+      "name": "Retalhadora",
+      "effect": "4d6; SP x1/3; 2 m; WA -2; alcance de 50 m",
+      "description": "4d6; SP x1/3; 2 m; WA -2; alcance de 50 m",
+      "price": 75
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_frag",
+      "category": "Granadas Militech de 25 mm",
+      "name": "Fragmentação",
+      "effect": "3d6; 3 m",
+      "description": "3d6; 3 m",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_flash",
+      "category": "Granadas Militech de 25 mm",
+      "name": "Clarão",
+      "effect": "50% de chance de -5 em REF e Percepção por 3 turnos; 5 m",
+      "description": "50% de chance de -5 em REF e Percepção por 3 turnos; 5 m",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_incendiary",
+      "category": "Granadas Militech de 25 mm",
+      "name": "Incendiária",
+      "effect": "4d6 / 2d6 / 1d6; 1 m",
+      "description": "4d6 / 2d6 / 1d6; 1 m",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_concussion",
+      "category": "Granadas Militech de 25 mm",
+      "name": "Concussão",
+      "effect": "3d6 Atordoamento; SP x1/3; 4 m",
+      "description": "3d6 Atordoamento; SP x1/3; 4 m",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_grenades_ln2",
+      "category": "Granadas Militech de 25 mm",
+      "name": "LN2",
+      "effect": "2d6 (mínimo 4) em duas áreas mais os efeitos de LN2; 2 m",
+      "description": "2d6 (mínimo 4) em duas áreas mais os efeitos de LN2; 2 m",
+      "price": 30
+    },
+    {
+      "id": "ammo_tsunami_high_pressure_25mm_grenades_frag",
+      "category": "Granadas Tsunami de Alta Pressão de 25 mm",
+      "name": "Fragmentação",
+      "effect": "3d6+1; penetração 1; 5 m; alcance de 1500 m",
+      "description": "3d6+1; penetração 1; 5 m; alcance de 1500 m",
+      "price": 15
+    },
+    {
+      "id": "ammo_tsunami_high_pressure_25mm_grenades_he",
+      "category": "Granadas Tsunami de Alta Pressão de 25 mm",
+      "name": "HE",
+      "effect": "5d6; penetração 2; 3 m; alcance de 1500 m",
+      "description": "5d6; penetração 2; 3 m; alcance de 1500 m",
+      "price": 15
+    },
+    {
+      "id": "ammo_tsunami_high_pressure_25mm_grenades_hep",
+      "category": "Granadas Tsunami de Alta Pressão de 25 mm",
+      "name": "HEP",
+      "effect": "5d6; penetração 3; armadura danificada em dois níveis; alcance de 1500 m",
+      "description": "5d6; penetração 3; armadura danificada em dois níveis; alcance de 1500 m",
+      "price": 25
+    },
+    {
+      "id": "ammo_tsunami_high_pressure_25mm_grenades_incendiary",
+      "category": "Granadas Tsunami de Alta Pressão de 25 mm",
+      "name": "Incendiária",
+      "effect": "4d6 / 3d6 / 2d6; penetração 2; 2 m; alcance de 1500 m",
+      "description": "4d6 / 3d6 / 2d6; penetração 2; 2 m; alcance de 1500 m",
+      "price": 15
+    },
+    {
+      "id": "ammo_militech_25mm_pistol_grenades_concussion",
+      "category": "Granadas de Pistola Militech de 25 mm",
+      "name": "Concussão",
+      "effect": "3d6 Atordoamento; SP x1/3; 4 m",
+      "description": "3d6 Atordoamento; SP x1/3; 4 m",
+      "price": 15
+    },
+    {
+      "id": "ammo_militech_25mm_pistol_grenades_defensive_frag",
+      "category": "Granadas de Pistola Militech de 25 mm",
+      "name": "Fragmentação Defensiva",
+      "effect": "2d6+1; 3 m",
+      "description": "2d6+1; 3 m",
+      "price": 20
+    },
+    {
+      "id": "ammo_militech_25mm_pistol_grenades_flashbomb",
+      "category": "Granadas de Pistola Militech de 25 mm",
+      "name": "Bomba de Clarão",
+      "effect": "Teste de Atordoamento; -5 em REF e Percepção por 5 turnos; 5 m",
+      "description": "Teste de Atordoamento; -5 em REF e Percepção por 5 turnos; 5 m",
+      "price": 15
+    },
+    {
+      "id": "ammo_militech_25mm_pistol_grenades_hep",
+      "category": "Granadas de Pistola Militech de 25 mm",
+      "name": "HEP",
+      "effect": "5d6 HEP",
+      "description": "5d6 HEP",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_pistol_grenades_incendiary",
+      "category": "Granadas de Pistola Militech de 25 mm",
+      "name": "Incendiária",
+      "effect": "4d6 / 3d6 / 2d6; 1 m",
+      "description": "4d6 / 3d6 / 2d6; 1 m",
+      "price": 30
+    },
+    {
+      "id": "ammo_militech_25mm_pistol_grenades_offensive_frag",
+      "category": "Granadas de Pistola Militech de 25 mm",
+      "name": "Fragmentação Ofensiva",
+      "effect": "5d6; 3 m",
+      "description": "5d6; 3 m",
+      "price": 25
+    },
+    {
+      "id": "ammo_militech_25mm_pistol_grenades_chemical",
+      "category": "Granadas de Pistola Militech de 25 mm",
+      "name": "Química",
+      "effect": "Fumaça ou gás lacrimogêneo; 3 m",
+      "description": "Fumaça ou gás lacrimogêneo; 3 m",
+      "price": 20
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_he",
+      "category": "Granadas Lançadas de 40 mm",
+      "name": "HE",
+      "effect": "7d6; penetração 2; 5 m; ativa após 10 m",
+      "description": "7d6; penetração 2; 5 m; ativa após 10 m",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_hedp",
+      "category": "Granadas Lançadas de 40 mm",
+      "name": "HEDP",
+      "effect": "4d10 HEAT; penetração 4; 4d6 em 1 m",
+      "description": "4d10 HEAT; penetração 4; 4d6 em 1 m",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_illumination",
+      "category": "Granadas Lançadas de 40 mm",
+      "name": "Iluminação",
+      "effect": "20 m mais 20 m de baixa luminosidade, ou 1d6x6; opção de paraquedas por 5 eb",
+      "description": "20 m mais 20 m de baixa luminosidade, ou 1d6x6; opção de paraquedas por 5 eb",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_chemical",
+      "category": "Granadas Lançadas de 40 mm",
+      "name": "Química",
+      "effect": "Transporta gás ou fumaça; 10 m; opção de paraquedas por 5 eb",
+      "description": "Transporta gás ou fumaça; 10 m; opção de paraquedas por 5 eb",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_bean_bag",
+      "category": "Granadas Lançadas de 40 mm",
+      "name": "Saco de Feijão",
+      "effect": "2d6; Atordoamento -5; +1 por 15 SP; 50 m; REF 20+",
+      "description": "2d6; Atordoamento -5; +1 por 15 SP; 50 m; REF 20+",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_wp",
+      "category": "Granadas Lançadas de 40 mm",
+      "name": "WP",
+      "effect": "4d6 por 3 turnos; penetração 2; 10 m",
+      "description": "4d6 por 3 turnos; penetração 2; 10 m",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_flechette",
+      "category": "Granadas Lançadas de 40 mm",
+      "name": "Flechette",
+      "effect": "1d6/2 x 2d6 AP; penetração 1; 3 m x 25 m",
+      "description": "1d6/2 x 2d6 AP; penetração 1; 3 m x 25 m",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_hep",
+      "category": "Granadas Lançadas de 40 mm",
+      "name": "HEP",
+      "effect": "7d6 HEP; SP -5 níveis; WA -1",
+      "description": "7d6 HEP; SP -5 níveis; WA -1",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_flash_bang",
+      "category": "Granadas Lançadas de 40 mm",
+      "name": "Luz e Som",
+      "effect": "Atordoamento -2; atordoado e surdo por 4 turnos; 5 m/15 m; REF 20+ ou cego por 2 turnos",
+      "description": "Atordoamento -2; atordoado e surdo por 4 turnos; 5 m/15 m; REF 20+ ou cego por 2 turnos",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_grapnel",
+      "category": "Granadas Lançadas de 40 mm",
+      "name": "Arpéu",
+      "effect": "Metade do alcance; WA -2; 1d6 dano; 50% de chance de prender",
+      "description": "Metade do alcance; WA -2; 1d6 dano; 50% de chance de prender",
+      "price": 30
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_net",
+      "category": "Granadas Lançadas de 40 mm",
+      "name": "Rede",
+      "effect": "25 m; WA -5; 1d6; 50% de chance de envolver; REF 20+ ou BOD 25+ para escapar",
+      "description": "25 m; WA -5; 1d6; 50% de chance de envolver; REF 20+ ou BOD 25+ para escapar",
+      "price": 50
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_splatshell",
+      "category": "Granadas Lançadas de 40 mm",
+      "name": "Splatshell",
+      "effect": "1d6+1 acertos; padrão de 5 m x 2 m até 15 m x 6 m",
+      "description": "1d6+1 acertos; padrão de 5 m x 2 m até 15 m x 6 m",
+      "price": 10
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_slasher",
+      "category": "Granadas Lançadas de 40 mm",
+      "name": "Retalhadora",
+      "effect": "4d6; SP x1/3; 3 m; WA -2; 50 m",
+      "description": "4d6; SP x1/3; 3 m; WA -2; 50 m",
+      "price": 75
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_spraypaint",
+      "category": "Granadas Lançadas de 40 mm",
+      "name": "Tinta em Spray",
+      "effect": "Cegueira por 1d6/3 turnos; 4 m",
+      "description": "Cegueira por 1d6/3 turnos; 4 m",
+      "price": 20
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_emp",
+      "category": "Granadas Lançadas de 40 mm",
+      "name": "EMP",
+      "effect": "Desorienta por 10 segundos; ciberware desativado por 4/10 minutos; 5 m",
+      "description": "Desorienta por 10 segundos; ciberware desativado por 4/10 minutos; 5 m",
+      "price": 400
+    },
+    {
+      "id": "ammo_40mm_launched_grenades_ln2",
+      "category": "Granadas Lançadas de 40 mm",
+      "name": "LN2",
+      "effect": "2d6+2 (mínimo 6); 1d6/2+1 na área; 3 m",
+      "description": "2d6+2 (mínimo 6); 1d6/2+1 na área; 3 m",
+      "price": 50
+    },
+    {
+      "id": "ammo_rifle_grenades_classic_he",
+      "category": "Granadas de Fuzil",
+      "name": "HE Clássica",
+      "effect": "8d6; 5 m; WA -3; 100 m",
+      "description": "8d6; 5 m; WA -3; 100 m",
+      "price": 50
+    },
+    {
+      "id": "ammo_rifle_grenades_classic_heat",
+      "category": "Granadas de Fuzil",
+      "name": "HEAT Clássica",
+      "effect": "8d10 HEAT; 4d6 em 1 m; WA -3; 100 m",
+      "description": "8d10 HEAT; 4d6 em 1 m; WA -3; 100 m",
+      "price": 50
+    },
+    {
+      "id": "ammo_rifle_grenades_classic_chemical",
+      "category": "Granadas de Fuzil",
+      "name": "Química Clássica",
+      "effect": "Gás ou fumaça; 10 m; WA -3; 100 m",
+      "description": "Gás ou fumaça; 10 m; WA -3; 100 m",
+      "price": 50
+    },
+    {
+      "id": "ammo_rifle_grenades_classic_emp",
+      "category": "Granadas de Fuzil",
+      "name": "EMP Clássica",
+      "effect": "Desorienta por 1d6x10 segundos; ciberware afetado por 4–10 minutos; 5 m",
+      "description": "Desorienta por 1d6x10 segundos; ciberware afetado por 4–10 minutos; 5 m",
+      "price": 400
+    },
+    {
+      "id": "ammo_rifle_grenades_dcr_he",
+      "category": "Granadas de Fuzil",
+      "name": "DCR HE",
+      "effect": "7d6 até 5 m; 3d6 de 6-10 m; WA -1; 150 m",
+      "description": "7d6 até 5 m; 3d6 de 6-10 m; WA -1; 150 m",
+      "price": 50
+    },
+    {
+      "id": "ammo_rifle_grenades_dcr_smoke",
+      "category": "Granadas de Fuzil",
+      "name": "Fumaça DCR",
+      "effect": "Fumaça em uma área de 10 m; WA -1; 150 m",
+      "description": "Fumaça em uma área de 10 m; WA -1; 150 m",
+      "price": 50
+    },
+    {
+      "id": "ammo_rifle_grenades_dcr_heat",
+      "category": "Granadas de Fuzil",
+      "name": "DCR HEAT",
+      "effect": "5d10 HEAT; 3d6 até 5 m; WA +0; 150 m",
+      "description": "5d10 HEAT; 3d6 até 5 m; WA +0; 150 m",
+      "price": 50
+    },
+    {
+      "id": "ammo_special_projectiles_det_web",
+      "category": "Projéteis Especiais",
+      "name": "Rede Detonante",
+      "effect": "40 AP; WA +0; 25 m",
+      "description": "40 AP; WA +0; 25 m",
+      "price": 450,
+      "compatibility": "lançadores de teia"
+    },
+    {
+      "id": "ammo_special_projectiles_taser_net",
+      "category": "Projéteis Especiais",
+      "name": "Rede Taser",
+      "effect": "Como um taser; WA +0; 25 m",
+      "description": "Como um taser; WA +0; 25 m",
+      "price": 100,
+      "compatibility": "lançadores de teia"
+    },
+    {
+      "id": "ammo_special_projectiles_web",
+      "category": "Projéteis Especiais",
+      "name": "Teia",
+      "effect": "Enreda; Teste Quase Impossível de BOD+REF; 30 m",
+      "description": "Enreda; Teste Quase Impossível de BOD+REF; 30 m",
+      "price": 0,
+      "compatibility": "lançadores de teia",
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_special_projectiles_sharpwire",
+      "category": "Projéteis Especiais",
+      "name": "Fio Cortante",
+      "effect": "WA +2; BOD/2 dano; SP x1/2; 10 m",
+      "description": "WA +2; BOD/2 dano; SP x1/2; 10 m",
+      "price": 450,
+      "compatibility": "lançadores de rede"
+    },
+    {
+      "id": "ammo_special_projectiles_micromissile_he",
+      "category": "Projéteis Especiais",
+      "name": "Micromíssil HE",
+      "effect": "4d6; 2 m",
+      "description": "4d6; 2 m",
+      "price": 50,
+      "compatibility": "micromísseis"
+    },
+    {
+      "id": "ammo_special_projectiles_micromissile_anti_armor",
+      "category": "Projéteis Especiais",
+      "name": "Micromíssil Antiblindagem",
+      "effect": "4d6 HEAT; SP x1/2; 1 m",
+      "description": "4d6 HEAT; SP x1/2; 1 m",
+      "price": 75,
+      "compatibility": "micromísseis"
+    },
+    {
+      "id": "ammo_special_projectiles_micromissile_hep",
+      "category": "Projéteis Especiais",
+      "name": "Micromíssil HEP",
+      "effect": "4d6+4; sem explosão em área",
+      "description": "4d6+4; sem explosão em área",
+      "price": 200,
+      "compatibility": "micromísseis"
+    },
+    {
+      "id": "ammo_special_projectiles_13mm_hep_shells_12",
+      "category": "Projéteis Especiais",
+      "name": "Projéteis HEP 13 mm (12)",
+      "effect": "4d6+2",
+      "description": "4d6+2",
+      "price": 45,
+      "compatibility": "13 mm"
+    },
+    {
+      "id": "ammo_special_projectiles_13mm_api_shells_12",
+      "category": "Projéteis Especiais",
+      "name": "Projéteis API 13 mm (12)",
+      "effect": "4d6+3; SP x1/2; depois 1d6 e 1d6/2 com SP 0",
+      "description": "4d6+3; SP x1/2; depois 1d6 e 1d6/2 com SP 0",
+      "price": 45,
+      "compatibility": "13 mm"
+    },
+    {
+      "id": "ammo_special_projectiles_13mm_acid_shells_12",
+      "category": "Projéteis Especiais",
+      "name": "Projéteis de Ácido 13 mm (12)",
+      "effect": "1d6 por 4 turnos",
+      "description": "1d6 por 4 turnos",
+      "price": 20,
+      "compatibility": "13 mm"
+    },
+    {
+      "id": "ammo_special_projectiles_13mm_ln2_shell",
+      "category": "Projéteis Especiais",
+      "name": "Projétil de LN2 13 mm",
+      "effect": "1d6+2 em um local mais os efeitos de LN2",
+      "description": "1d6+2 em um local mais os efeitos de LN2",
+      "price": 0,
+      "compatibility": "13 mm",
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_special_projectiles_15mm_kurtz_practice",
+      "category": "Projéteis Especiais",
+      "name": "Treino Kurtz 15 mm",
+      "effect": "4d10+3",
+      "description": "4d10+3",
+      "price": 8,
+      "compatibility": "Kurtz 15 mm"
+    },
+    {
+      "id": "ammo_special_projectiles_15mm_kurtz_he",
+      "category": "Projéteis Especiais",
+      "name": "HE Kurtz 15 mm",
+      "effect": "3d10; 1 m",
+      "description": "3d10; 1 m",
+      "price": 20,
+      "compatibility": "Kurtz 15 mm"
+    },
+    {
+      "id": "ammo_special_projectiles_25mm_cockerill_ap",
+      "category": "Projéteis Especiais",
+      "name": "Cockerill AP 25 mm",
+      "effect": "5d10+10 AP; penetração 5",
+      "description": "5d10+10 AP; penetração 5",
+      "price": 0,
+      "compatibility": "canhão Cockerill de 25 mm",
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_special_projectiles_25mm_cockerill_hep",
+      "category": "Projéteis Especiais",
+      "name": "Cockerill HEP 25 mm",
+      "effect": "5d10+10 HEP; penetração 6",
+      "description": "5d10+10 HEP; penetração 6",
+      "price": 0,
+      "compatibility": "canhão Cockerill de 25 mm",
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_special_projectiles_25mm_cockerill_flechette",
+      "category": "Projéteis Especiais",
+      "name": "Cockerill Flechette 25 mm",
+      "effect": "1d6+3 x 1d6+1 AP; 1 m/2 m/4 m x 100 m",
+      "description": "1d6+3 x 1d6+1 AP; 1 m/2 m/4 m x 100 m",
+      "price": 0,
+      "compatibility": "canhão Cockerill de 25 mm",
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_special_projectiles_30mm_rockets_6",
+      "category": "Projéteis Especiais",
+      "name": "Foguetes de 30 mm (6)",
+      "effect": "HE 5d6; penetração 1; 3 m",
+      "description": "HE 5d6; penetração 1; 3 m",
+      "price": 200,
+      "compatibility": "sistemas de foguetes de 30 mm"
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_rpg_a_heat",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "RPG-A HEAT",
+      "effect": "6d10 AP",
+      "description": "6d10 AP",
+      "price": 250
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_rpg_a_he",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "RPG-A HE",
+      "effect": "6d10; penetração 3; 6 m",
+      "description": "6d10; penetração 3; 6 m",
+      "price": 250
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_rpg_b_heat",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "RPG-B HEAT",
+      "effect": "9d10 AP",
+      "description": "9d10 AP",
+      "price": 400
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_2_inch_rocket",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "Foguete de 2 polegadas",
+      "effect": "6d10; um espaço a cada 12",
+      "description": "6d10; um espaço a cada 12",
+      "price": 100
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_2_75_inch_rocket",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "Foguete de 2,75 polegadas",
+      "effect": "8d10; um espaço a cada 10",
+      "description": "8d10; um espaço a cada 10",
+      "price": 200
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_3_5_inch_rocket",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "Foguete de 3,5 polegadas",
+      "effect": "9d10; um espaço a cada 6",
+      "description": "9d10; um espaço a cada 6",
+      "price": 400
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_5_inch_rocket",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "Foguete de 5 polegadas",
+      "effect": "13d10",
+      "description": "13d10",
+      "price": 1000
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_latgm",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "LATGM",
+      "effect": "12d10 AP; um quinto de espaço",
+      "description": "12d10 AP; um quinto de espaço",
+      "price": 1500
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_hatgm",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "HATGM",
+      "effect": "18d10 AP; um terço de espaço",
+      "description": "18d10 AP; um terço de espaço",
+      "price": 3500
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_hellfire",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "Hellfire",
+      "effect": "20d10 AP; um espaço",
+      "description": "20d10 AP; um espaço",
+      "price": 10000
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_60mm_mortar_shell",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "Projétil de Morteiro 60 mm",
+      "effect": "8d10",
+      "description": "8d10",
+      "price": 50
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_80mm_mortar_shell",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "Projétil de Morteiro 80 mm",
+      "effect": "9d10; um espaço a cada 20",
+      "description": "9d10; um espaço a cada 20",
+      "price": 150
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_120mm_mortar_shell",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "Projétil de Morteiro 120 mm",
+      "effect": "13d10; um espaço a cada 10",
+      "description": "13d10; um espaço a cada 10",
+      "price": 250
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_105mm_howitzer_shell",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "Projétil de Obuseiro 105 mm",
+      "effect": "11d10; um espaço a cada 5",
+      "description": "11d10; um espaço a cada 5",
+      "price": 500
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_150mm_howitzer_shell",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "Projétil de Obuseiro 150 mm",
+      "effect": "13d10; um espaço",
+      "description": "13d10; um espaço",
+      "price": 1000
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_200mm_howitzer_shell",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "Projétil de Obuseiro 200 mm",
+      "effect": "28d10; um espaço",
+      "description": "28d10; um espaço",
+      "price": 2000
+    },
+    {
+      "id": "ammo_rocket_and_missile_reloads_230mm_rocket",
+      "category": "Recargas de Foguetes e Mísseis",
+      "name": "Foguete de 230 mm",
+      "effect": "4d10 AP",
+      "description": "4d10 AP",
+      "price": 2500
+    },
+    {
+      "id": "ammo_chemical_loads_smoke",
+      "category": "Cargas Químicas",
+      "name": "Fumaça",
+      "effect": "Custo do projétil x0,3; granada 15 eb+",
+      "description": "Custo do projétil x0,3; granada 15 eb+",
+      "price": 15
+    },
+    {
+      "id": "ammo_chemical_loads_hot_smoke",
+      "category": "Cargas Químicas",
+      "name": "Fumaça Quente",
+      "effect": "Custo do projétil x1; granada 35 eb+",
+      "description": "Custo do projétil x1; granada 35 eb+",
+      "price": 35
+    },
+    {
+      "id": "ammo_chemical_loads_tear_gas",
+      "category": "Cargas Químicas",
+      "name": "Gás Lacrimogêneo",
+      "effect": "Custo do projétil x2; granada 15-20 eb",
+      "description": "Custo do projétil x2; granada 15-20 eb",
+      "price": 15,
+      "price_max": 20
+    },
+    {
+      "id": "ammo_chemical_loads_nausea_gas",
+      "category": "Cargas Químicas",
+      "name": "Gás Nauseante",
+      "effect": "Custo do projétil x2; granada 25-50 eb",
+      "description": "Custo do projétil x2; granada 25-50 eb",
+      "price": 25,
+      "price_max": 50
+    },
+    {
+      "id": "ammo_chemical_loads_knock_out_gas",
+      "category": "Cargas Químicas",
+      "name": "Gás Nocauteante",
+      "effect": "Custo do projétil x3; granada 50-75 eb",
+      "description": "Custo do projétil x3; granada 50-75 eb",
+      "price": 50,
+      "price_max": 75
+    },
+    {
+      "id": "ammo_chemical_loads_mace",
+      "category": "Cargas Químicas",
+      "name": "Mace",
+      "effect": "Custo do projétil x3; granada 45-80 eb",
+      "description": "Custo do projétil x3; granada 45-80 eb",
+      "price": 45,
+      "price_max": 80
+    },
+    {
+      "id": "ammo_chemical_loads_nerve_gas",
+      "category": "Cargas Químicas",
+      "name": "Gás Nervoso",
+      "effect": "Custo do projétil x20; preço da granada não informado",
+      "description": "Custo do projétil x20; preço da granada não informado",
+      "price": 20,
+      "price_label": "20x"
+    },
+    {
+      "id": "ammo_chemical_loads_white_phosphorous",
+      "category": "Cargas Químicas",
+      "name": "Fósforo Branco",
+      "effect": "Custo do projétil x4; preço da granada não informado",
+      "description": "Custo do projétil x4; preço da granada não informado",
+      "price": 4,
+      "price_label": "4x"
+    },
+    {
+      "id": "ammo_arrowheads_target_arrow",
+      "category": "Pontas de Flecha",
+      "name": "Flecha de Alvo",
+      "effect": "SP x1/2; dano normal",
+      "description": "SP x1/2; dano normal",
+      "price": 24,
+      "compatibility": "12 flechas"
+    },
+    {
+      "id": "ammo_arrowheads_broadhead_arrow",
+      "category": "Pontas de Flecha",
+      "name": "Flecha de Ponta Larga",
+      "effect": "SP de armadura leve x1/2; dano penetrante x2",
+      "description": "SP de armadura leve x1/2; dano penetrante x2",
+      "price": 40,
+      "compatibility": "12 flechas"
+    },
+    {
+      "id": "ammo_arrowheads_stun_arrow",
+      "category": "Pontas de Flecha",
+      "name": "Flecha de Atordoamento",
+      "effect": "Dano de Atordoamento",
+      "description": "Dano de Atordoamento",
+      "price": 20,
+      "compatibility": "12 flechas"
+    },
+    {
+      "id": "ammo_arrowheads_spinner_arrow",
+      "category": "Pontas de Flecha",
+      "name": "Flecha Giratória",
+      "effect": "SP de armadura leve x1/2; dano penetrante x3",
+      "description": "SP de armadura leve x1/2; dano penetrante x3",
+      "price": 80,
+      "compatibility": "12 flechas"
+    },
+    {
+      "id": "ammo_arrowheads_warhead_arrow",
+      "category": "Pontas de Flecha",
+      "name": "Flecha com Ogiva",
+      "effect": "granada de pistola de 25 mm; WA -2",
+      "description": "granada de pistola de 25 mm; WA -2",
+      "price": 0,
+      "compatibility": "preço e efeito variam",
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_arrowheads_target_quarrel",
+      "category": "Pontas de Flecha",
+      "name": "Virote de Alvo",
+      "effect": "SP x1/2; dano normal",
+      "description": "SP x1/2; dano normal",
+      "price": 30,
+      "compatibility": "12 virotes"
+    },
+    {
+      "id": "ammo_arrowheads_broadhead_quarrel",
+      "category": "Pontas de Flecha",
+      "name": "Virote de Ponta Larga",
+      "effect": "SP de armadura leve x1/2; dano penetrante x2",
+      "description": "SP de armadura leve x1/2; dano penetrante x2",
+      "price": 50,
+      "compatibility": "12 virotes"
+    },
+    {
+      "id": "ammo_arrowheads_stun_quarrel",
+      "category": "Pontas de Flecha",
+      "name": "Virote de Atordoamento",
+      "effect": "Dano de Atordoamento",
+      "description": "Dano de Atordoamento",
+      "price": 25,
+      "compatibility": "12 virotes"
+    },
+    {
+      "id": "ammo_arrowheads_spinner_quarrel",
+      "category": "Pontas de Flecha",
+      "name": "Virote Giratório",
+      "effect": "SP de armadura leve x1/2; dano penetrante x3",
+      "description": "SP de armadura leve x1/2; dano penetrante x3",
+      "price": 100,
+      "compatibility": "12 virotes"
+    },
+    {
+      "id": "ammo_arrowheads_warhead_quarrel",
+      "category": "Pontas de Flecha",
+      "name": "Virote com Ogiva",
+      "effect": "granada de pistola de 25 mm; WA -2",
+      "description": "granada de pistola de 25 mm; WA -2",
+      "price": 0,
+      "compatibility": "preço e efeito variam",
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_arrowheads_silver_quarrel",
+      "category": "Pontas de Flecha",
+      "name": "Virote de Prata",
+      "effect": "SP x1/2",
+      "description": "SP x1/2",
+      "price": 3,
+      "price_label": "3x",
+      "compatibility": "virotes de besta"
+    },
+    {
+      "id": "ammo_airgun_and_needlegun_loads_drugged_splatball",
+      "category": "Cargas de Armas de Ar e Agulhas",
+      "name": "Splatball Drogada",
+      "effect": "Efeito determinado pela droga",
+      "description": "Efeito determinado pela droga",
+      "price": 5,
+      "price_label": "5x",
+      "compatibility": "armas de ar"
+    },
+    {
+      "id": "ammo_airgun_and_needlegun_loads_acid_splatball",
+      "category": "Cargas de Armas de Ar e Agulhas",
+      "name": "Splatball de Ácido",
+      "effect": "1d6 por 3 turnos",
+      "description": "1d6 por 3 turnos",
+      "price": 5,
+      "price_label": "5x",
+      "compatibility": "armas de ar"
+    },
+    {
+      "id": "ammo_airgun_and_needlegun_loads_normal_needlegun_load_100",
+      "category": "Cargas de Armas de Ar e Agulhas",
+      "name": "Carga Normal para Arma de Agulhas (100)",
+      "effect": "SP de armadura leve x1/2",
+      "description": "SP de armadura leve x1/2",
+      "price": 50,
+      "compatibility": "armas de agulhas"
+    },
+    {
+      "id": "ammo_airgun_and_needlegun_loads_drugged_needlegun_load",
+      "category": "Cargas de Armas de Ar e Agulhas",
+      "name": "Carga Drogada para Arma de Agulhas",
+      "effect": "SP de armadura leve x1/2 mais o efeito da droga",
+      "description": "SP de armadura leve x1/2 mais o efeito da droga",
+      "price": 5,
+      "price_label": "5x",
+      "compatibility": "armas de agulhas"
+    },
+    {
+      "id": "ammo_airgun_and_needlegun_loads_anti_armor_needlegun_load",
+      "category": "Cargas de Armas de Ar e Agulhas",
+      "name": "Carga Antiblindagem para Arma de Agulhas",
+      "effect": "SP de armadura leve x1/4; SP de armadura rígida x1/2",
+      "description": "SP de armadura leve x1/4; SP de armadura rígida x1/2",
+      "price": 4,
+      "price_label": "4x",
+      "compatibility": "armas de agulhas"
+    },
+    {
+      "id": "ammo_airgun_and_needlegun_loads_he_impact_needlegun_load",
+      "category": "Cargas de Armas de Ar e Agulhas",
+      "name": "Carga HE de Impacto para Arma de Agulhas",
+      "effect": "4d6",
+      "description": "4d6",
+      "price": 5,
+      "price_label": "5x",
+      "compatibility": "armas de agulhas"
+    },
+    {
+      "id": "ammo_airgun_and_needlegun_loads_he_timer_liquid_needlegun_load",
+      "category": "Cargas de Armas de Ar e Agulhas",
+      "name": "Carga HE Temporizada/Líquida para Arma de Agulhas",
+      "effect": "SP de armadura leve x1/2; +4d6",
+      "description": "SP de armadura leve x1/2; +4d6",
+      "price": 5,
+      "price_label": "5x",
+      "compatibility": "armas de agulhas"
+    },
+    {
+      "id": "ammo_firearm_accessories_holster",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Coldre",
+      "effect": "Coldre de ombro, coxa ou perna",
+      "description": "Coldre de ombro, coxa ou perna",
+      "price": 20
+    },
+    {
+      "id": "ammo_firearm_accessories_shoulder_sling",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Bandoleira",
+      "effect": "Para fuzis, escopetas e submetralhadoras",
+      "description": "Para fuzis, escopetas e submetralhadoras",
+      "price": 5
+    },
+    {
+      "id": "ammo_firearm_accessories_silencer_suppressor",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Silenciador / Supressor",
+      "effect": "WA -1; Ocultabilidade +1; Teste de Percepção para ouvir",
+      "description": "WA -1; Ocultabilidade +1; Teste de Percepção para ouvir",
+      "price": 100
+    },
+    {
+      "id": "ammo_firearm_accessories_laser_sight",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Mira Laser",
+      "effect": "WA +1",
+      "description": "WA +1",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_firearm_accessories_commercial_under_barrel_grenade_launcher",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Lança-Granadas Comercial Sob o Cano",
+      "effect": "HVY +0 L R; 30-40 mm; 1 disparo; ROF 1; ST; 225 m",
+      "description": "HVY +0 L R; 30-40 mm; 1 disparo; ROF 1; ST; 225 m",
+      "price": 150
+    },
+    {
+      "id": "ammo_firearm_accessories_cyberleg_holster",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Coldre de Perna Cibernética",
+      "effect": "Uma pistola leve até uma submetralhadora média e um carregador",
+      "description": "Uma pistola leve até uma submetralhadora média e um carregador",
+      "price": 100
+    },
+    {
+      "id": "ammo_firearm_accessories_cybernetic_pop_up_gun",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Arma Cibernética Retrátil",
+      "effect": "Comporta de pistola leve até submetralhadora média",
+      "description": "Comporta de pistola leve até submetralhadora média",
+      "price": 1,
+      "price_max": 800
+    },
+    {
+      "id": "ammo_firearm_accessories_weapon_mount_link",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Suporte e Link de Arma",
+      "effect": "Ponto de fixação para arma em membro cibernético",
+      "description": "Ponto de fixação para arma em membro cibernético",
+      "price": 100
+    },
+    {
+      "id": "ammo_firearm_accessories_smartgun_link",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Link de Smartgun",
+      "effect": "WA +2 com Smartgun",
+      "description": "WA +2 com Smartgun",
+      "price": 100
+    },
+    {
+      "id": "ammo_firearm_accessories_cyberoptic_targeting_scope",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Luneta de Mira Cyberóptica",
+      "effect": "WA +1 somente em ataques com Smartgun",
+      "description": "WA +1 somente em ataques com Smartgun",
+      "price": 400
+    },
+    {
+      "id": "ammo_firearm_accessories_smart_vision_goggles",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Óculos Inteligentes / de Visão",
+      "effect": "Quatro espaços de opção; opções custam 10% menos",
+      "description": "Quatro espaços de opção; opções custam 10% menos",
+      "price": 200
+    },
+    {
+      "id": "ammo_firearm_accessories_smartlink_scope",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Luneta Smartlink",
+      "effect": "WA +1; total +3 com Smartgun",
+      "description": "WA +1; total +3 com Smartgun",
+      "price": 360
+    },
+    {
+      "id": "ammo_firearm_accessories_magnification",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Ampliação",
+      "effect": "Ampliação de até x25",
+      "description": "Ampliação de até x25",
+      "price": 200
+    },
+    {
+      "id": "ammo_firearm_accessories_image_intensifiers",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Intensificadores de Imagem",
+      "effect": "Percepção +2",
+      "description": "Percepção +2",
+      "price": 250
+    },
+    {
+      "id": "ammo_firearm_accessories_thermograph",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Termógrafo",
+      "effect": "Como o termógrafo cyberóptico",
+      "description": "Como o termógrafo cyberóptico",
+      "price": 200
+    },
+    {
+      "id": "ammo_firearm_accessories_scopesight",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Luneta",
+      "effect": "Ataque mirado: +2 em Longa/Extrema, +1 em Média",
+      "description": "Ataque mirado: +2 em Longa/Extrema, +1 em Média",
+      "price": 200
+    },
+    {
+      "id": "ammo_firearm_accessories_low_lite_scope",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Luneta de Baixa Luminosidade",
+      "effect": "Ataque mirado: +2 em Longa/Extrema, +1 em Média",
+      "description": "Ataque mirado: +2 em Longa/Extrema, +1 em Média",
+      "price": 300
+    },
+    {
+      "id": "ammo_firearm_accessories_computer_sights",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Miras Computadorizadas",
+      "effect": "Ataque mirado: +3 em Longa/Extrema, +2 em Média; baixa luminosidade",
+      "description": "Ataque mirado: +3 em Longa/Extrema, +2 em Média; baixa luminosidade",
+      "price": 500
+    },
+    {
+      "id": "ammo_firearm_accessories_computer_thermo_sight",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Mira Computadorizada + Térmica",
+      "effect": "Ataque mirado: +3 em Longa/Extrema, +2 em Média; baixa luminosidade e termógrafo",
+      "description": "Ataque mirado: +3 em Longa/Extrema, +2 em Média; baixa luminosidade e termógrafo",
+      "price": 700
+    },
+    {
+      "id": "ammo_firearm_accessories_bipod",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Bipé",
+      "effect": "WA +2 quando apoiada e imóvel",
+      "description": "WA +2 quando apoiada e imóvel",
+      "price": 10
+    },
+    {
+      "id": "ammo_firearm_accessories_bayonet",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Baioneta",
+      "effect": "3d6 AP quando fixada",
+      "description": "3d6 AP quando fixada",
+      "price": 15
+    },
+    {
+      "id": "ammo_firearm_accessories_gyro_mount",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Suporte Giroscópico",
+      "effect": "Anula penalidades de tiro a partir do quadril e movimento",
+      "description": "Anula penalidades de tiro a partir do quadril e movimento",
+      "price": 250
+    },
+    {
+      "id": "ammo_firearm_accessories_portable_laser_rangefinder",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Telêmetro Laser Portátil",
+      "effect": "Determina o alcance exato",
+      "description": "Determina o alcance exato",
+      "price": 50
+    },
+    {
+      "id": "ammo_firearm_accessories_power_exo_mount",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Exossuporte Motorizado",
+      "effect": "Para armas pesadas; WA -1, MA -1, REF -2",
+      "description": "Para armas pesadas; WA -1, MA -1, REF -2",
+      "price": 5000
+    },
+    {
+      "id": "ammo_firearm_accessories_m_205_grenade_launcher",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Lança-Granadas M-205",
+      "effect": "HVY +1 L P; 40 mm; 1 disparo; ROF 1; VR; 200 m",
+      "description": "HVY +1 L P; 40 mm; 1 disparo; ROF 1; VR; 200 m",
+      "price": 250
+    },
+    {
+      "id": "ammo_firearm_accessories_classic_rifle_grenade_adapter",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Adaptador Clássico de Granada de Fuzil",
+      "effect": "HVY -3 N P; 1 disparo; ROF 0,5; VR; 100 m",
+      "description": "HVY -3 N P; 1 disparo; ROF 0,5; VR; 100 m",
+      "price": 50
+    },
+    {
+      "id": "ammo_firearm_accessories_cot_sight",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Mira COT",
+      "effect": "Mira de Smartgun; WA +3",
+      "description": "Mira de Smartgun; WA +3",
+      "price": 4000
+    },
+    {
+      "id": "ammo_firearm_accessories_cookie_cutter",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Cookie Cutter",
+      "effect": "A Smartgun não dispara contra portadores do distintivo",
+      "description": "A Smartgun não dispara contra portadores do distintivo",
+      "price": 300
+    },
+    {
+      "id": "ammo_firearm_accessories_extra_cookie_cutter_badge",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Distintivo Cookie Cutter Extra",
+      "effect": "Distintivo protegido adicional",
+      "description": "Distintivo protegido adicional",
+      "price": 15
+    },
+    {
+      "id": "ammo_firearm_accessories_new_frames",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Novas Armações",
+      "effect": "Armação bullpup pode melhorar a Ocultabilidade",
+      "description": "Armação bullpup pode melhorar a Ocultabilidade",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_firearm_accessories_braces_and_stocks",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Apoios e Coronha",
+      "effect": "WA +1",
+      "description": "WA +1",
+      "price": 50
+    },
+    {
+      "id": "ammo_firearm_accessories_cooling_shroud",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Camisa de Refrigeração",
+      "effect": "Confiabilidade +1",
+      "description": "Confiabilidade +1",
+      "price": 50
+    },
+    {
+      "id": "ammo_firearm_accessories_magazine_extensions",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Extensões de Carregador",
+      "effect": "Capacidade dupla ou tripla",
+      "description": "Capacidade dupla ou tripla",
+      "price": 40
+    },
+    {
+      "id": "ammo_firearm_accessories_techtronica_scangrip",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Empunhadura de Varredura Techtronica",
+      "effect": "Empunhadura de varredura da arma",
+      "description": "Empunhadura de varredura da arma",
+      "price": 200
+    },
+    {
+      "id": "ammo_firearm_accessories_cybernetic_targeting_system",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Sistema de Mira Cibernética",
+      "effect": "Suporte giroscópico integrado",
+      "description": "Suporte giroscópico integrado",
+      "price": 1300
+    },
+    {
+      "id": "ammo_firearm_accessories_gun_cleaning_kit",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Kit de Limpeza de Arma",
+      "effect": "Evita Confiabilidade -1 por manutenção inadequada",
+      "description": "Evita Confiabilidade -1 por manutenção inadequada",
+      "price": 50
+    },
+    {
+      "id": "ammo_firearm_accessories_digital_weapon_link",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Link Digital de Arma",
+      "effect": "TECH +2 para desemperrar a arma",
+      "description": "TECH +2 para desemperrar a arma",
+      "price": 500
+    },
+    {
+      "id": "ammo_firearm_accessories_dud_smartgun_controller",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Controlador de Smartgun DUD",
+      "effect": "Armas ativadas por voz; exige DUD",
+      "description": "Armas ativadas por voz; exige DUD",
+      "price": 720
+    },
+    {
+      "id": "ammo_firearm_accessories_militech_pump_mini_grenade_launcher",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Lança-Minigranadas de Ação por Bomba Militech",
+      "effect": "HVY -1 L C; 25 mm; 4 disparos; ROF 2; ST; 150 m",
+      "description": "HVY -1 L C; 25 mm; 4 disparos; ROF 2; ST; 150 m",
+      "price": 255
+    },
+    {
+      "id": "ammo_firearm_accessories_militech_drum_mini_grenade_launcher",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Lança-Minigranadas de Tambor Militech",
+      "effect": "HVY +0 N P; 25 mm; 16 disparos; ROF 2; ST; 150 m",
+      "description": "HVY +0 N P; 25 mm; 16 disparos; ROF 2; ST; 150 m",
+      "price": 475
+    },
+    {
+      "id": "ammo_firearm_accessories_dcr_rifle_grenade_adapter",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Adaptador DCR de Granada de Fuzil",
+      "effect": "HVY -1 N P; 1 disparo; ROF 0,5; VR; 150 m",
+      "description": "HVY -1 N P; 1 disparo; ROF 0,5; VR; 150 m",
+      "price": 50,
+      "price_max": 100
+    },
+    {
+      "id": "ammo_firearm_accessories_speedholster",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Coldre Rápido",
+      "effect": "Saque Rápido +1",
+      "description": "Saque Rápido +1",
+      "price": 100
+    },
+    {
+      "id": "ammo_firearm_accessories_quickdraw_cyberarm_holster",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Coldre de Saque Rápido para Braço Cibernético",
+      "effect": "Saque Rápido +2; Ocultabilidade P",
+      "description": "Saque Rápido +2; Ocultabilidade P",
+      "price": 200
+    },
+    {
+      "id": "ammo_firearm_accessories_stutter_chipping",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Chip de Bloqueio de Fogo",
+      "effect": "Impede disparos contra aliados designados; resposta em 10 segundos",
+      "description": "Impede disparos contra aliados designados; resposta em 10 segundos",
+      "price": 310
+    },
+    {
+      "id": "ammo_firearm_accessories_nine_eleven_chip",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Chip Nine-Eleven",
+      "effect": "Pede ajuda; chegada em 1d10+2 minutos",
+      "description": "Pede ajuda; chegada em 1d10+2 minutos",
+      "price": 175
+    },
+    {
+      "id": "ammo_firearm_accessories_security_chipping",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Chip de Segurança",
+      "effect": "Smartlock Muito Difícil",
+      "description": "Smartlock Muito Difícil",
+      "price": 250
+    },
+    {
+      "id": "ammo_firearm_accessories_gun_cam",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Câmera de Arma",
+      "effect": "Armazena 10 imagens digitais",
+      "description": "Armazena 10 imagens digitais",
+      "price": 100
+    },
+    {
+      "id": "ammo_firearm_accessories_et_battery",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Bateria ET",
+      "effect": "Bateria para 100 disparos",
+      "description": "Bateria para 100 disparos",
+      "price": 150
+    },
+    {
+      "id": "ammo_firearm_accessories_22_muzzle_adapter",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Adaptador de Boca .22",
+      "effect": "Custo de instalação de 50 eb; dispara granadas de fuzil/pistola",
+      "description": "Custo de instalação de 50 eb; dispara granadas de fuzil/pistola",
+      "price": 200
+    },
+    {
+      "id": "ammo_firearm_accessories_under_barrel_capacitor_laser",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Laser Capacitor Sob o Cano",
+      "effect": "RIF +2; 3d6; 2 disparos; ROF 2; UR; 25 m",
+      "description": "RIF +2; 3d6; 2 disparos; ROF 2; UR; 25 m",
+      "price": 950
+    },
+    {
+      "id": "ammo_firearm_accessories_under_barrel_microwaver",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Micro-ondas Sob o Cano",
+      "effect": "EX +0; 1d6 mais efeito especial; 4 disparos; ROF 2; ST; 20 m",
+      "description": "EX +0; 1d6 mais efeito especial; 4 disparos; ROF 2; ST; 20 m",
+      "price": 500
+    },
+    {
+      "id": "ammo_firearm_accessories_hip_mounted_powerpack",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Powerpack de Quadril",
+      "effect": "Dobra os disparos; +5 m de alcance para micro-ondas; 4 kg",
+      "description": "Dobra os disparos; +5 m de alcance para micro-ondas; 4 kg",
+      "price": 250
+    },
+    {
+      "id": "ammo_firearm_accessories_under_barrel_micro_missile_pod",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Pod de Micromísseis Sob o Cano",
+      "effect": "HVY +1 L P; 4d6; 1 disparo; ROF 1; ST; 200 m",
+      "description": "HVY +1 L P; 4d6; 1 disparo; ROF 1; ST; 200 m",
+      "price": 200
+    },
+    {
+      "id": "ammo_firearm_accessories_under_barrel_sharpwire_net",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Rede de Fio Cortante Sob o Cano",
+      "effect": "Lança uma rede de fio cortante",
+      "description": "Lança uma rede de fio cortante",
+      "price": 450
+    },
+    {
+      "id": "ammo_firearm_accessories_kleen_bore_nanoagents",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Nanoagentes Kleen Bore",
+      "effect": "Limpa a arma",
+      "description": "Limpa a arma",
+      "price": 50
+    },
+    {
+      "id": "ammo_firearm_accessories_midnight_arms_smart_glove",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Luva Inteligente Midnight Arms",
+      "effect": "Luva de Smartgun; +200 eb por smartgun",
+      "description": "Luva de Smartgun; +200 eb por smartgun",
+      "price": 110
+    },
+    {
+      "id": "ammo_firearm_accessories_smartgoggle_mirrorshades",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Mirrorshades Smartgoggle",
+      "effect": "Dois espaços de opção; opções custam 10% menos",
+      "description": "Dois espaços de opção; opções custam 10% menos",
+      "price": 450
+    },
+    {
+      "id": "ammo_firearm_accessories_smartplate_link",
+      "category": "Acessórios para Armas de Fogo",
+      "name": "Link SmartPlate",
+      "effect": "A Smartgun custa três vezes o valor-base",
+      "description": "A Smartgun custa três vezes o valor-base",
+      "price": 300
+    },
+    {
+      "id": "ammo_bow_accessories_bow_string_silencer",
+      "category": "Acessórios para Arcos",
+      "name": "Silenciador de Corda de Arco",
+      "effect": "Torna o arco completamente silencioso",
+      "description": "Torna o arco completamente silencioso",
+      "price": 50
+    },
+    {
+      "id": "ammo_bow_accessories_crossbow_autoloader",
+      "category": "Acessórios para Arcos",
+      "name": "Autocarregador de Besta",
+      "effect": "Metade da capacidade normal (6); ROF x2; WA -1",
+      "description": "Metade da capacidade normal (6); ROF x2; WA -1",
+      "price": 25,
+      "price_label": "25%x"
+    },
+    {
+      "id": "ammo_bow_accessories_basic_bow_sights",
+      "category": "Acessórios para Arcos",
+      "name": "Miras Básicas para Arco",
+      "effect": "WA +1 ao mirar",
+      "description": "WA +1 ao mirar",
+      "price": 50
+    },
+    {
+      "id": "ammo_bow_accessories_cyber_targeting",
+      "category": "Acessórios para Arcos",
+      "name": "Mira Cibernética",
+      "effect": "WA +1 ou +2; exige Smartgoggles ou cyberóptica",
+      "description": "WA +1 ou +2; exige Smartgoggles ou cyberóptica",
+      "price": 250
+    },
+    {
+      "id": "ammo_bow_accessories_ir_sight",
+      "category": "Acessórios para Arcos",
+      "name": "Mira IR",
+      "effect": "Como a opção cyberóptica IR",
+      "description": "Como a opção cyberóptica IR",
+      "price": 200
+    },
+    {
+      "id": "ammo_bow_accessories_lowlite_sight",
+      "category": "Acessórios para Arcos",
+      "name": "Mira de Baixa Luminosidade",
+      "effect": "Anula penalidades por escuridão",
+      "description": "Anula penalidades por escuridão",
+      "price": 150
+    },
+    {
+      "id": "ammo_bow_accessories_gyro_stabilizer",
+      "category": "Acessórios para Arcos",
+      "name": "Estabilizador Giroscópico",
+      "effect": "Reduz pela metade as penalidades de movimento com arco simples",
+      "description": "Reduz pela metade as penalidades de movimento com arco simples",
+      "price": 100
+    },
+    {
+      "id": "ammo_melee_accessories_monomolecular_edge",
+      "category": "Acessórios para Armas Brancas",
+      "name": "Fio Monomolecular",
+      "effect": "Dano +1d6; SP de armadura leve x1/3; SP de armadura rígida x2/3",
+      "description": "Dano +1d6; SP de armadura leve x1/3; SP de armadura rígida x2/3",
+      "price": 5,
+      "price_label": "5x"
+    },
+    {
+      "id": "ammo_gun_customization_custom_grip",
+      "category": "Customização de Armas",
+      "name": "Empunhadura Personalizada",
+      "effect": "WA +1 em Saque Rápido e Disparo Instintivo",
+      "description": "WA +1 em Saque Rápido e Disparo Instintivo",
+      "price": 0.3,
+      "price_label": "0.3x"
+    },
+    {
+      "id": "ammo_gun_customization_adjustable_stock",
+      "category": "Customização de Armas",
+      "name": "Coronha Ajustável",
+      "effect": "Um turno adicional de mira; WA +1 em Disparo Instintivo",
+      "description": "Um turno adicional de mira; WA +1 em Disparo Instintivo",
+      "price": 0.6,
+      "price_label": "0.6x"
+    },
+    {
+      "id": "ammo_gun_customization_folding_stock_rifle",
+      "category": "Customização de Armas",
+      "name": "Coronha Dobrável — Fuzil",
+      "effect": "Ocultabilidade +1; WA -1/-2",
+      "description": "Ocultabilidade +1; WA -1/-2",
+      "price": 0.3,
+      "price_label": "0.3x"
+    },
+    {
+      "id": "ammo_gun_customization_stock_pistol_or_light_smg",
+      "category": "Customização de Armas",
+      "name": "Coronha — Pistola ou Submetralhadora Leve",
+      "effect": "WA +0/+1 em alcance Longo e Extremo",
+      "description": "WA +0/+1 em alcance Longo e Extremo",
+      "price": 0.3,
+      "price_label": "0.3x"
+    },
+    {
+      "id": "ammo_gun_customization_solenoid_trigger",
+      "category": "Customização de Armas",
+      "name": "Gatilho Solenoide",
+      "effect": "WA +1 em alcance Extremo; peso +10%",
+      "description": "WA +1 em alcance Extremo; peso +10%",
+      "price": 1,
+      "price_label": "1x"
+    },
+    {
+      "id": "ammo_gun_customization_build_solenoid_trigger",
+      "category": "Customização de Armas",
+      "name": "Construir Gatilho Solenoide",
+      "effect": "Substitui o gatilho por um botão de disparo",
+      "description": "Substitui o gatilho por um botão de disparo",
+      "price": 0.5,
+      "price_label": "0.5x"
+    },
+    {
+      "id": "ammo_gun_customization_electric_trigger",
+      "category": "Customização de Armas",
+      "name": "Gatilho Elétrico",
+      "effect": "WA +1 em alcance Extremo",
+      "description": "WA +1 em alcance Extremo",
+      "price": 1,
+      "price_label": "1x"
+    },
+    {
+      "id": "ammo_gun_customization_electric_fire_ammo_conversion",
+      "category": "Customização de Armas",
+      "name": "Conversão de Munição para Disparo Elétrico",
+      "effect": "Modifica 100 cartuchos para disparo elétrico",
+      "description": "Modifica 100 cartuchos para disparo elétrico",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_gun_customization_barrel_chopping",
+      "category": "Customização de Armas",
+      "name": "Encurtamento de Cano",
+      "effect": "Ocultabilidade +1; metade do alcance; padrão +50%",
+      "description": "Ocultabilidade +1; metade do alcance; padrão +50%",
+      "price": 0.3,
+      "price_label": "0.3x"
+    },
+    {
+      "id": "ammo_gun_customization_chop_pistol_or_smg",
+      "category": "Customização de Armas",
+      "name": "Encurtar Pistola ou Submetralhadora",
+      "effect": "WA -1; metade do alcance",
+      "description": "WA -1; metade do alcance",
+      "price": 0.3,
+      "price_label": "0.3x"
+    },
+    {
+      "id": "ammo_gun_customization_cheap_barrel_chopping",
+      "category": "Customização de Armas",
+      "name": "Encurtamento de Cano Barato",
+      "effect": "WA -2; emperra com 1–2; falha crítica provoca explosão",
+      "description": "WA -2; emperra com 1–2; falha crítica provoca explosão",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_gun_customization_barrel_extension",
+      "category": "Customização de Armas",
+      "name": "Extensão de Cano",
+      "effect": "Ocultabilidade -1; alcance +25%",
+      "description": "Ocultabilidade -1; alcance +25%",
+      "price": 0.3,
+      "price_label": "0.3x"
+    },
+    {
+      "id": "ammo_gun_customization_burst_fire",
+      "category": "Customização de Armas",
+      "name": "Rajada",
+      "effect": "WA -1; Confiabilidade -1; permite rajada de três disparos",
+      "description": "WA -1; Confiabilidade -1; permite rajada de três disparos",
+      "price": 1.5,
+      "price_label": "1.5x"
+    },
+    {
+      "id": "ammo_gun_customization_pure_auto_fire",
+      "category": "Customização de Armas",
+      "name": "Fogo Automático Puro",
+      "effect": "Dispara metade do carregador, no máximo 30; WA -1; Confiabilidade -2",
+      "description": "Dispara metade do carregador, no máximo 30; WA -1; Confiabilidade -2",
+      "price": 1,
+      "price_label": "1x"
+    },
+    {
+      "id": "ammo_gun_customization_selective_fire",
+      "category": "Customização de Armas",
+      "name": "Fogo Seletivo",
+      "effect": "Tiro único, rajada de três disparos ou automático com WA -2; Confiabilidade -1",
+      "description": "Tiro único, rajada de três disparos ou automático com WA -2; Confiabilidade -1",
+      "price": 2,
+      "price_label": "2x"
+    },
+    {
+      "id": "ammo_gun_customization_heat_resistant_barrel",
+      "category": "Customização de Armas",
+      "name": "Cano Resistente ao Calor",
+      "effect": "Anula um nível de perda de Confiabilidade",
+      "description": "Anula um nível de perda de Confiabilidade",
+      "price": 0.5,
+      "price_label": "0.5x"
+    },
+    {
+      "id": "ammo_gun_customization_make_resistant_barrel",
+      "category": "Customização de Armas",
+      "name": "Fabricar Cano Resistente",
+      "effect": "Opção de fabricação para Armeiro",
+      "description": "Opção de fabricação para Armeiro",
+      "price": 0.2,
+      "price_label": "0.2x"
+    },
+    {
+      "id": "ammo_gun_customization_quality",
+      "category": "Customização de Armas",
+      "name": "Qualidade",
+      "effect": "Confiabilidade +1 até VR",
+      "description": "Confiabilidade +1 até VR",
+      "price": 0.5,
+      "price_label": "0.5x"
+    },
+    {
+      "id": "ammo_gun_customization_compensation",
+      "category": "Customização de Armas",
+      "name": "Compensação",
+      "effect": "ROF +1 para semiautomáticas com ROF 1 ou 2",
+      "description": "ROF +1 para semiautomáticas com ROF 1 ou 2",
+      "price": 0.4,
+      "price_label": "0.4x"
+    },
+    {
+      "id": "ammo_gun_customization_electrothermal_enhancement",
+      "category": "Customização de Armas",
+      "name": "Aprimoramento Eletrotérmico",
+      "effect": "Dano e alcance +50%; +0,5–1 kg; somente munição com estojo",
+      "description": "Dano e alcance +50%; +0,5–1 kg; somente munição com estojo",
+      "price": 0.5,
+      "price_label": "0.5x"
+    },
+    {
+      "id": "ammo_gun_customization_smartgun_modification",
+      "category": "Customização de Armas",
+      "name": "Modificação para Smartgun",
+      "effect": "WA +2 com Link de Smartgun",
+      "description": "WA +2 com Link de Smartgun",
+      "price": 1,
+      "price_label": "1x"
+    },
+    {
+      "id": "ammo_gun_customization_smart_plate_modification",
+      "category": "Customização de Armas",
+      "name": "Modificação para SmartPlate",
+      "effect": "Habilita SmartPlate Smartgun2",
+      "description": "Habilita SmartPlate Smartgun2",
+      "price": 0.2,
+      "price_label": "0.2x"
+    },
+    {
+      "id": "ammo_gun_customization_smart_glove_modification",
+      "category": "Customização de Armas",
+      "name": "Modificação para Luva Inteligente",
+      "effect": "Habilita Luva Inteligente",
+      "description": "Habilita Luva Inteligente",
+      "price": 200
+    },
+    {
+      "id": "ammo_gun_customization_brass_catcher",
+      "category": "Customização de Armas",
+      "name": "Coletor de Estojos",
+      "effect": "Versões leves ou rígidas",
+      "description": "Versões leves ou rígidas",
+      "price": 0.1,
+      "price_label": "0.1x"
+    },
+    {
+      "id": "ammo_gun_customization_bayonet_lug",
+      "category": "Customização de Armas",
+      "name": "Encaixe de Baioneta",
+      "effect": "Permite instalar uma baioneta",
+      "description": "Permite instalar uma baioneta",
+      "price": 0.1,
+      "price_label": "0.1x"
+    },
+    {
+      "id": "ammo_gun_customization_standard_finish",
+      "category": "Customização de Armas",
+      "name": "Acabamento Padrão",
+      "effect": "Preto fosco, azulado ou níquel",
+      "description": "Preto fosco, azulado ou níquel",
+      "price": 0,
+      "price_label": "0x"
+    },
+    {
+      "id": "ammo_gun_customization_natural_color_finish",
+      "category": "Customização de Armas",
+      "name": "Acabamento em Cor Natural",
+      "effect": "Vermelho, verde, preto e cores semelhantes",
+      "description": "Vermelho, verde, preto e cores semelhantes",
+      "price": 0.1,
+      "price_label": "0.1x"
+    },
+    {
+      "id": "ammo_gun_customization_bowling_ball_finish",
+      "category": "Customização de Armas",
+      "name": "Acabamento Bola de Boliche",
+      "effect": "Duas ou mais cores misturadas",
+      "description": "Duas ou mais cores misturadas",
+      "price": 0.3,
+      "price_label": "0.3x"
+    },
+    {
+      "id": "ammo_gun_customization_custom_finish",
+      "category": "Customização de Armas",
+      "name": "Acabamento Personalizado",
+      "effect": "Cromado, perolado, camuflado ou brilhante",
+      "description": "Cromado, perolado, camuflado ou brilhante",
+      "price": 1,
+      "price_label": "1x"
+    },
+    {
+      "id": "ammo_gun_customization_neon_glow_finish",
+      "category": "Customização de Armas",
+      "name": "Acabamento Neon Luminoso",
+      "effect": "Acabamento iridescente que emite luz",
+      "description": "Acabamento iridescente que emite luz",
+      "price": 1.5,
+      "price_label": "1.5x"
+    },
+    {
+      "id": "ammo_gun_customization_printless_finish",
+      "category": "Customização de Armas",
+      "name": "Acabamento sem Impressões",
+      "effect": "Teste Quase Impossível de TECH para obter impressões digitais",
+      "description": "Teste Quase Impossível de TECH para obter impressões digitais",
+      "price": 2,
+      "price_label": "2x"
+    },
+    {
+      "id": "ammo_gun_customization_extended_magazine",
+      "category": "Customização de Armas",
+      "name": "Carregador Estendido",
+      "effect": "Até cinco vezes a capacidade original; 1 eb por cartucho com estojo",
+      "description": "Até cinco vezes a capacidade original; 1 eb por cartucho com estojo",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_gun_customization_extended_magazine_over_2x",
+      "category": "Customização de Armas",
+      "name": "Carregador Estendido Acima de 2x",
+      "effect": "Ocultabilidade -1; Confiabilidade -1; Disparo Instintivo -1/-2; 0,5 eb por cartucho sem estojo",
+      "description": "Ocultabilidade -1; Confiabilidade -1; Disparo Instintivo -1/-2; 0,5 eb por cartucho sem estojo",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_gun_customization_heavy_weapon_extended_magazine",
+      "category": "Customização de Armas",
+      "name": "Carregador Estendido para Arma Pesada",
+      "effect": "2-3 eb por cartucho",
+      "description": "2-3 eb por cartucho",
+      "price": 0,
+      "price_label": "Preço não informado"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_chemical",
+      "category": "Granadas IMI de 25 mm",
+      "name": "Química",
+      "effect": "Fumaça ou gás; 5 m; 100 m; padrão SOF2",
+      "description": "Fumaça ou gás; 5 m; 100 m; padrão SOF2",
+      "price": 45,
+      "compatibility": "lançadores IMI de 25 mm"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_flechette",
+      "category": "Granadas IMI de 25 mm",
+      "name": "Flechette",
+      "effect": "2d6 x 1d6 AP; 2 m x padrão de 25 m; 100 m; padrão SOF2",
+      "description": "2d6 x 1d6 AP; 2 m x padrão de 25 m; 100 m; padrão SOF2",
+      "price": 45,
+      "compatibility": "lançadores IMI de 25 mm"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_fragmentation",
+      "category": "Granadas IMI de 25 mm",
+      "name": "Fragmentação",
+      "effect": "2d6+1; penetração 1; 5 m; 100 m; padrão SOF2",
+      "description": "2d6+1; penetração 1; 5 m; 100 m; padrão SOF2",
+      "price": 45,
+      "compatibility": "lançadores IMI de 25 mm"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_hep",
+      "category": "Granadas IMI de 25 mm",
+      "name": "HEP",
+      "effect": "5d6 HEP; penetração 3; armadura -2 níveis; 100 m; padrão SOF2",
+      "description": "5d6 HEP; penetração 3; armadura -2 níveis; 100 m; padrão SOF2",
+      "price": 60,
+      "compatibility": "lançadores IMI de 25 mm"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_stundart",
+      "category": "Granadas IMI de 25 mm",
+      "name": "Stundart",
+      "effect": "Atordoamento -4 através de SP 10 de armadura leve; alcance de 100 m; 100 m; padrão SOF2",
+      "description": "Atordoamento -4 através de SP 10 de armadura leve; alcance de 100 m; 100 m; padrão SOF2",
+      "price": 7.5,
+      "compatibility": "lançadores IMI de 25 mm"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_slasher",
+      "category": "Granadas IMI de 25 mm",
+      "name": "Retalhadora",
+      "effect": "4d6; SP x1/3; 2 m; WA -2; alcance de 50 m; 100 m; padrão SOF2",
+      "description": "4d6; SP x1/3; 2 m; WA -2; alcance de 50 m; 100 m; padrão SOF2",
+      "price": 112.5,
+      "compatibility": "lançadores IMI de 25 mm"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_frag",
+      "category": "Granadas IMI de 25 mm",
+      "name": "Fragmentação",
+      "effect": "3d6; 3 m; 100 m; padrão SOF2",
+      "description": "3d6; 3 m; 100 m; padrão SOF2",
+      "price": 45,
+      "compatibility": "lançadores IMI de 25 mm"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_flash",
+      "category": "Granadas IMI de 25 mm",
+      "name": "Clarão",
+      "effect": "50% de chance de -5 em REF e Percepção por 3 turnos; 5 m; 100 m; padrão SOF2",
+      "description": "50% de chance de -5 em REF e Percepção por 3 turnos; 5 m; 100 m; padrão SOF2",
+      "price": 45,
+      "compatibility": "lançadores IMI de 25 mm"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_incendiary",
+      "category": "Granadas IMI de 25 mm",
+      "name": "Incendiária",
+      "effect": "4d6 / 2d6 / 1d6; 1 m; 100 m; padrão SOF2",
+      "description": "4d6 / 2d6 / 1d6; 1 m; 100 m; padrão SOF2",
+      "price": 45,
+      "compatibility": "lançadores IMI de 25 mm"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_concussion",
+      "category": "Granadas IMI de 25 mm",
+      "name": "Concussão",
+      "effect": "3d6 Atordoamento; SP x1/3; 4 m; 100 m; padrão SOF2",
+      "description": "3d6 Atordoamento; SP x1/3; 4 m; 100 m; padrão SOF2",
+      "price": 45,
+      "compatibility": "lançadores IMI de 25 mm"
+    },
+    {
+      "id": "ammo_imi_25mm_grenades_ln2",
+      "category": "Granadas IMI de 25 mm",
+      "name": "LN2",
+      "effect": "2d6 (mínimo 4) em duas áreas mais os efeitos de LN2; 2 m; 100 m; padrão SOF2",
+      "description": "2d6 (mínimo 4) em duas áreas mais os efeitos de LN2; 2 m; 100 m; padrão SOF2",
+      "price": 45,
+      "compatibility": "lançadores IMI de 25 mm"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_he",
+      "category": "Granadas Lançadas de 30 mm",
+      "name": "HE",
+      "effect": "7d6; penetração 2; 5 m; ativa após 10 m; 200 m, ou 1300 m a partir de lançador automático",
+      "description": "7d6; penetração 2; 5 m; ativa após 10 m; 200 m, ou 1300 m a partir de lançador automático",
+      "price": 50,
+      "compatibility": "lança-granadas de 30 mm"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_hedp",
+      "category": "Granadas Lançadas de 30 mm",
+      "name": "HEDP",
+      "effect": "4d10 HEAT; penetração 4; 4d6 em 1 m; 200 m, ou 1300 m a partir de lançador automático",
+      "description": "4d10 HEAT; penetração 4; 4d6 em 1 m; 200 m, ou 1300 m a partir de lançador automático",
+      "price": 50,
+      "compatibility": "lança-granadas de 30 mm"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_illumination",
+      "category": "Granadas Lançadas de 30 mm",
+      "name": "Iluminação",
+      "effect": "20 m mais 20 m de baixa luminosidade, ou 1d6x6; opção de paraquedas por 5 eb; 200 m, ou 1300 m a partir de lançador automático",
+      "description": "20 m mais 20 m de baixa luminosidade, ou 1d6x6; opção de paraquedas por 5 eb; 200 m, ou 1300 m a partir de lançador automático",
+      "price": 50,
+      "compatibility": "lança-granadas de 30 mm"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_chemical",
+      "category": "Granadas Lançadas de 30 mm",
+      "name": "Química",
+      "effect": "Transporta gás ou fumaça; 10 m; opção de paraquedas por 5 eb; 200 m, ou 1300 m a partir de lançador automático",
+      "description": "Transporta gás ou fumaça; 10 m; opção de paraquedas por 5 eb; 200 m, ou 1300 m a partir de lançador automático",
+      "price": 50,
+      "compatibility": "lança-granadas de 30 mm"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_bean_bag",
+      "category": "Granadas Lançadas de 30 mm",
+      "name": "Saco de Feijão",
+      "effect": "2d6; Atordoamento -5; +1 por 15 SP; 50 m; REF 20+; 200 m, ou 1300 m a partir de lançador automático",
+      "description": "2d6; Atordoamento -5; +1 por 15 SP; 50 m; REF 20+; 200 m, ou 1300 m a partir de lançador automático",
+      "price": 50,
+      "compatibility": "lança-granadas de 30 mm"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_wp",
+      "category": "Granadas Lançadas de 30 mm",
+      "name": "WP",
+      "effect": "4d6 por 3 turnos; penetração 2; 10 m; 200 m, ou 1300 m a partir de lançador automático",
+      "description": "4d6 por 3 turnos; penetração 2; 10 m; 200 m, ou 1300 m a partir de lançador automático",
+      "price": 50,
+      "compatibility": "lança-granadas de 30 mm"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_flechette",
+      "category": "Granadas Lançadas de 30 mm",
+      "name": "Flechette",
+      "effect": "1d6/2 x 2d6 AP; penetração 1; 3 m x 25 m; 200 m, ou 1300 m a partir de lançador automático",
+      "description": "1d6/2 x 2d6 AP; penetração 1; 3 m x 25 m; 200 m, ou 1300 m a partir de lançador automático",
+      "price": 50,
+      "compatibility": "lança-granadas de 30 mm"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_hep",
+      "category": "Granadas Lançadas de 30 mm",
+      "name": "HEP",
+      "effect": "7d6 HEP; SP -5 níveis; WA -1; 200 m, ou 1300 m a partir de lançador automático",
+      "description": "7d6 HEP; SP -5 níveis; WA -1; 200 m, ou 1300 m a partir de lançador automático",
+      "price": 50,
+      "compatibility": "lança-granadas de 30 mm"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_flash_bang",
+      "category": "Granadas Lançadas de 30 mm",
+      "name": "Luz e Som",
+      "effect": "Atordoamento -2; atordoado e surdo por 4 turnos; 5 m/15 m; REF 20+ ou cego por 2 turnos; 200 m, ou 1300 m a partir de lançador automático",
+      "description": "Atordoamento -2; atordoado e surdo por 4 turnos; 5 m/15 m; REF 20+ ou cego por 2 turnos; 200 m, ou 1300 m a partir de lançador automático",
+      "price": 50,
+      "compatibility": "lança-granadas de 30 mm"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_grapnel",
+      "category": "Granadas Lançadas de 30 mm",
+      "name": "Arpéu",
+      "effect": "Metade do alcance; WA -2; 1d6 dano; 50% de chance de prender; 200 m, ou 1300 m a partir de lançador automático",
+      "description": "Metade do alcance; WA -2; 1d6 dano; 50% de chance de prender; 200 m, ou 1300 m a partir de lançador automático",
+      "price": 30,
+      "compatibility": "lança-granadas de 30 mm"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_net",
+      "category": "Granadas Lançadas de 30 mm",
+      "name": "Rede",
+      "effect": "25 m; WA -5; 1d6; 50% de chance de envolver; REF 20+ ou BOD 25+ para escapar; 200 m, ou 1300 m a partir de lançador automático",
+      "description": "25 m; WA -5; 1d6; 50% de chance de envolver; REF 20+ ou BOD 25+ para escapar; 200 m, ou 1300 m a partir de lançador automático",
+      "price": 50,
+      "compatibility": "lança-granadas de 30 mm"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_splatshell",
+      "category": "Granadas Lançadas de 30 mm",
+      "name": "Splatshell",
+      "effect": "1d6+1 acertos; padrão de 5 m x 2 m até 15 m x 6 m; 200 m, ou 1300 m a partir de lançador automático",
+      "description": "1d6+1 acertos; padrão de 5 m x 2 m até 15 m x 6 m; 200 m, ou 1300 m a partir de lançador automático",
+      "price": 10,
+      "compatibility": "lança-granadas de 30 mm"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_spraypaint",
+      "category": "Granadas Lançadas de 30 mm",
+      "name": "Tinta em Spray",
+      "effect": "Cegueira por 1d6/3 turnos; 4 m; 200 m, ou 1300 m a partir de lançador automático",
+      "description": "Cegueira por 1d6/3 turnos; 4 m; 200 m, ou 1300 m a partir de lançador automático",
+      "price": 20,
+      "compatibility": "lança-granadas de 30 mm"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_emp",
+      "category": "Granadas Lançadas de 30 mm",
+      "name": "EMP",
+      "effect": "Desorienta por 10 segundos; ciberware desativado por 4/10 minutos; 5 m; 200 m, ou 1300 m a partir de lançador automático",
+      "description": "Desorienta por 10 segundos; ciberware desativado por 4/10 minutos; 5 m; 200 m, ou 1300 m a partir de lançador automático",
+      "price": 400,
+      "compatibility": "lança-granadas de 30 mm"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_ln2",
+      "category": "Granadas Lançadas de 30 mm",
+      "name": "LN2",
+      "effect": "2d6+2 (mínimo 6); 1d6/2+1 na área; 3 m; 200 m, ou 1300 m a partir de lançador automático",
+      "description": "2d6+2 (mínimo 6); 1d6/2+1 na área; 3 m; 200 m, ou 1300 m a partir de lançador automático",
+      "price": 50,
+      "compatibility": "lança-granadas de 30 mm"
+    },
+    {
+      "id": "ammo_30mm_launched_grenades_slasher",
+      "category": "Granadas Lançadas de 30 mm",
+      "name": "Retalhadora",
+      "effect": "4d6; SP x1/3; 2,5 m; WA -2; 50 m",
+      "description": "4d6; SP x1/3; 2,5 m; WA -2; 50 m",
+      "price": 75,
+      "compatibility": "lança-granadas de 30 mm"
+    }
+  ]
+}

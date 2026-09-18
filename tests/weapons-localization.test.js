@@ -6,7 +6,7 @@ const Ajv = require("ajv");
 const root = path.resolve(__dirname, "..");
 const english = JSON.parse(fs.readFileSync(path.join(root, "data/weapons.json"), "utf8"));
 const portuguese = JSON.parse(fs.readFileSync(path.join(root, "data/weapons.pt-BR.json"), "utf8"));
-const schema = JSON.parse(fs.readFileSync(path.join(root, "data/weapons-store.schema.json"), "utf8"));
+const schema = JSON.parse(fs.readFileSync(path.join(root, "data/weapons.schema.json"), "utf8"));
 
 const validate = new Ajv({ allErrors: true, strict: false }).compile(schema);
 assert.ok(validate(english), `English weapons failed schema: ${JSON.stringify(validate.errors)}`);

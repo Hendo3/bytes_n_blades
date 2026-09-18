@@ -1,0 +1,417 @@
+{
+  "$id": "./data/drugs.json",
+  "title": "Catálogo de Drogas",
+  "description": "Drogas de rua e opções do sistema de criação do Livro Básico de Cyberpunk 2020.",
+  "type": "drugs",
+  "version": "1.10",
+  "author": "Hendo",
+  "date": "2026-03-25",
+  "data": {
+    "street_stock": {
+      "Description": "Drogas comuns das ruas no Livro Básico de Cyberpunk 2020.",
+      "items": {
+        "synthcoke": {
+          "name": "Sintecoca",
+          "type": "Estimulante",
+          "strength": "+1",
+          "difficulty": 20,
+          "price": "1000",
+          "duration": "1D6+1 minutos",
+          "effects": "Euforia estimulante; paranoia e dependência psicológica",
+          "description": "A segunda geração e o substituto sintético da cocaína. Como no original, os efeitos secundários são horríveis: paranoia e dependência psicológica."
+        },
+        "stim": {
+          "name": "Stim",
+          "type": "Estimulante",
+          "strength": "+3",
+          "difficulty": 10,
+          "price": "500",
+          "duration": "1D6+1 minutos",
+          "effects": "Aumenta a resistência e o estado de alerta",
+          "description": "Stim aumenta a resistência, permitindo ao usuário permanecer alerta durante longos períodos. Os efeitos secundários são ilusões mentais."
+        },
+        "syncomp_15": {
+          "name": "Syncomp 15",
+          "type": "Antídoto",
+          "strength": "+3",
+          "difficulty": 13,
+          "price": "650",
+          "duration": "1D6+1 turnos",
+          "effects": "Antídoto de amplo espectro",
+          "description": "Syncomp é um antídoto para venenos de amplo espectro, usado para tratar os nervos e biotoxinas. Para cada dose é subtraído um ponto de velocidade aos REF."
+        },
+        "speedheal": {
+          "name": "Speedheal",
+          "type": "Medicação",
+          "strength": "+2",
+          "difficulty": 33,
+          "price": "1650",
+          "duration": "1D6+1 horas",
+          "effects": "Acelera a recuperação natural",
+          "description": "Speedheal foi projetada para acelerar o processo de recuperação natural. Os efeitos secundários reduzem os REF em 1D6/3 durante uma semana depois de seu uso."
+        },
+        "boost": {
+          "name": "Boost",
+          "type": "Amplificador de INT",
+          "strength": "+4",
+          "difficulty": 12,
+          "price": "600",
+          "duration": "1D6+1 horas",
+          "effects": "Aumenta temporariamente a INT em +1",
+          "description": "Aumenta a INT em +1 durante um período de 2 a 7 horas. Um viciado que tenha desenvolvido tolerância completa não consegue mais aumentar sua INT e deverá consumir mais Boost a cada 12 horas ou sofrer terríveis ataques e alucinações."
+        },
+        "blue_glass": {
+          "name": "Blue Glass",
+          "type": "Alucinógeno",
+          "strength": "+1",
+          "difficulty": 18,
+          "price": "900",
+          "duration": "1D6+1 minutos",
+          "effects": "Risco de apagar-se em alucinações",
+          "description": "Blue Glass foi desenvolvida originalmente como arma biológica. Diante do estresse, você terá 3 possibilidades entre 10 de apagar-se e ficar deslumbrado com os desenhos em sua mente. Reduza a INT em 1 ponto por dose."
+        },
+        "smash": {
+          "name": "Smash",
+          "type": "Eufórica",
+          "strength": "+1",
+          "difficulty": 2,
+          "price": "100",
+          "duration": "1D6+1 minutos",
+          "effects": "Euforia e estado festivo",
+          "description": "Smash é a resposta do ano 2020 ao álcool. É amarela, espumosa e vem em latas. Você fica despreocupado, feliz e disposto. Quando passa seu efeito, a dependência psicológica pode torná-lo suicida ou provocar catatonia total.",
+          "pack": "embalagem com 6"
+        },
+        "dorph": {
+          "name": "Endorfina",
+          "type": "Supressor de dor",
+          "strength": "+2",
+          "difficulty": 5,
+          "price": "250",
+          "duration": "1D6+1 turnos",
+          "effects": "Reduz a dor, o atordoamento e o choque",
+          "description": "Projetadas como droga de combate e analgésico, as endorfinas reduzem a dor e os efeitos do estresse. Reduzem os efeitos do choque e do atordoamento, mas causam grave dano ao sistema nervoso: a cada uso, jogue 1D10 adicional; num resultado 1, perca 1 ponto de REF permanentemente."
+        },
+        "black_lace": {
+          "name": "Black Lace",
+          "type": "Supressor de dor",
+          "strength": "+3",
+          "difficulty": 13,
+          "price": "650",
+          "duration": "1D6+1 horas",
+          "effects": "Euforia, descarga de adrenalina e invulnerabilidade à dor",
+          "description": "Uma versão muito poderosa da Endorfina que produz euforia, elevação da adrenalina e invulnerabilidade à dor. Seu AuCon se eleva em 2 pontos e você resiste ao atordoamento e ao choque. Um fracasso contra o vício pode causar perda de EMP e ciberpsicose."
+        }
+      }
+    },
+    "generatorOptions": {
+      "Description": "Tabelas oficiais de criação de drogas transcritas do Livro Básico de Cyberpunk 2020.",
+      "types": {
+        "stimulant": {
+          "label": "Estimulante",
+          "baseDifficulty": 0,
+          "basePrice": "500"
+        },
+        "euphoric": {
+          "label": "Eufórica",
+          "baseDifficulty": 0,
+          "basePrice": "250"
+        },
+        "hallucinogenic": {
+          "label": "Alucinógeno",
+          "baseDifficulty": 0,
+          "basePrice": "800"
+        },
+        "pain-negation": {
+          "label": "Supressor de dor",
+          "baseDifficulty": 0,
+          "basePrice": "400"
+        },
+        "healing-drug": {
+          "label": "Medicação",
+          "baseDifficulty": 0,
+          "basePrice": "1200"
+        },
+        "antidote": {
+          "label": "Antídoto",
+          "baseDifficulty": 0,
+          "basePrice": "600"
+        },
+        "int-booster": {
+          "label": "Amplificador de INT",
+          "baseDifficulty": 0,
+          "basePrice": "600"
+        }
+      },
+      "strengthOptions": [
+        {
+          "value": "1",
+          "difficultyMod": 1,
+          "priceMod": "0",
+          "rule": "Some a Força da droga ao corpo e à Dificuldade Básica."
+        },
+        {
+          "value": "2",
+          "difficultyMod": 2,
+          "priceMod": "0",
+          "rule": "Some a Força da droga ao corpo e à Dificuldade Básica."
+        },
+        {
+          "value": "3",
+          "difficultyMod": 3,
+          "priceMod": "0",
+          "rule": "Some a Força da droga ao corpo e à Dificuldade Básica."
+        }
+      ],
+      "durationOptions": [
+        {
+          "value": "1D10+1 turnos",
+          "difficultyMod": 1,
+          "priceMod": "0",
+          "multiplier": 1
+        },
+        {
+          "value": "1D10+1 minutos",
+          "difficultyMod": 2,
+          "priceMod": "0",
+          "multiplier": 2
+        },
+        {
+          "value": "1D10+1 horas",
+          "difficultyMod": 3,
+          "priceMod": "0",
+          "multiplier": 3
+        }
+      ],
+      "effectOptions": [
+        {
+          "id": "increase_ref",
+          "label": "Aumenta os REF em uma quantidade igual à Força da droga",
+          "difficultyMod": 15,
+          "priceMod": "0"
+        },
+        {
+          "id": "increase_int",
+          "label": "Aumenta a INT em uma quantidade igual à Força da droga",
+          "difficultyMod": 15,
+          "priceMod": "0"
+        },
+        {
+          "id": "increase_cl",
+          "label": "Aumenta o AuCon em uma quantidade igual à Força da droga",
+          "difficultyMod": 15,
+          "priceMod": "0"
+        },
+        {
+          "id": "enhanced_perception",
+          "label": "Melhora a Percepção (some a Força aos testes de Atenção)",
+          "difficultyMod": 15,
+          "priceMod": "0"
+        },
+        {
+          "id": "healing_rate",
+          "label": "Aumenta a recuperação em 1 ponto por ponto de Força",
+          "difficultyMod": 15,
+          "priceMod": "0"
+        },
+        {
+          "id": "antidote",
+          "label": "Antídoto (+1 ao Teste de Vitalidade por ponto de Força)",
+          "difficultyMod": 15,
+          "priceMod": "0"
+        },
+        {
+          "id": "increased_endurance",
+          "label": "Aumenta a Resistência (some a Força aos testes de Resistência)",
+          "difficultyMod": 10,
+          "priceMod": "0"
+        },
+        {
+          "id": "negate_pain",
+          "label": "Analgésico (some a Força ao Teste de Vitalidade contra Atordoamento)",
+          "difficultyMod": 10,
+          "priceMod": "0"
+        },
+        {
+          "id": "depressant",
+          "label": "Depressivo (subtraia a Força da Atenção)",
+          "difficultyMod": 5,
+          "priceMod": "0"
+        },
+        {
+          "id": "euphoric",
+          "label": "Eufórico (faz você se sentir bem)",
+          "difficultyMod": 5,
+          "priceMod": "0"
+        },
+        {
+          "id": "hallucinogenic",
+          "label": "Alucinógeno (faz você ver coisas)",
+          "difficultyMod": 10,
+          "priceMod": "0"
+        },
+        {
+          "id": "reduce_stun",
+          "label": "Redutor de Atordoamento (some a Força aos Testes de Vitalidade contra Atordoamento)",
+          "difficultyMod": 10,
+          "priceMod": "0"
+        },
+        {
+          "id": "soporific",
+          "label": "Soporífero (subtraia a Força dos Testes de Vitalidade contra sono)",
+          "difficultyMod": 5,
+          "priceMod": "0"
+        },
+        {
+          "id": "aphrodesiac",
+          "label": "Afrodisíaco (subtraia a Força para resistir aos testes de Sedução)",
+          "difficultyMod": 10,
+          "priceMod": "0"
+        },
+        {
+          "id": "contraceptive",
+          "label": "Anticoncepcional (masculino ou feminino)",
+          "difficultyMod": 10,
+          "priceMod": "0"
+        },
+        {
+          "id": "antibiotic",
+          "label": "Antibiótico (some a Força aos Testes de Vitalidade contra doença)",
+          "difficultyMod": 10,
+          "priceMod": "0"
+        }
+      ],
+      "riskOptions": [
+        {
+          "id": "psychological_addiction",
+          "label": "Dependência Psicológica",
+          "severity": "high",
+          "difficultyMod": -8,
+          "priceMod": "0",
+          "rule": "O personagem deve obter um resultado menor que seu AuCon a cada hora desde a última dose. Um fracasso provoca ansiedade, medo e depressão e o impele a buscar mais droga. Superar o vício exige um teste de Resistência Muito Difícil e o tempo decidido pelo Mestre."
+        },
+        {
+          "id": "physiological_addiction",
+          "label": "Dependência Fisiológica",
+          "severity": "high",
+          "difficultyMod": -10,
+          "priceMod": "0",
+          "rule": "O personagem deve obter, a cada hora desde a última dose, um resultado menor que seu TCO. Um fracasso causa dor intensa e 2D6 de dano por hora até superar o vício com um teste de Resistência Muito Difícil."
+        },
+        {
+          "id": "death",
+          "label": "Morte",
+          "severity": "extreme",
+          "difficultyMod": -15,
+          "priceMod": "0",
+          "rule": "Cada uso exige um Teste de Vitalidade contra Morte com modificador negativo igual à Força da droga menos um."
+        },
+        {
+          "id": "reduced_ref",
+          "label": "Redução de REF",
+          "severity": "high",
+          "difficultyMod": -5,
+          "priceMod": "0",
+          "rule": "Reduz os REF em 1 ponto por dose durante a permanência da droga no organismo; a penalização é cumulativa se outra dose for absorvida antes que a anterior se dissipe."
+        },
+        {
+          "id": "reduced_int",
+          "label": "Redução de INT",
+          "severity": "high",
+          "difficultyMod": -5,
+          "priceMod": "0",
+          "rule": "Reduz a INT em 1 ponto por dose durante a permanência da droga no organismo; a penalização é cumulativa se outra dose for absorvida antes que a anterior se dissipe."
+        },
+        {
+          "id": "tremors",
+          "label": "Tremores",
+          "severity": "medium",
+          "difficultyMod": -2,
+          "priceMod": "0",
+          "rule": "Causa tremores doloridos nas mãos e no rosto e aplica -2 aos REF."
+        },
+        {
+          "id": "hallucinations",
+          "label": "Alucinações",
+          "severity": "high",
+          "difficultyMod": -5,
+          "priceMod": "0",
+          "rule": "Causa alucinações de cores, vozes e formas estranhas. Como efeito colateral de um alucinógeno, o personagem sempre terá visões recorrentes a critério do Mestre."
+        },
+        {
+          "id": "paranoia",
+          "label": "Paranoia",
+          "severity": "high",
+          "difficultyMod": -3,
+          "priceMod": "0",
+          "rule": "Causa ilusões paranoicas. O personagem deve dedicar suas ações a defender-se da ameaça que acredita real, conforme decisão do Mestre."
+        },
+        {
+          "id": "delusions",
+          "label": "Ilusões",
+          "severity": "high",
+          "difficultyMod": -5,
+          "priceMod": "0",
+          "rule": "O personagem acredita em realidades falsas e deve dedicar suas ações a manter a ilusão, conforme decisão do Mestre."
+        },
+        {
+          "id": "sterility",
+          "label": "Esterilidade",
+          "severity": "high",
+          "difficultyMod": -8,
+          "priceMod": "0",
+          "rule": "Possui 3 possibilidades em 10 de causar esterilidade permanente."
+        },
+        {
+          "id": "carcinogenic",
+          "label": "Cancerígeno",
+          "severity": "extreme",
+          "difficultyMod": -10,
+          "priceMod": "0",
+          "rule": "Possui 3 possibilidades em 10 de causar câncer. Se a doença se desenvolver, o personagem sofre 1 ponto de dano permanente, a menos que consiga uma cura com um teste de Tecnologia Médica Muito Difícil."
+        },
+        {
+          "id": "psychotic_rage",
+          "label": "Fúria Psicótica",
+          "severity": "extreme",
+          "difficultyMod": -10,
+          "priceMod": "0",
+          "rule": "Pode fazer o personagem cair numa fúria psicótica e atacar qualquer um ao seu alcance."
+        },
+        {
+          "id": "aggressive_behavior",
+          "label": "Comportamento Agressivo",
+          "severity": "extreme",
+          "difficultyMod": -12,
+          "priceMod": "0",
+          "rule": "Torna o personagem irritado e agressivo, com 5 possibilidades em 10 de iniciar uma briga com a pessoa mais próxima."
+        },
+        {
+          "id": "irrational_fear",
+          "label": "Medo Irracional",
+          "severity": "extreme",
+          "difficultyMod": -12,
+          "priceMod": "0",
+          "rule": "Faz o personagem ter medo de tudo. Ele larga o que estiver fazendo e se encolhe quase catatônico até o efeito desaparecer."
+        },
+        {
+          "id": "nerve_degeneration",
+          "label": "Degeneração Nervosa",
+          "severity": "extreme",
+          "difficultyMod": -15,
+          "priceMod": "0",
+          "rule": "Causa graves danos nervosos e reduz permanentemente os REF em 2."
+        }
+      ],
+      "formula": {
+        "difficulty": "(strengthBase + effectsTotal + sideEffectsTotal) * durationMultiplier",
+        "price": "difficulty * 25",
+        "notes": "Efeitos colaterais usam pontos negativos e reduzem a dificuldade; a duração atua como multiplicador."
+      },
+      "warnings": [
+        "Drogas são perigosas e podem danificar atributos permanentemente.",
+        "Efeitos colaterais reduzem a dificuldade de criação da droga.",
+        "O preço final nas ruas é de 25 eb por ponto da Dificuldade final."
+      ]
+    }
+  }
+}

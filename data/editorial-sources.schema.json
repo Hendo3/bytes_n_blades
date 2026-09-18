@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bytes-and-blades.local/schemas/editorial-sources.schema.json",
+  "title": "Byte & Blades Editorial Sources",
+  "type": "object",
+  "required": ["version", "method", "books", "catalogs"],
+  "properties": {
+    "version": { "type": "string", "minLength": 1 },
+    "method": {
+      "type": "object",
+      "required": ["inventory", "citationPolicy"],
+      "properties": {
+        "inventory": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "citationPolicy": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "books": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["title", "kind"],
+        "properties": {
+          "title": { "type": "string", "minLength": 1 },
+          "kind": { "enum": ["official", "official-reprint", "unverified"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "catalogs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "default": { "$ref": "#/definitions/sourceReference" },
+          "categories": {
+            "type": "object",
+            "additionalProperties": { "$ref": "#/definitions/sourceReference" }
+          },
+          "items": {
+            "type": "object",
+            "additionalProperties": { "$ref": "#/definitions/sourceReference" }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "sourceReference": {
+      "type": "object",
+      "required": ["sourceId", "verification"],
+      "properties": {
+        "sourceId": { "type": "string", "minLength": 1 },
+        "pages": { "type": ["string", "null"] },
+        "verification": { "enum": ["page", "section", "book", "unverified"] },
+        "kind": { "enum": ["official", "official-reprint", "unverified"] },
+        "note": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  }
+}

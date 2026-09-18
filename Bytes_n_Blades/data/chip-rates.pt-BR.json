@@ -1,0 +1,365 @@
+{
+  "$id": "./data/chip-rates.json",
+  "title": "Preços dos Chips de Perícia",
+  "description": "Tabelas de preço por nível para chips PART, MRAM e de Reconhecimento Visual.",
+  "version": "1.0.0",
+  "data": {
+    "mram": {
+      "label": "MRAM",
+      "sections": [
+        {
+          "id": "attr_mram",
+          "label": "ATR (MRAM)",
+          "items": [
+            {
+              "skill": "Cuidados Pessoais",
+              "pricePerLevel": 100,
+              "id": "personal_grooming"
+            },
+            {
+              "skill": "Roupa & Estilo",
+              "pricePerLevel": 100,
+              "id": "wardrobe_style"
+            }
+          ]
+        },
+        {
+          "id": "int_mram",
+          "label": "INT (MRAM)",
+          "items": [
+            {
+              "skill": "Contabilidade",
+              "pricePerLevel": 150,
+              "id": "accounting"
+            },
+            {
+              "skill": "Antropologia",
+              "pricePerLevel": 150,
+              "id": "anthropology"
+            },
+            {
+              "skill": "Biologia",
+              "pricePerLevel": 150,
+              "id": "biology"
+            },
+            {
+              "skill": "Botânica",
+              "pricePerLevel": 150,
+              "id": "botany"
+            },
+            {
+              "skill": "Química",
+              "pricePerLevel": 150,
+              "id": "chemistry"
+            },
+            {
+              "skill": "Educação & Cultura Geral",
+              "pricePerLevel": 200,
+              "id": "education_gen_know"
+            },
+            {
+              "skill": "Especialista (escolha um assunto)",
+              "pricePerLevel": null,
+              "note": "Decisão do Mestre",
+              "id": "expert_pick_subject"
+            },
+            {
+              "skill": "Geologia",
+              "pricePerLevel": 150,
+              "id": "geology"
+            },
+            {
+              "skill": "História",
+              "pricePerLevel": 150,
+              "id": "history"
+            },
+            {
+              "skill": "Idioma Conhecido (escolha um)",
+              "pricePerLevel": 200,
+              "id": "know_language_choose"
+            },
+            {
+              "skill": "Matemática",
+              "pricePerLevel": 200,
+              "id": "mathematics"
+            },
+            {
+              "skill": "Física",
+              "pricePerLevel": 200,
+              "id": "physics"
+            },
+            {
+              "skill": "Programação",
+              "pricePerLevel": 300,
+              "id": "programming"
+            },
+            {
+              "skill": "Mercado de Ações",
+              "pricePerLevel": 300,
+              "id": "stock_market"
+            },
+            {
+              "skill": "Sobrevivência",
+              "pricePerLevel": 200,
+              "id": "wilderness_survival"
+            },
+            {
+              "skill": "Zoologia",
+              "pricePerLevel": 150,
+              "id": "zoology"
+            },
+            {
+              "skill": "Daytimer-Chip",
+              "pricePerLevel": 100,
+              "id": "daytimer_chip"
+            }
+          ]
+        }
+      ]
+    },
+    "aptr": {
+      "label": "PART",
+      "sections": [
+        {
+          "id": "body_aptr",
+          "label": "Corpo (PART)",
+          "items": [
+            {
+              "skill": "Natação",
+              "pricePerLevel": 100,
+              "id": "swimming"
+            }
+          ]
+        },
+        {
+          "id": "ref_aptr",
+          "label": "REF (PART)",
+          "items": [
+            {
+              "skill": "Arquerismo",
+              "pricePerLevel": 300,
+              "id": "archery"
+            },
+            {
+              "skill": "Dança",
+              "pricePerLevel": 150,
+              "id": "dance"
+            },
+            {
+              "skill": "Condução",
+              "pricePerLevel": 150,
+              "id": "driving"
+            },
+            {
+              "skill": "Esgrima",
+              "pricePerLevel": 300,
+              "id": "fencing"
+            },
+            {
+              "skill": "Armas Curtas",
+              "pricePerLevel": 300,
+              "id": "handgun"
+            },
+            {
+              "skill": "Armas Pesadas",
+              "pricePerLevel": 400,
+              "id": "heavy_weapons"
+            },
+            {
+              "skill": "Arte Marcial (escolha um tipo)",
+              "pricePerLevel": 350,
+              "id": "martial_art_choose_type"
+            },
+            {
+              "skill": "Armas Brancas",
+              "pricePerLevel": 150,
+              "id": "melee"
+            },
+            {
+              "skill": "Motocicleta",
+              "pricePerLevel": 150,
+              "id": "motorcycle"
+            },
+            {
+              "skill": "Operação de Maquinário Pesado",
+              "pricePerLevel": 200,
+              "id": "operate_hvy_machinery"
+            },
+            {
+              "skill": "Pilotagem (Giro)",
+              "pricePerLevel": 300,
+              "id": "pilot_gyro"
+            },
+            {
+              "skill": "Pilotagem (Asa Fixa)",
+              "pricePerLevel": 300,
+              "id": "pilot_fixed_wing"
+            },
+            {
+              "skill": "Pilotagem (Dirigível)",
+              "pricePerLevel": 300,
+              "id": "pilot_dirigible"
+            },
+            {
+              "skill": "Pilotagem (Veículo de Impulso Vetorial)",
+              "pricePerLevel": 350,
+              "id": "pilot_vect_thrust_vehicle"
+            },
+            {
+              "skill": "Fuzil",
+              "pricePerLevel": 300,
+              "id": "rifle"
+            },
+            {
+              "skill": "Submetralhadora",
+              "pricePerLevel": 300,
+              "id": "submachinegun"
+            }
+          ]
+        },
+        {
+          "id": "tech_aptr",
+          "label": "TEC (PART)",
+          "items": [
+            {
+              "skill": "Aero-Tecnologia",
+              "pricePerLevel": 250,
+              "id": "aero_tech"
+            },
+            {
+              "skill": "AV Tecnologia",
+              "pricePerLevel": 300,
+              "id": "av_tech"
+            },
+            {
+              "skill": "Tecnologia Básica",
+              "pricePerLevel": 200,
+              "id": "basic_tech"
+            },
+            {
+              "skill": "Operação de Tanques Criogênicos",
+              "pricePerLevel": 150,
+              "id": "cryotank_operation"
+            },
+            {
+              "skill": "Projeto de Ciberterminal",
+              "pricePerLevel": 200,
+              "id": "cyberdeck_design"
+            },
+            {
+              "skill": "Cibertecnologia",
+              "pricePerLevel": 300,
+              "id": "cybertech"
+            },
+            {
+              "skill": "Demolições",
+              "pricePerLevel": 300,
+              "id": "demolitions"
+            },
+            {
+              "skill": "Disfarce",
+              "pricePerLevel": 150,
+              "id": "disguise"
+            },
+            {
+              "skill": "Eletrônica",
+              "pricePerLevel": 150,
+              "id": "electronics"
+            },
+            {
+              "skill": "Segurança Eletrônica",
+              "pricePerLevel": 200,
+              "id": "elect_security"
+            },
+            {
+              "skill": "Primeiros Socorros",
+              "pricePerLevel": 150,
+              "id": "first_aid"
+            },
+            {
+              "skill": "Falsificação",
+              "pricePerLevel": 200,
+              "id": "forgery"
+            },
+            {
+              "skill": "Giro Tech",
+              "pricePerLevel": 300,
+              "id": "gyro_tech"
+            },
+            {
+              "skill": "Medicamentos",
+              "pricePerLevel": 200,
+              "id": "pharmaceuticals"
+            },
+            {
+              "skill": "Arrombamento",
+              "pricePerLevel": 150,
+              "id": "pick_lock"
+            },
+            {
+              "skill": "Punga",
+              "pricePerLevel": 150,
+              "id": "pick_pocket"
+            },
+            {
+              "skill": "Tocar Instrumento",
+              "pricePerLevel": 150,
+              "id": "play_instrument"
+            },
+            {
+              "skill": "Armeiro",
+              "pricePerLevel": 200,
+              "id": "weaponsmith"
+            }
+          ]
+        }
+      ]
+    },
+    "visual_recognition": {
+      "label": "Reconhecimento Visual",
+      "sections": [
+        {
+          "id": "visual_profiles",
+          "label": "Perfis de Reconhecimento Visual",
+          "items": [
+            {
+              "skill": "Técnico",
+              "pricePerLevel": 100,
+              "id": "techie"
+            },
+            {
+              "skill": "Corporativo",
+              "levelPrices": [
+                50,
+                100,
+                150
+              ],
+              "id": "corporate"
+            },
+            {
+              "skill": "Policial",
+              "pricePerLevel": 200,
+              "id": "police"
+            },
+            {
+              "skill": "Militar",
+              "pricePerLevel": 300,
+              "note": "3x o perfil básico",
+              "id": "military"
+            },
+            {
+              "skill": "Roqueiro",
+              "pricePerLevel": 100,
+              "id": "rocker"
+            },
+            {
+              "skill": "Secretariado",
+              "pricePerLevel": 100,
+              "id": "secretarial"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

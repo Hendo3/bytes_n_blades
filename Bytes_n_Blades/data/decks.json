@@ -1,0 +1,125 @@
+{
+  "$id": "https://bytes-and-blades.local/schemas/decks.json",
+  "title": "Published Prebuilt Cyberdecks",
+  "description": "Ready-made cyberdeck models printed in the Cyberpunk 2020 Corebook.",
+  "version": "1.0.0",
+  "author": "Byte & Blades",
+  "type": "prebuilt-cyberdecks",
+  "data": {
+    "publishedModels": {
+      "name": "Published Cyberdecks",
+      "description": "Factory-built decks with fixed prices and specifications taken directly from the Corebook listings.",
+      "items": {
+        "kirama_lpd_12": {
+          "id": "kirama_lpd_12",
+          "name": "Kirama LPD-12",
+          "manufacturer": "Kirama",
+          "model": "LPD-12",
+          "description": "A high-speed deck with 20 Memory Units and built-in cellular connectivity. The published listing does not state its CPU or Data Wall.",
+          "price": 8025,
+          "approximatePrice": false,
+          "stats": {
+            "speed": 3,
+            "memoryUnits": 20
+          },
+          "features": {
+            "cellular": true,
+            "portable": null
+          },
+          "options": [
+            {
+              "id": "cellular_connection",
+              "label": "Cellular connection"
+            }
+          ],
+          "source": {
+            "bookId": "cp2020-corebook",
+            "book": "Cyberpunk 2020 Corebook",
+            "page": 129
+          }
+        },
+        "sgi_elysia": {
+          "id": "sgi_elysia",
+          "name": "SGI Technologies \"Elysia\"",
+          "manufacturer": "SGI Technologies",
+          "model": "Elysia",
+          "description": "A fully portable high-performance deck supplied with a keyboard, compact Video Board, eight-'trode input and chip reader.",
+          "price": 4260,
+          "approximatePrice": false,
+          "stats": {
+            "speed": 3,
+            "cpu": 1,
+            "memoryUnits": 20,
+            "dataWall": 5
+          },
+          "features": {
+            "cellular": false,
+            "portable": true
+          },
+          "options": [
+            {
+              "id": "keyboard",
+              "label": "Keyboard"
+            },
+            {
+              "id": "video_board_3x4",
+              "label": "3 x 4 in Video Board"
+            },
+            {
+              "id": "eight_trode_input",
+              "label": "Input for eight 'trodes",
+              "quantity": 8
+            },
+            {
+              "id": "chip_reader",
+              "label": "Chip reader"
+            }
+          ],
+          "source": {
+            "bookId": "cp2020-corebook",
+            "book": "Cyberpunk 2020 Corebook",
+            "page": 133
+          }
+        },
+        "zetatech_parraline_5750": {
+          "id": "zetatech_parraline_5750",
+          "name": "Zetatech Parraline 5750",
+          "manufacturer": "Zetatech",
+          "model": "Parraline 5750",
+          "description": "A fast factory deck with a keyboard, compact Video Board and chip reader. Its listed price is approximate.",
+          "price": 3600,
+          "approximatePrice": true,
+          "stats": {
+            "speed": 2,
+            "cpu": 1,
+            "memoryUnits": 10,
+            "dataWall": 4
+          },
+          "features": {
+            "cellular": false,
+            "portable": null
+          },
+          "options": [
+            {
+              "id": "keyboard",
+              "label": "Keyboard"
+            },
+            {
+              "id": "video_board_2x3",
+              "label": "2 x 3 in Video Board"
+            },
+            {
+              "id": "chip_reader",
+              "label": "Chip reader"
+            }
+          ],
+          "source": {
+            "bookId": "cp2020-corebook",
+            "book": "Cyberpunk 2020 Corebook",
+            "page": 133
+          }
+        }
+      }
+    }
+  }
+}

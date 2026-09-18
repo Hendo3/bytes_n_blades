@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Drugs Dataset",
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "$id": { "type": "string" },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "type": { "type": "string" },
+    "version": { "type": "string" },
+    "author": { "type": "string" },
+    "date": { "type": "string" },
+    "data": {
+      "type": "object",
+      "required": ["street_stock", "generatorOptions"],
+      "properties": {
+        "street_stock": {
+          "type": "object",
+          "required": ["items"],
+          "properties": {
+            "Description": { "type": "string" },
+            "items": {
+              "type": "object",
+              "minProperties": 1,
+              "additionalProperties": { "$ref": "#/definitions/drugItem" }
+            }
+          },
+          "additionalProperties": true
+        },
+        "generatorOptions": {
+          "type": "object",
+          "required": ["types", "strengthOptions", "durationOptions", "effectOptions", "riskOptions"],
+          "properties": {
+            "Description": { "type": "string" },
+            "types": {
+              "type": "object",
+              "minProperties": 1,
+              "additionalProperties": {
+                "type": "object",
+                "required": ["label", "baseDifficulty", "basePrice"],
+                "properties": {
+                  "label": { "type": "string" },
+                  "baseDifficulty": { "type": "number" },
+                  "basePrice": { "type": ["string", "number"] }
+                },
+                "additionalProperties": true
+              }
+            },
+            "strengthOptions": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/modOption" }
+            },
+            "durationOptions": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/modOption" }
+            },
+            "effectOptions": {
+              "type": "array",
+              "items": { "$ref": "#/definitions/labeledModOption" }
+            },
+            "riskOptions": {
+              "type": "array",
+              "items": {
+                "allOf": [
+                  { "$ref": "#/definitions/labeledModOption" },
+                  {
+                    "type": "object",
+                    "required": ["severity"],
+                    "properties": {
+                      "severity": { "type": "string" }
+                    }
+                  }
+                ]
+              }
+            },
+            "formula": { "type": "object" },
+            "warnings": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "drugItem": {
+      "type": "object",
+      "required": ["name", "type", "price", "duration", "difficulty", "effects", "description"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "minLength": 1 },
+        "strength": { "type": "string" },
+        "difficulty": { "type": "number" },
+        "price": { "type": ["string", "number"] },
+        "duration": { "type": "string", "minLength": 1 },
+        "effects": { "type": ["string", "array"] },
+        "description": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": true
+    },
+    "modOption": {
+      "type": "object",
+      "required": ["value", "difficultyMod", "priceMod"],
+      "properties": {
+        "value": { "type": "string" },
+        "difficultyMod": { "type": "number" },
+        "priceMod": { "type": ["string", "number"] }
+      },
+      "additionalProperties": true
+    },
+    "labeledModOption": {
+      "type": "object",
+      "required": ["id", "label", "difficultyMod", "priceMod"],
+      "properties": {
+        "id": { "type": "string" },
+        "label": { "type": "string" },
+        "difficultyMod": { "type": "number" },
+        "priceMod": { "type": ["string", "number"] }
+      },
+      "additionalProperties": true
+    }
+  }
+}

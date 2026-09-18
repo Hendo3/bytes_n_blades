@@ -1,0 +1,1368 @@
+{
+  "schema_version": "2.0.0",
+  "locale": "en-US",
+  "decks": [
+    {
+      "price_model": {
+        "kind": "fixed",
+        "amount": 8025
+      },
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "id": "kirama_lpd_12",
+      "name": "Kirama LPD-12",
+      "description": "Premium cellular deck advertised with expanded memory and high speed.",
+      "price": 8025,
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 20,
+      "speed": 3,
+      "data_wall": null,
+      "portable": true,
+      "cellular": true,
+      "armor_sp": null,
+      "options": [
+        "cellular_link"
+      ],
+      "unspecified": [
+        "cpu",
+        "data_wall"
+      ],
+      "source": {
+        "book": "Cyberpunk 2020 Core Rulebook",
+        "pages": "148"
+      }
+    },
+    {
+      "price_model": {
+        "kind": "fixed",
+        "amount": 4260
+      },
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "id": "sgi_elysia",
+      "name": "SGI Technologies “Elysia”",
+      "description": "A fully portable high-performance deck with expanded memory and eight-trode input.",
+      "price": 4260,
+      "price_qualifier": "exact",
+      "cpu": 1,
+      "memory": 20,
+      "speed": 3,
+      "data_wall": 5,
+      "portable": true,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "keyboard",
+        "video_monitor_12m2",
+        "eight_trode_input",
+        "chip_reader"
+      ],
+      "unspecified": [],
+      "source": {
+        "book": "Cyberpunk 2020 Core Rulebook",
+        "pages": "133"
+      }
+    },
+    {
+      "price_model": {
+        "kind": "fixed",
+        "amount": 3600
+      },
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "id": "zetatech_parraline_5750",
+      "name": "Zetatech Parraline 5750",
+      "description": "A midrange deck with improved speed, Data Wall and a large video monitor.",
+      "price": 3600,
+      "price_qualifier": "approximate",
+      "cpu": 1,
+      "memory": 10,
+      "speed": 2,
+      "data_wall": 4,
+      "portable": false,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "keyboard",
+        "video_monitor_6m2",
+        "chip_reader"
+      ],
+      "unspecified": [],
+      "source": {
+        "book": "Cyberpunk 2020 Core Rulebook",
+        "pages": "133"
+      }
+    },
+    {
+      "id": "dantech_cacciaguida",
+      "name": "Dantech Cacciaguida",
+      "description": "Italian designer deck with a large video board, chip reader and voice box.",
+      "price": 7000,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 7000
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 10,
+      "speed": 0,
+      "data_wall": 5,
+      "portable": false,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "video_monitor_1m_x_2m",
+        "chip_reader",
+        "voice_box"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "11"
+      }
+    },
+    {
+      "id": "ebm_pni_210",
+      "name": "EBM PNI 210",
+      "description": "No-frills standard deck at the baseline market specification.",
+      "price": 1000,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 1000
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 10,
+      "speed": 0,
+      "data_wall": 2,
+      "portable": false,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "12"
+      }
+    },
+    {
+      "id": "ebm_pni_412",
+      "name": "EBM PNI 412",
+      "description": "Improved EBM desk deck with Speed 2, Data Wall 4 and office peripherals.",
+      "price": 4200,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 4200
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 10,
+      "speed": 2,
+      "data_wall": 4,
+      "portable": false,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "video_monitor_2ft_x_2ft",
+        "chip_reader",
+        "printer"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "12"
+      }
+    },
+    {
+      "id": "green_knight",
+      "name": "Green Knight",
+      "description": "A heavily protected standard deck with keyboard and compact video board.",
+      "price": 10000,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 10000
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 10,
+      "speed": 0,
+      "data_wall": 8,
+      "portable": false,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "keyboard",
+        "video_monitor_1ft_x_1ft"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "13"
+      }
+    },
+    {
+      "id": "omnibus_cyberspace_explorer_one",
+      "name": "Omnibus Cyberspace Explorer One",
+      "description": "Cheap explorer deck with a Speed penalty, keyboard, display, gloves and goggles.",
+      "price": 1300,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 1300
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 10,
+      "speed": -1,
+      "data_wall": 2,
+      "portable": false,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "keyboard",
+        "video_monitor_1ft_x_1ft",
+        "gloves_and_goggles"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "14"
+      }
+    },
+    {
+      "id": "pct_danzig",
+      "name": "PCT Danzig",
+      "description": "Bare-bones standard deck with a modest Data Wall.",
+      "price": 500,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 500
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 10,
+      "speed": 0,
+      "data_wall": 3,
+      "portable": false,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "14"
+      }
+    },
+    {
+      "id": "zetatech_parraline_5700",
+      "name": "Zetatech Parraline 5700",
+      "description": "Entry Parraline with Speed 1, chip reader and a small display.",
+      "price": 2100,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 2100
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 10,
+      "speed": 1,
+      "data_wall": 3,
+      "portable": false,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "chip_reader",
+        "video_monitor_1ft_x_2ft"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "18"
+      }
+    },
+    {
+      "id": "zetatech_parraline_5800",
+      "name": "Zetatech Parraline 5800",
+      "description": "High-end Parraline with 15 MU, Speed 3, Data Wall 6 and full office peripherals.",
+      "price": 6500,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 6500
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 15,
+      "speed": 3,
+      "data_wall": 6,
+      "portable": false,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "keyboard",
+        "chip_reader",
+        "scanner",
+        "video_monitor_4ft_x_4ft",
+        "printer",
+        "voice_box"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "18"
+      }
+    },
+    {
+      "id": "zetatech_virocana",
+      "name": "Zetatech Virocana",
+      "description": "A 20 MU desk fortress with Data Wall 8 and a complete peripheral suite.",
+      "price": 10000,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 10000
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 20,
+      "speed": 1,
+      "data_wall": 8,
+      "portable": false,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "keyboard",
+        "chip_reader",
+        "scanner",
+        "printer",
+        "deck_security_system",
+        "voice_box",
+        "video_monitor_4ft_x_4ft"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "18"
+      }
+    },
+    {
+      "id": "aztec_600_assault_programmer",
+      "name": "Aztec 600 Assault Programmer",
+      "description": "Surplus combat deck with 25 MU, SP 20, hardened circuitry and broad security options.",
+      "price": 8200,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 8200
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 25,
+      "speed": 2,
+      "data_wall": 5,
+      "portable": true,
+      "cellular": false,
+      "armor_sp": 20,
+      "options": [
+        "keyboard",
+        "video_monitor_4ft_x_4ft",
+        "chip_reader",
+        "netrunner_flip_switch",
+        "hardened_circuitry",
+        "deck_security_system"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "11"
+      }
+    },
+    {
+      "id": "ebm_pni_724_pi",
+      "name": "EBM PNI 724π",
+      "description": "Fast portable EBM deck with 20 MU, Speed 4 and Data Wall 7.",
+      "price": 10000,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 10000
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 20,
+      "speed": 4,
+      "data_wall": 7,
+      "portable": true,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "chip_reader"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "12"
+      }
+    },
+    {
+      "id": "jeweldecks",
+      "name": "Jeweldecks",
+      "description": "Wearable jewelry deck with 15 MU and cellular access; price depends on the jewels.",
+      "price": null,
+      "price_model": {
+        "kind": "barter",
+        "label": "Jewels / negotiated"
+      },
+      "price_qualifier": "special",
+      "cpu": null,
+      "memory": 15,
+      "speed": 2,
+      "data_wall": 5,
+      "portable": true,
+      "cellular": true,
+      "armor_sp": null,
+      "options": [
+        "cellular_link"
+      ],
+      "availability": "quote",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "13"
+      }
+    },
+    {
+      "id": "lang_compro_ii_masterdeck",
+      "name": "Lang Compro-II Masterdeck",
+      "description": "Cellular portable deck that trades Speed for an exceptional Data Wall 10.",
+      "price": 5000,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 5000
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 15,
+      "speed": -1,
+      "data_wall": 10,
+      "portable": true,
+      "cellular": true,
+      "armor_sp": null,
+      "options": [
+        "cellular_link"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "13"
+      }
+    },
+    {
+      "id": "langley_datastick_mark_vii",
+      "name": "Langley Autosystems Datastick Mark VII",
+      "description": "Stylish cellular stick deck with Speed 3 and 25 units of published memory.",
+      "price": 9500,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 9500
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 25,
+      "speed": 3,
+      "data_wall": 4,
+      "portable": true,
+      "cellular": true,
+      "armor_sp": null,
+      "options": [
+        "cellular_link"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Guide to the Net",
+        "pages": "150-151"
+      },
+      "reprint_source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "13"
+      },
+      "editorial_fields": {
+        "published_mu": 3,
+        "published_memory": 25
+      }
+    },
+    {
+      "id": "liz_cyber_spandeck",
+      "name": "Liz Cyber SpanDeck Netrunner Suit",
+      "description": "Wearable deck woven into a jumpsuit; its price rises with the wearer's Interface level.",
+      "price": null,
+      "price_model": {
+        "kind": "formula",
+        "base": 17000,
+        "label": "17,000 + 2,000-5,000 eb per Interface level"
+      },
+      "price_qualifier": "special",
+      "cpu": null,
+      "memory": 10,
+      "speed": 2,
+      "data_wall": 2,
+      "portable": true,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "awareness_modifier_minus_5"
+      ],
+      "availability": "quote",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Guide to the Net",
+        "pages": "151"
+      },
+      "reprint_source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "13"
+      },
+      "editorial_fields": {
+        "published_mu": 2,
+        "published_memory": 10
+      }
+    },
+    {
+      "id": "microtech_cad_4_commando",
+      "name": "Microtech CAD-4 “Commando”",
+      "description": "Sealed cellular combat deck with SP 20, 30 MU, hardened circuitry and a Flip Switch.",
+      "price": null,
+      "price_model": {
+        "kind": "black_market_markup",
+        "base": 37400,
+        "min_percent": 30,
+        "max_percent": 40,
+        "label": "37,400 eb government; +30-40% black market"
+      },
+      "price_qualifier": "special",
+      "cpu": 1,
+      "memory": 30,
+      "speed": 4,
+      "data_wall": 6,
+      "portable": true,
+      "cellular": true,
+      "armor_sp": 20,
+      "options": [
+        "netrunner_flip_switch",
+        "hardened_circuitry",
+        "cellular_link"
+      ],
+      "availability": "quote",
+      "catalog_scope": "standard",
+      "unspecified": [],
+      "source": {
+        "book": "Rache Bartmoss' Guide to the Net",
+        "pages": "151"
+      },
+      "reprint_source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "14"
+      }
+    },
+    {
+      "id": "microtech_headgear_helmetdeck",
+      "name": "Microtech “Headgear” Helmetdeck",
+      "description": "Helmet-mounted deck with HUD and radio.",
+      "price": 4100,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 4100
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 10,
+      "speed": 2,
+      "data_wall": 2,
+      "portable": true,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "hud",
+        "radio"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "14"
+      }
+    },
+    {
+      "id": "raven_microcyb_eagle",
+      "name": "Raven Microcyb Eagle",
+      "description": "Premium cellular portable with 20 MU, Speed 3 and Data Wall 5.",
+      "price": 11000,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 11000
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 20,
+      "speed": 3,
+      "data_wall": 5,
+      "portable": true,
+      "cellular": true,
+      "armor_sp": null,
+      "options": [
+        "cellular_link"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "15"
+      }
+    },
+    {
+      "id": "raven_microcyb_kestrel",
+      "name": "Raven Microcyb Kestrel",
+      "description": "Very fast cellular deck with a security system.",
+      "price": 9000,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 9000
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 10,
+      "speed": 4,
+      "data_wall": 4,
+      "portable": true,
+      "cellular": true,
+      "armor_sp": null,
+      "options": [
+        "cellular_link",
+        "deck_security_system"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "15"
+      }
+    },
+    {
+      "id": "raven_microcyb_owl",
+      "name": "Raven Microcyb Owl",
+      "description": "Luxury cellular deck with custom physical features described in its listing.",
+      "price": 25000,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 25000
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 10,
+      "speed": 1,
+      "data_wall": 4,
+      "portable": true,
+      "cellular": true,
+      "armor_sp": null,
+      "options": [
+        "cellular_link",
+        "listing_specific_features"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "15"
+      }
+    },
+    {
+      "id": "raven_microcyb_rook",
+      "name": "Raven Microcyb Rook",
+      "description": "Affordable cellular portable with Speed 1 and Data Wall 3.",
+      "price": 4000,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 4000
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 10,
+      "speed": 1,
+      "data_wall": 3,
+      "portable": true,
+      "cellular": true,
+      "armor_sp": null,
+      "options": [
+        "cellular_link"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "15"
+      }
+    },
+    {
+      "id": "shadowdeck",
+      "name": "Shadowdeck",
+      "description": "Fast 20 MU portable with Speed 4, Data Wall 7 and chip reader.",
+      "price": 4500,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 4500
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 20,
+      "speed": 4,
+      "data_wall": 7,
+      "portable": true,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "chip_reader"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "16"
+      }
+    },
+    {
+      "id": "techtronica_cybermodem_utility_suit",
+      "name": "Techtronica Cybermodem Utility Suit",
+      "description": "Wearable 20 MU utility suit with an add-on cellular interface.",
+      "price": 6300,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 6300
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 20,
+      "speed": 1,
+      "data_wall": 3,
+      "portable": true,
+      "cellular": true,
+      "armor_sp": null,
+      "options": [
+        "cybermodem_interface"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "16"
+      }
+    },
+    {
+      "id": "zetatech_d2_3000_armdeck",
+      "name": "Zetatech D2-3000 Armdeck",
+      "description": "Cyberarm-mounted deck with 15 MU, Speed 2 and Flip Switch.",
+      "price": 5000,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 5000
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 15,
+      "speed": 2,
+      "data_wall": 4,
+      "portable": true,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "netrunner_flip_switch"
+      ],
+      "availability": "retail",
+      "catalog_scope": "standard",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "17"
+      }
+    },
+    {
+      "id": "nr_bodyweight_data_creche",
+      "name": "Bodyweight Data Creche",
+      "description": "Optional Netrunner card-game conversion with 12 MU.",
+      "price": 7500,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 7500
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 12,
+      "speed": 1,
+      "data_wall": 4,
+      "portable": false,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "video_monitor_1ft_x_1ft"
+      ],
+      "availability": "referee_approval",
+      "catalog_scope": "netrunner_conversion",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "94"
+      }
+    },
+    {
+      "id": "nr_pandoras_deck",
+      "name": "Pandora's Deck",
+      "description": "Optional Netrunner card-game conversion with 20 MU and special rules.",
+      "price": 12000,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 12000
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 20,
+      "speed": 1,
+      "data_wall": 4,
+      "portable": false,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "listing_specific_features"
+      ],
+      "availability": "referee_approval",
+      "catalog_scope": "netrunner_conversion",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "95"
+      }
+    },
+    {
+      "id": "nr_pk_6089a",
+      "name": "PK-6089a",
+      "description": "Optional Netrunner card-game conversion with 15 MU.",
+      "price": 9000,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 9000
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 15,
+      "speed": 0,
+      "data_wall": 4,
+      "portable": false,
+      "cellular": false,
+      "armor_sp": null,
+      "options": [
+        "listing_specific_features"
+      ],
+      "availability": "referee_approval",
+      "catalog_scope": "netrunner_conversion",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "96"
+      }
+    },
+    {
+      "id": "nr_arasaka_portable_prototype",
+      "name": "Arasaka Portable Prototype",
+      "description": "Optional portable conversion with 18 MU, cellular link and a huge display.",
+      "price": 15000,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 15000
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 18,
+      "speed": 3,
+      "data_wall": 6,
+      "portable": true,
+      "cellular": true,
+      "armor_sp": null,
+      "options": [
+        "chip_reader",
+        "cellular_link",
+        "video_monitor_6ft_x_6ft"
+      ],
+      "availability": "referee_approval",
+      "catalog_scope": "netrunner_conversion",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "94"
+      }
+    },
+    {
+      "id": "nr_artemis_2020",
+      "name": "Artemis 2020",
+      "description": "Optional portable conversion with cellular access and a 15 MU backup drive.",
+      "price": 10000,
+      "price_model": {
+        "kind": "fixed",
+        "amount": 10000
+      },
+      "price_qualifier": "exact",
+      "cpu": null,
+      "memory": 15,
+      "speed": 2,
+      "data_wall": 5,
+      "portable": true,
+      "cellular": true,
+      "armor_sp": null,
+      "options": [
+        "cellular_link",
+        "backup_drive_15mu"
+      ],
+      "availability": "referee_approval",
+      "catalog_scope": "netrunner_conversion",
+      "unspecified": [
+        "cpu"
+      ],
+      "source": {
+        "book": "Rache Bartmoss' Brainware Blowout",
+        "pages": "94"
+      }
+    }
+  ],
+  "builder": {
+    "base_stats": {
+      "cpu": 1,
+      "memory": 10,
+      "speed": 0,
+      "data_wall": 2
+    },
+    "limits": {
+      "memory": [
+        10,
+        20
+      ],
+      "speed": [
+        0,
+        5
+      ],
+      "data_wall": [
+        2,
+        10
+      ]
+    },
+    "chassis": [
+      {
+        "id": "standard",
+        "name": "Standard",
+        "price": 1000,
+        "used_price": 500,
+        "portable": false,
+        "cellular": false,
+        "armor_sp": null
+      },
+      {
+        "id": "portable",
+        "name": "Portable",
+        "price": 2000,
+        "portable": true,
+        "cellular": false,
+        "armor_sp": null
+      },
+      {
+        "id": "combat",
+        "name": "Combat",
+        "price": 3000,
+        "portable": true,
+        "cellular": false,
+        "armor_sp": 20
+      },
+      {
+        "id": "cellular",
+        "name": "Cellular",
+        "price": 4000,
+        "portable": true,
+        "cellular": true,
+        "armor_sp": null
+      },
+      {
+        "id": "cyberlimb",
+        "name": "Cyberlimb",
+        "price": 3000,
+        "portable": true,
+        "cellular": false,
+        "armor_sp": null,
+        "external_requirement": "compatible_cyberlimb"
+      },
+      {
+        "id": "cellular_cyberlimb",
+        "name": "Cyberlimb + Cellular Interface",
+        "price": 3500,
+        "portable": true,
+        "cellular": true,
+        "armor_sp": null,
+        "external_requirement": "compatible_cyberlimb",
+        "bundled_option_ids": [
+          "cybermodem_interface"
+        ],
+        "derived": true
+      },
+      {
+        "id": "sealed_combat_assault",
+        "name": "Sealed Combat Assault",
+        "price": 6000,
+        "portable": true,
+        "cellular": false,
+        "armor_sp": 20
+      }
+    ],
+    "upgrades": {
+      "expanded_memory": {
+        "id": "expanded_memory",
+        "name": "Expanded Memory (20 MU)",
+        "price": 5000,
+        "memory": 20
+      },
+      "speed_per_level": 2000,
+      "data_wall_per_level": 1000
+    },
+    "connections": [
+      {
+        "id": "interface_plugs",
+        "name": "Interface Plugs",
+        "price": 0,
+        "modifier": 0,
+        "external_requirement": "interface_plugs"
+      },
+      {
+        "id": "trodes",
+        "name": "'Trodes",
+        "price": 10,
+        "modifier": -2
+      },
+      {
+        "id": "keyboard",
+        "name": "Keyboard",
+        "price": 100,
+        "modifier": -4,
+        "immune_except": "Firestarter"
+      }
+    ],
+    "options": [
+      {
+        "id": "video_monitor",
+        "name": "Video Monitor",
+        "pricing": "per_unit",
+        "unit": "m²",
+        "price_per_unit": 1000,
+        "min": 1,
+        "max": 20
+      },
+      {
+        "id": "printer",
+        "name": "Printer",
+        "pricing": "fixed",
+        "price": 300
+      },
+      {
+        "id": "chip_reader",
+        "name": "Chip Reader/Recorder",
+        "pricing": "fixed",
+        "price": 100
+      },
+      {
+        "id": "extra_chips",
+        "name": "Extra Data Chips",
+        "pricing": "per_unit",
+        "unit": "chip",
+        "price_per_unit": 10,
+        "min": 1,
+        "max": 50
+      },
+      {
+        "id": "voice_box",
+        "name": "Voice Box",
+        "pricing": "fixed",
+        "price": 300
+      },
+      {
+        "id": "scanner",
+        "name": "Scanner",
+        "pricing": "range",
+        "choices": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": 100
+          },
+          {
+            "id": "standard",
+            "name": "Standard",
+            "price": 200
+          },
+          {
+            "id": "professional",
+            "name": "Professional",
+            "price": 300
+          }
+        ]
+      },
+      {
+        "id": "auto_punchout",
+        "name": "Auto Punchout",
+        "description": "Disconnects on hostile current; -5 Netrunning Initiative.",
+        "pricing": "fixed",
+        "price": 330
+      },
+      {
+        "id": "batteries",
+        "name": "Batteries",
+        "description": "Portable deck power cells.",
+        "pricing": "per_unit",
+        "unit": "hour",
+        "price_per_unit": 5,
+        "min": 1,
+        "max": 72
+      },
+      {
+        "id": "code_gates",
+        "name": "Deck Code Gates",
+        "description": "Deck login protection, maximum level 10.",
+        "pricing": "per_unit",
+        "unit": "level",
+        "price_per_unit": 1500,
+        "min": 1,
+        "max": 10
+      },
+      {
+        "id": "cybermodem_interface",
+        "name": "Cybermodem Interface",
+        "description": "Makes a deck cellular; -1 Interface.",
+        "pricing": "fixed",
+        "price": 500,
+        "effects": {
+          "cellular": true,
+          "interface_modifier": -1
+        }
+      },
+      {
+        "id": "dead_mans_handle",
+        "name": "Dead Man's Handle",
+        "description": "Emergency mental-signal disconnect; starts at -3 to actions.",
+        "pricing": "fixed",
+        "price": 1000
+      },
+      {
+        "id": "deckmate",
+        "name": "DeckMate",
+        "description": "Adds pocket-computer functions to a deck.",
+        "pricing": "fixed",
+        "price": 100
+      },
+      {
+        "id": "deck_security_system",
+        "name": "Deck Security System",
+        "description": "Biometric deck lock.",
+        "pricing": "range",
+        "choices": [
+          {
+            "id": "thumbprint",
+            "name": "Thumbprint",
+            "price": 400
+          },
+          {
+            "id": "retinal",
+            "name": "Retinal",
+            "price": 1000
+          }
+        ]
+      },
+      {
+        "id": "ebm_99080_muse",
+        "name": "EBM 99080 MUSE",
+        "description": "Isolates a fixed number of memory units from attacks.",
+        "pricing": "fixed",
+        "price": 300
+      },
+      {
+        "id": "ebm_xr10_chip_rack",
+        "name": "EBM XR-10 Chip-Rack",
+        "description": "Adds 10 MU of discrete program storage.",
+        "pricing": "fixed",
+        "price": 5000,
+        "effects": {
+          "memory_bonus": 10
+        }
+      },
+      {
+        "id": "hardened_circuitry",
+        "name": "Hardened Circuitry",
+        "description": "Protects the deck from EMP and electrical hazards.",
+        "pricing": "percentage",
+        "percent": 20
+      },
+      {
+        "id": "mini_printer",
+        "name": "Mini-printer",
+        "description": "Pocket laser printer.",
+        "pricing": "fixed",
+        "price": 125
+      },
+      {
+        "id": "netrunner_flip_switch",
+        "name": "Netrunner Flip Switch",
+        "description": "Switches perception between the Net and meatspace.",
+        "pricing": "fixed",
+        "price": 135
+      },
+      {
+        "id": "neural_recognition_security",
+        "name": "Neural Recognition Security",
+        "description": "Brainwave-pattern deck lock.",
+        "pricing": "fixed",
+        "price": 2000
+      },
+      {
+        "id": "tight_beam_radio_relay",
+        "name": "Tight-Beam Radio Relay",
+        "description": "Remote radio link outside cellular coverage; -2 Initiative.",
+        "pricing": "fixed",
+        "price": 1500
+      },
+      {
+        "id": "transcriptor",
+        "name": "Transcriptor",
+        "description": "Hardware log of locations, icons and copied files.",
+        "pricing": "fixed",
+        "price": 150
+      }
+    ],
+    "source": {
+      "book": "Cyberpunk 2020 Core Rulebook",
+      "pages": "133-134"
+    },
+    "editorial_notes": [
+      "The Netrunning section prices 'Trodes at 10 eb; the general equipment table lists 20 eb.",
+      "A standard deck is listed at 500 eb used or 1,000 eb new."
+    ],
+    "external_products": [
+      {
+        "id": "fiber_optic_cable",
+        "name": "Fiber-Optic Cable",
+        "description": "High-quality Net cable.",
+        "pricing": "per_unit",
+        "unit": "meter",
+        "price_per_unit": 1,
+        "min": 1,
+        "max": 1000
+      },
+      {
+        "id": "junction",
+        "name": "Junction",
+        "description": "Merges two fiber-optic data flows.",
+        "pricing": "fixed",
+        "price": 100
+      },
+      {
+        "id": "repeater",
+        "name": "Repeater",
+        "description": "Boosts a fiber signal every hundred kilometers.",
+        "pricing": "fixed",
+        "price": 1000,
+        "availability": "restricted"
+      },
+      {
+        "id": "zetatech_diagnet",
+        "name": "Zetatech DiagNet",
+        "description": "Dedicated simulated Net for safe deck and program testing.",
+        "pricing": "fixed",
+        "price": 5000
+      }
+    ]
+  }
+}

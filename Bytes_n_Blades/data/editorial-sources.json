@@ -1,0 +1,5572 @@
+{
+  "version": "1.0.0",
+  "method": {
+    "inventory": [
+      "Cyberpunk 2020 Weapons Listing v5 (unofficial inventory only)",
+      "Cyberpunk 2020 Ammunition & Add-ons (unofficial inventory only)"
+    ],
+    "citationPolicy": "Public citations use official books only. Unofficial compilations are never presented as editorial sources; unresolved pages remain explicit."
+  },
+  "books": {
+    "unverified": {
+      "title": "Official origin",
+      "kind": "unverified"
+    },
+    "corebook": {
+      "title": "Cyberpunk 2020 Core Rulebook",
+      "kind": "official"
+    },
+    "blackhands": {
+      "title": "Blackhand's Street Weapons 2020",
+      "kind": "official-reprint"
+    },
+    "chromebook-1": {
+      "title": "Cyberpunk 2020 Chromebook 1",
+      "kind": "official"
+    },
+    "chromebook-2": {
+      "title": "Cyberpunk 2020 Chromebook 2",
+      "kind": "official"
+    },
+    "chromebook-3": {
+      "title": "Cyberpunk 2020 Chromebook 3",
+      "kind": "official"
+    },
+    "chromebook-4": {
+      "title": "Cyberpunk 2020 Chromebook 4",
+      "kind": "official"
+    },
+    "maximum-metal": {
+      "title": "Cyberpunk 2020 Maximum Metal",
+      "kind": "official"
+    },
+    "home-of-the-brave": {
+      "title": "Home of the Brave",
+      "kind": "official"
+    },
+    "solo-of-fortune": {
+      "title": "Solo of Fortune",
+      "kind": "official"
+    },
+    "solo-of-fortune-2": {
+      "title": "Solo of Fortune 2",
+      "kind": "official"
+    },
+    "deep-space": {
+      "title": "Deep Space",
+      "kind": "official"
+    },
+    "rough-guide-uk": {
+      "title": "Rough Guide to the UK",
+      "kind": "official"
+    },
+    "rockerboy": {
+      "title": "Rockerboy",
+      "kind": "official"
+    },
+    "when-gravity-fails": {
+      "title": "When Gravity Fails",
+      "kind": "official"
+    },
+    "pacific-rim": {
+      "title": "Pacific Rim Sourcebook",
+      "kind": "official"
+    },
+    "shockwave": {
+      "title": "Shockwave",
+      "kind": "official"
+    },
+    "neo-tribes": {
+      "title": "Neo Tribes",
+      "kind": "official"
+    },
+    "listen-up": {
+      "title": "Listen Up, You Primitive Screwheads!",
+      "kind": "official"
+    },
+    "edgerunners": {
+      "title": "Edgerunners Inc.",
+      "kind": "official"
+    },
+    "interface-1-1": {
+      "title": "Interface Magazine, Vol. 1, No. 1",
+      "kind": "official"
+    },
+    "interface-1-3": {
+      "title": "Interface Magazine, Vol. 1, No. 3",
+      "kind": "official"
+    },
+    "interface-1-4": {
+      "title": "Interface Magazine, Vol. 1, No. 4",
+      "kind": "official"
+    },
+    "interface-2-1": {
+      "title": "Interface Magazine, Vol. 2, No. 1",
+      "kind": "official"
+    },
+    "interface-2-2": {
+      "title": "Interface Magazine, Vol. 2, No. 2",
+      "kind": "official"
+    },
+    "corporation-report-2": {
+      "title": "Corporation Report 2020, Vol. 2",
+      "kind": "official"
+    },
+    "corporation-report-3": {
+      "title": "Corporation Report 2020, Vol. 3",
+      "kind": "official"
+    },
+    "source-code-sf": {
+      "title": "Official source code SF",
+      "kind": "unverified"
+    },
+    "source-code-sa": {
+      "title": "Official source code SA",
+      "kind": "unverified"
+    },
+    "source-code-ws": {
+      "title": "Official source code WS",
+      "kind": "unverified"
+    },
+    "source-code-p1": {
+      "title": "Official source code P1",
+      "kind": "unverified"
+    },
+    "source-code-p2": {
+      "title": "Official source code P2",
+      "kind": "unverified"
+    },
+    "source-code-p3": {
+      "title": "Official source code P3",
+      "kind": "unverified"
+    },
+    "source-code-ttb": {
+      "title": "Official source code TTB",
+      "kind": "unverified"
+    },
+    "source-code-rpi": {
+      "title": "Official source code RPI",
+      "kind": "unverified"
+    }
+  },
+  "catalogs": {
+    "weapons": {
+      "default": {
+        "sourceId": "unverified",
+        "verification": "unverified"
+      },
+      "items": {
+        "weapon_astra_style_6": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "10",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_budgetarms_c_13": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "10",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_dai_lung_cybermag_15": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "10",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_federated_arms_impact": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "10",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_federated_arms_x_22": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "10",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_federated_arms_x_38": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "10",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_towa_manufacturing_type_12_police_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "10",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_arasaka_wsa_autopistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "10",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_budgetarms_c_41": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "11",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_budgetarms_laser_niner": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "11",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_beretta_m97p": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "11",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_ccmmc_goaxing_xiuxi_cm_3": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "11",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_colt_alpha_omega_competition_pistol_45_acp": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "11",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_colt_alpha_omega_competition_pistol_10mm": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "11",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_colt_enforcement_10_sidearm_basic": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "11",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_colt_enforcement_10_sidearm_camouflaged": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "11",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_dai_lung_streetmaster": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "11",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_fn_browning_3_spot_machine_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "11",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_federated_arms_x_9mm": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "11",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_fashion_gun_9": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "11",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_goncz_taurus_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "12",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_goncz_taurus_pistol_selective_fire": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "12",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_glock_thirty_machine_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "12",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_hammer_m_11_bolt_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "12",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_imi_gamad": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "12",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_kang_tao_type_97": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "12",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_leroi_maxi_10": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "12",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_arms_avenger": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "12",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_black_widow_flechette_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "12",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_silver_shadow_flechette_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "12",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_nomad_357_magnum_autoloader": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "12",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_nomad_357_magnum_revolver": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "13",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_sci_fi_starrior_4": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "13",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_stein_wasserman_tri_star_revolver": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "13",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_sternmeyer_p_41_autoloading_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "13",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_stolbovoy_st_2_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "13",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_surprising_stranger": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "13",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_teen_dreem": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "13",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_texas_arms_model_351_gyrojet_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "13",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_towa_manufacturing_type_13_police_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "13",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_towa_manufacturing_type_14_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "13",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_tsunami_express_racegun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "14",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_wondernines": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "14",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_budgetarms_auto_3": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "14",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_dai_lung_magnum": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "14",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_espinoza_one_shot": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "14",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_malorian_arms_heavy_flechette_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "14",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_mustang_arms_mark_ii": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "15",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_nova_model_338_citygun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "15",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_nova_model_757_cityhunter": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "15",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_stein_wasserman_bi_power_handcannon_44_magnum": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "15",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_stein_wasserman_bi_power_handcannon_45_acp": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "15",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_sternmeyer_p_35": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "15",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_tsunami_arms_raimei_ramjet_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "16",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_454_magnum_disposable": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "16",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_ameritech_magnum": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "16",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_armalite_44": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "16",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_colt_amt_model_2000": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "16",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_constitution_arms_multi_ammunition_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "16",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_federated_arms_454_da_super_chief": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "16",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_malorian_arms_3516": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "16",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_477_boomer_buster": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "17",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_nomad_44_magnum_revolver": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "17",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_nova_arms_stallone_357_plasmatic_magnum": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "17",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_nova_arms_bronson_41_plasmatic_magnum": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "17",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_nova_arms_eastwood_44_plasmatic_magnum": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "17",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_nova_arms_arno_454_plasmatic_magnum": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "17",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_royal_enfield_ordnance_spitfire_12mm_battle_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "17",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_federated_arms_tech_assault": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "17",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_federated_arms_tech_assault_ii": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "17",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_heckler_koch_mpk_9": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "17",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_mini_gat_machine_carbine": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "18",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_setsuko_arasaka_pms_sub_machine_gun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "18",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_suranam_machine_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "18",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_uzi_miniauto_9": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "18",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_arasaka_wma_minami_10": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "18",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_beretta_1010_machine_pistol": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "18",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_beretta_m_24_advanced_submachine_gun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "18",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_heckler_koch_mp_2013": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "19",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_imi_gamdaii": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "19",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_malorian_arms_sub_flechette_gun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "19",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_10_submachine_gun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "19",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_viper_submachinegun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "19",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_mustang_arms_ars_5sc_submachinegun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "19",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_sten": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "19",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_stolbovoy_sts_submachinegun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "20",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_ccmmc_tuzi_7": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "20",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_chadran_arms_city_reaper": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "20",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_heckler_koch_mpk_11": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "20",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_heckler_koch_mpk_2020_smg": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "20",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_ingram_mac_14": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "20",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_sternmeyer_smg_21": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "20",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_arasaka_wcaa_rapid_assault_shot_12": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "21",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_ccmmc_qi_15": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "21",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_constitution_arms_hurricane_assault_weapon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "21",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_enfield_ubichi_lastchance": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "21",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_luigi_franchi_p_16": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "21",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_luigi_franchi_king_buck_multi_magnum": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "21",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_metacorp_warhammer_assault_shotgun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "21",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_military_m_12_close_assault_weapon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "22",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_bulldog_compact_assault_shotgun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "22",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_crusher_ssg": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "22",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_military_police_shotgun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "22",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_mustang_arms_close_control_20": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "22",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_mustang_arms_raider_riot_shotgun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "22",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_sternmeyer_stakeout_10": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "22",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_tsunami_arms_ragnarok_close_assault_weapon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "22",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_akr_20_medium_assault": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "27",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_arasaka_waa_bullpup_assault_weapon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "27",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_ccmmc_jinhua_m_9": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "27",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_chadran_arms_jungle_reaper": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "27",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_colt_m_18_assault_weapon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "27",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_darra_polytechnic_m_9_assault_rifle": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "27",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_fn_ral_heavy_assault_rifle": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "27",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_federated_arms_light_assault_15": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "27",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_fabrica_de_armes_m_2012": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "28",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_kalashnikov_a_80_heavy_assault_rifle": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "28",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_dragon_light_assault_weapon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "28",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_m_31a1_advanced_infantry_combat_weapon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "28",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_mk_iv_assault_weapon_revised": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "28",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_ronin_light_assault": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "28",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_royal_enfield_ordnance_liquid_propellant_assault_rifle_lpa1": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "29",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_sternmeyer_m_95a4_cg_13b_assault_weapon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "29",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_stolbovoy_st_5_assault_rifle": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "29",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_towa_manufacturing_type_20_advanced_infantry_combat_weapon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "29",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_towa_manufacturing_type_99_assault_rifle": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "29",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_arasaka_wssa_sniper_system": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "29",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_barrett_m_90_sniper_rifle": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "30",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_barrett_arasaka_light_20": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "30",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_fr_f6": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "30",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_nomad_15mm_long_rifle": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "30",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_remington_gyro_sniper_rifle": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "30",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_towa_manufacturing_type_00_kai": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "30",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_heckler_koch_hk77uk": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "30",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_hughes_rocket_rifle": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "31",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_m_99_evaw": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "31",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_cyborg_rifle": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "31",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_ninja": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "31",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_nomad_357_magnum_automatic_carbine": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "31",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_nomad_357_magnum_lever_action_carbine": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "31",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_nomad_44_magnum_lever_action_rifle": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "31",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_nomad_7_62mm_bolt_action_rifle": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "31",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_nomad_personal_weapon_derivatives": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "32",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_polymer_one_shot_cannon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "32",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_stein_wasserman_model_f_cyborg_assault_weapon_system": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "32",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_tsunami_arms_ramjet_rifle": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "32",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_constitution_arms_cyclone_squad_support_weapon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "32",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_constitution_arms_deluge_crowd_control_weapon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "33",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_dover_ga_1112_autogun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "33",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_fn_mg_6_one_on_one": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "33",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_fabrica_de_armes_m_2012hb_saw": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "33",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_heckler_koch_g_6_advanced_squad_automatic": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "33",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_m2a5hb_browning_50cal_hmg": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "33",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_m_60d_medium_machine_gun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "33",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_high_power_15": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "33",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_m_232_squad_assault_automatic_weapon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "34",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_renegade_squad_automatic_weapon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "34",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_20l_autocannon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "34",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_sternmeyer_m_5a_squad_automatic_weapon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "34",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_towa_manufacturing_type_8_medium_machine_gun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "34",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_60mm_light_mortar": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "34",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_rheinmetall_mauser_mex_cannon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "34",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_commercial_grenade_launcher": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "34",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_kenshiri_adachi_f_253_flamethrower": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "34",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_law": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "35",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_hlaw": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "35",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_m_32_automatic_grenade_launcher": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "35",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_m_205_grenade_launcher": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "35",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_m_212_grenade_launcher": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "35",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_am_3_anti_matter_rifle": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "35",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_cowboy_u_55_grenade_launcher": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "35",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_hotshot_l_atgm": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "35",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_mini_grenade_launcher_pump_model": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "35",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_mini_grenade_launcher_drum_model": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "35",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_rpg_a_grenade_launcher": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "36",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_scorpion_16_surface_to_air_missile": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "36",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_militech_urban_missile_launcher": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "36",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_under_barrel_micromissile_pod": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "36",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_rheinmetall_emg_85_railgun": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "36",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_rostovic_wrist_racate": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "36",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_royal_enfield_ordnance_25mm_cockerill_assault_cannon": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "36",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_towa_manufacturing_type_9_grenade_launcher": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "37",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_tsunami_arms_type_17_anti_armor_rifle": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "37",
+          "note": "Official reprint page verified against the supplied PDF."
+        },
+        "weapon_tsunami_arms_type_18_automatic_grenade_launcher": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "37",
+          "note": "Official reprint page verified against the supplied PDF."
+        }
+      }
+    },
+    "ammo": {
+      "default": {
+        "sourceId": "unverified",
+        "verification": "unverified"
+      },
+      "items": {
+        "ammo_ammunition_reloads_light_pistol_smg_100": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "67-70"
+        },
+        "ammo_ammunition_reloads_medium_pistol_smg_100": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "67-70"
+        },
+        "ammo_ammunition_reloads_heavy_pistol_smg_100": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "67-70"
+        },
+        "ammo_ammunition_reloads_very_heavy_pistol_100": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "67-70"
+        },
+        "ammo_ammunition_reloads_assault_rifle_100": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "67-70"
+        },
+        "ammo_ammunition_reloads_airgun_pellets_100": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "67-70"
+        },
+        "ammo_ammunition_reloads_acid_or_drug_pellets_100": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "67-70"
+        },
+        "ammo_ammunition_reloads_needlegun_rounds_100": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "67-70"
+        },
+        "ammo_ammunition_reloads_20mm_cannon_round": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "67-70"
+        },
+        "ammo_ammunition_reloads_flamethrower_reload": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "67-70"
+        },
+        "ammo_ammunition_reloads_paintloads_100": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "67-70"
+        },
+        "ammo_ammunition_reloads_acid_drug_or_poison_loads_100": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "67-70"
+        },
+        "ammo_ammunition_reloads_glass_ceramic_or_steel_balls_20": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "67-70"
+        },
+        "ammo_ammunition_types_normal": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_brass_cased": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_plasticase": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_armor_piercing": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_api": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_dual_purpose": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_electrothermal": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_hollowpoints": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_frag_flechettes": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_rubber_bullets": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_safety_rounds": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_electric_fire": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_wasp_flechette": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_12mm_anti_personnel": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_silver_bullets": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_dumdums": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_titanium": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_tungsten_carbide": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_depleted_uranium": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_memory_expander": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_tracers": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_subsonic": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_acid": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_ammunition_types_heartbreaker": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "44-45"
+        },
+        "ammo_410_28_gauge_shotshell": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "ammo_410_28_gauge_slug": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "ammo_410_28_gauge_triplex_shell": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "ammo_20_gauge_shotshell": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_20_gauge_flare": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_20_gauge_flash_bang": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_20_gauge_flash": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_20_gauge_slug": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_shotshell": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_apfsds": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_flare": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_flash_bang": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_flash": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_flechettes": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_gas": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_he": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_heat": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_non_lethal": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_slug": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_smoke": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_stinger": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_stundart": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_thermite": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_slasher": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_ball_bearing_x2": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_magnum_buckshot": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_magnum_he_slug": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_12_gauge_magnum_ap_slug": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_10_gauge_shotshell": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_10_gauge_flare": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_10_gauge_flash": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_10_gauge_flechettes": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_10_gauge_gas": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_10_gauge_non_lethal": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_10_gauge_slug": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_10_gauge_smoke": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_10_gauge_stinger": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "45"
+        },
+        "ammo_10_gauge_3_inch_magnum_shotshell": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "ammo_10_gauge_3_inch_magnum_stinger": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "ammo_10_gauge_3_inch_magnum_gas": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "ammo_10_gauge_3_inch_magnum_flare": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "ammo_10_gauge_3_inch_magnum_smoke": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "ammo_4_gauge_claw_000_buckshot": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "39"
+        },
+        "ammo_4_gauge_claw_slug": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "39"
+        },
+        "ammo_4_gauge_claw_apfsds": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "39"
+        },
+        "ammo_4_gauge_claw_heat": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "39"
+        },
+        "ammo_4_gauge_claw_slasher": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "39"
+        },
+        "ammo_4_gauge_claw_flechette_special_shells": {
+          "sourceId": "blackhands",
+          "verification": "page",
+          "pages": "39"
+        },
+        "ammo_hand_grenades_he": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_anti_tank": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_chemical": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_wp_incendiary": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_flash_bang": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_concussion": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_flash": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_sonic": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_motion_restraint": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_emp": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_saucer": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_mini_grenade": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_scatter": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_spraypaint": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_stench": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_ln2": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_smoke_pellets": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_acid": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_hand_grenades_blind_gas": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "39-40"
+        },
+        "ammo_militech_25mm_grenades_chemical": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_militech_25mm_grenades_flechette": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_militech_25mm_grenades_fragmentation": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_militech_25mm_grenades_hep": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_militech_25mm_grenades_stundart": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_militech_25mm_grenades_slasher": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_militech_25mm_grenades_frag": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_militech_25mm_grenades_flash": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_militech_25mm_grenades_incendiary": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_militech_25mm_grenades_concussion": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_militech_25mm_grenades_ln2": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_tsunami_high_pressure_25mm_grenades_frag": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "ammo_tsunami_high_pressure_25mm_grenades_he": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "ammo_tsunami_high_pressure_25mm_grenades_hep": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "ammo_tsunami_high_pressure_25mm_grenades_incendiary": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "ammo_militech_25mm_pistol_grenades_concussion": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_militech_25mm_pistol_grenades_defensive_frag": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_militech_25mm_pistol_grenades_flashbomb": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_militech_25mm_pistol_grenades_hep": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_militech_25mm_pistol_grenades_incendiary": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_militech_25mm_pistol_grenades_offensive_frag": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_militech_25mm_pistol_grenades_chemical": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_40mm_launched_grenades_he": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_40mm_launched_grenades_hedp": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_40mm_launched_grenades_illumination": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_40mm_launched_grenades_chemical": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_40mm_launched_grenades_bean_bag": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_40mm_launched_grenades_wp": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_40mm_launched_grenades_flechette": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_40mm_launched_grenades_hep": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_40mm_launched_grenades_flash_bang": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_40mm_launched_grenades_grapnel": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_40mm_launched_grenades_net": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_40mm_launched_grenades_splatshell": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_40mm_launched_grenades_slasher": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_40mm_launched_grenades_spraypaint": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_40mm_launched_grenades_emp": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_40mm_launched_grenades_ln2": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_rifle_grenades_classic_he": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_rifle_grenades_classic_heat": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_rifle_grenades_classic_chemical": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_rifle_grenades_classic_emp": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_rifle_grenades_dcr_he": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_rifle_grenades_dcr_smoke": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_rifle_grenades_dcr_heat": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "41"
+        },
+        "ammo_special_projectiles_det_web": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_special_projectiles_taser_net": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_special_projectiles_web": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_special_projectiles_sharpwire": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_special_projectiles_micromissile_he": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_special_projectiles_micromissile_anti_armor": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_special_projectiles_micromissile_hep": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_special_projectiles_13mm_hep_shells_12": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_special_projectiles_13mm_api_shells_12": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_special_projectiles_13mm_acid_shells_12": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_special_projectiles_13mm_ln2_shell": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_special_projectiles_15mm_kurtz_practice": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_special_projectiles_15mm_kurtz_he": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_special_projectiles_25mm_cockerill_ap": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_special_projectiles_25mm_cockerill_hep": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_special_projectiles_25mm_cockerill_flechette": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_special_projectiles_30mm_rockets_6": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46-47"
+        },
+        "ammo_rocket_and_missile_reloads_rpg_a_heat": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_rocket_and_missile_reloads_rpg_a_he": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_rocket_and_missile_reloads_rpg_b_heat": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_rocket_and_missile_reloads_2_inch_rocket": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_rocket_and_missile_reloads_2_75_inch_rocket": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_rocket_and_missile_reloads_3_5_inch_rocket": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_rocket_and_missile_reloads_5_inch_rocket": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_rocket_and_missile_reloads_latgm": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_rocket_and_missile_reloads_hatgm": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_rocket_and_missile_reloads_hellfire": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_rocket_and_missile_reloads_60mm_mortar_shell": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_rocket_and_missile_reloads_80mm_mortar_shell": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_rocket_and_missile_reloads_120mm_mortar_shell": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_rocket_and_missile_reloads_105mm_howitzer_shell": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_rocket_and_missile_reloads_150mm_howitzer_shell": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_rocket_and_missile_reloads_200mm_howitzer_shell": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_rocket_and_missile_reloads_230mm_rocket": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "20-21"
+        },
+        "ammo_chemical_loads_smoke": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "21"
+        },
+        "ammo_chemical_loads_hot_smoke": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "21"
+        },
+        "ammo_chemical_loads_tear_gas": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "21"
+        },
+        "ammo_chemical_loads_nausea_gas": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "21"
+        },
+        "ammo_chemical_loads_knock_out_gas": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "21"
+        },
+        "ammo_chemical_loads_mace": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "21"
+        },
+        "ammo_chemical_loads_nerve_gas": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "21"
+        },
+        "ammo_chemical_loads_white_phosphorous": {
+          "sourceId": "maximum-metal",
+          "verification": "section",
+          "pages": "21"
+        },
+        "ammo_arrowheads_target_arrow": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46"
+        },
+        "ammo_arrowheads_broadhead_arrow": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46"
+        },
+        "ammo_arrowheads_stun_arrow": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46"
+        },
+        "ammo_arrowheads_spinner_arrow": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46"
+        },
+        "ammo_arrowheads_warhead_arrow": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46"
+        },
+        "ammo_arrowheads_target_quarrel": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46"
+        },
+        "ammo_arrowheads_broadhead_quarrel": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46"
+        },
+        "ammo_arrowheads_stun_quarrel": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46"
+        },
+        "ammo_arrowheads_spinner_quarrel": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46"
+        },
+        "ammo_arrowheads_warhead_quarrel": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46"
+        },
+        "ammo_arrowheads_silver_quarrel": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "46"
+        },
+        "ammo_airgun_and_needlegun_loads_drugged_splatball": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "47"
+        },
+        "ammo_airgun_and_needlegun_loads_acid_splatball": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "47"
+        },
+        "ammo_airgun_and_needlegun_loads_normal_needlegun_load_100": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "47"
+        },
+        "ammo_airgun_and_needlegun_loads_drugged_needlegun_load": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "47"
+        },
+        "ammo_airgun_and_needlegun_loads_anti_armor_needlegun_load": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "47"
+        },
+        "ammo_airgun_and_needlegun_loads_he_impact_needlegun_load": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "47"
+        },
+        "ammo_airgun_and_needlegun_loads_he_timer_liquid_needlegun_load": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "47"
+        },
+        "ammo_firearm_accessories_holster": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "64-70"
+        },
+        "ammo_firearm_accessories_shoulder_sling": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "64-70"
+        },
+        "ammo_firearm_accessories_silencer_suppressor": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "64-70"
+        },
+        "ammo_firearm_accessories_laser_sight": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "64-70"
+        },
+        "ammo_firearm_accessories_commercial_under_barrel_grenade_launcher": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "64-70"
+        },
+        "ammo_firearm_accessories_cyberleg_holster": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "64-70"
+        },
+        "ammo_firearm_accessories_cybernetic_pop_up_gun": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "64-70"
+        },
+        "ammo_firearm_accessories_weapon_mount_link": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "64-70"
+        },
+        "ammo_firearm_accessories_smartgun_link": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "64-70"
+        },
+        "ammo_firearm_accessories_cyberoptic_targeting_scope": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "64-70"
+        },
+        "ammo_firearm_accessories_smart_vision_goggles": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "64-70"
+        },
+        "ammo_firearm_accessories_smartlink_scope": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "64-70"
+        },
+        "ammo_firearm_accessories_magnification": {
+          "sourceId": "home-of-the-brave",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_image_intensifiers": {
+          "sourceId": "home-of-the-brave",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_thermograph": {
+          "sourceId": "home-of-the-brave",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_scopesight": {
+          "sourceId": "home-of-the-brave",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_low_lite_scope": {
+          "sourceId": "home-of-the-brave",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_computer_sights": {
+          "sourceId": "home-of-the-brave",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_computer_thermo_sight": {
+          "sourceId": "home-of-the-brave",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_bipod": {
+          "sourceId": "home-of-the-brave",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_bayonet": {
+          "sourceId": "home-of-the-brave",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_gyro_mount": {
+          "sourceId": "home-of-the-brave",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_portable_laser_rangefinder": {
+          "sourceId": "home-of-the-brave",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_power_exo_mount": {
+          "sourceId": "home-of-the-brave",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_m_205_grenade_launcher": {
+          "sourceId": "home-of-the-brave",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_classic_rifle_grenade_adapter": {
+          "sourceId": "home-of-the-brave",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_cot_sight": {
+          "sourceId": "solo-of-fortune",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_cookie_cutter": {
+          "sourceId": "solo-of-fortune",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_extra_cookie_cutter_badge": {
+          "sourceId": "solo-of-fortune",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_new_frames": {
+          "sourceId": "solo-of-fortune",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_braces_and_stocks": {
+          "sourceId": "solo-of-fortune",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_cooling_shroud": {
+          "sourceId": "solo-of-fortune",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_magazine_extensions": {
+          "sourceId": "solo-of-fortune",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_techtronica_scangrip": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_cybernetic_targeting_system": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_gun_cleaning_kit": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_digital_weapon_link": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "12"
+        },
+        "ammo_firearm_accessories_dud_smartgun_controller": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "12"
+        },
+        "ammo_firearm_accessories_militech_pump_mini_grenade_launcher": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "46"
+        },
+        "ammo_firearm_accessories_militech_drum_mini_grenade_launcher": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "46"
+        },
+        "ammo_firearm_accessories_dcr_rifle_grenade_adapter": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "47"
+        },
+        "ammo_firearm_accessories_speedholster": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "13"
+        },
+        "ammo_firearm_accessories_quickdraw_cyberarm_holster": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "6"
+        },
+        "ammo_firearm_accessories_stutter_chipping": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "38"
+        },
+        "ammo_firearm_accessories_nine_eleven_chip": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "50"
+        },
+        "ammo_firearm_accessories_security_chipping": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "50"
+        },
+        "ammo_firearm_accessories_gun_cam": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "42"
+        },
+        "ammo_firearm_accessories_et_battery": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "44"
+        },
+        "ammo_firearm_accessories_22_muzzle_adapter": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "11"
+        },
+        "ammo_firearm_accessories_under_barrel_capacitor_laser": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "39"
+        },
+        "ammo_firearm_accessories_under_barrel_microwaver": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "39"
+        },
+        "ammo_firearm_accessories_hip_mounted_powerpack": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "83"
+        },
+        "ammo_firearm_accessories_under_barrel_micro_missile_pod": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "36"
+        },
+        "ammo_firearm_accessories_under_barrel_sharpwire_net": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "58"
+        },
+        "ammo_firearm_accessories_kleen_bore_nanoagents": {
+          "sourceId": "chromebook-2",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_midnight_arms_smart_glove": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "14"
+        },
+        "ammo_firearm_accessories_smartgoggle_mirrorshades": {
+          "sourceId": "chromebook-3",
+          "verification": "book"
+        },
+        "ammo_firearm_accessories_smartplate_link": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "23"
+        },
+        "ammo_bow_accessories_bow_string_silencer": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_bow_accessories_crossbow_autoloader": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_bow_accessories_basic_bow_sights": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_bow_accessories_cyber_targeting": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_bow_accessories_ir_sight": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_bow_accessories_lowlite_sight": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_bow_accessories_gyro_stabilizer": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_melee_accessories_monomolecular_edge": {
+          "sourceId": "pacific-rim",
+          "verification": "book"
+        },
+        "ammo_gun_customization_custom_grip": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_adjustable_stock": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_folding_stock_rifle": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_stock_pistol_or_light_smg": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_solenoid_trigger": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_build_solenoid_trigger": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_electric_trigger": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_electric_fire_ammo_conversion": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_barrel_chopping": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_chop_pistol_or_smg": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_cheap_barrel_chopping": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_barrel_extension": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_burst_fire": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_pure_auto_fire": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_selective_fire": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_heat_resistant_barrel": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_make_resistant_barrel": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_quality": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_compensation": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_electrothermal_enhancement": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_smartgun_modification": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_smart_plate_modification": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_smart_glove_modification": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_brass_catcher": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_bayonet_lug": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_standard_finish": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_natural_color_finish": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_bowling_ball_finish": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_custom_finish": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_neon_glow_finish": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_printless_finish": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_extended_magazine": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_extended_magazine_over_2x": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_gun_customization_heavy_weapon_extended_magazine": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_imi_25mm_grenades_chemical": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_imi_25mm_grenades_flechette": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_imi_25mm_grenades_fragmentation": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_imi_25mm_grenades_hep": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_imi_25mm_grenades_stundart": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_imi_25mm_grenades_slasher": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_imi_25mm_grenades_frag": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_imi_25mm_grenades_flash": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_imi_25mm_grenades_incendiary": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_imi_25mm_grenades_concussion": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_imi_25mm_grenades_ln2": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ammo_30mm_launched_grenades_he": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_30mm_launched_grenades_hedp": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_30mm_launched_grenades_illumination": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_30mm_launched_grenades_chemical": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_30mm_launched_grenades_bean_bag": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_30mm_launched_grenades_wp": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_30mm_launched_grenades_flechette": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_30mm_launched_grenades_hep": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_30mm_launched_grenades_flash_bang": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_30mm_launched_grenades_grapnel": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_30mm_launched_grenades_net": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_30mm_launched_grenades_splatshell": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_30mm_launched_grenades_spraypaint": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_30mm_launched_grenades_emp": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_30mm_launched_grenades_ln2": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        },
+        "ammo_30mm_launched_grenades_slasher": {
+          "sourceId": "blackhands",
+          "verification": "section",
+          "pages": "42"
+        }
+      }
+    },
+    "cyberwares": {
+      "default": {
+        "sourceId": "unverified",
+        "verification": "unverified"
+      },
+      "items": {
+        "biomonitor": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "skinwatch": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "light_tattoo": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "shift_tacts": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "chem_skins": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "synthskins": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "synthskin_turning_chip": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "techhair": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "kill_display": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "6"
+        },
+        "turn_onails": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "36"
+        },
+        "show_off_nails": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "36"
+        },
+        "transparent_skin": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "35"
+        },
+        "mood_skin": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "35"
+        },
+        "skin_tattoo": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "13"
+        },
+        "nu_tek_tvskin": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "14"
+        },
+        "advanced_biomonitor": {
+          "sourceId": "corporation-report-3",
+          "verification": "book"
+        },
+        "etched_design": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "71"
+        },
+        "unusual_colorization": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "71"
+        },
+        "unusual_optic_colorization": {
+          "sourceId": "chromebook-1",
+          "verification": "book"
+        },
+        "limblite_processor": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "71"
+        },
+        "limblite_control_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "75"
+        },
+        "custom_cyberware": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "32"
+        },
+        "neuralware_processor": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "kerenzikov_boosterware": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "speedware_sandevistan": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "tactile_boost": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "olifactory_boost": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "pain_editor": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "cybermodem_link": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "cyberaudio_link": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "vehicle_link": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "smartgun_link": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "machine_tech_link": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "dataterm_link": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "interface_plugs": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "chipware_socket": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "mag_duct_spots": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "38"
+        },
+        "tactile_boost_linkage": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "62"
+        },
+        "livewires": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "24"
+        },
+        "pacemaker_coprocessor": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "26"
+        },
+        "super_compact_braindance": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "23"
+        },
+        "model_100_plugs": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "33"
+        },
+        "taste_boost": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "15"
+        },
+        "cyber_detection_computer": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "15"
+        },
+        "echolocation_system": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "68"
+        },
+        "lockdown": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "15"
+        },
+        "chiplok": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "15"
+        },
+        "boostmaster": {
+          "sourceId": "solo-of-fortune",
+          "verification": "book"
+        },
+        "subdermal_smartgun_link": {
+          "sourceId": "rough-guide-uk",
+          "verification": "book"
+        },
+        "braindance_plugs": {
+          "sourceId": "rockerboy",
+          "verification": "book"
+        },
+        "neural_ulf_transceiver": {
+          "sourceId": "source-code-sf",
+          "verification": "book"
+        },
+        "universal_link": {
+          "sourceId": "interface-1-3",
+          "verification": "book"
+        },
+        "positronic_enhancer": {
+          "sourceId": "interface-1-3",
+          "verification": "book"
+        },
+        "braindance_apdaptor": {
+          "sourceId": "interface-2-1",
+          "verification": "book"
+        },
+        "wirehead_unit": {
+          "sourceId": "interface-2-1",
+          "verification": "book"
+        },
+        "nasal_filters": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "gills_fresh_water": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "gill_toxin_filters": {
+          "sourceId": "source-code-sa",
+          "verification": "book"
+        },
+        "saltwater_gills": {
+          "sourceId": "source-code-sf",
+          "verification": "book"
+        },
+        "independent_air_supply": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "independent_air_supply_plus": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "mr_studd": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "midnight_lady": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "contraceptive_implant": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "subdermal_pocket": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "adrenal_booster": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "subdermal_armor": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "subdermal_torso_armour": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "7"
+        },
+        "subdermal_skull_armour": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "7"
+        },
+        "motion_detector": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "implant_digital_recorder": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "audio_video_tape_recorder": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "radar_sensor": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "sonar_implant": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "military_sonar": {
+          "sourceId": "source-code-sf",
+          "verification": "book"
+        },
+        "radiation_detector": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "chemical_analyser": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "t_maxx_cyberliver": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "37"
+        },
+        "t_maxx2_cyberliver": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "37"
+        },
+        "decentralized_heart": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "37"
+        },
+        "e_monitor": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "38"
+        },
+        "gyro_stabilizer": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "38"
+        },
+        "optishield": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "30"
+        },
+        "optishield_options": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "5"
+        },
+        "pacesetter_heart": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "37"
+        },
+        "pacesetter_2000_heart": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "37"
+        },
+        "variable_chambered_heart": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "9"
+        },
+        "rebreather_enhanced_lungs": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "36"
+        },
+        "wet_drive": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "35"
+        },
+        "extraemory": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "35"
+        },
+        "wetdrive_access_link": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "6"
+        },
+        "wearmank2": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "38"
+        },
+        "subdermal_viewscreen": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "8"
+        },
+        "zetatech_bodycomp": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "8"
+        },
+        "eye_color_gland_control": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "6"
+        },
+        "autoinjector": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "25"
+        },
+        "cell_phone_implant": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "24"
+        },
+        "cam_o_skin": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "35"
+        },
+        "endo_frame_basic": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "28"
+        },
+        "endo_frame_orbital": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "28"
+        },
+        "bodyweight_vein_clips": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "10"
+        },
+        "militech_cyberdoc": {
+          "sourceId": "corporation-report-2",
+          "verification": "book"
+        },
+        "boozemaster": {
+          "sourceId": "pacific-rim",
+          "verification": "book"
+        },
+        "gpsodule": {
+          "sourceId": "source-code-sf",
+          "verification": "book"
+        },
+        "gpsodule_screen": {
+          "sourceId": "source-code-sf",
+          "verification": "book"
+        },
+        "otec_ear_valve": {
+          "sourceId": "source-code-sf",
+          "verification": "book"
+        },
+        "enhanced_lungs_series2": {
+          "sourceId": "source-code-sf",
+          "verification": "book"
+        },
+        "enhanced_lungs_series3x2": {
+          "sourceId": "source-code-sf",
+          "verification": "book"
+        },
+        "feel_good_endorphin_trigger": {
+          "sourceId": "shockwave",
+          "verification": "book"
+        },
+        "poison_sac": {
+          "sourceId": "when-gravity-fails",
+          "verification": "book"
+        },
+        "uv_blockers": {
+          "sourceId": "when-gravity-fails",
+          "verification": "book"
+        },
+        "feature_alteration_implant": {
+          "sourceId": "when-gravity-fails",
+          "verification": "book"
+        },
+        "strobe_m": {
+          "sourceId": "interface-1-4",
+          "verification": "book"
+        },
+        "life_scan_bodyonitor": {
+          "sourceId": "interface-1-4",
+          "verification": "book"
+        },
+        "self_destruct": {
+          "sourceId": "source-code-p2",
+          "verification": "book"
+        },
+        "dakai_cyphire_new_throat": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "8"
+        },
+        "cybervocal_boxalter": {
+          "sourceId": "interface-1-3",
+          "verification": "book"
+        },
+        "voice_synthesizer": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "audiovox": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "forked_tongue": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "35"
+        },
+        "voice_pattern": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "35"
+        },
+        "scramble": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "8"
+        },
+        "volume": {
+          "sourceId": "interface-1-3",
+          "verification": "book"
+        },
+        "armour": {
+          "sourceId": "interface-1-3",
+          "verification": "book"
+        },
+        "subsonic": {
+          "sourceId": "interface-1-3",
+          "verification": "book"
+        },
+        "grafted_muscle": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "muscle_and_bone_lace": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "skin_weave": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "upgraded_skinweave": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "9"
+        },
+        "lifesaver_skinweave": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "39"
+        },
+        "enhanced_antibodies": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "toxin_binders": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "nanosurgeons": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "anti_plague_nanotech": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "39"
+        },
+        "armour_weave": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "7"
+        },
+        "speed_grafts": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "103"
+        },
+        "nanooptical_upgrade": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "8"
+        },
+        "nano_groomers": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "26"
+        },
+        "nitrogen_binders": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "17"
+        },
+        "nitrogen_binders_upkeep": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "17"
+        },
+        "advanced_m_b_lace": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "17"
+        },
+        "advanced_m_b_lace_3": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "17"
+        },
+        "alpha_tuffbone_skeletal_enh": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "18"
+        },
+        "beta_tuffbone_skeletal_enh": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "18"
+        },
+        "hemological_replacement": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "18"
+        },
+        "neoappendix": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "19"
+        },
+        "nanoauditory_rebuild": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "20"
+        },
+        "sunblocker_sunscreen": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "20"
+        },
+        "neolungs": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "21"
+        },
+        "neural_bridge": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "22"
+        },
+        "circulatory_sphincters": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "22"
+        },
+        "poison_glands_teeth": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "23"
+        },
+        "poison_glands_teeth_i": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "23"
+        },
+        "poison_glands_hands": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "23"
+        },
+        "poison_glands_hands_i": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "23"
+        },
+        "tailored_pheromones_love": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "23"
+        },
+        "tailored_pheromones_gullible": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "23"
+        },
+        "tailored_pheromones_confu": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "23"
+        },
+        "kaloric_secondary_gut": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "24"
+        },
+        "freezeban_bioconstruct": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "24"
+        },
+        "quickclot_hemofibrinic_node": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "25"
+        },
+        "flashlite_implant": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "26"
+        },
+        "replitech_toxin_screen": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "27"
+        },
+        "t_maxx_ileocecal_siphon": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "28"
+        },
+        "diet_mite": {
+          "sourceId": "listen-up",
+          "verification": "book"
+        },
+        "erased_fingerprints": {
+          "sourceId": "source-code-ws",
+          "verification": "book"
+        },
+        "altered_fingerprints": {
+          "sourceId": "source-code-ws",
+          "verification": "book"
+        },
+        "alterable_prints": {
+          "sourceId": "source-code-ws",
+          "verification": "book"
+        },
+        "altered_retinas": {
+          "sourceId": "source-code-ws",
+          "verification": "book"
+        },
+        "programmable_retinas": {
+          "sourceId": "source-code-ws",
+          "verification": "book"
+        },
+        "altered_dna": {
+          "sourceId": "source-code-ws",
+          "verification": "book"
+        },
+        "full_spectrum_booster": {
+          "sourceId": "neo-tribes",
+          "verification": "book"
+        },
+        "muscle_enhancement": {
+          "sourceId": "deep-space",
+          "verification": "book"
+        },
+        "chem_weave": {
+          "sourceId": "deep-space",
+          "verification": "book"
+        },
+        "thermal_weave": {
+          "sourceId": "deep-space",
+          "verification": "book"
+        },
+        "vac_weave": {
+          "sourceId": "deep-space",
+          "verification": "book"
+        },
+        "rad_weave": {
+          "sourceId": "deep-space",
+          "verification": "book"
+        },
+        "reflex_boost": {
+          "sourceId": "deep-space",
+          "verification": "book"
+        },
+        "enhanced_sense": {
+          "sourceId": "deep-space",
+          "verification": "book"
+        },
+        "ihag_nictating_membrane": {
+          "sourceId": "source-code-sf",
+          "verification": "book"
+        },
+        "sinus_reconstruction": {
+          "sourceId": "source-code-sf",
+          "verification": "book"
+        },
+        "nanowear_ozoneshield": {
+          "sourceId": "source-code-ttb",
+          "verification": "book"
+        },
+        "antidazzle_nicm": {
+          "sourceId": "when-gravity-fails",
+          "verification": "book"
+        },
+        "poison_gland": {
+          "sourceId": "when-gravity-fails",
+          "verification": "book"
+        },
+        "water_refiltration_sys": {
+          "sourceId": "when-gravity-fails",
+          "verification": "book"
+        },
+        "lung_weave": {
+          "sourceId": "source-code-sa",
+          "verification": "book"
+        },
+        "shark_weave_full_body": {
+          "sourceId": "source-code-sa",
+          "verification": "book"
+        },
+        "shark_weave_partial": {
+          "sourceId": "source-code-sa",
+          "verification": "book"
+        },
+        "thermaskin": {
+          "sourceId": "interface-2-2",
+          "verification": "book"
+        },
+        "preparatory_dna_mapping": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "permanent_ref_increase": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "permanent_bod_increase": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "permanent_att_increase": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "permanent_ma_increase": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "reduced_oxygen_demand": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "uv_resistance": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "toughened_skin": {
+          "sourceId": "interface-2-2",
+          "verification": "book"
+        },
+        "endurance": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "ignore_pain": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "anti_trauma": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "skill_1": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "skill_2": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "skill_3": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "bodyweapon_scratchers": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "implanted_fangs_vampires": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "poison_vampires": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "retractable_vampires": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "9"
+        },
+        "spitting_cobra": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "27"
+        },
+        "bodyweapon_rippers": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "wolvers": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "big_knucks": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "slice_n_dice": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "cybersnake": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "gang_jazzler": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "58"
+        },
+        "bonespike": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "25"
+        },
+        "newteeth": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "7"
+        },
+        "powerjaw": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "7"
+        },
+        "stinger": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "10"
+        },
+        "bodyweapon_bigripp": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "11"
+        },
+        "noveltech_spitfire_flamer": {
+          "sourceId": "edgerunners",
+          "verification": "book"
+        },
+        "mandibles": {
+          "sourceId": "interface-2-2",
+          "verification": "book"
+        },
+        "cyberjaw": {
+          "sourceId": "source-code-p2",
+          "verification": "book"
+        },
+        "cyberjaw_with_realskinn": {
+          "sourceId": "source-code-p2",
+          "verification": "book"
+        },
+        "cyberoptic": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "remote_eye": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "9"
+        },
+        "optical_interface": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "27"
+        },
+        "bug_eye": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "23"
+        },
+        "third_eye": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "28"
+        },
+        "revelation_cyberoptic": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "36"
+        },
+        "soviet_cyberoptic": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "7"
+        },
+        "kiroshi_monovision": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "9"
+        },
+        "quick_change_optic": {
+          "sourceId": "source-code-p1",
+          "verification": "book"
+        },
+        "color_shift": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "image_enhancement": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "targeting_scope": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "times_square_marquee": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "teleoptics": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "micro_optics": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "anti_dazzle": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "low_lite": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "thermograph_sensor": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "infrared": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "ultraviolet": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "microvideo_optic": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "digital_camera": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "cyberoptic_dartgun": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "dodgeball": {
+          "sourceId": "chromebook-1",
+          "verification": "book"
+        },
+        "tear_gas_sprayer": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "39"
+        },
+        "times_square_plus": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "12"
+        },
+        "video_cam_transmitter": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "39"
+        },
+        "video_imager": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "38"
+        },
+        "time_day_display": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "5"
+        },
+        "cyberoptic_compass": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "24"
+        },
+        "interferometry_system": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "27"
+        },
+        "laser_comm_optic": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "24"
+        },
+        "verbal_eyes_basic": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "32"
+        },
+        "verbal_eyes_vid_image": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "32"
+        },
+        "verbal_eyes_cust_image": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "32"
+        },
+        "double_slit_pupils": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "10"
+        },
+        "hydrosubsidium_aquagoggs": {
+          "sourceId": "source-code-sf",
+          "verification": "book"
+        },
+        "live_feed_optic": {
+          "sourceId": "interface-2-1",
+          "verification": "book"
+        },
+        "optical_capacitor_laser": {
+          "sourceId": "source-code-p1",
+          "verification": "book"
+        },
+        "cyberoptic_eyepatch": {
+          "sourceId": "source-code-p3",
+          "verification": "book"
+        },
+        "cyberaudio": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "spectrum_cyberaudio": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "35"
+        },
+        "soviet_cyberaudio": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "7"
+        },
+        "amplified_hearing": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "radio_link": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "phone_splice": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "scrambler": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "bug_detector": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "voice_stress_analyser": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "sound_editing": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "enhanced_hearing_range": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "wearman": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "radar_detector": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "homing_tracer": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "tight_beam_radio_link": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "wide_band_radio_scanner": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "micro_recorder_link": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "digital_recording_link": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "level_damper": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "fax_plus": {
+          "sourceId": "chromebook-3",
+          "verification": "book"
+        },
+        "standard_cyberarm": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "standard_cyberleg": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "artificial_shoulder_mount": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "orbital_crystal_cyberarm": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "57"
+        },
+        "orbital_crystal_cyberleg": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "55"
+        },
+        "independent_cyberhand": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "31"
+        },
+        "romanova_cyberlegs": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "31"
+        },
+        "supersized_arm": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "25"
+        },
+        "enable_cyberarm": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "22"
+        },
+        "enable_cyberleg": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "34"
+        },
+        "soviet_cyberleg": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "7"
+        },
+        "soviet_cyberarm": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "7"
+        },
+        "corvette_cyberlegs_basic": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "5"
+        },
+        "corvette_cyberlegs_advan": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "5"
+        },
+        "high_speed_maneuvering_system": {
+          "sourceId": "unverified",
+          "verification": "unverified"
+        },
+        "speeding_bullet_legs": {
+          "sourceId": "solo-of-fortune",
+          "verification": "book"
+        },
+        "sovwear_cyberarm": {
+          "sourceId": "solo-of-fortune",
+          "verification": "book"
+        },
+        "sovwear_cyberleg": {
+          "sourceId": "solo-of-fortune",
+          "verification": "book"
+        },
+        "cyber_bar_leg": {
+          "sourceId": "interface-1-3",
+          "verification": "book"
+        },
+        "tentacle_arm": {
+          "sourceId": "interface-2-2",
+          "verification": "book"
+        },
+        "extendable_tentacle_arm": {
+          "sourceId": "interface-2-2",
+          "verification": "book"
+        },
+        "cyberlimb_quick_change_mount": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "hydraulic_rams": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "thickened_myomar": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "reinforced_joints": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "microwave_emp_shielding": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "plastic_covering": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "realskinn": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "superchrome": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "armor": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "leg_boosters": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "24"
+        },
+        "fleshweave": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "21"
+        },
+        "extra_twist_joint_addition": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "6"
+        },
+        "double_jointed": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "6"
+        },
+        "locking_joints": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "6"
+        },
+        "rotating_joints_360": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "6"
+        },
+        "extending_leg_units": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "6"
+        },
+        "spiked_limb_cover": {
+          "sourceId": "interface-1-4",
+          "verification": "book"
+        },
+        "tentacle_arm_sheath": {
+          "sourceId": "interface-2-2",
+          "verification": "book"
+        },
+        "standard_hand": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "ripper_hand": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "hammerhand": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "buzzhand": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "tool_hand": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "grapple_hand": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "extension_hand": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "spike_hand": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "modular_hand": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "mace_hand": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "36"
+        },
+        "cyberhand_coverings": {
+          "sourceId": "chromebook-1",
+          "verification": "book"
+        },
+        "custom_cyberhand": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "5"
+        },
+        "web_hand": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "26"
+        },
+        "iec_venom_hand": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "75"
+        },
+        "medical_modular_cyberhand": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "5"
+        },
+        "dainamax_grapplefist": {
+          "sourceId": "pacific-rim",
+          "verification": "book"
+        },
+        "surveillance_hand": {
+          "sourceId": "interface-2-1",
+          "verification": "book"
+        },
+        "drill_hand": {
+          "sourceId": "source-code-p1",
+          "verification": "book"
+        },
+        "travel_hand": {
+          "sourceId": "source-code-p1",
+          "verification": "book"
+        },
+        "gouge_master": {
+          "sourceId": "source-code-p3",
+          "verification": "book"
+        },
+        "lightning_fist": {
+          "sourceId": "source-code-rpi",
+          "verification": "book"
+        },
+        "standard_foot": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "talon_foot": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "tool_foot": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "web_foot": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "grip_foot": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "spike_heel_foot": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "skate_foot": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "33"
+        },
+        "anchoring_cyberfeet": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "5"
+        },
+        "catspaw_stealth_foot": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "5"
+        },
+        "mini_camera_in_palm": {
+          "sourceId": "interface-1-1",
+          "verification": "book"
+        },
+        "cyberfinger_dartgun": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "32"
+        },
+        "lockpick": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "32"
+        },
+        "mini_light": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "32"
+        },
+        "finger_bomb": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "32"
+        },
+        "wirecutters_scissors": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "32"
+        },
+        "mace_sprayer": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "32"
+        },
+        "cyberfinger_quick_change_mount": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "4"
+        },
+        "vidcam_plus_option": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "4"
+        },
+        "self_propelled_grenade": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "4"
+        },
+        "aip_hypo": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "4"
+        },
+        "tracking_device": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "4"
+        },
+        "lighter": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "4"
+        },
+        "probe_link": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "22"
+        },
+        "parabolic_microphone": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "22"
+        },
+        "flasher": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "22"
+        },
+        "ir_uv_flashlight": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "22"
+        },
+        "flare": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "8"
+        },
+        "storage_compartment": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "22"
+        },
+        "laser_pointer": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "22"
+        },
+        "flesh_mount": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "4"
+        },
+        "one_shot_special": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "4"
+        },
+        "ballpoint_finger": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "4"
+        },
+        "cyberfinger_oxygen_tank": {
+          "sourceId": "source-code-sa",
+          "verification": "book"
+        },
+        "screwdriver": {
+          "sourceId": "interface-1-1",
+          "verification": "book"
+        },
+        "wrench": {
+          "sourceId": "interface-1-1",
+          "verification": "book"
+        },
+        "drill": {
+          "sourceId": "interface-1-1",
+          "verification": "book"
+        },
+        "soldering_iron": {
+          "sourceId": "interface-1-1",
+          "verification": "book"
+        },
+        "socket_wrench": {
+          "sourceId": "interface-1-1",
+          "verification": "book"
+        },
+        "tentacle_finger": {
+          "sourceId": "interface-2-2",
+          "verification": "book"
+        },
+        "extendable_tentacle": {
+          "sourceId": "interface-2-2",
+          "verification": "book"
+        },
+        "cybermodem": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "cellular_cybermodem": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "cyberlimb_digital_recorder": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "storage_space": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "minicam": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "minivid": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "hidden_holster": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "lcd_screen_readout": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "techscanner": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "cutting_torch": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "36"
+        },
+        "icer": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "76"
+        },
+        "limb_link": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "34"
+        },
+        "magnetic_hands_feet": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "34"
+        },
+        "watch_man": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "33"
+        },
+        "winch": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "5"
+        },
+        "quickdraw_holster": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "6"
+        },
+        "radio_phone_station": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "56"
+        },
+        "ecm": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "56"
+        },
+        "laser_mike": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "20"
+        },
+        "cyberpillow": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "26"
+        },
+        "smartplate_link": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "23"
+        },
+        "microwaldo_bracer": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "11"
+        },
+        "dtek_targeting_network": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "ufl_antena": {
+          "sourceId": "source-code-sf",
+          "verification": "book"
+        },
+        "cyberlimb_light": {
+          "sourceId": "interface-1-4",
+          "verification": "book"
+        },
+        "grenade_launcher": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "micro_missile_launcher": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "popup_gun": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "flame_thrower": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "weapon_mount_link": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "two_shot_capacitor_laser": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "derringer": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "36"
+        },
+        "flashbulb": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "35"
+        },
+        "gas_jet": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "34"
+        },
+        "tazer_grip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "38"
+        },
+        "whip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "34"
+        },
+        "popup_sliver_gun": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "42"
+        },
+        "tri_dart_launcher": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "6"
+        },
+        "retractable_monoblade": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "72"
+        },
+        "survival_blade": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "44"
+        },
+        "chainripp": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "29"
+        },
+        "blitzkrieg_arc_thrower": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "12"
+        },
+        "cyberweapon_bigripp": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "11"
+        },
+        "high_five_palm_bomb": {
+          "sourceId": "chromebook-4",
+          "verification": "page",
+          "pages": "11"
+        },
+        "pop_up_hand_crossbow": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "micro_torpedo_launcher": {
+          "sourceId": "source-code-sa",
+          "verification": "book"
+        },
+        "sigma": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "beta": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "omega": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "gp_exoskeleton_a": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "34"
+        },
+        "gp_exoskeleton_b": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "34"
+        },
+        "underwater_gamma": {
+          "sourceId": "source-code-sa",
+          "verification": "book"
+        },
+        "underwater_delta": {
+          "sourceId": "source-code-sa",
+          "verification": "book"
+        },
+        "underwater_pi": {
+          "sourceId": "source-code-sa",
+          "verification": "book"
+        },
+        "cowl": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "faceplate": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "torso_plate": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "front_optic_mount": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "sense_ext_rabbit_ears": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "total_body_plating": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "9"
+        },
+        "cyberfacial_remounts": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "33"
+        },
+        "spyke_furniture": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "30"
+        },
+        "alpha_class": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "66"
+        },
+        "aquarius_sub_marine": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "67"
+        },
+        "copernicus_space_use": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "69"
+        },
+        "eclipse_covert_ops": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "71"
+        },
+        "enforcer_security": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "73"
+        },
+        "brimstone_fire_fighter": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "75"
+        },
+        "gemini_humanoid": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "85"
+        },
+        "wingman_pilot": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "77"
+        },
+        "samson_industrial": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "79"
+        },
+        "dragoon_military": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "82"
+        },
+        "sheol_hazardous_ops": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "93"
+        },
+        "md_tech_kildare_medical": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "95"
+        },
+        "adrek_burroughs_mars_ops": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "97"
+        },
+        "militech_spyder_recon": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "99"
+        },
+        "wiseman_cyberspace_com": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "104"
+        },
+        "arasaka_daioni_pa_convert": {
+          "sourceId": "shockwave",
+          "verification": "book"
+        },
+        "stylization": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "66"
+        },
+        "increased_sp": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "71"
+        },
+        "increased_sdp": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "84"
+        },
+        "increased_ref": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "85"
+        },
+        "increased_ma": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "64"
+        },
+        "increased_body": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "64"
+        },
+        "shielding": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "17"
+        },
+        "quick_change_mounts": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "83"
+        },
+        "interchangeable_bipod": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "85"
+        },
+        "longevity_module": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "85"
+        },
+        "eelskin": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "107"
+        },
+        "cyber_steroids": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "107"
+        },
+        "back_mounted_power_unit": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "103"
+        },
+        "variable_spectrum_light": {
+          "sourceId": "chromebook-3",
+          "verification": "book"
+        },
+        "enhanced_thermograph": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "95"
+        },
+        "blood_iv_supply": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "95"
+        },
+        "reactive_body_plating": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "dummy_facemasks": {
+          "sourceId": "solo-of-fortune-2",
+          "verification": "book"
+        },
+        "minor_facial_modification": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "104"
+        },
+        "major_facial_modification": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "104"
+        },
+        "muzzle_short": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "102"
+        },
+        "muzzle_long": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "102"
+        },
+        "mandibles_extended": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "102"
+        },
+        "natural_fangs": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "105"
+        },
+        "natural_claws": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "102"
+        },
+        "retractable_claws": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "102"
+        },
+        "exotic_scratchers": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "102"
+        },
+        "exotic_rippers": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "54"
+        },
+        "short_tail": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "105"
+        },
+        "tail": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "36"
+        },
+        "combat_tail": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "102"
+        },
+        "stinger_tail": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "102"
+        },
+        "digitgrade_legs": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "84"
+        },
+        "fur_scales_skinchange": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "102"
+        },
+        "heavy_scales": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "102"
+        },
+        "exoskeleton": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "103"
+        },
+        "frame_alteration": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "102"
+        },
+        "muscle_pouch": {
+          "sourceId": "source-code-sa",
+          "verification": "book"
+        },
+        "katnip_feline": {
+          "sourceId": "chromebook-2",
+          "verification": "book"
+        },
+        "rodent": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "104"
+        },
+        "rabbit": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "72"
+        },
+        "reptile": {
+          "sourceId": "chromebook-2",
+          "verification": "book"
+        },
+        "elf": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "39"
+        },
+        "dwarf_halfling": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "105"
+        },
+        "ork_goblin": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "6"
+        },
+        "troll_ogre": {
+          "sourceId": "chromebook-2",
+          "verification": "book"
+        },
+        "fishman": {
+          "sourceId": "chromebook-2",
+          "verification": "book"
+        },
+        "zark_nartanq_graftable": {
+          "sourceId": "chromebook-2",
+          "verification": "book"
+        },
+        "bear_package": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "66"
+        },
+        "the_superman": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "90"
+        },
+        "bigkatt": {
+          "sourceId": "chromebook-2",
+          "verification": "book"
+        },
+        "slight_buggy": {
+          "sourceId": "chromebook-2",
+          "verification": "book"
+        },
+        "franz_kafka_bughouse": {
+          "sourceId": "chromebook-2",
+          "verification": "book"
+        },
+        "merman": {
+          "sourceId": "chromebook-2",
+          "verification": "book"
+        },
+        "sharkman": {
+          "sourceId": "chromebook-2",
+          "verification": "book"
+        },
+        "lupaform_minor_package": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "105"
+        },
+        "lupaform_major_package": {
+          "sourceId": "chromebook-2",
+          "verification": "page",
+          "pages": "74"
+        },
+        "humanisaurus_rex_dragon": {
+          "sourceId": "chromebook-2",
+          "verification": "book"
+        },
+        "playbeing_addition": {
+          "sourceId": "chromebook-2",
+          "verification": "book"
+        },
+        "aptr_reflex_chips": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "mram_memory_chips": {
+          "sourceId": "corebook",
+          "verification": "section",
+          "pages": "73-93"
+        },
+        "mo_chips": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "73"
+        },
+        "courier_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "73"
+        },
+        "security_chips": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "73"
+        },
+        "digi_tone_id": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "73"
+        },
+        "special_operative_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "73"
+        },
+        "poser_impersonation_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "73"
+        },
+        "photomemory_ram_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "74"
+        },
+        "memory_compression": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "74"
+        },
+        "programmable_chipware": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "74"
+        },
+        "mind_games": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "74"
+        },
+        "business_trip_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "74"
+        },
+        "tourism_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "74"
+        },
+        "space_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "74"
+        },
+        "maximum_lover_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "74"
+        },
+        "stress_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "75"
+        },
+        "adrenaline_endorphin_surge": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "75"
+        },
+        "increased_neural_feedback": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "75"
+        },
+        "ambidexterity_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "75"
+        },
+        "independent_action_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "75"
+        },
+        "deathtrance": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "75"
+        },
+        "redundancy_loop": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "75"
+        },
+        "fish_n_chips": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "75"
+        },
+        "visual_recognition_chips": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "76"
+        },
+        "techie_visual_rec_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "76"
+        },
+        "corporate_visual_rec_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "76"
+        },
+        "police_visual_rec_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "76"
+        },
+        "military_visual_rec_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "76"
+        },
+        "rocker_visual_rec_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "76"
+        },
+        "secretarial_visual_rec_chip": {
+          "sourceId": "chromebook-1",
+          "verification": "page",
+          "pages": "76"
+        },
+        "somaware_sleep_chip": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "37"
+        },
+        "navigation_orientation_chip": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "37"
+        },
+        "major_city_map": {
+          "sourceId": "chromebook-3",
+          "verification": "book"
+        },
+        "crypto_chips": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "37"
+        },
+        "stutter_chipping": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "38"
+        },
+        "weaponmasters_mart_chip": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "38"
+        },
+        "auditory_recognition_chips": {
+          "sourceId": "chromebook-3",
+          "verification": "page",
+          "pages": "39"
+        },
+        "james_bond": {
+          "sourceId": "when-gravity-fails",
+          "verification": "book"
+        },
+        "xarghis_khan": {
+          "sourceId": "when-gravity-fails",
+          "verification": "book"
+        },
+        "perfect_soldier": {
+          "sourceId": "when-gravity-fails",
+          "verification": "book"
+        },
+        "kick_ass": {
+          "sourceId": "when-gravity-fails",
+          "verification": "book"
+        },
+        "sunny_day": {
+          "sourceId": "when-gravity-fails",
+          "verification": "book"
+        }
+      }
+    },
+    "accessories": {
+      "default": {
+        "sourceId": "corebook",
+        "verification": "section",
+        "pages": "64-72"
+      },
+      "items": {}
+    },
+    "drugs": {
+      "default": {
+        "sourceId": "corebook",
+        "verification": "section",
+        "pages": "121-125"
+      },
+      "items": {}
+    },
+    "chips": {
+      "default": {
+        "sourceId": "unverified",
+        "verification": "unverified"
+      },
+      "items": {}
+    }
+  }
+}
